@@ -239,7 +239,6 @@ int APS5_VABI sceNpGetParentalControlInfoA(int reqId, int userId, int8_t* age, v
     return SignedOutRequest(reqId);
 }
 int APS5_VABI sceNpIdMapperAbortRequest(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceNpIdMapperAccountIdToNpId(void) {
