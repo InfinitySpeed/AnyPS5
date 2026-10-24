@@ -91,7 +91,6 @@ int APS5_VABI sceCameraGetConnectedDeviceAndDriverMode(void) {
 }
 
 int APS5_VABI sceCamera2IsAttached(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
