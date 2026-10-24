@@ -892,4 +892,5 @@ int main() {
     Require(scePadSetFeatureReport2(0, 0, nullptr, 0) == PAD_ERROR_INVALID_ARG);
     Require(scePadSetMuteLed(-1, 0) == PAD_ERROR_INVALID_HANDLE);
     Require(scePadBondUpdateIsReady(0, nullptr) == PAD_ERROR_INVALID_ARG);
+    Require(scePadBondUpdateStart(0, nullptr) == PAD_ERROR_INVALID_ARG);
 }
