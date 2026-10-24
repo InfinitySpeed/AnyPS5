@@ -32,6 +32,7 @@ int APS5_VABI sceGameLiveStreamingScreenTerminate(void);
 int APS5_VABI sceGameLiveStreamingScreenCloseSeparateMode(void);
 int APS5_VABI sceGameLiveStreamingScreenConfigureSeparateMode(void);
 int APS5_VABI sceGameLiveStreamingScreenOpenSeparateMode(void);
+int APS5_VABI sceGameLiveStreamingScreenSetMode(void);
 }
 
 namespace {
@@ -105,4 +106,5 @@ int main() {
     Require(sceGameLiveStreamingScreenCloseSeparateMode() == 0);
     Require(sceGameLiveStreamingScreenConfigureSeparateMode() == 0);
     Require(sceGameLiveStreamingScreenOpenSeparateMode() == 0);
+    Require(sceGameLiveStreamingScreenSetMode() == 0);
 }
