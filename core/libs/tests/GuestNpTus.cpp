@@ -52,6 +52,7 @@ int APS5_VABI sceNpTusGetFriendsVariableA(void);
 int APS5_VABI sceNpTusGetFriendsVariableAAsync(void);
 int APS5_VABI sceNpTusGetFriendsVariableForCrossSave(void);
 int APS5_VABI sceNpTusGetFriendsVariableForCrossSaveAsync(void);
+int APS5_VABI sceNpTusGetFriendsDataStatusA(void);
 }
 
 static constexpr int SIGNED_OUT = static_cast<int>(0x80550006);
@@ -333,5 +334,6 @@ int main() {
         Require(sceNpTusGetFriendsVariableAAsync() == 0);
         Require(sceNpTusGetFriendsVariableForCrossSave() == 0);
         Require(sceNpTusGetFriendsVariableForCrossSaveAsync() == 0);
+        Require(sceNpTusGetFriendsDataStatusA() == 0);
     CheckTssTitleContexts();
 }
