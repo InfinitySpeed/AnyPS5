@@ -259,7 +259,6 @@ int APS5_VABI sceAudioInHqOpenEx(int user_id, uint32_t type, uint32_t index, uin
 }
 
 int APS5_VABI sceAudioInDeviceOpenEx(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
