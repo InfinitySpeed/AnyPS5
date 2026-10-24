@@ -230,7 +230,6 @@ int APS5_VABI sceRegMgrToolGetEntryCnt(void) {
 }
 
 int APS5_VABI sceRegMgrToolDataCheckGet(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
