@@ -197,6 +197,7 @@ int APS5_VABI sceVdecswSyncDecodeOutput(std::uint64_t, OutputInfo*);
 int APS5_VABI sceVdecswGetVp9PictureInfo(const OutputInfo*, Vp9PictureInfo*);
 int APS5_VABI sceVdecswGetAvcPictureInfo(const OutputInfo*, AvcPictureInfo*, AvcPictureInfo*);
 int APS5_VABI sceVdecswGetHevcPictureInfo(const OutputInfo*, HevcPictureInfo*);
+int APS5_VABI sceVdecswGetPictureInfo(const OutputInfo*, void*, void*);
 int APS5_VABI sceVdecswFinalizeDecodeSequence(std::uint64_t);
 int APS5_VABI sceVdecswResetDecoder(std::uint64_t);
 }
@@ -595,6 +596,13 @@ void testHevcMain10() {
     check(info.generalProfileIdc == 2 && info.bitDepthLumaMinus8 == 2 && info.bitDepthChromaMinus8 == 2, "Main 10 HEVC profile or bit depth differs");
 }
 
+void testGetPictureInfo() {
+    OutputInfo output{sizeof(OutputInfo)};
+    AvcPictureInfo avc{sizeof(AvcPictureInfo)};
+    check(throws([&] { sceVdecswGetPictureInfo(nullptr, &avc, nullptr); }), "null output was accepted");
+    check(throws([&] { sceVdecswGetPictureInfo(&output, nullptr, nullptr); }), "null first was accepted");
+}
+
 int main() {
     try {
         testDecode();
@@ -605,6 +613,7 @@ int main() {
         testSyncWrappers();
         testVp9PictureInfo();
         testVp9PictureInfoOfAvcPicture();
+        testGetPictureInfo();
         std::puts("Vdecsw tests passed");
         return 0;
     } catch (const std::exception& error) {
