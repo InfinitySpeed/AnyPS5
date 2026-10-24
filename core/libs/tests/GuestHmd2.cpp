@@ -63,6 +63,7 @@ int APS5_VABI sceHmd2GazeActivateGazeTracking(std::int32_t mode);
 int APS5_VABI sceHmd2ReprojectionGetCurrentOutput(Hmd2::ReprojectionOutput* output);
 int APS5_VABI sceHmd2SetFieldOfView(const Hmd2::FieldOfView* fieldOfView);
 int APS5_VABI sceHmd2InternalSetPortStatus(void);
+int APS5_VABI sceHmd2InternalLedDetectorStartBySlot(void);
 }
 
 namespace {
@@ -318,6 +319,7 @@ int main() {
     Require(sceHmd2ReprojectionGetCurrentOutput(nullptr) == Hmd2::ReprojectionNotInitialized, "reprojection before initialization");
     Require(sceHmd2SetFieldOfView(nullptr) == Hmd2::ParameterNull, "null field of view");
         Require(sceHmd2InternalSetPortStatus() == 0, "sceHmd2InternalSetPortStatus check");
+        Require(sceHmd2InternalLedDetectorStartBySlot() == 0, "sceHmd2InternalLedDetectorStartBySlot check");
     std::puts("HMD2 tests passed");
     return 0;
 }
