@@ -28,6 +28,7 @@ int APS5_VABI sceGameLiveStreamingGetProgramInfo(GameLiveStreamingProgramInfo*);
 int APS5_VABI sceGameLiveStreamingEnableLiveStreaming(bool isEnableLiveStreaming);
 int APS5_VABI sceGameLiveStreamingScreenInitialize(void);
 int APS5_VABI sceGameLiveStreamingScreenInitializeSeparateModeParameter(void);
+int APS5_VABI sceGameLiveStreamingScreenTerminate(void);
 }
 
 namespace {
@@ -97,4 +98,5 @@ int main() {
     Require(sceGameLiveStreamingTerminate() == notInitialized);
     Require(sceGameLiveStreamingScreenInitialize() == 0);
     Require(sceGameLiveStreamingScreenInitializeSeparateModeParameter() == 0);
+    Require(sceGameLiveStreamingScreenTerminate() == 0);
 }
