@@ -93,7 +93,6 @@ int APS5_VABI sceSaveDataTransferringMount(const SaveDataTransferringMount* moun
 }
 
 int APS5_VABI sceSaveDataAbort() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -146,7 +145,6 @@ int APS5_VABI sceSaveDataCheckSaveDataVersionLatest(void) {
 }
 
 int APS5_VABI sceSaveDataClearProgress() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -191,7 +189,6 @@ int APS5_VABI sceSaveDataDownload(void) {
 }
 
 int APS5_VABI sceSaveDataGetAllSize() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -224,22 +221,18 @@ int APS5_VABI sceSaveDataGetCloudQuotaInfo(void) {
 }
 
 int APS5_VABI sceSaveDataGetEventInfo() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceSaveDataGetMountedSaveDataCount() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceSaveDataGetProgress() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceSaveDataGetSaveDataCount() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -264,7 +257,6 @@ int APS5_VABI sceSaveDataGetUpdatedDataCount(void) {
 }
 
 int APS5_VABI sceSaveDataInitialize2() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -277,7 +269,6 @@ int APS5_VABI sceSaveDataIsDeletingUsbDb(void) {
 }
 
 int APS5_VABI sceSaveDataIsMounted() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -294,7 +285,6 @@ int APS5_VABI sceSaveDataManualUpload(void) {
 }
 
 int APS5_VABI sceSaveDataMount5() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -311,7 +301,6 @@ int APS5_VABI sceSaveDataRebuildDatabase(void) {
 }
 
 int APS5_VABI sceSaveDataRegisterEventCallback() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -332,7 +321,6 @@ int APS5_VABI sceSaveDataSetAutoUploadSetting(void) {
 }
 
 int APS5_VABI sceSaveDataSetEventInfo() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -361,7 +349,6 @@ int APS5_VABI sceSaveDataUmountWithBackup(void) {
 }
 
 int APS5_VABI sceSaveDataUnregisterEventCallback() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
