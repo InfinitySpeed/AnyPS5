@@ -248,7 +248,6 @@ int APS5_VABI sceNpIdMapperAccountIdToOnlineId(void) {
     return 0;
 }
 int APS5_VABI sceNpIdMapperCreateRequest(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceNpIdMapperDeleteRequest(void) {
