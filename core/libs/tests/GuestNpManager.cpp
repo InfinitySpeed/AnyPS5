@@ -86,6 +86,7 @@ int APS5_VABI sceNpInGameMessageAbortHandle(void);
 int APS5_VABI sceNpInGameMessageCheckCallback(void);
 int APS5_VABI sceNpInGameMessageGetMemoryPoolStatistics(void);
 int APS5_VABI sceNpInGameMessagePrepareA(void);
+int APS5_VABI sceNpInGameMessageSendDataA(void);
 }
 
 extern "C" {
@@ -584,5 +585,6 @@ int main() {
         Require(sceNpInGameMessageCheckCallback() == 0, "sceNpInGameMessageCheckCallback check");
         Require(sceNpInGameMessageGetMemoryPoolStatistics() == 0, "sceNpInGameMessageGetMemoryPoolStatistics check");
         Require(sceNpInGameMessagePrepareA() == 0, "sceNpInGameMessagePrepareA check");
+        Require(sceNpInGameMessageSendDataA() == 0, "sceNpInGameMessageSendDataA check");
     return 0;
 }
