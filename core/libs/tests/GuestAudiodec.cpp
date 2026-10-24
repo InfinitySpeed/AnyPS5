@@ -17,6 +17,7 @@ std::int32_t APS5_VABI sceAudiodecDecode(std::int32_t, AudiodecCtrl*);
 std::int32_t APS5_VABI sceAudiodecClearContext(std::int32_t);
 std::int32_t APS5_VABI sceAudiodecClearContextEx(void);
 std::int32_t APS5_VABI sceAudiodecCreateDecoderEx(void);
+std::int32_t APS5_VABI sceAudiodecDecode2(void);
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -475,4 +476,5 @@ int main() {
     for (std::uint32_t type = 1; type <= 3; ++type) Require(sceAudiodecTermLibrary(type) == 0);
     Require(sceAudiodecClearContextEx() == 0);
     Require(sceAudiodecCreateDecoderEx() == 0);
+    Require(sceAudiodecDecode2() == 0);
 }
