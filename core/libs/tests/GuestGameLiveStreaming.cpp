@@ -60,6 +60,7 @@ int APS5_VABI sceGameLiveStreamingCheckCallback(void);
 int APS5_VABI sceGameLiveStreamingSetStandbyScreenResource(void);
 int APS5_VABI sceGameLiveStreamingGetCurrentBroadcastScreenLayout(void);
 int APS5_VABI sceGameLiveStreamingLaunchLiveViewer(void);
+int APS5_VABI sceGameLiveStreamingLaunchLiveViewerA(void);
 }
 
 namespace {
@@ -161,4 +162,5 @@ int main() {
     Require(sceGameLiveStreamingSetStandbyScreenResource() == 0);
     Require(sceGameLiveStreamingGetCurrentBroadcastScreenLayout() == 0);
     Require(sceGameLiveStreamingLaunchLiveViewer() == 0);
+    Require(sceGameLiveStreamingLaunchLiveViewerA() == 0);
 }
