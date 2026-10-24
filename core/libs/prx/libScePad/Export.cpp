@@ -644,8 +644,9 @@ int APS5_VABI scePadShareOutputDataWithFunctionType(std::int32_t source, std::in
 }
 
 int APS5_VABI scePadSetVibrationForce(std::int32_t handle, const PadVibrationParam* param) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    if (param == nullptr) return PAD_ERROR_INVALID_ARG;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadGetVersionInfo(std::int32_t handle, PadVersionInfo* info) {

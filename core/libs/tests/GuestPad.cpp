@@ -89,6 +89,7 @@ int APS5_VABI scePadGetMotionTimerUnit(std::int32_t, float*);
 int APS5_VABI scePadGetSphereRadius(std::int32_t, float*);
 int APS5_VABI scePadIsMoveReproductionModel(std::int32_t);
 int APS5_VABI scePadGetAstonModel(std::int32_t);
+int APS5_VABI scePadSetVibrationForce(std::int32_t, const PadVibrationParam*);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -695,6 +696,8 @@ int main() {
     Require(scePadIsMoveReproductionModel(handle) == 0);
     Require(scePadGetAstonModel(handle) == 0);
     Require(scePadSetAngularVelocityBiasCorrectionState(handle, true) == PAD_OK);
+    PadVibrationParam vparam{};
+    Require(scePadSetVibrationForce(handle, &vparam) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
