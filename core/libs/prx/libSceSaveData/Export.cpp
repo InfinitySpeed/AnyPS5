@@ -320,7 +320,6 @@ int APS5_VABI sceSaveDataRestoreBackupData(void) {
 }
 
 int APS5_VABI sceSaveDataRestoreBackupDataForCdlg(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
