@@ -40,6 +40,7 @@ int APS5_VABI sceNpAsmClientDeleteResourceContext2(void);
 int APS5_VABI sceNpAsmClientGetAppId(void);
 int APS5_VABI sceNpAsmClientGetCacheControlMaxAge(void);
 int APS5_VABI sceNpAsmClientGetGameNpTitleInfo(void);
+int APS5_VABI sceNpAsmClientGetGameNpTitleToken(void);
 }
 
 extern "C" {
@@ -492,5 +493,6 @@ int main() {
         Require(sceNpAsmClientGetAppId() == 0, "sceNpAsmClientGetAppId check");
         Require(sceNpAsmClientGetCacheControlMaxAge() == 0, "sceNpAsmClientGetCacheControlMaxAge check");
         Require(sceNpAsmClientGetGameNpTitleInfo() == 0, "sceNpAsmClientGetGameNpTitleInfo check");
+        Require(sceNpAsmClientGetGameNpTitleToken() == 0, "sceNpAsmClientGetGameNpTitleToken check");
     return 0;
 }
