@@ -438,7 +438,6 @@ int APS5_VABI sceAudio3dAudioOutOutputs(AudioOutOutputParam* param, uint32_t num
 }
 
 int APS5_VABI sceAudio3dStrError(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
