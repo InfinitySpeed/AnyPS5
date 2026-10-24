@@ -90,7 +90,6 @@ int APS5_VABI sceAgcDriverSetupAsyncGraphics(void) {
 }
 
 int APS5_VABI sceAgcDriverSetupRegisterShadow(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
