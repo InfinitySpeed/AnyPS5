@@ -486,7 +486,6 @@ int APS5_VABI sceHttp2SetCookieRecvCallback(void) {
 }
 
 int APS5_VABI sceHttp2SetCookieSendCallback(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

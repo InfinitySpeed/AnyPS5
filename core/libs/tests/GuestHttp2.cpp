@@ -44,6 +44,7 @@ int APS5_VABI sceHttp2SetCookieMaxNum(void);
 int APS5_VABI sceHttp2SetCookieMaxNumPerDomain(void);
 int APS5_VABI sceHttp2SetCookieMaxSize(void);
 int APS5_VABI sceHttp2SetCookieRecvCallback(void);
+int APS5_VABI sceHttp2SetCookieSendCallback(void);
 }
 
 struct Http2MemoryPoolStats {
@@ -281,4 +282,5 @@ int main() {
     Require(sceHttp2SetCookieMaxNumPerDomain() == 0);
     Require(sceHttp2SetCookieMaxSize() == 0);
     Require(sceHttp2SetCookieRecvCallback() == 0);
+    Require(sceHttp2SetCookieSendCallback() == 0);
 }
