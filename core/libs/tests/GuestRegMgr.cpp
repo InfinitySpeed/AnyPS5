@@ -18,6 +18,7 @@ int APS5_VABI sceRegMgrEvtGetRegId();
 int APS5_VABI sceRegMgrResetVal();
 int APS5_VABI sceRegMgrSetInitLevel();
 int APS5_VABI sceRegMgrSrvCnvRegionInt();
+int APS5_VABI sceRegMgrSrvCnvRegionStr();
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -48,4 +49,5 @@ int main() {
     Require(sceRegMgrResetVal() == 0);
     Require(sceRegMgrSetInitLevel() == 0);
     Require(sceRegMgrSrvCnvRegionInt() == 0);
+    Require(sceRegMgrSrvCnvRegionStr() == 0);
 }
