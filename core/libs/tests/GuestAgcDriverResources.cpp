@@ -64,6 +64,7 @@ int APS5_VABI sceAgcDriverSysIsGameClosed(void);
 int APS5_VABI sceAgcDriverTmpInitIdhs(void);
 int APS5_VABI sceAgcDriverUserDataWritePacket(void);
 int APS5_VABI sceAgcDriverUserDataWritePopMarker(void);
+int APS5_VABI sceAgcDriverUserDataWritePushMarker(void);
 }
 
 static constexpr int Unavailable = static_cast<int>(0x8A6C9018);
@@ -166,4 +167,5 @@ int main() {
     Require(sceAgcDriverTmpInitIdhs() == 0);
     Require(sceAgcDriverUserDataWritePacket() == 0);
     Require(sceAgcDriverUserDataWritePopMarker() == 0);
+    Require(sceAgcDriverUserDataWritePushMarker() == 0);
 }
