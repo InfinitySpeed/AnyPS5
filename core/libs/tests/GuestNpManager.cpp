@@ -66,6 +66,7 @@ int APS5_VABI sceNpAsmCreateConnection(void);
 int APS5_VABI sceNpAsmCreateRequest(void);
 int APS5_VABI sceNpAsmDeleteConnection(void);
 int APS5_VABI sceNpAsmDeleteRequest(void);
+int APS5_VABI sceNpAsmGenerateNpTitleToken(void);
 }
 
 extern "C" {
@@ -544,5 +545,6 @@ int main() {
         Require(sceNpAsmCreateRequest() == 0, "sceNpAsmCreateRequest check");
         Require(sceNpAsmDeleteConnection() == 0, "sceNpAsmDeleteConnection check");
         Require(sceNpAsmDeleteRequest() == 0, "sceNpAsmDeleteRequest check");
+        Require(sceNpAsmGenerateNpTitleToken() == 0, "sceNpAsmGenerateNpTitleToken check");
     return 0;
 }
