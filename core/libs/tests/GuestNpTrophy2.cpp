@@ -28,6 +28,7 @@ int APS5_VABI sceNpTrophy2SystemGetTrophyTitleConf(void);
 int APS5_VABI sceNpTrophy2SystemGetTrophyTitleDetails(void);
 int APS5_VABI sceNpTrophy2SystemGetTrpIconByUri(void);
 int APS5_VABI sceNpTrophy2SystemIsServerAvailable(void);
+int APS5_VABI sceNpTrophy2SystemRegisterTitleSyncedCallback(void);
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -93,4 +94,5 @@ int main() {
     Require(sceNpTrophy2SystemGetTrophyTitleDetails() == 0);
     Require(sceNpTrophy2SystemGetTrpIconByUri() == 0);
     Require(sceNpTrophy2SystemIsServerAvailable() == 0);
+    Require(sceNpTrophy2SystemRegisterTitleSyncedCallback() == 0);
 }

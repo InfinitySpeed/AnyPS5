@@ -78,7 +78,6 @@ int APS5_VABI sceNpTrophy2SystemIsServerAvailable(void) {
 }
 
 int APS5_VABI sceNpTrophy2SystemRegisterTitleSyncedCallback(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
