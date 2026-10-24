@@ -32,6 +32,7 @@ int APS5_VABI sceRazorCpuFiberLogNameChange(void);
 int APS5_VABI sceRazorCpuFiberSwitch(void);
 int APS5_VABI sceRazorCpuGpuMarkerSync(void);
 int APS5_VABI sceRazorCpuInitializeGpuMarkerContext(void);
+int APS5_VABI sceRazorCpuInitializeInternal(void);
 }
 
 namespace {
@@ -96,6 +97,7 @@ int main() {
         Require(sceRazorCpuFiberSwitch() == 0);
         Require(sceRazorCpuGpuMarkerSync() == 0);
         Require(sceRazorCpuInitializeGpuMarkerContext() == 0);
+        Require(sceRazorCpuInitializeInternal() == 0);
     bool threw = false;
     try {
         sceRazorCpuGetDataTagStorageSize(16);
