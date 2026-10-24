@@ -1339,8 +1339,10 @@ int APS5_VABI scePadBondUpdateGetStatus(std::int32_t deviceId, std::int32_t* sta
 }
 
 int APS5_VABI scePadBondUpdateSendData(std::int32_t deviceId, const PadUpdateData* data) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (deviceId <= 0 || !data) {
+        return PAD_ERROR_INVALID_ARG;
+    }
+    return PAD_OK;
 }
 
 int APS5_VABI scePadBondUpdateResetBond(std::int32_t deviceId) {
