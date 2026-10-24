@@ -85,6 +85,7 @@ int APS5_VABI sceCamera2SetHue(void);
 int APS5_VABI sceCamera2GetGamma(void);
 int APS5_VABI sceCameraGetCalibData(void);
 int APS5_VABI sceCameraWaitForEveReady(void);
+int APS5_VABI sceCameraGetRegistryInfo(void);
 }
 
 namespace {
@@ -193,5 +194,6 @@ int main() {
         Require(sceCamera2GetGamma() == 0, "sceCamera2GetGamma check");
         Require(sceCameraGetCalibData() == 0, "sceCameraGetCalibData check");
         Require(sceCameraWaitForEveReady() == 0, "sceCameraWaitForEveReady check");
+        Require(sceCameraGetRegistryInfo() == 0, "sceCameraGetRegistryInfo check");
     return 0;
 }
