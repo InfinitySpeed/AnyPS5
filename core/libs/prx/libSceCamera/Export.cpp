@@ -191,7 +191,6 @@ int APS5_VABI sceCameraSetLensCorrection(void) {
 }
 
 int APS5_VABI sceCameraSetCalibData(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
