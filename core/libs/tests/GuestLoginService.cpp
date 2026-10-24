@@ -16,16 +16,12 @@ static void Require(bool value) {
 }
 
 int main() {
-    Require(sceLoginServiceInitialize() == 0);
-    Require(sceLoginServiceTerminate() == 0);
+    Require(sceLoginServiceRequestDevices(nullptr) == static_cast<int>(0x813a0003u));
     unsigned char buffer[0x80]{};
-    try {
-        sceLoginServiceRequestDevices(buffer);
-    } catch (const std::runtime_error& error) {
-        if (std::string(error.what()) == "sceLoginServiceRequestDevices not implemented") return 0;
-        std::fprintf(stderr, "sceLoginServiceRequestDevices threw: %s\n", error.what());
-        return 1;
-    }
-    std::fprintf(stderr, "sceLoginServiceRequestDevices returned instead of reporting that it is not implemented\n");
-    return 1;
+    Require(sceLoginServiceRequestDevices(buffer) == static_cast<int>(0x813a0001u));
+    Require(sceLoginServiceInitialize() == 0);
+    Require(sceLoginServiceRequestDevices(buffer) == 0);
+    Require(sceLoginServiceTerminate() == 0);
+    Require(sceLoginServiceRequestDevices(buffer) == static_cast<int>(0x813a0001u));
+    return 0;
 }
