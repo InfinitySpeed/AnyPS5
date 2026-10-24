@@ -95,6 +95,7 @@ int APS5_VABI scePadSetLightBarBlinking(std::int32_t, const PadLightBarBlinkingP
 int APS5_VABI scePadVrControllerSetVibration(std::int32_t, std::uint8_t);
 int APS5_VABI scePadVrControllerSetVibrationMode(std::int32_t, std::uint32_t);
 int APS5_VABI scePadVrControllerSetTriggerEffect(std::int32_t, const PadVrTriggerEffect*);
+int APS5_VABI scePadSetTriggerEffectExt(std::int32_t, const PadTriggerEffectExtended*);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -708,6 +709,7 @@ int main() {
     Require(scePadVrControllerSetVibration(handle, 128) == PAD_OK);
     Require(scePadVrControllerSetVibrationMode(handle, 1) == PAD_OK);
     Require(scePadVrControllerSetTriggerEffect(handle, nullptr) == PAD_OK);
+    Require(scePadSetTriggerEffectExt(handle, nullptr) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);

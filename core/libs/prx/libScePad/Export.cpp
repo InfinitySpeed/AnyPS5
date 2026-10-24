@@ -501,8 +501,9 @@ int APS5_VABI scePadGetAccessibilityControllerState(int handle, std::uint32_t* s
 }
 
 int APS5_VABI scePadSetTriggerEffectExt(std::int32_t handle, const PadTriggerEffectExtended* effect) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    (void)effect;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadLastLotusButtonData(std::int32_t handle, std::uint32_t parameter, PadLotusButtonData* data) {
