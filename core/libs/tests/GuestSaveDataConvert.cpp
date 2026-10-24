@@ -47,6 +47,7 @@ int APS5_VABI sceSaveDataGetClientThreadPriority(void);
 int APS5_VABI sceSaveDataGetCloudQuotaInfo(void);
 int APS5_VABI sceSaveDataGetSaveDataRootDir(void);
 int APS5_VABI sceSaveDataGetSaveDataRootPath(void);
+int APS5_VABI sceSaveDataGetSaveDataRootUsbPath(void);
 }
 
 namespace {
@@ -154,6 +155,7 @@ int main() {
         Check(sceSaveDataGetCloudQuotaInfo() == 0, "sceSaveDataGetCloudQuotaInfo check");
         Check(sceSaveDataGetSaveDataRootDir() == 0, "sceSaveDataGetSaveDataRootDir check");
         Check(sceSaveDataGetSaveDataRootPath() == 0, "sceSaveDataGetSaveDataRootPath check");
+        Check(sceSaveDataGetSaveDataRootUsbPath() == 0, "sceSaveDataGetSaveDataRootUsbPath check");
     if (failures != 0) return 1;
     std::printf("savedata convert tests passed\n");
     return 0;
