@@ -67,6 +67,7 @@ int APS5_VABI sceGameLiveStreamingStopSocialFeedbackMessageFiltering(void);
 int APS5_VABI sceGameLiveStreamingApplySocialFeedbackMessageFilter(void);
 int APS5_VABI sceGameLiveStreamingSetLinkCommentPreset(void);
 int APS5_VABI sceGameLiveStreamingStartDebugBroadcast(void);
+int APS5_VABI sceGameLiveStreamingStopDebugBroadcast(void);
 }
 
 namespace {
@@ -175,4 +176,5 @@ int main() {
     Require(sceGameLiveStreamingApplySocialFeedbackMessageFilter() == 0);
     Require(sceGameLiveStreamingSetLinkCommentPreset() == 0);
     Require(sceGameLiveStreamingStartDebugBroadcast() == 0);
+    Require(sceGameLiveStreamingStopDebugBroadcast() == 0);
 }
