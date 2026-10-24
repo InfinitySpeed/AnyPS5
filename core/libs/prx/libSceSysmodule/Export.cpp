@@ -327,7 +327,6 @@ int APS5_VABI sceSysmoduleMapLibcForLibkernel() {
 }
 
 int APS5_VABI sceSysmodulePreloadModuleForLibkernel() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
