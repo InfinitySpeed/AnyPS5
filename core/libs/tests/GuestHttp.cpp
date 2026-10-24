@@ -46,6 +46,7 @@ int APS5_VABI sceHttpSetRedirectCallback(int, HttpRedirectCallback, void*);
 int APS5_VABI sceHttpSetCookieRecvCallback(int, HttpCookieRecvCallback, void*);
 int APS5_VABI sceHttpSetAuthInfoCallback(int, HttpAuthInfoCallback, void*);
 int APS5_VABI sceHttpParseStatusLine(const char*, std::size_t, std::int32_t*, std::int32_t*, std::int32_t*, const char**, std::size_t*);
+int APS5_VABI sceHttpDbgShowStat(void);
 }
 
 alignas(16) static std::array<std::byte, 0x40> processParameters{};
@@ -967,4 +968,5 @@ int main() {
         Require(sceHttpUriCopy(&copy, &pooled, hostPool, sizeof(hostPool), &needed) == 0 && needed == 18 && copy.hostname == hostPool + 4 && copy.hostname[0] == 0);
         Require(Equal(copy.path, "/p/q") && copy.path == hostPool + 5 && copy.port == 1234);
     }
+    Require(sceHttpDbgShowStat() == 0);
 }
