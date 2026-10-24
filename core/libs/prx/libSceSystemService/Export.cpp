@@ -617,7 +617,6 @@ int APS5_VABI sceShellCoreUtilIsInternalCronosUser(void) {
 }
 
 int APS5_VABI sceShellCoreUtilChangePbtcMode(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

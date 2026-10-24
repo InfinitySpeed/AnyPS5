@@ -49,6 +49,7 @@ extern "C" int APS5_VABI sceShellCoreUtilIsM2StorageTemperatureDanger(void);
 extern "C" int APS5_VABI sceShellCoreUtilGetAvailableSizeM2(void);
 extern "C" int APS5_VABI sceShellCoreUtilNotifyConnectAccountStatusChanged(void);
 extern "C" int APS5_VABI sceShellCoreUtilIsInternalCronosUser(void);
+extern "C" int APS5_VABI sceShellCoreUtilChangePbtcMode(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -249,4 +250,5 @@ int main() {
     Require(sceShellCoreUtilGetAvailableSizeM2() == 0);
     Require(sceShellCoreUtilNotifyConnectAccountStatusChanged() == 0);
     Require(sceShellCoreUtilIsInternalCronosUser() == 0);
+    Require(sceShellCoreUtilChangePbtcMode() == 0);
 }
