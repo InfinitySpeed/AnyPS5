@@ -42,6 +42,7 @@ int APS5_VABI sceVoiceUpdatePort(std::uint32_t, const VoicePortParam*);
 int APS5_VABI sceVoiceGetMemorySize(void);
 int APS5_VABI sceVoiceDeviceInCustomerData(void);
 int APS5_VABI sceVoiceQAEnableRecording(void);
+int APS5_VABI sceVoiceVADAdjustment(void);
 }
 
 namespace {
@@ -503,4 +504,5 @@ int main() {
     Require(sceVoiceGetMemorySize() == 0);
     Require(sceVoiceDeviceInCustomerData() == 0);
     Require(sceVoiceQAEnableRecording() == 0);
+    Require(sceVoiceVADAdjustment() == 0);
 }
