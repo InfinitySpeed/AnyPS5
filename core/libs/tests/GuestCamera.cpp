@@ -111,6 +111,7 @@ int APS5_VABI sceCamera2Close(void);
 int APS5_VABI sceCamera2SetVideoSync(void);
 int APS5_VABI sceCameraWaitForLukeReady(void);
 int APS5_VABI sceCameraSetDefectivePixelCancellationInternal(void);
+int APS5_VABI sceCamera2GetSharpness(void);
 }
 
 namespace {
@@ -245,5 +246,6 @@ int main() {
         Require(sceCamera2SetVideoSync() == 0, "sceCamera2SetVideoSync check");
         Require(sceCameraWaitForLukeReady() == 0, "sceCameraWaitForLukeReady check");
         Require(sceCameraSetDefectivePixelCancellationInternal() == 0, "sceCameraSetDefectivePixelCancellationInternal check");
+        Require(sceCamera2GetSharpness() == 0, "sceCamera2GetSharpness check");
     return 0;
 }
