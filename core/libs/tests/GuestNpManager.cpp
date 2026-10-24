@@ -63,6 +63,7 @@ int APS5_VABI sceNpAsmClientInitialize(void);
 int APS5_VABI sceNpAsmClientSetNpTitleId(void);
 int APS5_VABI sceNpAsmClientTerminate(void);
 int APS5_VABI sceNpAsmCreateConnection(void);
+int APS5_VABI sceNpAsmCreateRequest(void);
 }
 
 extern "C" {
@@ -538,5 +539,6 @@ int main() {
         Require(sceNpAsmClientSetNpTitleId() == 0, "sceNpAsmClientSetNpTitleId check");
         Require(sceNpAsmClientTerminate() == 0, "sceNpAsmClientTerminate check");
         Require(sceNpAsmCreateConnection() == 0, "sceNpAsmCreateConnection check");
+        Require(sceNpAsmCreateRequest() == 0, "sceNpAsmCreateRequest check");
     return 0;
 }
