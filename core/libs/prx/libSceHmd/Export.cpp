@@ -918,7 +918,6 @@ int APS5_VABI sceHmdInternalGetBrightness(std::uint8_t* brightness) {
 }
 
 int APS5_VABI sceHmdReprojectionFinalizeCapture(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
