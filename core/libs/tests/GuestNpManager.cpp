@@ -38,6 +38,7 @@ int APS5_VABI sceNpAsmClientDeleteRequest(void);
 int APS5_VABI sceNpAsmClientDeleteResourceContext(void);
 int APS5_VABI sceNpAsmClientDeleteResourceContext2(void);
 int APS5_VABI sceNpAsmClientGetAppId(void);
+int APS5_VABI sceNpAsmClientGetCacheControlMaxAge(void);
 }
 
 extern "C" {
@@ -488,5 +489,6 @@ int main() {
         Require(sceNpAsmClientDeleteResourceContext() == 0, "sceNpAsmClientDeleteResourceContext check");
         Require(sceNpAsmClientDeleteResourceContext2() == 0, "sceNpAsmClientDeleteResourceContext2 check");
         Require(sceNpAsmClientGetAppId() == 0, "sceNpAsmClientGetAppId check");
+        Require(sceNpAsmClientGetCacheControlMaxAge() == 0, "sceNpAsmClientGetCacheControlMaxAge check");
     return 0;
 }
