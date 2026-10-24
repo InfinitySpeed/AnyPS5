@@ -25,6 +25,7 @@ int APS5_VABI scePadResetLightBarAll(void);
 int APS5_VABI scePadMbusInit(void);
 int APS5_VABI scePadMbusTerm(void);
 int APS5_VABI scePadStartRecording(void);
+int APS5_VABI scePadStopRecording(void);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -556,6 +557,7 @@ int main() {
     Require(scePadMbusInit() == 0);
     Require(scePadMbusTerm() == 0);
     Require(scePadStartRecording() == 0);
+    Require(scePadStopRecording() == 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     const int handle = scePadOpen_nid_postfix(user, 0, 0, nullptr);
     Require(handle > 0);
