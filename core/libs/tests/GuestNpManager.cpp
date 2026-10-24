@@ -73,6 +73,7 @@ int APS5_VABI sceNpAsmGetNpCommInfo2(void);
 int APS5_VABI sceNpAsmGetRelatedGameNpTitleIds(void);
 int APS5_VABI sceNpAsmGetServiceBaseUrl(void);
 int APS5_VABI sceNpAsmGetServiceIdInfo(void);
+int APS5_VABI sceNpAsmInitialize(void);
 }
 
 extern "C" {
@@ -558,5 +559,6 @@ int main() {
         Require(sceNpAsmGetRelatedGameNpTitleIds() == 0, "sceNpAsmGetRelatedGameNpTitleIds check");
         Require(sceNpAsmGetServiceBaseUrl() == 0, "sceNpAsmGetServiceBaseUrl check");
         Require(sceNpAsmGetServiceIdInfo() == 0, "sceNpAsmGetServiceIdInfo check");
+        Require(sceNpAsmInitialize() == 0, "sceNpAsmInitialize check");
     return 0;
 }
