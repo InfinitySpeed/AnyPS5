@@ -348,7 +348,6 @@ int APS5_VABI sceNpTusGetFriendsVariableAAsync(void) {
 }
 
 int APS5_VABI sceNpTusGetFriendsVariableForCrossSave(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
