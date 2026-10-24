@@ -15,6 +15,7 @@ extern "C" int APS5_VABI sceSystemServiceKillLocalProcessForPsmKit(int handle);
 
 extern "C" int APS5_VABI sceSystemServiceLaunchSystemDeeplink(void);
 extern "C" int APS5_VABI sceShellCoreUtilLaunchByUriParamInit(void);
+extern "C" int APS5_VABI sceSystemStateMgrTickVideoPlayback(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -181,4 +182,5 @@ int main() {
     TestPlayerDialogParam();
     Require(sceSystemServiceLaunchSystemDeeplink() == 0);
     Require(sceShellCoreUtilLaunchByUriParamInit() == 0);
+    Require(sceSystemStateMgrTickVideoPlayback() == 0);
 }
