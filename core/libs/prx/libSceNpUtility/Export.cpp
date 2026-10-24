@@ -129,8 +129,7 @@ int APS5_VABI sceNpBandwidthTestShutdown(int context_id, void* result) {
 extern "C" {
 
 int APS5_VABI sceNpBandwidthTestInitStart() {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    return SCE_NP_ERROR_SIGNED_OUT;
 }
 
 int APS5_VABI sceNpLookupCreateRequest(int titleCtxId) {
