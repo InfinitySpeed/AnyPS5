@@ -189,8 +189,9 @@ int APS5_VABI scePadVrControllerSetVibrationMode(std::int32_t handle, std::uint3
 }
 
 int APS5_VABI scePadVrControllerReadCombinedState(std::int32_t leftHandle, std::int32_t rightHandle, PadVrControllerCombinedState* state) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(leftHandle) || !KnownHandle(rightHandle)) return PAD_ERROR_INVALID_HANDLE;
+    if (state == nullptr) return PAD_ERROR_INVALID_ARG;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadDeviceClassGetExtendedInformation(int handle, PadDeviceClassExtendedInformation* info) {
