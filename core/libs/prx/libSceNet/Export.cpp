@@ -2907,7 +2907,6 @@ int APS5_VABI sceNetInfoDumpStart(std::int32_t threadParameter1, std::int32_t th
 }
 
 int APS5_VABI sceNetInfoDumpStop(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
