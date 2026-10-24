@@ -43,6 +43,7 @@ int APS5_VABI sceVoiceGetMemorySize(void);
 int APS5_VABI sceVoiceDeviceInCustomerData(void);
 int APS5_VABI sceVoiceQAEnableRecording(void);
 int APS5_VABI sceVoiceVADAdjustment(void);
+int APS5_VABI sceVoiceVADPVTAdjustment(void);
 }
 
 namespace {
@@ -505,4 +506,5 @@ int main() {
     Require(sceVoiceDeviceInCustomerData() == 0);
     Require(sceVoiceQAEnableRecording() == 0);
     Require(sceVoiceVADAdjustment() == 0);
+    Require(sceVoiceVADPVTAdjustment() == 0);
 }
