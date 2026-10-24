@@ -56,6 +56,7 @@ int APS5_VABI sceAgcDriverSetupRegisterShadow(void);
 int APS5_VABI sceAgcDriverSubmitMultiCommandBuffersDirect(void);
 int APS5_VABI sceAgcDriverSubmitToHDRScopesACQ(void);
 int APS5_VABI sceAgcDriverSubmitToRazorACQ(void);
+int APS5_VABI sceAgcDriverSuspendPointSubmit(void);
 }
 
 static constexpr int Unavailable = static_cast<int>(0x8A6C9018);
@@ -150,4 +151,5 @@ int main() {
     Require(sceAgcDriverSubmitMultiCommandBuffersDirect() == 0);
     Require(sceAgcDriverSubmitToHDRScopesACQ() == 0);
     Require(sceAgcDriverSubmitToRazorACQ() == 0);
+    Require(sceAgcDriverSuspendPointSubmit() == 0);
 }
