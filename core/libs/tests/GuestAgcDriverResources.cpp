@@ -33,6 +33,7 @@ int APS5_VABI sceAgcDriverInitResourceRegistrationInterface();
 int APS5_VABI sceAgcDriverSetResourceRegistrationInfo();
 int APS5_VABI sceAgcDriverAcquireRazorACQ(void);
 int APS5_VABI sceAgcDriverCreateQueue(void);
+int APS5_VABI sceAgcDriverCwsrResumeAcq(void);
 }
 
 static constexpr int Unavailable = static_cast<int>(0x8A6C9018);
@@ -104,4 +105,5 @@ int main() {
     Require(sceAgcDriverSetResourceRegistrationInfo() == 0);
     Require(sceAgcDriverAcquireRazorACQ() == 0);
     Require(sceAgcDriverCreateQueue() == 0);
+    Require(sceAgcDriverCwsrResumeAcq() == 0);
 }
