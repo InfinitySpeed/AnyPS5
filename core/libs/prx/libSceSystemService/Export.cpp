@@ -681,7 +681,6 @@ int APS5_VABI sceShellCoreUtilIsLaunchBlockDialog(void) {
 }
 
 int APS5_VABI sceShellCoreUtilGetConsoleToken(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
