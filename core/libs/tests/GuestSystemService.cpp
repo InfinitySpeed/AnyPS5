@@ -62,6 +62,7 @@ extern "C" int APS5_VABI sceShellCoreUtilGetPasscodeInputType(void);
 extern "C" int APS5_VABI sceShellCoreUtilGetPasscodeDisplayInfo(void);
 extern "C" int APS5_VABI sceShellCoreUtilNotifySystemResumeTelemetryInfo(void);
 extern "C" int APS5_VABI sceShellCoreUtilUpdateTelemetryToken(void);
+extern "C" int APS5_VABI sceShellCoreUtilGetVRBaseMatRectangles(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -275,4 +276,5 @@ int main() {
     Require(sceShellCoreUtilGetPasscodeDisplayInfo() == 0);
     Require(sceShellCoreUtilNotifySystemResumeTelemetryInfo() == 0);
     Require(sceShellCoreUtilUpdateTelemetryToken() == 0);
+    Require(sceShellCoreUtilGetVRBaseMatRectangles() == 0);
 }
