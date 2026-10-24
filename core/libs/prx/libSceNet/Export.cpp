@@ -3076,7 +3076,6 @@ int APS5_VABI sceNetPppoeStart(std::uint32_t interfaceId, std::int32_t pppoeInte
 }
 
 int APS5_VABI sceNetPppoeStop(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
