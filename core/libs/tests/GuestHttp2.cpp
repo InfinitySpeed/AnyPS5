@@ -41,6 +41,7 @@ int APS5_VABI sceHttp2RedirectCacheFlush(void);
 int APS5_VABI sceHttp2RemoveRequestHeader(void);
 int APS5_VABI sceHttp2SetAuthInfoCallback(void);
 int APS5_VABI sceHttp2SetCookieMaxNum(void);
+int APS5_VABI sceHttp2SetCookieMaxNumPerDomain(void);
 }
 
 struct Http2MemoryPoolStats {
@@ -275,4 +276,5 @@ int main() {
     Require(sceHttp2RemoveRequestHeader() == 0);
     Require(sceHttp2SetAuthInfoCallback() == 0);
     Require(sceHttp2SetCookieMaxNum() == 0);
+    Require(sceHttp2SetCookieMaxNumPerDomain() == 0);
 }
