@@ -882,8 +882,9 @@ int APS5_VABI scePadGetProfileEditModeLeonardo(std::int32_t handle) {
 }
 
 int APS5_VABI scePadSetSelectButtonCustomizeMode(std::int32_t handle, bool enabled) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    (void)enabled;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadGetSelectButtonCustomizeMode(std::int32_t handle) {
