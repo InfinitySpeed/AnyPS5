@@ -100,6 +100,7 @@ int APS5_VABI sceNpManagerIntAddPlusMemberTypeCallback(void);
 int APS5_VABI sceNpManagerIntAddSigninStateCallback(void);
 int APS5_VABI sceNpManagerIntAuthGetAuthorizationCode(void);
 int APS5_VABI sceNpManagerIntAuthGetIdToken(void);
+int APS5_VABI sceNpManagerIntCheckNpAvailability(void);
 }
 
 extern "C" {
@@ -612,5 +613,6 @@ int main() {
         Require(sceNpManagerIntAddSigninStateCallback() == 0, "sceNpManagerIntAddSigninStateCallback check");
         Require(sceNpManagerIntAuthGetAuthorizationCode() == 0, "sceNpManagerIntAuthGetAuthorizationCode check");
         Require(sceNpManagerIntAuthGetIdToken() == 0, "sceNpManagerIntAuthGetIdToken check");
+        Require(sceNpManagerIntCheckNpAvailability() == 0, "sceNpManagerIntCheckNpAvailability check");
     return 0;
 }
