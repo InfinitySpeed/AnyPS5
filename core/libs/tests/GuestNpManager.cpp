@@ -131,6 +131,7 @@ int APS5_VABI sceNpManagerIntGetActiveSigninState(void);
 int APS5_VABI sceNpManagerIntGetAuthServerErrorFlag(void);
 int APS5_VABI sceNpManagerIntGetAuthorizationCode(void);
 int APS5_VABI sceNpManagerIntGetAuthorizationCodeWithPsnoUri(void);
+int APS5_VABI sceNpManagerIntGetClientCredentialAccessToken(void);
 }
 
 extern "C" {
@@ -674,5 +675,6 @@ int main() {
         Require(sceNpManagerIntGetAuthServerErrorFlag() == 0, "sceNpManagerIntGetAuthServerErrorFlag check");
         Require(sceNpManagerIntGetAuthorizationCode() == 0, "sceNpManagerIntGetAuthorizationCode check");
         Require(sceNpManagerIntGetAuthorizationCodeWithPsnoUri() == 0, "sceNpManagerIntGetAuthorizationCodeWithPsnoUri check");
+        Require(sceNpManagerIntGetClientCredentialAccessToken() == 0, "sceNpManagerIntGetClientCredentialAccessToken check");
     return 0;
 }
