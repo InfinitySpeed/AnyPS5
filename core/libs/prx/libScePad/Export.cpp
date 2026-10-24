@@ -1249,8 +1249,10 @@ int APS5_VABI scePadEnablePs4CompatibleMode(std::int32_t handle, bool enabled) {
 }
 
 int APS5_VABI scePadGetLicenseControllerInformation(std::int32_t handle, PadLicenseControllerInformation* info) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (handle <= 0 || !info) {
+        return PAD_ERROR_INVALID_ARG;
+    }
+    return PAD_OK;
 }
 
 int APS5_VABI scePadReadHistory(std::int32_t handle, PadHistoryData* data, std::int32_t count) {
