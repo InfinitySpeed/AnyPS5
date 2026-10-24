@@ -28,6 +28,7 @@ int APS5_VABI sceKernelAddUserEventEdge(KernelEqueue eq, int id);
 int APS5_VABI sceKernelDeleteUserEvent(KernelEqueue eq, int id);
 uintptr_t APS5_VABI sceKernelGetEventId(const KernelEvent* ev);
 void* APS5_VABI sceKernelGetEventUserData(const KernelEvent* ev);
+int APS5_VABI sceHttp2AddCookie(void);
 }
 
 struct Http2MemoryPoolStats {
@@ -249,4 +250,5 @@ int main() {
     RequireSslSetters(terminatedRequest, InvalidId);
     Require(sceKernelDeleteUserEvent(termEqueue, terminatedRequest) == 0);
     Require(sceKernelDeleteEqueue(termEqueue) == 0);
+    Require(sceHttp2AddCookie() == 0);
 }
