@@ -286,7 +286,6 @@ int APS5_VABI sceAppContentGetEntitlementKey(void) {
 }
 
 int APS5_VABI sceAppContentGetPftFlag(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
