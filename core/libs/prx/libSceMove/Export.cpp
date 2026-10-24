@@ -112,7 +112,6 @@ int APS5_VABI sceMoveResetLightSphere(int32_t handle) {
     return checkHandle(handle);
 }
 int APS5_VABI sceMoveGetBluetoothAddress(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
