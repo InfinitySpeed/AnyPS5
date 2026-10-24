@@ -422,7 +422,6 @@ int APS5_VABI sceHttp2WebSocketSetPingTimeout(std::int32_t requestId, std::uint3
     return 0;
 }
 int APS5_VABI sceHttp2AddCookie(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
