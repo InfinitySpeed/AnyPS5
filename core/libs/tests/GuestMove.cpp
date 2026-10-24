@@ -20,6 +20,7 @@ int APS5_VABI sceMoveGetBluetoothAddress(void);
 int APS5_VABI sceMoveGetCalibrationInfo(void);
 int APS5_VABI sceMoveGetDeviceId(void);
 int APS5_VABI sceMoveIsReproductionModel(void);
+int APS5_VABI sceMoveIsValidHandle(void);
 }
 
 namespace {
@@ -159,4 +160,5 @@ int main() {
     Require(sceMoveGetCalibrationInfo() == 0);
     Require(sceMoveGetDeviceId() == 0);
     Require(sceMoveIsReproductionModel() == 0);
+    Require(sceMoveIsValidHandle() == 0);
 }
