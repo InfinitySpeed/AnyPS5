@@ -76,6 +76,7 @@ int APS5_VABI scePadSetVrTrackingMode(std::uint8_t);
 int APS5_VABI scePadConnectPort(std::int32_t, std::int32_t);
 int APS5_VABI scePadDisconnectPort(std::int32_t, std::int32_t);
 int APS5_VABI scePadDisconnectDevice(std::int32_t);
+int APS5_VABI scePadGetControllerIdleCount(std::int32_t, std::uint64_t*);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -660,6 +661,8 @@ int main() {
     Require(scePadConnectPort(user, 0) == PAD_OK);
     Require(scePadDisconnectPort(user, 0) == PAD_OK);
     Require(scePadDisconnectDevice(0) == PAD_OK);
+    std::uint64_t idle = 99;
+    Require(scePadGetControllerIdleCount(handle, &idle) == PAD_OK && idle == 0);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
