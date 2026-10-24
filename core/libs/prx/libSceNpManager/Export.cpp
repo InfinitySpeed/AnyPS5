@@ -204,7 +204,6 @@ int APS5_VABI sceNpAsmGetServiceBaseUrl(void) {
     return 0;
 }
 int APS5_VABI sceNpAsmGetServiceIdInfo(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceNpAsmInitialize(void) {
