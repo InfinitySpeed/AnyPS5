@@ -569,7 +569,6 @@ int APS5_VABI sceReportSequenceHandlerUpdateEventCache(void) {
 }
 
 int APS5_VABI sceReportSequenceHandlerGetEventCache(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
