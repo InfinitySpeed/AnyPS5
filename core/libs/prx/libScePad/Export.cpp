@@ -617,8 +617,8 @@ int APS5_VABI scePadDisableTrackingLedBatterySaver(bool disabled) {
 }
 
 int APS5_VABI scePadSetLoginUserNumber(std::int32_t number) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    (void)number;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadGetCapability(std::int32_t deviceId, std::uint32_t* capability) {

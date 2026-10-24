@@ -41,6 +41,7 @@ int APS5_VABI scePadEnableUsbConnection(bool);
 int APS5_VABI scePadEnableAutoDetect(bool);
 int APS5_VABI scePadEnablePlayPauseEmulation(bool);
 int APS5_VABI scePadDisableTrackingLedBatterySaver(bool);
+int APS5_VABI scePadSetLoginUserNumber(std::int32_t);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -590,6 +591,7 @@ int main() {
     Require(scePadEnableAutoDetect(true) == PAD_OK);
     Require(scePadEnablePlayPauseEmulation(true) == PAD_OK);
     Require(scePadDisableTrackingLedBatterySaver(false) == PAD_OK);
+    Require(scePadSetLoginUserNumber(1) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
