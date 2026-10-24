@@ -125,6 +125,7 @@ int APS5_VABI sceNpManagerIntGetAccountId(void);
 int APS5_VABI sceNpManagerIntGetAccountIdSdk(void);
 int APS5_VABI sceNpManagerIntGetAccountLanguage(void);
 int APS5_VABI sceNpManagerIntGetAccountLanguageA(void);
+int APS5_VABI sceNpManagerIntGetAccountNpEnv(void);
 }
 
 extern "C" {
@@ -662,5 +663,6 @@ int main() {
         Require(sceNpManagerIntGetAccountIdSdk() == 0, "sceNpManagerIntGetAccountIdSdk check");
         Require(sceNpManagerIntGetAccountLanguage() == 0, "sceNpManagerIntGetAccountLanguage check");
         Require(sceNpManagerIntGetAccountLanguageA() == 0, "sceNpManagerIntGetAccountLanguageA check");
+        Require(sceNpManagerIntGetAccountNpEnv() == 0, "sceNpManagerIntGetAccountNpEnv check");
     return 0;
 }
