@@ -669,8 +669,9 @@ int APS5_VABI scePadSetVibrationForce(std::int32_t handle, const PadVibrationPar
 }
 
 int APS5_VABI scePadGetVersionInfo(std::int32_t handle, PadVersionInfo* info) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    if (info == nullptr) return PAD_ERROR_INVALID_ARG;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadGetControllerType(std::int32_t handle, std::int32_t* type) {
