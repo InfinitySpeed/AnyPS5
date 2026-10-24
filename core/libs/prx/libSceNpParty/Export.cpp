@@ -108,7 +108,6 @@ int APS5_VABI sceNpPartyRegisterHandlerA(const void* handlers, void*) {
 }
 
 int APS5_VABI sceNpPartyRegisterPrivateHandler(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
