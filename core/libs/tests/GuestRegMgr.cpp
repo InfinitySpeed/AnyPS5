@@ -61,6 +61,7 @@ int APS5_VABI sceRegMgrDrvDataOpen(void);
 int APS5_VABI sceRegMgrDrvDataCheckGet(void);
 int APS5_VABI sceRegMgrDrvDataClose(void);
 int APS5_VABI sceRegMgrToolGetInfo(void);
+int APS5_VABI sceRegMgrLogPull(void);
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -134,4 +135,5 @@ int main() {
     Require(sceRegMgrDrvDataCheckGet() == 0);
     Require(sceRegMgrDrvDataClose() == 0);
     Require(sceRegMgrToolGetInfo() == 0);
+    Require(sceRegMgrLogPull() == 0);
 }
