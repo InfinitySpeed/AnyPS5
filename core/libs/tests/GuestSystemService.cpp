@@ -80,6 +80,7 @@ extern "C" int APS5_VABI sceShellCoreUtilGetCdlgEnabledFreezeRendering(void);
 extern "C" int APS5_VABI sceShellCoreUtilGetNpTitleId(void);
 extern "C" int APS5_VABI sceShellCoreUtilIsCronosInGameCommerceEnabled(void);
 extern "C" int APS5_VABI sceShellCoreUtilLemSettingGet(void);
+extern "C" int APS5_VABI sceShellCoreUtilLemSettingSet(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -311,4 +312,5 @@ int main() {
     Require(sceShellCoreUtilGetNpTitleId() == 0);
     Require(sceShellCoreUtilIsCronosInGameCommerceEnabled() == 0);
     Require(sceShellCoreUtilLemSettingGet() == 0);
+    Require(sceShellCoreUtilLemSettingSet() == 0);
 }
