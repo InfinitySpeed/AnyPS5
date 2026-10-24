@@ -124,6 +124,8 @@
 
 ### Functional
 
+- [pthread_attr_getaffinity_np and pthread_attr_setaffinity_np](../../../core/libs/prx/libkernel/Pthread/Posix/Attr.cpp) (libkernel) - console behavior is unmeasured, and bits above 63 are retained as attribute data but are not applied to thread execution. Signatures and the 256-bit set follow the [public payload SDK](https://github.com/ps5-payload-dev/sdk/blob/a7685ce8e97ce1f8a4f38253a41d54241c9124f1/include/freebsd/pthread_np.h); validation, clear/reset, implicit all-CPU masks and zero extension follow [FreeBSD 11.4 libthr](https://github.com/freebsd/freebsd-src/blob/releng/11.4/lib/libthr/thread/thr_attr.c#L560-L625), with `EFAULT` for a null get buffer as in the existing thread-affinity API. Host pinning remains unchanged.
+
 - [pthread_attr_setstackaddr](../../../core/libs/prx/libkernel/Pthread/Posix/Attr.cpp) (libkernel) - console-specific behavior is unverified. Follows [FreeBSD 11.4 libthr](https://github.com/freebsd/freebsd-src/blob/releng/11.4/lib/libthr/thread/thr_attr.c#L509-L525): a null attribute, null attribute object or null stack address returns POSIX `EINVAL`; success changes only the stored stack address through the existing SCE setter.
 
 - [scePthreadYield](../../../core/libs/prx/libkernel/Pthread/src/Thread.cpp) (libkernel) on Windows calls Sleep(1) after 512 consecutive yields that find no other thread ready on the current processor and arrive less than ~10,000 TSC ticks apart (so the span varies with host CPU TSC rate); FreeBSD sched_yield never sleeps.
