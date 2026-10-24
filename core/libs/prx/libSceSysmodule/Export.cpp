@@ -310,7 +310,6 @@ int APS5_VABI sceSysmoduleIsLoadedInternal(std::uint32_t id) {
 }
 
 int APS5_VABI sceSysmoduleIsCalledFromSysModule() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
