@@ -734,7 +734,6 @@ int APS5_VABI sceHmd2InternalLedDetectorOpenBySlot(void) {
 }
 
 int APS5_VABI sceHmd2InternalImageOpenBySlot(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
