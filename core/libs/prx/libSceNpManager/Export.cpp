@@ -457,7 +457,6 @@ int APS5_VABI sceNpManagerIntGetPlusMemberType(void) {
     return 0;
 }
 int APS5_VABI sceNpManagerIntGetPlusMemberTypeNB(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceNpManagerIntGetServerError(void) {
