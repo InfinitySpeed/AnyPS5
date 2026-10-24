@@ -323,7 +323,6 @@ int APS5_VABI sceSysmoduleLoadModuleByNameInternal(std::uint8_t* fname, std::uin
 }
 
 int APS5_VABI sceSysmoduleMapLibcForLibkernel() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

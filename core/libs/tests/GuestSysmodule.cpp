@@ -31,6 +31,7 @@ int APS5_VABI sceSysmoduleGetModuleInfoForUnwind(std::uint64_t addr, int flags, 
 int APS5_VABI sceSysmoduleGetModuleHandleInternal(std::uint32_t id, std::int32_t* handle);
 int APS5_VABI sceSysmoduleIsCalledFromSysModule();
 int APS5_VABI sceSysmoduleIsCameraPreloaded();
+int APS5_VABI sceSysmoduleMapLibcForLibkernel();
 int APS5_VABI sceKernelDlsym(std::int32_t handle, const char* symbol, void** addr);
 }
 
@@ -216,6 +217,7 @@ int main() {
     Require(sceSysmoduleUnloadModule(0) == kInvalidValue);
     Require(sceSysmoduleIsCalledFromSysModule() == 0);
     Require(sceSysmoduleIsCameraPreloaded() == 0);
+    Require(sceSysmoduleMapLibcForLibkernel() == 0);
     for (std::uint32_t id : {0u, kInternalFlag}) {
         Require(sceSysmoduleIsLoadedInternal(id) == kInvalidValue);
         Require(sceSysmoduleLoadModuleInternal(id) == kInvalidValue);
