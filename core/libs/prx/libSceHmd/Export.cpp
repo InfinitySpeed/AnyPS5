@@ -793,7 +793,6 @@ int APS5_VABI sceHmdInternalSeparateModeSendVideo(const HmdScreenData* data) {
 }
 
 int APS5_VABI sceHmdInternalResetLedForVrTracker(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
