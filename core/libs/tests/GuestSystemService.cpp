@@ -87,6 +87,7 @@ extern "C" int APS5_VABI sceShellCoreUtilIsEChassisVariant(void);
 extern "C" int APS5_VABI sceSystemStateMgrGetRebootCause(void);
 extern "C" int APS5_VABI sceCoredumpSequenceHandlerUpdateEventCache(void);
 extern "C" int APS5_VABI sceCoredumpSequenceHandlerGetEventCache(void);
+extern "C" int APS5_VABI sceCoredumpSequenceHandlerGetWorkingEventSummary(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -325,4 +326,5 @@ int main() {
     Require(sceSystemStateMgrGetRebootCause() == 0);
     Require(sceCoredumpSequenceHandlerUpdateEventCache() == 0);
     Require(sceCoredumpSequenceHandlerGetEventCache() == 0);
+    Require(sceCoredumpSequenceHandlerGetWorkingEventSummary() == 0);
 }
