@@ -993,8 +993,7 @@ int APS5_VABI scePadSetIsCoPilot(std::int32_t handle, bool enabled) {
 }
 
 int APS5_VABI scePadRegisterCollaboInputMgrProcess(void) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadGetTelemetryInfo(std::int32_t handle, PadTelemetryInfo* info) {
