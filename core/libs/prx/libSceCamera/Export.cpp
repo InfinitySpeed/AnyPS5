@@ -291,7 +291,6 @@ int APS5_VABI sceCamera2GetExposureGain(void) {
 }
 
 int APS5_VABI sceCameraStartByHandle(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
