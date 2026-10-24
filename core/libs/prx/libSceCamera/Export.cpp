@@ -123,7 +123,6 @@ int APS5_VABI sceCameraIsConnectedForSystem(void) {
 }
 
 int APS5_VABI sceCamera2SetExposureGain(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
