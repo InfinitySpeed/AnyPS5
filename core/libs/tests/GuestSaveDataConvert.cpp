@@ -64,6 +64,7 @@ int APS5_VABI sceSaveDataRestoreLoadSaveDataMemory(void);
 int APS5_VABI sceSaveDataSetAutoUploadSetting(void);
 int APS5_VABI sceSaveDataSetSaveDataLibraryUser(void);
 int APS5_VABI sceSaveDataShutdownStart(void);
+int APS5_VABI sceSaveDataSupportedFakeBrokenStatus(void);
 }
 
 namespace {
@@ -188,6 +189,7 @@ int main() {
         Check(sceSaveDataSetAutoUploadSetting() == 0, "sceSaveDataSetAutoUploadSetting check");
         Check(sceSaveDataSetSaveDataLibraryUser() == 0, "sceSaveDataSetSaveDataLibraryUser check");
         Check(sceSaveDataShutdownStart() == 0, "sceSaveDataShutdownStart check");
+        Check(sceSaveDataSupportedFakeBrokenStatus() == 0, "sceSaveDataSupportedFakeBrokenStatus check");
     if (failures != 0) return 1;
     std::printf("savedata convert tests passed\n");
     return 0;

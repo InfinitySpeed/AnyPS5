@@ -345,7 +345,6 @@ int APS5_VABI sceSaveDataShutdownStart(void) {
 }
 
 int APS5_VABI sceSaveDataSupportedFakeBrokenStatus(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
