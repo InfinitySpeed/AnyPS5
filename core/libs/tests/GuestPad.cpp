@@ -872,4 +872,5 @@ int main() {
     Require(scePadSetAngularVelocityBiasCorrectionState(handle, false) == PAD_OK);
     Require(scePadSetAngularVelocityBiasCorrectionState(handle + 1, false) == PAD_ERROR_INVALID_HANDLE);
     Require(scePadSetProcessFocus(nullptr) == PAD_ERROR_INVALID_ARG);
+    Require(scePadVirtualDeviceDeleteDevice(0) == PAD_ERROR_INVALID_ARG);
 }
