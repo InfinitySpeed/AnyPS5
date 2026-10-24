@@ -103,7 +103,6 @@ int APS5_VABI sceGnmComputeWaitSemaphore(std::uint32_t* cmdbuf, std::uint32_t si
 }
 
 int APS5_VABI sceGnmCreateWorkloadStream(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
