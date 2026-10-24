@@ -102,6 +102,7 @@ int APS5_VABI sceNpManagerIntAuthGetAuthorizationCode(void);
 int APS5_VABI sceNpManagerIntAuthGetIdToken(void);
 int APS5_VABI sceNpManagerIntCheckNpAvailability(void);
 int APS5_VABI sceNpManagerIntCheckNpAvailabilityByPid(void);
+int APS5_VABI sceNpManagerIntCheckNpState(void);
 }
 
 extern "C" {
@@ -616,5 +617,6 @@ int main() {
         Require(sceNpManagerIntAuthGetIdToken() == 0, "sceNpManagerIntAuthGetIdToken check");
         Require(sceNpManagerIntCheckNpAvailability() == 0, "sceNpManagerIntCheckNpAvailability check");
         Require(sceNpManagerIntCheckNpAvailabilityByPid() == 0, "sceNpManagerIntCheckNpAvailabilityByPid check");
+        Require(sceNpManagerIntCheckNpState() == 0, "sceNpManagerIntCheckNpState check");
     return 0;
 }
