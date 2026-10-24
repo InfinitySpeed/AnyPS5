@@ -1044,7 +1044,8 @@ int APS5_VABI scePadSetLightBarForTracker(std::int32_t handle, const PadLightBar
 }
 
 int APS5_VABI scePadReadForTracker(std::int32_t handle, PadTrackerData* data, std::int32_t count) {
-    NotImplemented_nid_no_patch(__func__);
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    if (data == nullptr || count <= 0) return PAD_ERROR_INVALID_ARG;
     return 0;
 }
 
