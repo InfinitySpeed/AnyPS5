@@ -954,8 +954,8 @@ int APS5_VABI scePadResetLightBarAll(void) {
 }
 
 int APS5_VABI scePadResetLightBarAllByPortType(std::uint32_t portType) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    (void)portType;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadSetLightBarForTracker(std::int32_t handle, const PadLightBarParam* color) {

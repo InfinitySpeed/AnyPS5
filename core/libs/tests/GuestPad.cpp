@@ -70,6 +70,7 @@ int APS5_VABI scePadEnableControllerIndicator(std::int32_t);
 int APS5_VABI scePadEnableProfileIndicator(std::int32_t);
 int APS5_VABI scePadSetProfileIndicatorAnimation(std::int32_t, std::uint8_t);
 int APS5_VABI scePadSetIsCoPilot(std::int32_t, bool);
+int APS5_VABI scePadResetLightBarAllByPortType(std::uint32_t);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -648,6 +649,7 @@ int main() {
     Require(scePadEnableProfileIndicator(handle) == PAD_OK);
     Require(scePadSetProfileIndicatorAnimation(handle, 0) == PAD_OK);
     Require(scePadSetIsCoPilot(handle, false) == PAD_OK);
+    Require(scePadResetLightBarAllByPortType(0) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
