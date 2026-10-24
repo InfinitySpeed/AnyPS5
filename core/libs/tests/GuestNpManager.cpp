@@ -61,6 +61,7 @@ int APS5_VABI sceNpAsmClientGetServiceIdInfo(void);
 int APS5_VABI sceNpAsmClientGetServiceIdInfoA(void);
 int APS5_VABI sceNpAsmClientInitialize(void);
 int APS5_VABI sceNpAsmClientSetNpTitleId(void);
+int APS5_VABI sceNpAsmClientTerminate(void);
 }
 
 extern "C" {
@@ -534,5 +535,6 @@ int main() {
         Require(sceNpAsmClientGetServiceIdInfoA() == 0, "sceNpAsmClientGetServiceIdInfoA check");
         Require(sceNpAsmClientInitialize() == 0, "sceNpAsmClientInitialize check");
         Require(sceNpAsmClientSetNpTitleId() == 0, "sceNpAsmClientSetNpTitleId check");
+        Require(sceNpAsmClientTerminate() == 0, "sceNpAsmClientTerminate check");
     return 0;
 }
