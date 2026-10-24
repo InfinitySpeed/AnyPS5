@@ -34,6 +34,7 @@ int APS5_VABI sceAudioInSetUsbGain();
 int APS5_VABI sceAudioInSetDevConnection();
 int APS5_VABI sceAudioInIsSharedDevice();
 int APS5_VABI sceAudioInGetHandleStatusInfo();
+int APS5_VABI sceAudioInChangeAppModuleState();
 int32_t APS5_VABI sceAudioInIsPadEmbeddedMic(int32_t);
 int32_t APS5_VABI sceAudioInGetGain(int32_t, float*);
 int32_t APS5_VABI sceAudioInGetRerouteCount(int32_t);
@@ -93,6 +94,7 @@ void TestOpenEx() {
     Require(sceAudioInSetDevConnection() == 0);
     Require(sceAudioInIsSharedDevice() == 0);
     Require(sceAudioInGetHandleStatusInfo() == 0);
+    Require(sceAudioInChangeAppModuleState() == 0);
 }
 
 void TestValidation() {
