@@ -941,7 +941,6 @@ int APS5_VABI sceNetBweGetInfoIpcInt(NetBweInfo* info) {
 }
 
 int APS5_VABI sceNetBweStartInternetConnectionTestIpcInt(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

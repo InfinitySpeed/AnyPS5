@@ -67,6 +67,7 @@ int APS5_VABI sceNetCtlApCpStop(void);
 int APS5_VABI sceNetCtlApAppInitWpaKey(void);
 int APS5_VABI sceNetCtlApRestart(void);
 int APS5_VABI sceNetBweCheckCallbackIpcInt(void);
+int APS5_VABI sceNetBweStartInternetConnectionTestIpcInt(void);
 }
 
 namespace {
@@ -408,4 +409,5 @@ int main() {
     Require(sceNetCtlApAppInitWpaKey() == 0);
     Require(sceNetCtlApRestart() == 0);
     Require(sceNetBweCheckCallbackIpcInt() == 0);
+    Require(sceNetBweStartInternetConnectionTestIpcInt() == 0);
 }
