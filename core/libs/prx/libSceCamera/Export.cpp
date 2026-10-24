@@ -75,7 +75,6 @@ int APS5_VABI sceCameraGetAttribute(void) {
 }
 
 int APS5_VABI sceCameraInitializeRegistryCalibData(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
