@@ -39,6 +39,7 @@ int APS5_VABI sceVoiceVADSetVersion(std::int32_t);
 int APS5_VABI sceVoiceSetMuteFlagAll(bool);
 int APS5_VABI sceVoiceSetBitRate(std::uint32_t, std::uint32_t);
 int APS5_VABI sceVoiceUpdatePort(std::uint32_t, const VoicePortParam*);
+int APS5_VABI sceVoiceGetMemorySize(void);
 }
 
 namespace {
@@ -497,4 +498,5 @@ int main() {
     Require(sceVoiceInit(&init, 100) == 0);
     Require(sceVoiceInitHQ(&init, 100) == AlreadyInitialized);
     Require(sceVoiceEnd_nid_postfix() == 0);
+    Require(sceVoiceGetMemorySize() == 0);
 }
