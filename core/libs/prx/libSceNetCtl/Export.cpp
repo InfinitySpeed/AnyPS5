@@ -716,7 +716,6 @@ int APS5_VABI sceNetCtlGetWifiType(int* type) {
 }
 
 int APS5_VABI sceNetCtlConnectIpcInt(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
