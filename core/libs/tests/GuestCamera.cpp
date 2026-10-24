@@ -77,6 +77,7 @@ int APS5_VABI sceCamera2GetExposureGain(void);
 int APS5_VABI sceCameraStartByHandle(void);
 int APS5_VABI sceCamera2Open(void);
 int APS5_VABI sceCamera2Start(void);
+int APS5_VABI sceCameraSetLensCorrectionInternal(void);
 }
 
 namespace {
@@ -177,5 +178,6 @@ int main() {
         Require(sceCameraStartByHandle() == 0, "sceCameraStartByHandle check");
         Require(sceCamera2Open() == 0, "sceCamera2Open check");
         Require(sceCamera2Start() == 0, "sceCamera2Start check");
+        Require(sceCameraSetLensCorrectionInternal() == 0, "sceCameraSetLensCorrectionInternal check");
     return 0;
 }
