@@ -29,6 +29,7 @@ int APS5_VABI sceNpIsPlusMember(int user_id, bool* is_member);
 int APS5_VABI sceNpSetContentRestriction(const NpContentRestriction* restriction);
 int APS5_VABI sceNpAsmAbort(void);
 int APS5_VABI sceNpAsmClientAbortRequest(void);
+int APS5_VABI sceNpAsmClientClearNpTitleToken(void);
 }
 
 extern "C" {
@@ -470,5 +471,6 @@ int main() {
     }
         Require(sceNpAsmAbort() == 0, "sceNpAsmAbort check");
         Require(sceNpAsmClientAbortRequest() == 0, "sceNpAsmClientAbortRequest check");
+        Require(sceNpAsmClientClearNpTitleToken() == 0, "sceNpAsmClientClearNpTitleToken check");
     return 0;
 }
