@@ -312,7 +312,6 @@ int APS5_VABI sceNpTusDeleteMultiSlotDataVUser(void) {
 }
 
 int APS5_VABI sceNpTusDeleteMultiSlotDataVUserAsync(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
