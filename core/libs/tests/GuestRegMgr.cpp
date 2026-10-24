@@ -25,6 +25,7 @@ int APS5_VABI sceRegMgrSrvGetRealMachineType();
 int APS5_VABI sceRegMgrSrvGetRegion();
 int APS5_VABI sceRegMgrSrvGetRegionStr();
 int APS5_VABI sceRegMgrBackupNeedMem();
+int APS5_VABI sceRegMgrBackupPullData();
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -62,4 +63,5 @@ int main() {
     Require(sceRegMgrSrvGetRegion() == 0);
     Require(sceRegMgrSrvGetRegionStr() == 0);
     Require(sceRegMgrBackupNeedMem() == 0);
+    Require(sceRegMgrBackupPullData() == 0);
 }
