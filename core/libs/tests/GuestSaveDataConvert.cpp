@@ -40,6 +40,7 @@ int APS5_VABI sceSaveDataDirNameSearchInternal(void);
 int APS5_VABI sceSaveDataDownload(void);
 int APS5_VABI sceSaveDataGetAppLaunchedUser(void);
 int APS5_VABI sceSaveDataGetAutoUploadConditions(void);
+int APS5_VABI sceSaveDataGetAutoUploadRequestInfo(void);
 }
 
 namespace {
@@ -140,6 +141,7 @@ int main() {
         Check(sceSaveDataDownload() == 0, "sceSaveDataDownload check");
         Check(sceSaveDataGetAppLaunchedUser() == 0, "sceSaveDataGetAppLaunchedUser check");
         Check(sceSaveDataGetAutoUploadConditions() == 0, "sceSaveDataGetAutoUploadConditions check");
+        Check(sceSaveDataGetAutoUploadRequestInfo() == 0, "sceSaveDataGetAutoUploadRequestInfo check");
     if (failures != 0) return 1;
     std::printf("savedata convert tests passed\n");
     return 0;
