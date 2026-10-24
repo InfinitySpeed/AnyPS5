@@ -166,7 +166,6 @@ int APS5_VABI sceRegMgrNonSysCheckError(void) {
 }
 
 int APS5_VABI sceRegMgrNonSysGetBin(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
