@@ -42,6 +42,7 @@ int APS5_VABI sceNpAsmClientGetCacheControlMaxAge(void);
 int APS5_VABI sceNpAsmClientGetGameNpTitleInfo(void);
 int APS5_VABI sceNpAsmClientGetGameNpTitleToken(void);
 int APS5_VABI sceNpAsmClientGetGameTitleBanInfo(void);
+int APS5_VABI sceNpAsmClientGetNpComInfo2(void);
 }
 
 extern "C" {
@@ -496,5 +497,6 @@ int main() {
         Require(sceNpAsmClientGetGameNpTitleInfo() == 0, "sceNpAsmClientGetGameNpTitleInfo check");
         Require(sceNpAsmClientGetGameNpTitleToken() == 0, "sceNpAsmClientGetGameNpTitleToken check");
         Require(sceNpAsmClientGetGameTitleBanInfo() == 0, "sceNpAsmClientGetGameTitleBanInfo check");
+        Require(sceNpAsmClientGetNpComInfo2() == 0, "sceNpAsmClientGetNpComInfo2 check");
     return 0;
 }
