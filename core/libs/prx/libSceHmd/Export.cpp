@@ -709,7 +709,6 @@ int APS5_VABI sceHmdInternalSetDebugMode(std::uint8_t mode) {
 }
 
 int APS5_VABI sceHmdInternalCrashReportCancel(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
