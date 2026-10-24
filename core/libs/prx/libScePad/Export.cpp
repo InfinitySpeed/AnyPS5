@@ -1214,8 +1214,8 @@ int APS5_VABI scePadVirtualDeviceDisableButtonRemapping(bool disabled) {
 }
 
 int APS5_VABI scePadSetShareButtonMaskForRemotePlay(std::uint8_t mask) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    (void)mask;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadSetPS4BcVibrationMode(std::uint8_t mode) {

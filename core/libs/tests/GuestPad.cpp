@@ -874,4 +874,5 @@ int main() {
     Require(scePadSetProcessFocus(nullptr) == PAD_ERROR_INVALID_ARG);
     Require(scePadVirtualDeviceDeleteDevice(0) == PAD_ERROR_INVALID_ARG);
     Require(scePadVirtualDeviceDisableButtonRemapping(false) == PAD_OK);
+    Require(scePadSetShareButtonMaskForRemotePlay(0) == PAD_OK);
 }
