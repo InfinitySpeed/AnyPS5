@@ -115,6 +115,7 @@ int APS5_VABI sceCamera2GetSharpness(void);
 int APS5_VABI sceCamera2SetAutoWhiteBalance(void);
 int APS5_VABI sceCameraSetDebugStop(void);
 int APS5_VABI sceCamera2SetAutoExposureGain(void);
+int APS5_VABI sceCameraIsConfigChangeDone(void);
 }
 
 namespace {
@@ -253,5 +254,6 @@ int main() {
         Require(sceCamera2SetAutoWhiteBalance() == 0, "sceCamera2SetAutoWhiteBalance check");
         Require(sceCameraSetDebugStop() == 0, "sceCameraSetDebugStop check");
         Require(sceCamera2SetAutoExposureGain() == 0, "sceCamera2SetAutoExposureGain check");
+        Require(sceCameraIsConfigChangeDone() == 0, "sceCameraIsConfigChangeDone check");
     return 0;
 }
