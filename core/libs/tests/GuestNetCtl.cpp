@@ -65,6 +65,7 @@ int APS5_VABI sceNetCtlEnableBandwidthManagementIpcInt(void);
 int APS5_VABI sceNetCtlApCpStart(void);
 int APS5_VABI sceNetCtlApCpStop(void);
 int APS5_VABI sceNetCtlApAppInitWpaKey(void);
+int APS5_VABI sceNetCtlApRestart(void);
 }
 
 namespace {
@@ -404,4 +405,5 @@ int main() {
     Require(sceNetCtlApCpStart() == 0);
     Require(sceNetCtlApCpStop() == 0);
     Require(sceNetCtlApAppInitWpaKey() == 0);
+    Require(sceNetCtlApRestart() == 0);
 }
