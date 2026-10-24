@@ -33,6 +33,7 @@ int APS5_VABI sceCameraGetCalibDataFromDevice(void);
 int APS5_VABI sceCamera2SetContrast(void);
 int APS5_VABI sceCameraIsConnectedForSystem(void);
 int APS5_VABI sceCamera2SetExposureGain(void);
+int APS5_VABI sceCameraSetRegister(void);
 }
 
 namespace {
@@ -89,5 +90,6 @@ int main() {
         Require(sceCamera2SetContrast() == 0, "sceCamera2SetContrast check");
         Require(sceCameraIsConnectedForSystem() == 0, "sceCameraIsConnectedForSystem check");
         Require(sceCamera2SetExposureGain() == 0, "sceCamera2SetExposureGain check");
+        Require(sceCameraSetRegister() == 0, "sceCameraSetRegister check");
     return 0;
 }
