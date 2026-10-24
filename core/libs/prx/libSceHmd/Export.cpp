@@ -572,7 +572,6 @@ int APS5_VABI sceHmdInternalGetDefaultLedData(std::int32_t handle, std::uint32_t
 }
 
 int APS5_VABI sceHmdInternalDfuClose(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

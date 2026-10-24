@@ -19,6 +19,7 @@ extern "C" int APS5_VABI sceHmdInternalCreateSharedMemory(void);
 extern "C" int APS5_VABI sceHmdReprojectionStopLiveCapture(void);
 extern "C" int APS5_VABI sceHmdInternalAnotherScreenClose(void);
 extern "C" int APS5_VABI sceHmdReprojectionStartCapture(void);
+extern "C" int APS5_VABI sceHmdInternalDfuClose(void);
 namespace {
 
 constexpr std::uint32_t LastSdkBeforeStartupState = 0x044fffff;
@@ -244,5 +245,6 @@ int main() {
         Require(sceHmdReprojectionStopLiveCapture() == 0, "sceHmdReprojectionStopLiveCapture check");
         Require(sceHmdInternalAnotherScreenClose() == 0, "sceHmdInternalAnotherScreenClose check");
         Require(sceHmdReprojectionStartCapture() == 0, "sceHmdReprojectionStartCapture check");
+        Require(sceHmdInternalDfuClose() == 0, "sceHmdInternalDfuClose check");
     }
 }
