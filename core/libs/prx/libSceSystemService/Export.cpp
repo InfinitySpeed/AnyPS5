@@ -589,7 +589,6 @@ int APS5_VABI sceLncUtilImportSpmemConfigJson(void) {
 }
 
 int APS5_VABI sceShellCoreUtilExitAppWithValue(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

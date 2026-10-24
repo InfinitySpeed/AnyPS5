@@ -42,6 +42,7 @@ extern "C" int APS5_VABI sceLncUtilRegisterCallEntries(void);
 extern "C" int APS5_VABI sceLncUtilGetSpmemConfigJson(void);
 extern "C" int APS5_VABI sceLncUtilExportSpmemConfigJson(void);
 extern "C" int APS5_VABI sceLncUtilImportSpmemConfigJson(void);
+extern "C" int APS5_VABI sceShellCoreUtilExitAppWithValue(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -235,4 +236,5 @@ int main() {
     Require(sceLncUtilGetSpmemConfigJson() == 0);
     Require(sceLncUtilExportSpmemConfigJson() == 0);
     Require(sceLncUtilImportSpmemConfigJson() == 0);
+    Require(sceShellCoreUtilExitAppWithValue() == 0);
 }
