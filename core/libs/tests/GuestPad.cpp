@@ -123,6 +123,7 @@ int APS5_VABI scePadVrControllerGetDeviceInformation(std::int32_t, PadVrControll
 int APS5_VABI scePadRegisterCollaboInputMgrProcess(void);
 int APS5_VABI scePadVrControllerGetPhysicalUsbConnectionStatus(PadVrUsbConnectionStatus*);
 int APS5_VABI scePadGetInfoByPortType(std::int32_t, PadPortInfo*);
+int APS5_VABI scePadGetTelemetryInfo(std::int32_t, PadTelemetryInfo*);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -780,6 +781,8 @@ int main() {
     Require(scePadVrControllerGetPhysicalUsbConnectionStatus(&vrusb) == PAD_OK);
     PadPortInfo portinfo{};
     Require(scePadGetInfoByPortType(0, &portinfo) == PAD_OK);
+    PadTelemetryInfo telinfo{};
+    Require(scePadGetTelemetryInfo(handle, &telinfo) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
