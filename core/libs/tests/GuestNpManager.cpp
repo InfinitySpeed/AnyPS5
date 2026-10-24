@@ -27,6 +27,7 @@ int APS5_VABI sceNpRegisterPlusEventCallback(void* callback, void* userdata);
 int APS5_VABI sceNpUnregisterPlusEventCallback(void);
 int APS5_VABI sceNpIsPlusMember(int user_id, bool* is_member);
 int APS5_VABI sceNpSetContentRestriction(const NpContentRestriction* restriction);
+int APS5_VABI sceNpAsmAbort(void);
 }
 
 extern "C" {
@@ -466,5 +467,6 @@ int main() {
         Require(std::string(error.what()) == "sceNpUnknown_WxLcN76q19o not implemented",
             "sceNpUnknown_WxLcN76q19o threw");
     }
+        Require(sceNpAsmAbort() == 0, "sceNpAsmAbort check");
     return 0;
 }
