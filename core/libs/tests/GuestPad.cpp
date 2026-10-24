@@ -122,6 +122,7 @@ int APS5_VABI scePadGetFeatureReport(std::int32_t, std::uint8_t, void*, std::siz
 int APS5_VABI scePadVrControllerGetDeviceInformation(std::int32_t, PadVrControllerDeviceInformation*);
 int APS5_VABI scePadRegisterCollaboInputMgrProcess(void);
 int APS5_VABI scePadVrControllerGetPhysicalUsbConnectionStatus(PadVrUsbConnectionStatus*);
+int APS5_VABI scePadGetInfoByPortType(std::int32_t, PadPortInfo*);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -777,6 +778,8 @@ int main() {
     Require(scePadRegisterCollaboInputMgrProcess() == PAD_OK);
     PadVrUsbConnectionStatus vrusb{};
     Require(scePadVrControllerGetPhysicalUsbConnectionStatus(&vrusb) == PAD_OK);
+    PadPortInfo portinfo{};
+    Require(scePadGetInfoByPortType(0, &portinfo) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
