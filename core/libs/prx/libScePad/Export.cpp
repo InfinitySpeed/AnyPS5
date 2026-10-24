@@ -476,8 +476,9 @@ int APS5_VABI scePadVrControllerSetTriggerEffect(std::int32_t handle, const PadV
 }
 
 int APS5_VABI scePadVrControllerSetTriggerEffects(std::int32_t leftHandle, std::int32_t rightHandle, const PadVrTriggerEffects* effects) {
- NotImplemented_nid_no_patch(__func__);
- return 0;
+    if (!KnownHandle(leftHandle) || !KnownHandle(rightHandle)) return PAD_ERROR_INVALID_HANDLE;
+    (void)effects;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadIsRemoteController(int handle, bool* remote) {

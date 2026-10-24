@@ -99,6 +99,7 @@ int APS5_VABI scePadSetTriggerEffectExt(std::int32_t, const PadTriggerEffectExte
 int APS5_VABI scePadSetExtensionReport(std::int32_t, const PadExtensionReport*);
 int APS5_VABI scePadSetFeatureReport(std::int32_t, std::uint8_t, const void*, std::size_t);
 int APS5_VABI scePadOutputReport(std::int32_t, std::uint8_t, const void*, std::uint64_t);
+int APS5_VABI scePadVrControllerSetTriggerEffects(std::int32_t, std::int32_t, const PadVrTriggerEffects*);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -716,6 +717,7 @@ int main() {
     Require(scePadSetExtensionReport(handle, nullptr) == PAD_OK);
     Require(scePadSetFeatureReport(handle, 0, nullptr, 0) == PAD_OK);
     Require(scePadOutputReport(handle, 0, nullptr, 0) == PAD_OK);
+    Require(scePadVrControllerSetTriggerEffects(handle, handle, nullptr) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
