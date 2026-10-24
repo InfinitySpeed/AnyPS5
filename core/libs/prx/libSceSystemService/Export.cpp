@@ -665,7 +665,6 @@ int APS5_VABI sceShellCoreUtilNotifySystemResumeTelemetryInfo(void) {
 }
 
 int APS5_VABI sceShellCoreUtilUpdateTelemetryToken(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
