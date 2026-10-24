@@ -167,6 +167,7 @@ int APS5_VABI sceNpManagerIntIsSubAccount(void);
 int APS5_VABI sceNpManagerIntIsTemporarySignout(void);
 int APS5_VABI sceNpManagerIntIsUnregisteredClientError(void);
 int APS5_VABI sceNpManagerIntLoginAuthenticate(void);
+int APS5_VABI sceNpManagerIntLoginBind(void);
 }
 
 extern "C" {
@@ -746,5 +747,6 @@ int main() {
             Require(sceNpManagerIntIsTemporarySignout() == 0, "sceNpManagerIntIsTemporarySignout check");
             Require(sceNpManagerIntIsUnregisteredClientError() == 0, "sceNpManagerIntIsUnregisteredClientError check");
             Require(sceNpManagerIntLoginAuthenticate() == 0, "sceNpManagerIntLoginAuthenticate check");
+            Require(sceNpManagerIntLoginBind() == 0, "sceNpManagerIntLoginBind check");
     return 0;
 }
