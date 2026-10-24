@@ -36,6 +36,7 @@ union NetCtlInfoV6;
 extern "C" {
 int APS5_VABI sceNetCtlInit(void);
 int APS5_VABI sceNetCtlCheckCallback(void);
+int APS5_VABI sceNetCtlCheckCallbackForNpToolkit(void);
 int APS5_VABI sceNetCtlGetInfo(int, NetCtlInfo*);
 int APS5_VABI sceNetCtlGetNatInfo(NetCtlNatInfo*);
 int APS5_VABI sceNetCtlGetState(int*);
@@ -117,6 +118,7 @@ void CheckCallbacks() {
     int first = -1;
     Require(sceNetCtlRegisterCallback(RecordFirst, &firstProbe, &first) == 0 && first == 0);
     Require(sceNetCtlCheckCallback() == 0);
+    Require(sceNetCtlCheckCallbackForNpToolkit() == 0);
     Require(g_first.calls == 1 && g_first.event == event && g_first.arg == &firstProbe);
     Require(sceNetCtlCheckCallback() == 0);
     Require(g_first.calls == 1);
