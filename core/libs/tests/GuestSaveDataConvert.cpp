@@ -48,6 +48,7 @@ int APS5_VABI sceSaveDataGetCloudQuotaInfo(void);
 int APS5_VABI sceSaveDataGetSaveDataRootDir(void);
 int APS5_VABI sceSaveDataGetSaveDataRootPath(void);
 int APS5_VABI sceSaveDataGetSaveDataRootUsbPath(void);
+int APS5_VABI sceSaveDataGetSavePoint(void);
 }
 
 namespace {
@@ -156,6 +157,7 @@ int main() {
         Check(sceSaveDataGetSaveDataRootDir() == 0, "sceSaveDataGetSaveDataRootDir check");
         Check(sceSaveDataGetSaveDataRootPath() == 0, "sceSaveDataGetSaveDataRootPath check");
         Check(sceSaveDataGetSaveDataRootUsbPath() == 0, "sceSaveDataGetSaveDataRootUsbPath check");
+        Check(sceSaveDataGetSavePoint() == 0, "sceSaveDataGetSavePoint check");
     if (failures != 0) return 1;
     std::printf("savedata convert tests passed\n");
     return 0;
