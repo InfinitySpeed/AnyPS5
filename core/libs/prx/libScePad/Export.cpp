@@ -943,8 +943,11 @@ int APS5_VABI scePadGetTelemetryInfo(std::int32_t handle, PadTelemetryInfo* info
 }
 
 int APS5_VABI scePadGetActiveTime(std::int32_t handle, std::int32_t type, std::uint64_t* activeTime) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    (void)type;
+    if (activeTime == nullptr) return PAD_ERROR_INVALID_ARG;
+    *activeTime = 0;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadGetDeviceId(std::int32_t handle, std::int32_t* deviceId) {
