@@ -1210,8 +1210,7 @@ int APS5_VABI scePadVirtualDeviceSetTriggerEffectSetting(std::int32_t handle, co
 
 int APS5_VABI scePadVirtualDeviceDisableButtonRemapping(bool disabled) {
     (void)disabled;
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadSetShareButtonMaskForRemotePlay(std::uint8_t mask) {
