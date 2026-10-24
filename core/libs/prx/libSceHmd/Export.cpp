@@ -639,7 +639,6 @@ int APS5_VABI sceHmdInternalSocialScreenSetFadeAndSwitch(const HmdScreenFadePara
 }
 
 int APS5_VABI sceHmdInternalDfuStart(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
