@@ -200,6 +200,7 @@ int APS5_VABI __wrap_clock_gettime(int clockId, KernelTimespec* tp) {
 }
 
 int APS5_VABI __wrap_fchown() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -212,6 +213,7 @@ char* APS5_VABI __wrap_getenv(const char* name) {
 }
 
 int APS5_VABI __wrap_link() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -224,48 +226,59 @@ void* APS5_VABI __wrap_mmap(void* address, std::size_t length, int protection, i
 }
 
 int APS5_VABI __wrap_readlink() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI __wrap_statvfs() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI __wrap_symlink() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI clock_gettime_np() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI getenv_np() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 APS5_EXPORT("dt8ermYp-Wc", scePosixForWebKit_gethostbyname_r);
 int APS5_VABI scePosixForWebKit_gethostbyname_r() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI mmap_np() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI msetname() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI pthread_setschedparam_np() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI setenv_np() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 APS5_EXPORT("9Vqxt-qBPB4", scePosixForWebKit_sysinfo);
 int APS5_VABI scePosixForWebKit_sysinfo() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

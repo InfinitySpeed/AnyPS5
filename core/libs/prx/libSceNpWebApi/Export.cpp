@@ -38,10 +38,12 @@ int nextObject() {
 extern "C" {
 
 int APS5_VABI sceNpWebApiAbortRequest() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpWebApiCreateContext() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -65,6 +67,7 @@ int APS5_VABI sceNpWebApiCreatePushEventFilter(int libCtxId, const void* filterP
 }
 
 int APS5_VABI sceNpWebApiCreateRequest() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -79,6 +82,7 @@ int APS5_VABI sceNpWebApiCreateServicePushEventFilter(int libCtxId, int handleId
 }
 
 int APS5_VABI sceNpWebApiDeleteContext() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -97,6 +101,7 @@ int APS5_VABI sceNpWebApiDeletePushEventFilter(int libCtxId, int filterId) {
 }
 
 int APS5_VABI sceNpWebApiDeleteRequest() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -108,14 +113,17 @@ int APS5_VABI sceNpWebApiDeleteServicePushEventFilter(int libCtxId, int filterId
 }
 
 int APS5_VABI sceNpWebApiGetHttpResponseHeaderValue() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpWebApiGetHttpResponseHeaderValueLength() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpWebApiGetHttpStatusCode() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -131,18 +139,22 @@ int APS5_VABI sceNpWebApiInitialize(int libHttpCtxId, std::size_t poolSize) {
 }
 
 int APS5_VABI sceNpWebApiReadData() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpWebApiRegisterPushEventCallback() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpWebApiRegisterServicePushEventCallback() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpWebApiSendRequest() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -152,14 +164,17 @@ int APS5_VABI sceNpWebApiTerminate(int libCtxId) {
 }
 
 int APS5_VABI sceNpWebApiUnregisterPushEventCallback() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpWebApiUnregisterServicePushEventCallback() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpWebApiUtilityParseNpId() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

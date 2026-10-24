@@ -147,6 +147,7 @@ int APS5_VABI sceVoiceQoSDisconnect(int32_t connectionId) {
 }
 
 int APS5_VABI sceVoiceQoSSetConnectionAttribute(std::int32_t connectionId, std::int32_t attributeId, const void* value, std::int32_t size) {
+ NotImplemented_nid_no_patch(__func__);
  return 0;
 }
 
@@ -180,6 +181,7 @@ int APS5_VABI sceVoiceQoSWritePacket(int32_t connectionId, const void* buffer, u
 }
 
 int APS5_VABI sceVoiceQoSGetLocalEndpointAttribute(int32_t localId, int32_t attributeId, void* value, int32_t size) {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -188,6 +190,7 @@ int APS5_VABI sceVoiceQoSGetRemoteEndpointAttribute(int32_t remoteId, int32_t at
     (void)attributeId;
     (void)value;
     (void)size;
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -196,6 +199,7 @@ int APS5_VABI sceVoiceQoSGetConnectionAttribute(int32_t connectionId, int32_t at
     (void)attributeId;
     (void)value;
     (void)size;
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -218,10 +222,12 @@ int APS5_VABI sceVoiceQoSGetRemoteEndpoint(int32_t connectionId, int32_t* remote
 }
 
 int APS5_VABI sceVoiceQoSEnableChat() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceVoiceQoSDisableChat() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -230,22 +236,27 @@ int APS5_VABI sceVoiceQoSGetStatus(int32_t connectionId, int32_t statusId, void*
     (void)statusId;
     (void)value;
     (void)size;
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceVoiceQoSDebugGetStatus(std::int32_t connectionId, std::int32_t statusId, void* value, std::int32_t size) {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceVoiceQoSInitHQ(void* memory, std::uint32_t memorySize, std::int32_t appType) {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceVoiceQoSSetMode() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceVoiceQoSTerminate() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

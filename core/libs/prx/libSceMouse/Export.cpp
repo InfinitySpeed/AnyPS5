@@ -32,42 +32,52 @@ bool MouseIsOpen_nid_no_patch() {
 }
 
 int APS5_VABI sceMouseConnectPort() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceMouseDebugGetDeviceId() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceMouseDeviceOpen() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceMouseDisconnectDevice() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceMouseDisconnectPort() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceMouseGetDeviceInfo() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceMouseMbusInit() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceMouseSetHandType() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceMouseSetPointerSpeed() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceMouseSetProcessPrivilege() {
+    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
