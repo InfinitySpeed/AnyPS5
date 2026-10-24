@@ -668,8 +668,9 @@ int APS5_VABI scePadDisableDataConversion(std::int32_t handle, bool disabled) {
 }
 
 int APS5_VABI scePadSetButtonRemappingInfo(std::int32_t handle, const PadButtonRemappingInfo* info) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    (void)info;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadSetProcessPrivilegeOfButtonRemapping(bool enabled) {
