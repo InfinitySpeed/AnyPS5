@@ -70,6 +70,7 @@ int APS5_VABI sceNpAsmGenerateNpTitleToken(void);
 int APS5_VABI sceNpAsmGenerateNpTitleToken2(void);
 int APS5_VABI sceNpAsmGetNpCommInfo(void);
 int APS5_VABI sceNpAsmGetNpCommInfo2(void);
+int APS5_VABI sceNpAsmGetRelatedGameNpTitleIds(void);
 }
 
 extern "C" {
@@ -552,5 +553,6 @@ int main() {
         Require(sceNpAsmGenerateNpTitleToken2() == 0, "sceNpAsmGenerateNpTitleToken2 check");
         Require(sceNpAsmGetNpCommInfo() == 0, "sceNpAsmGetNpCommInfo check");
         Require(sceNpAsmGetNpCommInfo2() == 0, "sceNpAsmGetNpCommInfo2 check");
+        Require(sceNpAsmGetRelatedGameNpTitleIds() == 0, "sceNpAsmGetRelatedGameNpTitleIds check");
     return 0;
 }
