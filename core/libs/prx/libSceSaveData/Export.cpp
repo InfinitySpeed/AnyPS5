@@ -353,7 +353,6 @@ int APS5_VABI sceSaveDataSyncCloudList(void) {
 }
 
 int APS5_VABI sceSaveDataUmountSys(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

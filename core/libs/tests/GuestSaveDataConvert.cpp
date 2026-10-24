@@ -66,6 +66,7 @@ int APS5_VABI sceSaveDataSetSaveDataLibraryUser(void);
 int APS5_VABI sceSaveDataShutdownStart(void);
 int APS5_VABI sceSaveDataSupportedFakeBrokenStatus(void);
 int APS5_VABI sceSaveDataSyncCloudList(void);
+int APS5_VABI sceSaveDataUmountSys(void);
 }
 
 namespace {
@@ -192,6 +193,7 @@ int main() {
         Check(sceSaveDataShutdownStart() == 0, "sceSaveDataShutdownStart check");
         Check(sceSaveDataSupportedFakeBrokenStatus() == 0, "sceSaveDataSupportedFakeBrokenStatus check");
         Check(sceSaveDataSyncCloudList() == 0, "sceSaveDataSyncCloudList check");
+        Check(sceSaveDataUmountSys() == 0, "sceSaveDataUmountSys check");
     if (failures != 0) return 1;
     std::printf("savedata convert tests passed\n");
     return 0;
