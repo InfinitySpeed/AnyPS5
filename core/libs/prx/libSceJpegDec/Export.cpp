@@ -250,9 +250,8 @@ int32_t APS5_VABI sceJpegDecQueryMemorySize(const JpegDecCreateParam* param) {
     return static_cast<std::int32_t>(workMemorySize(*param));
 }
 
-int APS5_VABI sceJpegDecDecodeWithInputControl() {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+int32_t APS5_VABI sceJpegDecDecodeWithInputControl(void* handle, const JpegDecDecodeParam* param, JpegDecImageInfo* imageInfo) {
+    return sceJpegDecDecode(handle, param, imageInfo);
 }
 
 }
