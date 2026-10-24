@@ -22,6 +22,7 @@ int APS5_VABI sceSharePlayServerLock(void);
 int APS5_VABI sceSharePlayServerUnLock(void);
 int APS5_VABI sceSharePlaySetMode(void);
 int APS5_VABI sceSharePlaySetProhibition(void);
+int APS5_VABI sceSharePlaySetProhibitionModeWithAppId(void);
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -79,4 +80,5 @@ int main() {
     Require(sceSharePlayServerUnLock() == 0);
     Require(sceSharePlaySetMode() == 0);
     Require(sceSharePlaySetProhibition() == 0);
+    Require(sceSharePlaySetProhibitionModeWithAppId() == 0);
 }
