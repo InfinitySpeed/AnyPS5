@@ -164,6 +164,7 @@ int APS5_VABI sceNpManagerIntGetVshAccessToken(void);
 int APS5_VABI sceNpManagerIntGetVshAccessTokenWithCheck(void);
 int APS5_VABI sceNpManagerIntGetVshClientId(void);
 int APS5_VABI sceNpManagerIntIsSubAccount(void);
+int APS5_VABI sceNpManagerIntIsTemporarySignout(void);
 }
 
 extern "C" {
@@ -740,5 +741,6 @@ int main() {
             Require(sceNpManagerIntGetVshAccessTokenWithCheck() == 0, "sceNpManagerIntGetVshAccessTokenWithCheck check");
             Require(sceNpManagerIntGetVshClientId() == 0, "sceNpManagerIntGetVshClientId check");
             Require(sceNpManagerIntIsSubAccount() == 0, "sceNpManagerIntIsSubAccount check");
+            Require(sceNpManagerIntIsTemporarySignout() == 0, "sceNpManagerIntIsTemporarySignout check");
     return 0;
 }
