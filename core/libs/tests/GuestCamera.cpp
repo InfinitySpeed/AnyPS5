@@ -103,6 +103,7 @@ int APS5_VABI sceCameraDeviceOpen(void);
 int APS5_VABI sceCameraSetUacModeInternal(void);
 int APS5_VABI sceCameraGetAutoExposureGain(void);
 int APS5_VABI sceCameraGetRegister(void);
+int APS5_VABI sceCamera2SetGamma(void);
 }
 
 namespace {
@@ -229,5 +230,6 @@ int main() {
         Require(sceCameraSetUacModeInternal() == 0, "sceCameraSetUacModeInternal check");
         Require(sceCameraGetAutoExposureGain() == 0, "sceCameraGetAutoExposureGain check");
         Require(sceCameraGetRegister() == 0, "sceCameraGetRegister check");
+        Require(sceCamera2SetGamma() == 0, "sceCamera2SetGamma check");
     return 0;
 }
