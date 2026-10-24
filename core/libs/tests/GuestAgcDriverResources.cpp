@@ -47,6 +47,7 @@ int APS5_VABI sceAgcDriverModuleRegistration(void);
 int APS5_VABI sceAgcDriverNotifyDefaultStates(void);
 int APS5_VABI sceAgcDriverPassInfoDownward(void);
 int APS5_VABI sceAgcDriverPatchClearState(void);
+int APS5_VABI sceAgcDriverSetFlip(void);
 }
 
 static constexpr int Unavailable = static_cast<int>(0x8A6C9018);
@@ -132,4 +133,5 @@ int main() {
     Require(sceAgcDriverNotifyDefaultStates() == 0);
     Require(sceAgcDriverPassInfoDownward() == 0);
     Require(sceAgcDriverPatchClearState() == 0);
+    Require(sceAgcDriverSetFlip() == 0);
 }
