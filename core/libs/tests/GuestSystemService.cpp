@@ -47,6 +47,7 @@ extern "C" int APS5_VABI sceShellCoreUtilNpDebugSpecialNotification(void);
 extern "C" int APS5_VABI sceShellCoreUtilIsDddTemperatureDanger(void);
 extern "C" int APS5_VABI sceShellCoreUtilIsM2StorageTemperatureDanger(void);
 extern "C" int APS5_VABI sceShellCoreUtilGetAvailableSizeM2(void);
+extern "C" int APS5_VABI sceShellCoreUtilNotifyConnectAccountStatusChanged(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -245,4 +246,5 @@ int main() {
     Require(sceShellCoreUtilIsDddTemperatureDanger() == 0);
     Require(sceShellCoreUtilIsM2StorageTemperatureDanger() == 0);
     Require(sceShellCoreUtilGetAvailableSizeM2() == 0);
+    Require(sceShellCoreUtilNotifyConnectAccountStatusChanged() == 0);
 }
