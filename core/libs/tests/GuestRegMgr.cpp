@@ -8,6 +8,7 @@ extern "C" {
 std::int32_t APS5_VABI sceRegMgrNonSysGetInt(std::int64_t key, std::int32_t unk, std::int32_t* data);
 int APS5_VABI sceRegMgrCheckError();
 int APS5_VABI sceRegMgrCheckIntVal();
+int APS5_VABI sceRegMgrGetBinInitVal();
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -28,4 +29,5 @@ int main() {
     Require(ReportsNotImplemented("sceRegMgrNonSysGetInt", [&] { sceRegMgrNonSysGetInt(-1, 1, nullptr); }));
     Require(sceRegMgrCheckError() == 0);
     Require(sceRegMgrCheckIntVal() == 0);
+    Require(sceRegMgrGetBinInitVal() == 0);
 }
