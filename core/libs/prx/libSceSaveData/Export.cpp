@@ -196,7 +196,6 @@ int APS5_VABI sceSaveDataGetAllSize() {
 }
 
 int APS5_VABI sceSaveDataGetAppLaunchedUser(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
