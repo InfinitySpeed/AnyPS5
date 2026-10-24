@@ -180,7 +180,6 @@ int APS5_VABI sceGameLiveStreamingRegisterCallback(void) {
 }
 
 int APS5_VABI sceGameLiveStreamingUnregisterCallback(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
