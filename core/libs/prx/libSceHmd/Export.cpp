@@ -216,7 +216,6 @@ int APS5_VABI sceHmdInternalGetPUVersion(std::uint32_t* version) {
 }
 
 int APS5_VABI sceHmdInternalEventInitialize(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

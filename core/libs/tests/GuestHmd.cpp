@@ -10,6 +10,7 @@
 #include <initializer_list>
 #include <stdexcept>
 
+extern "C" int APS5_VABI sceHmdInternalEventInitialize(void);
 namespace {
 
 constexpr std::uint32_t LastSdkBeforeStartupState = 0x044fffff;
@@ -226,5 +227,6 @@ int main() {
         Require(sceHmdTerminate() == Hmd::NotInitialized, "duplicate terminate");
         Require(sceHmdGetDeviceInformation(&info) == Hmd::NotInitialized, "query after terminate");
         CheckDisconnected();
+        Require(sceHmdInternalEventInitialize() == 0, "sceHmdInternalEventInitialize check");
     }
 }
