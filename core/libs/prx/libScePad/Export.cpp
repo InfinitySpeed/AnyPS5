@@ -812,8 +812,10 @@ int APS5_VABI scePadSetTriggerTuningParam(std::int32_t handle, const PadTriggerT
 }
 
 int APS5_VABI scePadGetProfileHunt(std::int32_t handle, std::int32_t profileId, PadHuntProfile* profile) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    (void)profileId;
+    if (profile == nullptr) return PAD_ERROR_INVALID_ARG;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadSetProfileHunt(std::int32_t handle, std::int32_t profileId, PadHuntProfile* profile, std::uint32_t* result) {

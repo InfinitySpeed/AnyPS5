@@ -111,6 +111,7 @@ int APS5_VABI scePadGetProfileInfo(std::int32_t, std::int32_t, PadProfileInfo*);
 int APS5_VABI scePadGetActiveProfileInfo(std::int32_t, PadActiveProfileInfo*);
 int APS5_VABI scePadGetSavedSettingInfo(std::int32_t, PadSavedSettingInfo*);
 int APS5_VABI scePadGetProfileLeonardo(std::int32_t, std::int32_t, PadLeonardoProfile*);
+int APS5_VABI scePadGetProfileHunt(std::int32_t, std::int32_t, PadHuntProfile*);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -746,6 +747,8 @@ int main() {
     Require(scePadGetSavedSettingInfo(handle, &sinfo) == PAD_OK);
     PadLeonardoProfile leoprof{};
     Require(scePadGetProfileLeonardo(handle, 0, &leoprof) == PAD_OK);
+    PadHuntProfile huntprof{};
+    Require(scePadGetProfileHunt(handle, 0, &huntprof) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
