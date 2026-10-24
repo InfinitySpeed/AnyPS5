@@ -24,6 +24,8 @@ int APS5_VABI scePthreadAttrGetdetachstate(const PthreadAttr* attr, int* state);
 int APS5_VABI scePthreadAttrGetsolosched(const PthreadAttr* attr, int* solosched);
 int APS5_VABI pthread_attr_setstacksize_nid_postfix(PthreadAttr* attr, std::size_t stackSize);
 int APS5_VABI pthread_attr_setsolosched_np_nid_postfix(PthreadAttr* attr, int solosched);
+int APS5_VABI pthread_attr_getsolosched_np_nid_postfix(const PthreadAttr* attr, int* solosched);
+int* APS5_VABI __error_nid_postfix();
 int APS5_VABI pthread_attr_getinheritsched_nid_postfix(const PthreadAttr* attr, int* inherit_sched);
 int APS5_VABI pthread_attr_setinheritsched_nid_postfix(PthreadAttr* attr, int inherit_sched);
 int APS5_VABI pthread_attr_getscope_nid_postfix(const PthreadAttr* attr, int* scope);
@@ -102,6 +104,44 @@ static void CheckStackSizeLimit() {
 }
 
 extern "C" int APS5_VABI scePthreadAttrSetsolosched(PthreadAttr* attr, int solosched);
+
+static void CheckPosixSoloSched() {
+    PthreadAttr attr = nullptr;
+    PthreadAttr other = nullptr;
+    PthreadAttr uninitialized = nullptr;
+    Require(scePthreadAttrInit(&attr) == SCE_OK);
+    Require(scePthreadAttrInit(&other) == SCE_OK);
+    struct Guarded { int before; int value; int after; } output{0x123456, -77, 0x654321};
+    *__error_nid_postfix() = 13;
+    const auto read = [&](const PthreadAttr* source, int expected) {
+        output.value = -77;
+        Require(pthread_attr_getsolosched_np_nid_postfix(source, &output.value) == 0);
+        Require(output.value == expected && output.before == 0x123456 && output.after == 0x654321);
+        Require(*__error_nid_postfix() == 13);
+    };
+    read(&attr, 0);
+    Require(pthread_attr_setsolosched_np_nid_postfix(&attr, 16) == 0);
+    read(&attr, 16);
+    read(&other, 0);
+    Require(pthread_attr_setsolosched_np_nid_postfix(&attr, 1) == GUEST_ENOTSUP);
+    read(&attr, 16);
+    Require(pthread_attr_setsolosched_np_nid_postfix(&attr, 0) == 0);
+    read(&attr, 0);
+    const PthreadAttr* invalidAttributes[] = {nullptr, &uninitialized};
+    for (const PthreadAttr* invalid : invalidAttributes) {
+        output.value = -77;
+        Require(pthread_attr_getsolosched_np_nid_postfix(invalid, &output.value) == GUEST_EINVAL);
+        Require(pthread_attr_getsolosched_np_nid_postfix(invalid, nullptr) == GUEST_EINVAL);
+        Require(output.value == -77 && *__error_nid_postfix() == 13);
+    }
+    Require(pthread_attr_getsolosched_np_nid_postfix(&attr, nullptr) == GUEST_EINVAL);
+    Require(scePthreadAttrDestroy(&attr) == SCE_OK);
+    output.value = -77;
+    Require(pthread_attr_getsolosched_np_nid_postfix(&attr, &output.value) == GUEST_EINVAL);
+    Require(output.value == -77 && output.before == 0x123456 && output.after == 0x654321);
+    Require(*__error_nid_postfix() == 13);
+    Require(scePthreadAttrDestroy(&other) == SCE_OK);
+}
 
 static void CheckSoloSched() {
     PthreadAttr attr = nullptr;
@@ -342,6 +382,7 @@ static void CheckEndedThreads() {
 int main() {
     CheckStackSizeLimit();
     CheckSoloSched();
+    CheckPosixSoloSched();
     CheckSchedArguments();
     CheckSchedulingAttributes();
     CheckThreadScope();

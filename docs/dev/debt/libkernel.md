@@ -124,6 +124,8 @@
 
 ### Functional
 
+- [pthread_attr_getsolosched_np](../../../core/libs/prx/libkernel/Pthread/Posix/Attr.cpp) (libkernel) - the POSIX alias signature and error handling are inferred from the existing SCE getter and sibling POSIX adapters, as in [DavidSamir's #9156](https://github.com/boykopovar/AnyPS5/pull/9156). They have not been measured on a PS5. The getter exposes the stored attribute; it does not implement solo scheduling
+
 - [getlogin](../../../core/libs/prx/libkernel/System/src/Getlogin.cpp) (libkernel) - console session identity is unverified. The cached name comes from the existing host-effective-user `getlogin_r` provider, not a PS5 login session. Stable 33-byte storage and serialized initialization follow [FreeBSD 11.4 getlogin.c](https://github.com/freebsd/freebsd-src/blob/releng/11.4/lib/libc/gen/getlogin.c); failures return null with guest errno. A future guest `setlogin` implementation must invalidate this cache.
 
 - [pthread_attr_getaffinity_np and pthread_attr_setaffinity_np](../../../core/libs/prx/libkernel/Pthread/Posix/Attr.cpp) (libkernel) - console behavior is unmeasured, and bits above 63 are retained as attribute data but are not applied to thread execution. Signatures and the 256-bit set follow the [public payload SDK](https://github.com/ps5-payload-dev/sdk/blob/a7685ce8e97ce1f8a4f38253a41d54241c9124f1/include/freebsd/pthread_np.h); validation, clear/reset, implicit all-CPU masks and zero extension follow [FreeBSD 11.4 libthr](https://github.com/freebsd/freebsd-src/blob/releng/11.4/lib/libthr/thread/thr_attr.c#L560-L625), with `EFAULT` for a null get buffer as in the existing thread-affinity API. Host pinning remains unchanged.
