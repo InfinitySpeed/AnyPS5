@@ -28,6 +28,7 @@ int APS5_VABI scePadStartRecording(void);
 int APS5_VABI scePadStopRecording(void);
 int APS5_VABI scePadBondUpdateInit(void);
 int APS5_VABI scePadBondUpdateTerm(void);
+int APS5_VABI scePadControllerUpdateInit(void);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -562,6 +563,7 @@ int main() {
     Require(scePadStopRecording() == 0);
     Require(scePadBondUpdateInit() == 0);
     Require(scePadBondUpdateTerm() == 0);
+    Require(scePadControllerUpdateInit() == 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     const int handle = scePadOpen_nid_postfix(user, 0, 0, nullptr);
     Require(handle > 0);
