@@ -44,13 +44,12 @@ int main() {
     Require(scePlayerSelectionDialogOpen(&param) == kErrNotInitialized);
     Require(scePlayerSelectionDialogClose() == kErrNotInitialized);
     Require(scePlayerSelectionDialogParamInitialize(nullptr) == kErrArgNull);
-    bool threw = false;
-    try {
-        scePlayerSelectionDialogParamInitialize(&param);
-    } catch (const std::runtime_error&) {
-        threw = true;
-    }
-    Require(threw);
+    PlayerSelectionDialogParam initParam{};
+    std::memset(&initParam, 0xAA, sizeof(initParam));
+    Require(scePlayerSelectionDialogParamInitialize(&initParam) == 0);
+    Require(initParam.base.size == sizeof(initParam.base));
+    Require(ValidateCommonDialogBaseParam(initParam.base));
+    Require(initParam.size == sizeof(initParam));
     Require(param.size == sizeof(param));
     Require(scePlayerSelectionDialogGetResult(&result) == kErrNotInitialized);
     Require(scePlayerSelectionDialogGetStatus() == 0);

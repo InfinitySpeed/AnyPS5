@@ -80,8 +80,13 @@ int APS5_VABI scePlayerSelectionDialogGetResult(PlayerSelectionDialogResult* res
 }
 
 int APS5_VABI scePlayerSelectionDialogParamInitialize(void* param) {
- if (param == nullptr) return COMMON_DIALOG_ERROR_ARG_NULL;
- NotImplemented_nid_no_patch(__func__);
+    if (param == nullptr) return COMMON_DIALOG_ERROR_ARG_NULL;
+    auto* const p = static_cast<PlayerSelectionDialogParam*>(param);
+    std::memset(p, 0, sizeof(*p));
+    p->base.size = sizeof(p->base);
+    p->base.magic = static_cast<std::uint32_t>(reinterpret_cast<std::uintptr_t>(&p->base)) - 1060003575u;
+    p->size = sizeof(*p);
+    return 0;
 }
 
 int APS5_VABI scePlayerSelectionDialogTerminate(void) {
