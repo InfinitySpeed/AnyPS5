@@ -694,7 +694,6 @@ int APS5_VABI sceHttpGetMemoryPoolStats(int contextId, HttpMemoryPoolStats* stat
 }
 
 int APS5_VABI sceHttpDbgShowConnectionStat(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
