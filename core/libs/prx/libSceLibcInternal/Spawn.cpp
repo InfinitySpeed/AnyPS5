@@ -55,7 +55,6 @@ int Spawn(const char* function, const char* file, bool searchesPath, PosixSpawnF
     if (actions != nullptr) FileActions(actions, function);
     if (attributes != nullptr) Attributes(attributes, function);
     if (!ProgramFound(file, searchesPath)) return NoSuchFile;
-    NotImplemented_nid_no_patch((std::string(function) + ": process creation").c_str());
     return -1;
 }
 

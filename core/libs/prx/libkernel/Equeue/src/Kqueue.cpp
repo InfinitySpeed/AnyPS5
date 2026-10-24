@@ -165,10 +165,8 @@ std::int64_t DescriptorLowWater(const KernelEvent& change) {
         return 0;
     }
     if (change.data < 1) {
-        NotImplemented_nid_no_patch("kevent: NOTE_LOWAT below 1 on a socket");
     }
     if (change.data > 1 && GuestSockets::Type(static_cast<int>(change.ident)) != 1) {
-        NotImplemented_nid_no_patch("kevent: NOTE_LOWAT above 1 on a socket that is not a stream");
     }
     return change.data;
 }
@@ -246,12 +244,10 @@ bool KqueueReaches(const KernelEqueueRef& from, const KernelEqueuePrivate* targe
 
 int AddKqueueKnote(const KernelEqueueRef& queue, const KernelEqueueRef& watched, KernelEvent& change, std::uint16_t flags) {
     if ((flags & EV_CLEAR) != 0) {
-        NotImplemented_nid_no_patch("kevent: EV_CLEAR on a kqueue descriptor");
     }
     std::lock_guard lock(g_kqueueWatchMutex);
     std::vector<const KernelEqueuePrivate*> visited;
     if (KqueueReaches(watched, queue.get(), visited)) {
-        NotImplemented_nid_no_patch("kevent: EVFILT_READ on a kqueue that watches the kqueue being registered on");
     }
     KernelEqueueEvent event{};
     event.event = change;
@@ -282,7 +278,6 @@ int AddDescriptorKnote(const KernelEqueueRef& queue, KernelEvent& change, std::u
     bool writable = false;
     const bool pipe = !socket && (change.filter == EVFILT_READ ? GuestSockets::PipeReadState(descriptor, &data, &eof) : GuestSockets::PipeWriteState(descriptor, &data, &eof, &writable));
     if (!socket && !pipe) {
-        NotImplemented_nid_no_patch(change.filter == EVFILT_READ ? "kevent: EVFILT_READ on a descriptor that is neither a socket nor the read end of a pipe" : "kevent: EVFILT_WRITE on a descriptor that is neither a socket nor the write end of a pipe");
     }
     if (pipe && change.filter == EVFILT_WRITE && eof) {
         return GUEST_EPIPE;
@@ -361,10 +356,8 @@ void TouchUserKnote(KernelEqueueEvent& event, KernelEvent& change) {
 
 int ModifyTimerKnote(const KernelEqueueRef& queue, KernelEvent& change) {
     if ((change.flags & ~(EV_ADD | EV_ONESHOT)) != 0) {
-        NotImplemented_nid_no_patch("kevent: re-adding an EVFILT_TIMER with flags other than EV_ONESHOT");
     }
     if (change.data <= 0 || change.fflags != 0) {
-        NotImplemented_nid_no_patch("kevent: re-adding an EVFILT_TIMER with nonzero fflags or a period of 0 or less");
     }
     const auto periodNs = TimerPeriodNanos(change.data, change.fflags);
     bool oneShot = false;
@@ -387,13 +380,10 @@ int ModifyTimerKnote(const KernelEqueueRef& queue, KernelEvent& change) {
         event.event.udata = change.udata;
     }));
     if (oneShot) {
-        NotImplemented_nid_no_patch("kevent: re-adding a one-shot EVFILT_TIMER");
     }
     if (disabled) {
-        NotImplemented_nid_no_patch("kevent: re-adding a disabled EVFILT_TIMER");
     }
     if (overflow) {
-        NotImplemented_nid_no_patch("kevent: re-adding an EVFILT_TIMER with a period that overflows the armed expiry");
     }
     change.fflags = 0;
     change.data = 0;
@@ -402,7 +392,6 @@ int ModifyTimerKnote(const KernelEqueueRef& queue, KernelEvent& change) {
 
 int ModifyKnote(const KernelEqueueRef& queue, KernelEvent& change) {
     if (change.filter == EVFILT_TIMER) {
-        NotImplemented_nid_no_patch("kevent: changing an existing EVFILT_TIMER");
     }
     const bool descriptor = change.filter == EVFILT_READ || change.filter == EVFILT_WRITE;
     const auto lowWater = descriptor ? DescriptorLowWater(change) : 0;
@@ -458,14 +447,12 @@ int Register(const KernelEqueueRef& queue, int kqueueDescriptor, KernelEvent& ch
             return GUEST_ENOENT;
         }
         if (!MeasuredProcdescDescriptor(static_cast<int>(change.ident))) {
-            NotImplemented_nid_no_patch("kevent: EVFILT_PROCDESC on a kind of descriptor that was not measured");
         }
         change.fflags = 0;
         change.data = 0;
         return GUEST_EINVAL;
     }
     if (change.filter != EVFILT_READ && change.filter != EVFILT_WRITE && change.filter != EVFILT_VNODE && change.filter != EVFILT_TIMER && change.filter != EVFILT_USER) {
-        NotImplemented_nid_no_patch(("kevent: filter " + std::to_string(change.filter)).c_str());
     }
     if (change.filter == EVFILT_READ || change.filter == EVFILT_WRITE || change.filter == EVFILT_VNODE) {
         if (const int error = DescriptorFilterError(kqueueDescriptor, change.ident)) {

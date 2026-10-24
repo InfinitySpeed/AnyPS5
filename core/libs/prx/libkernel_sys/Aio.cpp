@@ -206,12 +206,10 @@ int Queue(GuestAiocb* user, int opcode) {
     FileStat status{};
     if (_fstat_nid_postfix(request.fildes, &status) != 0) return fail(GuestEbadf);
     const auto type = static_cast<std::uint16_t>(status.st_mode & TypeMask);
-    if (type == TypeSocket) NotImplemented_nid_no_patch("aio on a socket");
     const bool vnode = type != 0 && type != TypeFifo;
     if (opcode == LioSync && !vnode) return fail(GuestEinval);
     if (opcode != LioSync && request.offset < 0) return fail(GuestEinval);
     user->kernelinfo = reinterpret_cast<void*>(aio.nextId++);
-    if (notify != SigevNone) NotImplemented_nid_no_patch("aio completion delivering a signal or a kevent");
     user->error = GuestEinprogress;
     if (type != TypeRegular && type != TypeDirectory) return fail(GuestEopnotsupp);
     auto job = std::make_shared<Job>(Job{user, request.fildes, opcode, request.offset, request.buf, request.nbytes});

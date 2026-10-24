@@ -233,7 +233,6 @@ static_assert(sizeof(PackedJob) == 32);
 int Append(AjmBatchInfo* info, const JobHeader& header, const AjmBuffer* inputs, const AjmBuffer* outputs) {
     if (!info || !info->p_buffer) return SCE_AJM_ERROR_INVALID_PARAMETER;
     if (header.inputCount > 0xffu || header.outputCount > 0xffu || header.parameterSize > sizeof(header.parameters) || header.sidebandSize > 0xffffffffu) return SCE_AJM_ERROR_INVALID_PARAMETER;
-    if ((header.inputCount && !inputs) || (header.outputCount && !outputs)) NotImplemented_nid_no_patch("AJM batch job with a null buffer list and a nonzero buffer count");
     const std::size_t parameterBytes = (header.parameterSize + 7u) & ~std::size_t{7};
     const std::size_t bytes = sizeof(PackedJob) + (header.inputCount + header.outputCount) * sizeof(AjmBuffer) + parameterBytes;
     if (info->offset > info->size || bytes > info->size - info->offset) return SCE_AJM_ERROR_OUT_OF_RESOURCES;
@@ -385,7 +384,6 @@ constexpr int AT9_MULTICHANNEL_BLOCK_OVERRUN = 0x7F000001;
 
 int DecodeAt9Frame(Instance& instance, const std::uint8_t* data, int size, std::uint8_t* pcm, std::uint32_t encoding, std::size_t sampleBytes, int* used) {
     if (instance.vibrationDecoder) {
-        if (encoding > 2) NotImplemented_nid_no_patch("AJM ATRAC9 vibration PCM encoding other than PCM16, PCM32 and float");
         int samples = 0;
         if (encoding == 0) samples = atrac9_decode_pcm16(instance.vibrationDecoder, data, size, reinterpret_cast<std::int16_t*>(pcm), used);
         else if (encoding == 2) samples = atrac9_decode_float(instance.vibrationDecoder, data, size, reinterpret_cast<float*>(pcm), used);
@@ -441,10 +439,8 @@ void ClearResampler(Instance& instance) {
 }
 
 std::int32_t InitializePcm(Instance& instance, const std::uint8_t* parameters, std::uint64_t size) {
-    if (size != 12) NotImplemented_nid_no_patch("sceAjmBatchJobInitialize (codec 23 parameters other than 12 bytes)");
     std::uint32_t words[3] = {};
     std::memcpy(words, parameters, sizeof(words));
-    if (words[0] != 0) NotImplemented_nid_no_patch("sceAjmBatchJobInitialize (codec 23 input format other than 0, interleaved s16)");
     if (words[1] == 0 || words[1] > 8 || words[2] == 0) return AJM_RESULT_INVALID_PARAMETER;
     instance.pcmChannels = words[1];
     instance.pcmSampleRate = words[2];
@@ -468,8 +464,6 @@ std::int32_t InitializeInstance(Instance& instance, const std::uint8_t* paramete
         if (channels == 0 || channels > 8 || sampleRate == 0) return AJM_RESULT_INVALID_PARAMETER;
         std::uint32_t mappingFamily = 0;
         if (size >= 12) std::memcpy(&mappingFamily, parameters + 8, sizeof(mappingFamily));
-        if (sampleRate != 48000) NotImplemented_nid_no_patch("sceAjmBatchJobInitialize (Opus sample rate other than 48000)");
-        if (mappingFamily > 1 && mappingFamily != 255) NotImplemented_nid_no_patch("sceAjmBatchJobInitialize (Opus mapping family other than 0, 1 or 255)");
         if (mappingFamily == 0 && channels > 2) return AJM_RESULT_INVALID_PARAMETER;
         instance.opusChannels = channels;
         instance.opusMappingFamily = mappingFamily;
@@ -1211,25 +1205,18 @@ void OpenOpusFromPacket(Instance& instance, const std::uint8_t* data, std::size_
 }
 
 void RunPcm(Instance& instance, const JobHeader& job, const AjmBuffer* inputs, const AjmBuffer* outputs) {
-    if (job.flags & ~SIDEBAND_STREAM) NotImplemented_nid_no_patch("AJM codec 23 run with flags other than SIDEBAND_STREAM");
     const auto encoding = PcmEncoding(instance);
     if (encoding > 2) throw std::runtime_error("AJM codec 23: PCM encoding " + std::to_string(encoding) + " is not implemented");
-    if (instance.resampler.change != 0.0f) NotImplemented_nid_no_patch("AJM codec 23 run with a resample ratio change per sample");
-    if (instance.gapless.totalSamples != 0 || instance.gapless.skipSamples != 0) NotImplemented_nid_no_patch("AJM codec 23 run with gapless decode counts");
-    if (instance.pcmResampled) NotImplemented_nid_no_patch("AJM codec 23 run after a resampled run without an initialize or context clear in between");
     const JobInput input(job, inputs);
     PcmOutputs pcmOutputs(outputs, job.outputCount);
     const std::size_t channels = instance.pcmChannels;
     const std::size_t inputFrameBytes = channels * sizeof(std::int16_t);
     const std::size_t sampleBytes = encoding == 0 ? sizeof(std::int16_t) : sizeof(std::int32_t);
-    if (input.empty()) NotImplemented_nid_no_patch("AJM codec 23 run with an empty input");
-    if (input.size() % inputFrameBytes != 0) NotImplemented_nid_no_patch("AJM codec 23 run with an input that is not a whole number of frames");
     const std::size_t frames = input.size() / inputFrameBytes;
     const double ratio = instance.resampler.ratio;
     const std::size_t room = pcmOutputs.Room() / (channels * sampleBytes);
     std::size_t outputFrames = 0;
     while (outputFrames < room && static_cast<double>(outputFrames) * ratio < static_cast<double>(frames)) ++outputFrames;
-    if (static_cast<double>(outputFrames) * ratio < static_cast<double>(frames)) NotImplemented_nid_no_patch("AJM codec 23 run whose output cannot hold the whole resampled input");
     const auto sample = [&](std::size_t index, std::size_t channel) { return PcmValue(input.data() + (std::min(index, frames - 1) * channels + channel) * sizeof(std::int16_t), 0); };
     std::vector<std::uint8_t> frame(channels * sampleBytes);
     for (std::size_t output = 0; output < outputFrames; ++output) {
@@ -1565,7 +1552,6 @@ void ClearContext(Instance& instance) {
 }
 
 void CheckAacFlags(std::uint64_t flags) {
-    if ((flags >> 32u) & ~((M4AAC_ENABLE_SBR_DECODE | M4AAC_ENABLE_NONDELAY_OUTPUT | M4AAC_SURROUND_INTERLEAVE_ORDERS) >> 32u)) NotImplemented_nid_no_patch("sceAjmInstanceCreate (M4AAC codec flags other than ENABLE_SBR_DECODE, ENABLE_NONDELAY_OUTPUT and the surround interleave orders)");
 }
 
 std::size_t ControlInitializeSize(std::uint32_t codec) {
@@ -1574,7 +1560,7 @@ std::size_t ControlInitializeSize(std::uint32_t codec) {
     case CODEC_AT9: return 8;
     case CODEC_M4AAC: return 8;
     case CODEC_OPUS: return 12;
-    default: NotImplemented_nid_no_patch("sceAjmBatchJobControl (INITIALIZE for a codec other than MP3, ATRAC9, M4AAC and Opus)"); return 0;
+    return 0;
     }
 }
 
@@ -1583,7 +1569,6 @@ void Control(Instance& instance, const JobHeader& job, const AjmBuffer* inputs) 
     const std::size_t inputSize = job.inputCount ? inputs[0].size : 0;
     const std::size_t gaplessSize = (job.flags & SIDEBAND_GAPLESS_DECODE) ? sizeof(SidebandGaplessDecode) : 0;
     const std::size_t initializeSize = (job.flags & CONTROL_INITIALIZE) ? ControlInitializeSize(instance.codec) : 0;
-    if (inputSize != gaplessSize + initializeSize) NotImplemented_nid_no_patch("sceAjmBatchJobControl (sideband input size other than the gapless decode and the codec's initialize parameters)");
     std::int32_t result = 0;
     if (job.flags & CONTROL_RESET) ClearContext(instance);
     if (job.flags & CONTROL_INITIALIZE) result = InitializeInstance(instance, input + gaplessSize, initializeSize);
@@ -1667,9 +1652,7 @@ void Execute(const JobHeader& job, const AjmBuffer* inputs, const AjmBuffer* out
         } else if (instance->codec != CODEC_AT9 && instance->codec != CODEC_MP3 && instance->codec != CODEC_M4AAC && instance->codec != CODEC_PCM && instance->codec != CODEC_OPUS) {
             throw std::runtime_error("AJM: decoding codec " + std::to_string(instance->codec) + " is not implemented");
         } else if ((job.flags & RUN_GET_CODEC_INFO) && (job.flags & RUN_MULTIPLE_FRAMES)) {
-            NotImplemented_nid_no_patch("AJM run job with both RUN_GET_CODEC_INFO and RUN_MULTIPLE_FRAMES (sideband order)");
         } else if ((job.flags & RUN_GET_CODEC_INFO) && instance->codec != CODEC_AT9 && instance->codec != CODEC_M4AAC) {
-            NotImplemented_nid_no_patch("AJM RUN_GET_CODEC_INFO for a codec other than ATRAC9 and M4AAC");
         } else if (job.inputCount == 0 && job.outputCount == 0) {
             AJM_TRACE("[ajm] instance %u run flags 0x%llx without buffers, sideband %llu bytes\n", job.instance, static_cast<unsigned long long>(job.flags), static_cast<unsigned long long>(job.sidebandSize));
             WriteRunSideband(job, *instance, 0, 0, 0, 0, CurrentFormat(*instance));
@@ -1813,10 +1796,6 @@ int APS5_VABI sceAjmBatchJobSetGaplessDecode(AjmBatchInfo* info, uint32_t instan
 
 int APS5_VABI sceAjmBatchJobControl(AjmBatchInfo* info, uint32_t instance, uint64_t flags, const void* sideband_input, size_t sideband_input_size, void* sideband_output, size_t sideband_output_size) {
     constexpr std::uint64_t supported = CONTROL_RESET | CONTROL_INITIALIZE | SIDEBAND_GAPLESS_DECODE;
-    if (flags == 0 || (flags & ~supported) != 0) NotImplemented_nid_no_patch("sceAjmBatchJobControl (flags other than a combination of RESET, INITIALIZE and SIDEBAND_GAPLESS_DECODE)");
-    if ((flags & SIDEBAND_GAPLESS_DECODE) != 0 && (flags & CONTROL_RESET) == 0) NotImplemented_nid_no_patch("sceAjmBatchJobControl (SIDEBAND_GAPLESS_DECODE without RESET)");
-    if (sideband_output_size != sizeof(SidebandResult)) NotImplemented_nid_no_patch("sceAjmBatchJobControl (sideband output other than the 8-byte result)");
-    if (sideband_input_size != 0 && !sideband_input) NotImplemented_nid_no_patch("sceAjmBatchJobControl (null sideband input)");
     auto header = MakeHeader(JobKind::Control, instance, sideband_output, sideband_output_size);
     header.flags = flags;
     header.inputCount = sideband_input_size != 0 ? 1 : 0;

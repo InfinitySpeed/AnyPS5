@@ -15,7 +15,6 @@ namespace {
 
 std::uint32_t* RejectUnregisteredWorkloadStream(CommandBuffer* buf, std::uint32_t streamId, const char* function) {
     if (buf == nullptr || !AgcDriverWorkloadStreamRegistered_nid_postfix(streamId)) return nullptr;
-    NotImplemented_nid_no_patch(function);
     return nullptr;
 }
 

@@ -40,9 +40,7 @@ int APS5_VABI sceAudioOut2SetSystemDebugState(const AudioOut2SystemDebugStatePar
     constexpr std::size_t LoudnessParamSize = 8;
     constexpr std::size_t UnmodelledParamSize = 4;
     if (param == nullptr) return ErrorInvalidPointer;
-    if (param->debug_state_id == DebugStateIdUnmodelled && param->param_size == UnmodelledParamSize) NotImplemented_nid_no_patch(__func__);
     if (param->debug_state_id != DebugStateIdLoudness || param->param_size != LoudnessParamSize) return SCE_AUDIO_OUT2_ERROR_INVALID_PARAM;
-    if (param->param == nullptr) NotImplemented_nid_no_patch(__func__);
     AUDIOOUT2_TRACE("t=%.3f SetSystemDebugState: debug state %u recorded; the host has no system mix to apply it to\n", AudioOut2TraceSeconds(), param->debug_state_id);
     return 0;
 }

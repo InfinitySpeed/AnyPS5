@@ -752,7 +752,6 @@ int APS5_VABI nmount_nid_postfix(const KernelIovec* iov, unsigned int niov, int 
     (void)iov;
     (void)niov;
     (void)flags;
-    NotImplemented_nid_no_patch("nmount: mounting file systems");
     return -1;
 }
 
@@ -958,7 +957,6 @@ static bool CopyStatfs(KernelStatfs* destination, const KernelStatfs& source) {
 #elif defined(__APPLE__)
     return ::mach_vm_write(::mach_task_self(), first, reinterpret_cast<vm_offset_t>(&source), sizeof(source)) == KERN_SUCCESS;
 #else
-    NotImplemented_nid_no_patch("statfs: checked guest writes on this host");
     return false;
 #endif
 }

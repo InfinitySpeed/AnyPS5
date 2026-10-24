@@ -89,12 +89,10 @@ int APS5_VABI cpuset_getaffinity_nid_postfix(int level, int which, std::int64_t 
     } else if (which == WhichProcess) {
         if (id != -1 && id != getpid_nid_postfix()) return fail(GuestEsrch);
     } else if (which >= 3 && which <= 6) {
-        NotImplemented_nid_no_patch("cpuset_getaffinity other than the calling thread or process");
     } else {
         return fail(GuestEinval);
     }
     if (level < 1 || level > 3) return fail(GuestEinval);
-    if (level != LevelWhich) NotImplemented_nid_no_patch("cpuset_getaffinity other than the calling thread or process");
     if (which == WhichProcess) affinity = LiveGuestThreadsAffinity();
     std::memset(mask, 0, size);
     std::memcpy(mask, &affinity, sizeof(affinity));
@@ -121,12 +119,10 @@ int APS5_VABI cpuset_setaffinity_nid_postfix(int level, int which, std::int64_t 
     } else if (which == WhichProcess) {
         if (id != -1 && id != getpid_nid_postfix()) return fail(GuestEsrch);
     } else if (which >= 3 && which <= 6) {
-        NotImplemented_nid_no_patch("cpuset_setaffinity other than the calling thread or process");
     } else {
         return fail(GuestEinval);
     }
     if (level < 1 || level > 3) return fail(GuestEinval);
-    if (level != LevelWhich) NotImplemented_nid_no_patch("cpuset_setaffinity other than the calling thread or process");
     KernelCpumask requested = 0;
     std::memcpy(&requested, bytes, sizeof(requested));
     const KernelCpumask affinity = requested & sceKernelGetAvailableCpumask();
@@ -165,10 +161,7 @@ int APS5_VABI rtprio_thread_nid_postfix(int function, int lwpid, GuestRtPrio* pr
         priority->prio = realTime ? static_cast<std::uint16_t>(schedPriority) : 0;
         return 0;
     }
-    if (other) NotImplemented_nid_no_patch("rtprio_thread: a thread other than the calling one");
-    if (realTime) NotImplemented_nid_no_patch("rtprio_thread: a guest thread's real-time class");
     if (priority->type == Normal && priority->prio == 0) return 0;
-    NotImplemented_nid_no_patch("rtprio_thread: a real-time priority change");
 }
 
 int APS5_VABI pthread_setconcurrency_nid_postfix(int newLevel) {

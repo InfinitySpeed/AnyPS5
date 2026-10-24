@@ -116,7 +116,6 @@ int APS5_VABI ktimer_create_nid_postfix(int clock, const GuestSigevent* event, i
     while (id < TimerMax && g_ktimers[id].live) ++id;
     if (id == TimerMax) return static_cast<int>(Fail(GuestEagain));
     if (timerid == nullptr) return static_cast<int>(Fail(GuestEfault));
-    if (event == nullptr || event->notify != SigevNone) NotImplemented_nid_no_patch("ktimer_create delivering a signal");
     g_ktimers[id] = {true, clock, 0, 0};
     *timerid = id;
     return 0;

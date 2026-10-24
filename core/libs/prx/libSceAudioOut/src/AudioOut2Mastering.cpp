@@ -51,7 +51,6 @@ static_assert(offsetof(AudioOut2MasteringStates, limiter_states) + offsetof(Audi
 extern "C" {
 
 int APS5_VABI sceAudioOutMasteringInit(uint32_t flags) {
-    if (flags != 0) NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -61,7 +60,6 @@ int APS5_VABI sceAudioOutMasteringTerm(void) {
 
 int APS5_VABI sceAudioOutMasteringGetState(AudioOut2MasteringStatesHeader* state) {
     if (state == nullptr) APS5_INVALID_ARG_EX;
-    if (state->states_id != AUDIO_OUT_MASTERING_STATES_ID_DEFAULT) NotImplemented_nid_no_patch(__func__);
     auto* full = static_cast<AudioOut2MasteringStates*>(static_cast<void*>(state));
     std::memset(full->compressor_states.input_rms, 0, sizeof(full->compressor_states.input_rms));
     std::memset(full->compressor_states.compression_coeff, 0, sizeof(full->compressor_states.compression_coeff));
@@ -73,8 +71,6 @@ int APS5_VABI sceAudioOutMasteringGetState(AudioOut2MasteringStatesHeader* state
 
 int APS5_VABI sceAudioOutMasteringSetParam(const AudioOut2MasteringParamsHeader* param, uint32_t flags) {
     if (param == nullptr) APS5_INVALID_ARG_EX;
-    if (flags != 0) NotImplemented_nid_no_patch(__func__);
-    if (param->params_id != AUDIO_OUT_MASTERING_PARAMS_ID_DEFAULT) NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

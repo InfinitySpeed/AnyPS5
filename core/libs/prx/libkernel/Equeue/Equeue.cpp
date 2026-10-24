@@ -823,10 +823,8 @@ static int AddDescriptorEvent(KernelEqueue eq, int fd, std::size_t size, void* u
     const bool isPipe = !isSocket && filter == EVFILT_READ && !File::IsHostStream(fd) && GuestSockets::PipeReadState(fd, &available, &eof);
     const bool isFile = !isSocket && !isPipe && RegularFile(fd);
     if (!isSocket && !isPipe && !isFile && DescriptorIsOpen_nid_no_patch(fd)) {
-        NotImplemented_nid_no_patch(filter == EVFILT_READ ? "sceKernelAddReadEvent: descriptor that is neither a socket, the read end of a pipe nor a regular file" : "sceKernelAddWriteEvent: descriptor that is neither a socket nor a regular file");
     }
     if (size > 1 && !isPipe) {
-        NotImplemented_nid_no_patch(filter == EVFILT_READ ? "sceKernelAddReadEvent: low watermark" : "sceKernelAddWriteEvent: low watermark");
     }
     if (!isSocket && !isPipe && !isFile) {
         return SCE_KERNEL_ERROR_EBADF;

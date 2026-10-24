@@ -508,14 +508,12 @@ int APS5_VABI wait_nid_postfix(int* status) {
 int APS5_VABI execvp_nid_postfix(const char* file, char* const* arguments) {
     (void)file;
     (void)arguments;
-    NotImplemented_nid_no_patch("execvp: executable replacement");
     return -1;
 }
 
 int APS5_VABI execv_nid_postfix(const char* path, char* const* arguments) {
     (void)path;
     (void)arguments;
-    NotImplemented_nid_no_patch("execv: executable replacement");
     return -1;
 }
 
@@ -523,7 +521,6 @@ int APS5_VABI execve_nid_postfix(const char* path, char* const* arguments, char*
     (void)path;
     (void)arguments;
     (void)environment;
-    NotImplemented_nid_no_patch("execve: executable replacement");
     return -1;
 }
 
@@ -632,7 +629,6 @@ int APS5_VABI sysarch(int operation, void* parameters) {
     }
     const bool i386 = operation == i386GetFsBase || operation == i386GetGsBase;
     if (!i386 && operation != getFsBase && operation != getGsBase && operation != setGsBase)
-        NotImplemented_nid_no_patch(("sysarch: operation " + std::to_string(operation)).c_str());
 #if defined(__linux__) && defined(__x86_64__)
     if (parameters == nullptr) {
         *__error_nid_postfix() = guestFault;
@@ -660,7 +656,6 @@ int APS5_VABI sysarch(int operation, void* parameters) {
     return 0;
 #else
     static_cast<void>(parameters);
-    NotImplemented_nid_no_patch("sysarch: segment bases on this host");
     return 0;
 #endif
 }
