@@ -1,5 +1,7 @@
 #include "prx/libc/include/general/VabiMacros.hpp"
+#include "prx/libSceNpTrophy2/include/NpTrophy2Constants.hpp"
 #include "prx/libSceNpTrophy2/include/NpTrophy2Types.hpp"
+#include <cstddef>
 #include <cstdlib>
 #include <stdexcept>
 
@@ -33,6 +35,7 @@ int APS5_VABI sceNpTrophy2SystemRegisterTitleUpdateCallback(void);
 int APS5_VABI sceNpTrophy2SystemRemoveAll(void);
 int APS5_VABI sceNpTrophy2SystemRemoveTitleData(void);
 int APS5_VABI sceNpTrophy2SystemRemoveUserData(void);
+int APS5_VABI sceNpTrophy2GetRewardIcon(int, int, int, void*, std::size_t*);
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -103,4 +106,8 @@ int main() {
     Require(sceNpTrophy2SystemRemoveAll() == 0);
     Require(sceNpTrophy2SystemRemoveTitleData() == 0);
     Require(sceNpTrophy2SystemRemoveUserData() == 0);
+    std::size_t iconSize = 1234;
+    Require(sceNpTrophy2GetRewardIcon(1, 1, 1, nullptr, &iconSize) == SCE_NP_TROPHY2_ERROR_ICON_FILE_NOT_FOUND);
+    Require(iconSize == 0);
+    Require(sceNpTrophy2GetRewardIcon(1, 1, 1, nullptr, nullptr) == SCE_NP_TROPHY2_ERROR_ICON_FILE_NOT_FOUND);
 }
