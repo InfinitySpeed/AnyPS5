@@ -75,6 +75,7 @@ int APS5_VABI sceHmd2InternalLedDetectorStopBySlot(void);
 int APS5_VABI sceHmd2InternalSetDeviceConnection(void);
 int APS5_VABI sceHmd2InternalLedDetectorCloseBySlot(void);
 int APS5_VABI sceHmd2InternalSetSidetone(void);
+int APS5_VABI sceHmd2InternalGetDeviceId(void);
 }
 
 namespace {
@@ -342,6 +343,7 @@ int main() {
         Require(sceHmd2InternalSetDeviceConnection() == 0, "sceHmd2InternalSetDeviceConnection check");
         Require(sceHmd2InternalLedDetectorCloseBySlot() == 0, "sceHmd2InternalLedDetectorCloseBySlot check");
         Require(sceHmd2InternalSetSidetone() == 0, "sceHmd2InternalSetSidetone check");
+        Require(sceHmd2InternalGetDeviceId() == 0, "sceHmd2InternalGetDeviceId check");
     std::puts("HMD2 tests passed");
     return 0;
 }
