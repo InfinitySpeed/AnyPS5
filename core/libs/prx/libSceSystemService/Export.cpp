@@ -505,7 +505,6 @@ int APS5_VABI sceSystemServiceSwitchToVRApp(void) {
 }
 
 int APS5_VABI sceSystemServiceSwitchToNonVRApp(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
