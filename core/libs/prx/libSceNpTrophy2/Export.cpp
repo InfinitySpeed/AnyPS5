@@ -86,7 +86,6 @@ int APS5_VABI sceNpTrophy2SystemRegisterTitleUpdateCallback(void) {
 }
 
 int APS5_VABI sceNpTrophy2SystemRemoveAll(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
