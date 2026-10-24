@@ -717,7 +717,6 @@ int APS5_VABI sceShellCoreUtilDebugGetCffInfo(void) {
 }
 
 int APS5_VABI sceShellCoreUtilDebugSetCffStatus(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
