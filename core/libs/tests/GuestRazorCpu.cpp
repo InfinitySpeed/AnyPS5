@@ -29,6 +29,7 @@ int APS5_VABI sceRazorCpuUnTagBuffer(std::uint32_t category, void* buffer);
 int APS5_VABI sceRazorCpuBeginLogicalFileAccess(const char* filename, std::uint64_t tag, std::uint64_t size, std::uint8_t operation);
 int APS5_VABI sceRazorCpuEndLogicalFileAccess(void);
 int APS5_VABI sceRazorCpuFiberLogNameChange(void);
+int APS5_VABI sceRazorCpuFiberSwitch(void);
 }
 
 namespace {
@@ -90,6 +91,7 @@ int main() {
     Require(sceRazorCpuIsCapturing() == 0);
 
         Require(sceRazorCpuFiberLogNameChange() == 0);
+        Require(sceRazorCpuFiberSwitch() == 0);
     bool threw = false;
     try {
         sceRazorCpuGetDataTagStorageSize(16);
