@@ -134,6 +134,7 @@ int APS5_VABI scePadReadForTracker(std::int32_t, PadTrackerData*, std::int32_t);
 int APS5_VABI scePadReadBlasterForTracker(std::int32_t, PadBlasterTrackerData*, std::int32_t);
 int APS5_VABI scePadReadAstonForTracker(std::int32_t, PadAstonTrackerData*, std::int32_t);
 int APS5_VABI scePadUiReadState(std::int32_t, PadUiData*);
+int APS5_VABI scePadUiReadStateForTuning(std::int32_t, PadUiTuningData*);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -812,6 +813,8 @@ int main() {
     Require(scePadReadAstonForTracker(handle, &adata, 1) == 0);
     PadUiData udata{};
     Require(scePadUiReadState(handle, &udata) == PAD_OK);
+    PadUiTuningData utdata{};
+    Require(scePadUiReadStateForTuning(handle, &utdata) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
