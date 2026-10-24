@@ -359,7 +359,6 @@ int APS5_VABI sceHmdInternalPushVr2dData(const HmdVr2dData* data) {
 }
 
 int APS5_VABI sceHmdReprojectionClearUserEventEnd(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
