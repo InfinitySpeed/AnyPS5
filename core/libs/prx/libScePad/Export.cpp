@@ -894,8 +894,10 @@ int APS5_VABI scePadSetControllerTypeLeonardo(std::int32_t deviceId, std::int32_
 }
 
 int APS5_VABI scePadGetProfileLeonardo(std::int32_t handle, std::int32_t profileId, PadLeonardoProfile* profile) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    (void)profileId;
+    if (profile == nullptr) return PAD_ERROR_INVALID_ARG;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadSetProfileLeonardo(std::int32_t handle, std::int32_t profileId, PadLeonardoProfile* profile, std::uint32_t* result) {
