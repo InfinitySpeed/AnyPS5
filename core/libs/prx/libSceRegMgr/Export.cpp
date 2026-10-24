@@ -242,7 +242,6 @@ int APS5_VABI sceRegMgrDrvGetEntCnt(void) {
 }
 
 int APS5_VABI sceRegMgrDrvDataOpen(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
