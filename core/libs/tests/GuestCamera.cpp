@@ -89,6 +89,7 @@ int APS5_VABI sceCameraGetRegistryInfo(void);
 int APS5_VABI sceCameraAudioGetData2(void);
 int APS5_VABI sceCameraSetAppModuleFocus(void);
 int APS5_VABI sceCameraSetDefectivePixelCancellation(void);
+int APS5_VABI sceCameraGetDeviceID(void);
 }
 
 namespace {
@@ -201,5 +202,6 @@ int main() {
         Require(sceCameraAudioGetData2() == 0, "sceCameraAudioGetData2 check");
         Require(sceCameraSetAppModuleFocus() == 0, "sceCameraSetAppModuleFocus check");
         Require(sceCameraSetDefectivePixelCancellation() == 0, "sceCameraSetDefectivePixelCancellation check");
+        Require(sceCameraGetDeviceID() == 0, "sceCameraGetDeviceID check");
     return 0;
 }
