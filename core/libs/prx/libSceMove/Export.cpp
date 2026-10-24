@@ -148,7 +148,6 @@ int APS5_VABI sceMoveSetLightSphereForTracker(void) {
 }
 
 int APS5_VABI sceMoveWriteCalibrationInfo(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
