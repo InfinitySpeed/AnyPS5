@@ -73,6 +73,7 @@ extern "C" int APS5_VABI sceShellCoreUtilRequestCffUpdate(void);
 extern "C" int APS5_VABI sceShellCoreUtilGetCffConfig(void);
 extern "C" int APS5_VABI sceShellCoreUtilRemoveCffConfigFile(void);
 extern "C" int APS5_VABI sceShellCoreUtilDebugGetNumberOfCffItems(void);
+extern "C" int APS5_VABI sceShellCoreUtilDebugGetCffInfo(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -297,4 +298,5 @@ int main() {
     Require(sceShellCoreUtilGetCffConfig() == 0);
     Require(sceShellCoreUtilRemoveCffConfigFile() == 0);
     Require(sceShellCoreUtilDebugGetNumberOfCffItems() == 0);
+    Require(sceShellCoreUtilDebugGetCffInfo() == 0);
 }
