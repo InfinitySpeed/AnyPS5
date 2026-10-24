@@ -12,6 +12,7 @@
 
 extern "C" int APS5_VABI sceHmdInternalEventInitialize(void);
 extern "C" int APS5_VABI sceHmdInternalAnotherScreenOpen(void);
+extern "C" int APS5_VABI sceHmdReprojectionUnsetCallback(void);
 namespace {
 
 constexpr std::uint32_t LastSdkBeforeStartupState = 0x044fffff;
@@ -230,5 +231,6 @@ int main() {
         CheckDisconnected();
         Require(sceHmdInternalEventInitialize() == 0, "sceHmdInternalEventInitialize check");
         Require(sceHmdInternalAnotherScreenOpen() == 0, "sceHmdInternalAnotherScreenOpen check");
+        Require(sceHmdReprojectionUnsetCallback() == 0, "sceHmdReprojectionUnsetCallback check");
     }
 }
