@@ -15,7 +15,8 @@ namespace {
 
 std::uint32_t* RejectUnregisteredWorkloadStream(CommandBuffer* buf, std::uint32_t streamId, const char* function) {
     if (buf == nullptr || !AgcDriverWorkloadStreamRegistered_nid_postfix(streamId)) return nullptr;
-    return buf->current;
+    NotImplemented_nid_no_patch(function);
+    return nullptr;
 }
 
 }
@@ -99,6 +100,18 @@ std::uint32_t* APS5_VABI sceAgcAcbSetWorkloadStreamInactive(CommandBuffer* buf, 
 uint32_t* APS5_VABI sceAgcAcbPushMarker(CommandBuffer* buf, const char* str, uint32_t color) {
     (void)color;
     return Agc::Marker::Push(buf, str, __func__);
+}
+
+uint32_t* APS5_VABI sceAgcAcbPushMarkerSpan(CommandBuffer* buf, const char* str, uint32_t length, uint32_t color) {
+    (void)color;
+    return Agc::Marker::PushSpan(buf, str, length, __func__);
+}
+
+uint32_t* APS5_VABI sceAgcAcbSetMarkerSpan(CommandBuffer* buf, const char* str, uint32_t length, uint32_t color) {
+    (void)color;
+    auto* packet = Agc::Marker::PushSpan(buf, str, length, __func__);
+    Agc::Marker::Pop(buf, __func__);
+    return packet;
 }
 
 uint32_t* APS5_VABI sceAgcAcbPopMarker(CommandBuffer* buf) {
