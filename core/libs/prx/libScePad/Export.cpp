@@ -536,8 +536,9 @@ int APS5_VABI scePadSetExtensionReport(std::int32_t handle, const PadExtensionRe
 }
 
 int APS5_VABI scePadGetExtensionUnitInfo(std::int32_t handle, PadExtensionUnitInfo* info) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    if (info == nullptr) return PAD_ERROR_INVALID_ARG;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadEnableExtensionPort(bool enabled) {

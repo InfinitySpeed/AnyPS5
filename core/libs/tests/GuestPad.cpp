@@ -117,6 +117,7 @@ int APS5_VABI scePadGetUsbDetectionState(std::int32_t, PadUsbDetectionState*);
 int APS5_VABI scePadGetLotusIrCodeSetResult(std::int32_t, std::int32_t*, std::uint8_t*);
 int APS5_VABI scePadGetVersionInfo(std::int32_t, PadVersionInfo*);
 int APS5_VABI scePadGetTriggerEffectInternalState(std::int32_t, PadTriggerInternalState*);
+int APS5_VABI scePadGetExtensionUnitInfo(std::int32_t, PadExtensionUnitInfo*);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -764,6 +765,8 @@ int main() {
     Require(scePadGetVersionInfo(handle, &vinfo) == PAD_OK);
     PadTriggerInternalState tstate{};
     Require(scePadGetTriggerEffectInternalState(handle, &tstate) == PAD_OK);
+    PadExtensionUnitInfo einfo{};
+    Require(scePadGetExtensionUnitInfo(handle, &einfo) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
