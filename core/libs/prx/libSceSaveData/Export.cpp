@@ -324,7 +324,6 @@ int APS5_VABI sceSaveDataRestoreBackupDataForCdlg(void) {
 }
 
 int APS5_VABI sceSaveDataRestoreLoadSaveDataMemory(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
