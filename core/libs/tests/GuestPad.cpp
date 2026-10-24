@@ -694,6 +694,7 @@ int main() {
     Require(scePadGetSphereRadius(handle, &srad) == PAD_OK && srad == 0.0f);
     Require(scePadIsMoveReproductionModel(handle) == 0);
     Require(scePadGetAstonModel(handle) == 0);
+    Require(scePadSetAngularVelocityBiasCorrectionState(handle, true) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
