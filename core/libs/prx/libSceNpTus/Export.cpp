@@ -193,7 +193,6 @@ int APS5_VABI sceNpTssCreateNpTitleCtxA(std::uint32_t serviceLabel, int userId) 
 }
 
 int APS5_VABI sceNpTusCreateTitleCtx(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
