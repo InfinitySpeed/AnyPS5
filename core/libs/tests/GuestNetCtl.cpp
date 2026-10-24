@@ -66,6 +66,7 @@ int APS5_VABI sceNetCtlApCpStart(void);
 int APS5_VABI sceNetCtlApCpStop(void);
 int APS5_VABI sceNetCtlApAppInitWpaKey(void);
 int APS5_VABI sceNetCtlApRestart(void);
+int APS5_VABI sceNetBweCheckCallbackIpcInt(void);
 }
 
 namespace {
@@ -406,4 +407,5 @@ int main() {
     Require(sceNetCtlApCpStop() == 0);
     Require(sceNetCtlApAppInitWpaKey() == 0);
     Require(sceNetCtlApRestart() == 0);
+    Require(sceNetBweCheckCallbackIpcInt() == 0);
 }
