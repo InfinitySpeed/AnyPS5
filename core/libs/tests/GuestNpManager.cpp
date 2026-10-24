@@ -117,6 +117,7 @@ int APS5_VABI sceNpManagerIntDeleteLoginContext(void);
 int APS5_VABI sceNpManagerIntDeleteRequest(void);
 int APS5_VABI sceNpManagerIntGetAccessTokenViaImplicitFlow(void);
 int APS5_VABI sceNpManagerIntGetAccountAge(void);
+int APS5_VABI sceNpManagerIntGetAccountCountry(void);
 }
 
 extern "C" {
@@ -646,5 +647,6 @@ int main() {
         Require(sceNpManagerIntDeleteRequest() == 0, "sceNpManagerIntDeleteRequest check");
         Require(sceNpManagerIntGetAccessTokenViaImplicitFlow() == 0, "sceNpManagerIntGetAccessTokenViaImplicitFlow check");
         Require(sceNpManagerIntGetAccountAge() == 0, "sceNpManagerIntGetAccountAge check");
+        Require(sceNpManagerIntGetAccountCountry() == 0, "sceNpManagerIntGetAccountCountry check");
     return 0;
 }
