@@ -471,7 +471,6 @@ int APS5_VABI sceCameraAudioReset(void) {
 }
 
 int APS5_VABI sceCameraSetAutoExposureGain(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

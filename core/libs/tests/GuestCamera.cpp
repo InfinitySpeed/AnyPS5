@@ -119,6 +119,7 @@ int APS5_VABI sceCameraIsConfigChangeDone(void);
 int APS5_VABI sceCameraSetExposureGain(void);
 int APS5_VABI sceCameraSetVideoSync(void);
 int APS5_VABI sceCameraAudioReset(void);
+int APS5_VABI sceCameraSetAutoExposureGain(void);
 }
 
 namespace {
@@ -261,5 +262,6 @@ int main() {
         Require(sceCameraSetExposureGain() == 0, "sceCameraSetExposureGain check");
         Require(sceCameraSetVideoSync() == 0, "sceCameraSetVideoSync check");
         Require(sceCameraAudioReset() == 0, "sceCameraAudioReset check");
+        Require(sceCameraSetAutoExposureGain() == 0, "sceCameraSetAutoExposureGain check");
     return 0;
 }
