@@ -28,6 +28,7 @@ int APS5_VABI sceNpPartyLeave(void);
 int APS5_VABI sceNpPartyRegisterHandler(void);
 int APS5_VABI sceNpPartyRegisterPrivateHandler(void);
 int APS5_VABI sceNpPartySetVoiceChatPriority(void);
+int APS5_VABI sceNpPartyShowInvitationList(void);
 }
 
 namespace {
@@ -106,5 +107,6 @@ int main() {
         if (sceNpPartyRegisterHandler() != 0) return 1;
         if (sceNpPartyRegisterPrivateHandler() != 0) return 1;
         if (sceNpPartySetVoiceChatPriority() != 0) return 1;
+        if (sceNpPartyShowInvitationList() != 0) return 1;
     return 0;
 }
