@@ -24,6 +24,7 @@ int APS5_VABI sceSaveDataCheckBackupData(void);
 int APS5_VABI sceSaveDataCheckBackupDataForCdlg(void);
 int APS5_VABI sceSaveDataCheckBackupDataInternal(void);
 int APS5_VABI sceSaveDataCheckBackupDataLight(void);
+int APS5_VABI sceSaveDataCheckCloudData(void);
 }
 
 namespace {
@@ -108,6 +109,7 @@ int main() {
         Check(sceSaveDataCheckBackupDataForCdlg() == 0, "sceSaveDataCheckBackupDataForCdlg check");
         Check(sceSaveDataCheckBackupDataInternal() == 0, "sceSaveDataCheckBackupDataInternal check");
         Check(sceSaveDataCheckBackupDataLight() == 0, "sceSaveDataCheckBackupDataLight check");
+        Check(sceSaveDataCheckCloudData() == 0, "sceSaveDataCheckCloudData check");
     if (failures != 0) return 1;
     std::printf("savedata convert tests passed\n");
     return 0;
