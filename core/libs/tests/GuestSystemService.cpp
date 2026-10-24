@@ -26,6 +26,7 @@ extern "C" int APS5_VABI sceLncUtilGetSpmemAllocatorConfigValue(void);
 extern "C" int APS5_VABI sceCsbMgrInitialize(void);
 extern "C" int APS5_VABI sceCsbMgrTerminate(void);
 extern "C" int APS5_VABI sceCsbMgrCreateLocalSandbox(void);
+extern "C" int APS5_VABI sceCsbMgrDestroyLocalSandbox(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -203,4 +204,5 @@ int main() {
     Require(sceCsbMgrInitialize() == 0);
     Require(sceCsbMgrTerminate() == 0);
     Require(sceCsbMgrCreateLocalSandbox() == 0);
+    Require(sceCsbMgrDestroyLocalSandbox() == 0);
 }
