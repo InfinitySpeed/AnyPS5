@@ -43,6 +43,7 @@ int APS5_VABI sceNpTusChangeModeForOtherSaveDataOwners(void);
 int APS5_VABI sceNpTusDeleteMultiSlotDataVUser(void);
 int APS5_VABI sceNpTusDeleteMultiSlotDataVUserAsync(void);
 int APS5_VABI sceNpTssGetStorage(void);
+int APS5_VABI sceNpTssGetStorageAsync(void);
 }
 
 static constexpr int SIGNED_OUT = static_cast<int>(0x80550006);
@@ -315,5 +316,6 @@ int main() {
         Require(sceNpTusDeleteMultiSlotDataVUser() == 0);
         Require(sceNpTusDeleteMultiSlotDataVUserAsync() == 0);
         Require(sceNpTssGetStorage() == 0);
+        Require(sceNpTssGetStorageAsync() == 0);
     CheckTssTitleContexts();
 }
