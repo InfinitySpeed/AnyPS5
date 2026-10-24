@@ -22,6 +22,7 @@ int APS5_VABI sceNpPartyCreateA(void);
 int APS5_VABI sceNpPartyGetMemberInfo(void);
 int APS5_VABI sceNpPartyGetMembers(void);
 int APS5_VABI sceNpPartyGetStateAsUser(void);
+int APS5_VABI sceNpPartyGetVoiceChatPriority(void);
 }
 
 namespace {
@@ -94,5 +95,6 @@ int main() {
         if (sceNpPartyGetMemberInfo() != 0) return 1;
         if (sceNpPartyGetMembers() != 0) return 1;
         if (sceNpPartyGetStateAsUser() != 0) return 1;
+        if (sceNpPartyGetVoiceChatPriority() != 0) return 1;
     return 0;
 }

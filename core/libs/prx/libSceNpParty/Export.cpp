@@ -79,7 +79,6 @@ int APS5_VABI sceNpPartyGetStateAsUserA(std::int32_t, std::uint16_t* state) {
 }
 
 int APS5_VABI sceNpPartyGetVoiceChatPriority(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
