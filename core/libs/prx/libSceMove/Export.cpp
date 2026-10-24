@@ -120,7 +120,6 @@ int APS5_VABI sceMoveGetCalibrationInfo(void) {
 }
 
 int APS5_VABI sceMoveGetDeviceId(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
