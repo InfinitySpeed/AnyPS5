@@ -69,6 +69,7 @@ int APS5_VABI sceNetCtlApRestart(void);
 int APS5_VABI sceNetBweCheckCallbackIpcInt(void);
 int APS5_VABI sceNetBweStartInternetConnectionTestIpcInt(void);
 int APS5_VABI sceNetBweFinishInternetConnectionTestIpcInt(void);
+int APS5_VABI sceNetBweStartInternetConnectionTestBandwidthTestIpcInt(void);
 }
 
 namespace {
@@ -412,4 +413,5 @@ int main() {
     Require(sceNetBweCheckCallbackIpcInt() == 0);
     Require(sceNetBweStartInternetConnectionTestIpcInt() == 0);
     Require(sceNetBweFinishInternetConnectionTestIpcInt() == 0);
+    Require(sceNetBweStartInternetConnectionTestBandwidthTestIpcInt() == 0);
 }
