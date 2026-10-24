@@ -51,8 +51,6 @@ int APS5_VABI sceGnmValidateGetDiagnostics(void);
 int APS5_VABI sceGnmValidateOnSubmitEnabled(void);
 int APS5_VABI sceGnmValidateResetState(void);
 int APS5_VABI sceGnmValidationRegisterMemoryCheckCallback(void);
-int APS5_VABI sceGnmBeginWorkload(void);
-int APS5_VABI sceGnmCreateWorkloadStream(void);
 }
 
 namespace {
@@ -116,9 +114,7 @@ int main() {
     RequireAll(0, {
         sceGnmDriverTraceInProgress,
         sceGnmValidateOnSubmitEnabled,
-            sceGnmBeginWorkload,
-        sceGnmCreateWorkloadStream,
-});
+    });
     RequireAll(-1, {
         sceGnmGetDbgGcHandle,
     });
