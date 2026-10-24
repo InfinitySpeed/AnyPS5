@@ -126,7 +126,6 @@ int APS5_VABI sceAgcDriverSysIsGameClosed(void) {
 }
 
 int APS5_VABI sceAgcDriverTmpInitIdhs(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

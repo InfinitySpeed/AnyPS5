@@ -61,6 +61,7 @@ int APS5_VABI sceAgcDriverSuspendPointSubmitDirect(void);
 int APS5_VABI sceAgcDriverSysEnableSubmitDone45Exception(void);
 int APS5_VABI sceAgcDriverSysGetClientNumber(void);
 int APS5_VABI sceAgcDriverSysIsGameClosed(void);
+int APS5_VABI sceAgcDriverTmpInitIdhs(void);
 }
 
 static constexpr int Unavailable = static_cast<int>(0x8A6C9018);
@@ -160,4 +161,5 @@ int main() {
     Require(sceAgcDriverSysEnableSubmitDone45Exception() == 0);
     Require(sceAgcDriverSysGetClientNumber() == 0);
     Require(sceAgcDriverSysIsGameClosed() == 0);
+    Require(sceAgcDriverTmpInitIdhs() == 0);
 }
