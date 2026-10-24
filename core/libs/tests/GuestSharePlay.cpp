@@ -11,6 +11,7 @@ int APS5_VABI sceSharePlayInitialize(void*, std::size_t);
 int APS5_VABI sceSharePlayTerminate(void);
 int APS5_VABI sceSharePlayGetCurrentConnectionInfoA(SharePlayConnectionInfoA*);
 int APS5_VABI sceSharePlayProhibitController(std::uint8_t);
+int APS5_VABI sceSharePlayCrashDaemon(void);
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -57,4 +58,5 @@ int main() {
     Require(sceSharePlayGetCurrentConnectionInfoA(&info) == notInitialized);
     for (const auto value : std::as_bytes(std::span(&info, 1))) Require(value == std::byte{0x5a});
     Require(sceSharePlayTerminate() == notInitialized);
+    Require(sceSharePlayCrashDaemon() == 0);
 }
