@@ -69,6 +69,7 @@ extern "C" int APS5_VABI sceShellCoreUtilGetConsoleToken(void);
 extern "C" int APS5_VABI sceShellCoreUtilGetDeviceIdByDeviceUniqueId(void);
 extern "C" int APS5_VABI sceShellCoreUtilGetDeviceUniqueIdByDeviceId(void);
 extern "C" int APS5_VABI sceShellCoreUtilGetStreamingClientInfo(void);
+extern "C" int APS5_VABI sceShellCoreUtilRequestCffUpdate(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -289,4 +290,5 @@ int main() {
     Require(sceShellCoreUtilGetDeviceIdByDeviceUniqueId() == 0);
     Require(sceShellCoreUtilGetDeviceUniqueIdByDeviceId() == 0);
     Require(sceShellCoreUtilGetStreamingClientInfo() == 0);
+    Require(sceShellCoreUtilRequestCffUpdate() == 0);
 }
