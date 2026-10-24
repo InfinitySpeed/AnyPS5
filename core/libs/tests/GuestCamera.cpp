@@ -57,6 +57,7 @@ int APS5_VABI sceCameraSetSharpness(void);
 int APS5_VABI sceCamera2Initialize(void);
 int APS5_VABI sceCameraSetHue(void);
 int APS5_VABI sceCameraAccGetData(void);
+int APS5_VABI sceCamera2SetAttribute(void);
 }
 
 namespace {
@@ -137,5 +138,6 @@ int main() {
         Require(sceCamera2Initialize() == 0, "sceCamera2Initialize check");
         Require(sceCameraSetHue() == 0, "sceCameraSetHue check");
         Require(sceCameraAccGetData() == 0, "sceCameraAccGetData check");
+        Require(sceCamera2SetAttribute() == 0, "sceCamera2SetAttribute check");
     return 0;
 }
