@@ -536,8 +536,9 @@ int APS5_VABI scePadLastLotusButtonData(std::int32_t handle, std::uint32_t param
 }
 
 int APS5_VABI scePadReadStateExt(std::int32_t handle, PadDataExtended* data) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    if (data == nullptr) return PAD_ERROR_INVALID_ARG;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadSetExtensionReport(std::int32_t handle, const PadExtensionReport* report) {
