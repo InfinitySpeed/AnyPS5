@@ -411,7 +411,6 @@ int APS5_VABI sceCamera2SetGamma(void) {
 }
 
 int APS5_VABI sceCameraRemoveAppModuleFocus(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
