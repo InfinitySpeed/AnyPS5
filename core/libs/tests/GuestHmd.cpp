@@ -15,6 +15,7 @@ extern "C" int APS5_VABI sceHmdInternalAnotherScreenOpen(void);
 extern "C" int APS5_VABI sceHmdReprojectionUnsetCallback(void);
 extern "C" int APS5_VABI sceHmdInternalResetInertialSensor(void);
 extern "C" int APS5_VABI sceHmdReprojectionClearUserEventEnd(void);
+extern "C" int APS5_VABI sceHmdInternalCreateSharedMemory(void);
 namespace {
 
 constexpr std::uint32_t LastSdkBeforeStartupState = 0x044fffff;
@@ -236,5 +237,6 @@ int main() {
         Require(sceHmdReprojectionUnsetCallback() == 0, "sceHmdReprojectionUnsetCallback check");
         Require(sceHmdInternalResetInertialSensor() == 0, "sceHmdInternalResetInertialSensor check");
         Require(sceHmdReprojectionClearUserEventEnd() == 0, "sceHmdReprojectionClearUserEventEnd check");
+        Require(sceHmdInternalCreateSharedMemory() == 0, "sceHmdInternalCreateSharedMemory check");
     }
 }
