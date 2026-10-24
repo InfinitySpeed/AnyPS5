@@ -2604,7 +2604,6 @@ int APS5_VABI sceNetThreadCreate(Pthread* thread, const NetThreadParameter* para
 }
 
 int APS5_VABI sceNetThreadExit(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
