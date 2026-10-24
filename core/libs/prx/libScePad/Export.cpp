@@ -627,8 +627,9 @@ int APS5_VABI scePadGetCapability(std::int32_t deviceId, std::uint32_t* capabili
 }
 
 int APS5_VABI scePadShareOutputData(std::int32_t source, std::int32_t destination) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    (void)source;
+    (void)destination;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadShareOutputDataWithFunctionType(std::int32_t source, std::int32_t destination, std::uint32_t functionType) {

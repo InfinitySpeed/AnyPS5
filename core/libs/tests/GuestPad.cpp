@@ -49,6 +49,7 @@ int APS5_VABI scePadDisableDataConversion(std::int32_t, bool);
 int APS5_VABI scePadDisableTriggerEffect(std::int32_t, bool);
 int APS5_VABI scePadSetTriggerEffectStrength(std::int32_t, std::uint32_t);
 int APS5_VABI scePadSetUserNumber(std::int32_t, std::int32_t);
+int APS5_VABI scePadShareOutputData(std::int32_t, std::int32_t);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -606,6 +607,7 @@ int main() {
     Require(scePadDisableTriggerEffect(handle, false) == PAD_OK);
     Require(scePadSetTriggerEffectStrength(handle, 100) == PAD_OK);
     Require(scePadSetUserNumber(handle, 1) == PAD_OK);
+    Require(scePadShareOutputData(handle, handle) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
