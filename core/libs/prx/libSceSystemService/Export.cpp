@@ -493,7 +493,6 @@ int APS5_VABI sceShellCoreUtilStartUmmDictation(void) {
 }
 
 int APS5_VABI sceSystemServiceGetSpotifyTitleId(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
