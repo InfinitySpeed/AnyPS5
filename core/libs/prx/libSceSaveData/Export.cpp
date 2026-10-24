@@ -290,7 +290,6 @@ int APS5_VABI sceSaveDataManualDownload(void) {
 }
 
 int APS5_VABI sceSaveDataManualUpload(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
