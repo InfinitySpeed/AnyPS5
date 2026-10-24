@@ -129,7 +129,6 @@ int APS5_VABI sceNpAsmClientGetNpTitleId(void) {
     return 0;
 }
 int APS5_VABI sceNpAsmClientGetNpTitleToken(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceNpAsmClientGetNpTitleToken2(void) {
