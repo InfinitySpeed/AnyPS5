@@ -19,6 +19,7 @@ int APS5_VABI sceCameraGetFrameData(void);
 int APS5_VABI sceCameraIsValidFrameData(void);
 int APS5_VABI sceCameraStopByHandle(void);
 int APS5_VABI sceCameraGetDeviceIDWithoutOpen(void);
+int APS5_VABI sceCameraGetAttribute(void);
 }
 
 namespace {
@@ -61,5 +62,6 @@ int main() {
     RequireNotImplemented([] { sceCameraIsValidFrameData(); }, "sceCameraIsValidFrameData");
         Require(sceCameraStopByHandle() == 0, "sceCameraStopByHandle check");
         Require(sceCameraGetDeviceIDWithoutOpen() == 0, "sceCameraGetDeviceIDWithoutOpen check");
+        Require(sceCameraGetAttribute() == 0, "sceCameraGetAttribute check");
     return 0;
 }
