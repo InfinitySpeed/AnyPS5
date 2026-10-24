@@ -38,6 +38,7 @@ int APS5_VABI scePadSetUserColor(std::int32_t, std::uint32_t);
 int APS5_VABI scePadEnableSpecificDeviceClass(std::int32_t);
 int APS5_VABI scePadSetAutoPowerOffCount(std::int32_t);
 int APS5_VABI scePadEnableUsbConnection(bool);
+int APS5_VABI scePadEnableAutoDetect(bool);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -584,6 +585,7 @@ int main() {
     Require(scePadEnableSpecificDeviceClass(0) == PAD_OK);
     Require(scePadSetAutoPowerOffCount(0) == PAD_OK);
     Require(scePadEnableUsbConnection(true) == PAD_OK);
+    Require(scePadEnableAutoDetect(true) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
