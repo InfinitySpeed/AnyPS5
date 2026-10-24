@@ -82,7 +82,6 @@ int APS5_VABI sceNpTrophy2SystemRegisterTitleSyncedCallback(void) {
 }
 
 int APS5_VABI sceNpTrophy2SystemRegisterTitleUpdateCallback(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
