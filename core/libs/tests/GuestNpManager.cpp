@@ -44,6 +44,7 @@ int APS5_VABI sceNpAsmClientGetGameNpTitleToken(void);
 int APS5_VABI sceNpAsmClientGetGameTitleBanInfo(void);
 int APS5_VABI sceNpAsmClientGetNpComInfo2(void);
 int APS5_VABI sceNpAsmClientGetNpComInfo2A(void);
+int APS5_VABI sceNpAsmClientGetNpComInfo3(void);
 }
 
 extern "C" {
@@ -500,5 +501,6 @@ int main() {
         Require(sceNpAsmClientGetGameTitleBanInfo() == 0, "sceNpAsmClientGetGameTitleBanInfo check");
         Require(sceNpAsmClientGetNpComInfo2() == 0, "sceNpAsmClientGetNpComInfo2 check");
         Require(sceNpAsmClientGetNpComInfo2A() == 0, "sceNpAsmClientGetNpComInfo2A check");
+        Require(sceNpAsmClientGetNpComInfo3() == 0, "sceNpAsmClientGetNpComInfo3 check");
     return 0;
 }
