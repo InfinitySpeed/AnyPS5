@@ -1009,8 +1009,10 @@ int APS5_VABI scePadGetMotionSensorPosition(std::int32_t handle, PadMotionSensor
 }
 
 int APS5_VABI scePadGetSphereRadius(std::int32_t handle, float* radius) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    if (radius == nullptr) return PAD_ERROR_INVALID_ARG;
+    *radius = 0.0f;
+    return PAD_OK;
 }
 
 bool APS5_VABI scePadIsValidHandle(std::int32_t handle, std::int32_t portType) {
