@@ -38,6 +38,7 @@ int APS5_VABI sceCameraSetVideoSyncInternal(void);
 int APS5_VABI sceCameraSetConfigInternal(void);
 int APS5_VABI sceCameraSetAttributeInternal(void);
 int APS5_VABI sceCamera2SetWhiteBalance(void);
+int APS5_VABI sceCameraGetMmapConnectedCount(void);
 }
 
 namespace {
@@ -99,5 +100,6 @@ int main() {
         Require(sceCameraSetConfigInternal() == 0, "sceCameraSetConfigInternal check");
         Require(sceCameraSetAttributeInternal() == 0, "sceCameraSetAttributeInternal check");
         Require(sceCamera2SetWhiteBalance() == 0, "sceCamera2SetWhiteBalance check");
+        Require(sceCameraGetMmapConnectedCount() == 0, "sceCameraGetMmapConnectedCount check");
     return 0;
 }
