@@ -725,8 +725,8 @@ int APS5_VABI scePadSetLotusIrCodeSetData(std::int32_t handle, std::uint8_t pack
 }
 
 int APS5_VABI scePadSetLotusIrCodeSetEnd(std::int32_t handle) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadGetLotusIrCodeSetResult(std::int32_t handle, std::int32_t* result, std::uint8_t* deviceResult) {
