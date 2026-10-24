@@ -29,6 +29,7 @@ int APS5_VABI sceSaveDataCheckSaveDataBroken(void);
 int APS5_VABI sceSaveDataCheckSaveDataVersion(void);
 int APS5_VABI sceSaveDataCheckSaveDataVersionLatest(void);
 int APS5_VABI sceSaveDataCreateUploadData(void);
+int APS5_VABI sceSaveDataDebugGetThreadId(void);
 }
 
 namespace {
@@ -118,6 +119,7 @@ int main() {
         Check(sceSaveDataCheckSaveDataVersion() == 0, "sceSaveDataCheckSaveDataVersion check");
         Check(sceSaveDataCheckSaveDataVersionLatest() == 0, "sceSaveDataCheckSaveDataVersionLatest check");
         Check(sceSaveDataCreateUploadData() == 0, "sceSaveDataCreateUploadData check");
+        Check(sceSaveDataDebugGetThreadId() == 0, "sceSaveDataDebugGetThreadId check");
     if (failures != 0) return 1;
     std::printf("savedata convert tests passed\n");
     return 0;
