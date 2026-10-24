@@ -7,6 +7,7 @@ int APS5_VABI sceGameCustomDataDialogInitialize(void);
 int APS5_VABI sceGameCustomDataDialogOpenA(const void* param);
 int APS5_VABI sceGameCustomDataDialogUpdateStatus(void);
 int APS5_VABI sceGameCustomDataDialogGetStatus(void);
+int APS5_VABI sceGameCustomDataDialogGetResult(void* result);
 int APS5_VABI sceGameCustomDataDialogGetResultA(void* result);
 int APS5_VABI sceGameCustomDataDialogClose(void);
 int APS5_VABI sceGameCustomDataDialogTerminate(void);
@@ -50,6 +51,7 @@ int main() {
     Require(sceGameCustomDataDialogGetStatus() == kStatusFinished);
     Require(sceGameCustomDataDialogUpdateStatus() == kStatusFinished);
 
+    Require(sceGameCustomDataDialogGetResult(nullptr) == kErrArgNull);
     Require(sceGameCustomDataDialogGetResultA(nullptr) == kErrArgNull);
     Require(sceGameCustomDataDialogGetResultA(result) == 0);
     Require(result[0] == kResultUserCanceled);
