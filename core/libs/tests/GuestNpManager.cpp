@@ -135,6 +135,7 @@ int APS5_VABI sceNpManagerIntGetClientCredentialAccessToken(void);
 int APS5_VABI sceNpManagerIntGetCommunicationRestrictionStatus(void);
 int APS5_VABI sceNpManagerIntGetGameAccessToken(void);
 int APS5_VABI sceNpManagerIntGetIssuerId(void);
+int APS5_VABI sceNpManagerIntGetNpEnv(void);
 }
 
 extern "C" {
@@ -682,5 +683,6 @@ int main() {
         Require(sceNpManagerIntGetCommunicationRestrictionStatus() == 0, "sceNpManagerIntGetCommunicationRestrictionStatus check");
         Require(sceNpManagerIntGetGameAccessToken() == 0, "sceNpManagerIntGetGameAccessToken check");
         Require(sceNpManagerIntGetIssuerId() == 0, "sceNpManagerIntGetIssuerId check");
+        Require(sceNpManagerIntGetNpEnv() == 0, "sceNpManagerIntGetNpEnv check");
     return 0;
 }
