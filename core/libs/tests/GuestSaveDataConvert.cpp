@@ -43,6 +43,7 @@ int APS5_VABI sceSaveDataGetAutoUploadConditions(void);
 int APS5_VABI sceSaveDataGetAutoUploadRequestInfo(void);
 int APS5_VABI sceSaveDataGetAutoUploadSetting(void);
 int APS5_VABI sceSaveDataGetBoundPsnAccountCount(void);
+int APS5_VABI sceSaveDataGetClientThreadPriority(void);
 }
 
 namespace {
@@ -146,6 +147,7 @@ int main() {
         Check(sceSaveDataGetAutoUploadRequestInfo() == 0, "sceSaveDataGetAutoUploadRequestInfo check");
         Check(sceSaveDataGetAutoUploadSetting() == 0, "sceSaveDataGetAutoUploadSetting check");
         Check(sceSaveDataGetBoundPsnAccountCount() == 0, "sceSaveDataGetBoundPsnAccountCount check");
+        Check(sceSaveDataGetClientThreadPriority() == 0, "sceSaveDataGetClientThreadPriority check");
     if (failures != 0) return 1;
     std::printf("savedata convert tests passed\n");
     return 0;
