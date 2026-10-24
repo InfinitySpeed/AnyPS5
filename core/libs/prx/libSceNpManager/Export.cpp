@@ -328,7 +328,6 @@ int APS5_VABI sceNpManagerIntCheckNpState(void) {
     return 0;
 }
 int APS5_VABI sceNpManagerIntCheckNpStateA(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceNpManagerIntClearGameAccessToken(void) {
