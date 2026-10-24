@@ -243,7 +243,6 @@ int APS5_VABI sceAudioInSetConnections(void) {
 }
 
 int APS5_VABI sceAudioInSetPortConnections(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
