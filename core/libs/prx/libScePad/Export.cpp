@@ -326,7 +326,13 @@ int APS5_VABI scePadReadExt(std::int32_t handle, PadDataExtended* data, std::int
 
 int APS5_VABI scePadGetFeatureReport(std::int32_t handle, std::uint8_t reportId, void* data, std::size_t size) { NotImplemented_nid_no_patch(__func__); return 0; }
 
-int APS5_VABI scePadSetFeatureReport(std::int32_t handle, std::uint8_t reportId, const void* data, std::size_t size) { NotImplemented_nid_no_patch(__func__); return 0; }
+int APS5_VABI scePadSetFeatureReport(std::int32_t handle, std::uint8_t reportId, const void* data, std::size_t size) {
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    (void)reportId;
+    (void)data;
+    (void)size;
+    return PAD_OK;
+}
 
 int APS5_VABI scePadOutputReport(std::int32_t handle, std::uint8_t reportId, const void* data, std::uint64_t size) { NotImplemented_nid_no_patch(__func__); return 0; }
 
