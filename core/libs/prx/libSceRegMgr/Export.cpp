@@ -110,7 +110,6 @@ int APS5_VABI sceRegMgrSrvGetRegionStr(void) {
 }
 
 int APS5_VABI sceRegMgrBackupNeedMem(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
