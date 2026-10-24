@@ -1170,8 +1170,10 @@ int APS5_VABI scePadSetProcessFocus(const PadProcessFocusParameter* parameter) {
 }
 
 int APS5_VABI scePadVertualDeviceAddDevice(const PadVirtualDeviceParameter* parameter, PadVirtualDeviceId* deviceId) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!parameter || !deviceId) {
+        return PAD_ERROR_INVALID_ARG;
+    }
+    return PAD_OK;
 }
 
 int APS5_VABI scePadVirtualDeviceAddDevice(const PadVirtualDeviceParameter* parameter, PadVirtualDeviceId* deviceId) {
