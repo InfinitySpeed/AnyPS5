@@ -1047,8 +1047,9 @@ int APS5_VABI scePadMbusTerm(void) {
 }
 
 int APS5_VABI scePadConnectPort(std::int32_t userId, std::int32_t portType) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    (void)userId;
+    (void)portType;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadDisconnectPort(std::int32_t userId, std::int32_t portType) {
