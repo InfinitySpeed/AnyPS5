@@ -54,7 +54,6 @@ int APS5_VABI sceSharePlayGetCurrentConnectionInfo(void) {
 }
 
 int APS5_VABI sceSharePlayGetCurrentInfo(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
