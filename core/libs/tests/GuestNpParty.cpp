@@ -18,6 +18,7 @@ int APS5_VABI sceNpPartyGetMemberSessionInfo(std::uint16_t memberId, void* membe
 int APS5_VABI sceNpPartyGetMemberVoiceInfo(std::uint16_t asMemberId, std::uint16_t memberId, std::uint8_t* memberVoiceState);
 int APS5_VABI sceNpPartySendBinaryMessage(const void* sendParams);
 int APS5_VABI sceNpPartyCreate(void);
+int APS5_VABI sceNpPartyCreateA(void);
 }
 
 namespace {
@@ -86,5 +87,6 @@ int main() {
     if (!stateTests() || !lifecycleTests() || !notInPartyTests()) return 1;
     std::puts("NpParty tests passed");
         if (sceNpPartyCreate() != 0) return 1;
+        if (sceNpPartyCreateA() != 0) return 1;
     return 0;
 }
