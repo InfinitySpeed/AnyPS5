@@ -108,6 +108,7 @@ int APS5_VABI sceCameraRemoveAppModuleFocus(void);
 int APS5_VABI sceCameraGetAutoWhiteBalance(void);
 int APS5_VABI sceCameraGetDefectivePixelCancellation(void);
 int APS5_VABI sceCamera2Close(void);
+int APS5_VABI sceCamera2SetVideoSync(void);
 }
 
 namespace {
@@ -239,5 +240,6 @@ int main() {
         Require(sceCameraGetAutoWhiteBalance() == 0, "sceCameraGetAutoWhiteBalance check");
         Require(sceCameraGetDefectivePixelCancellation() == 0, "sceCameraGetDefectivePixelCancellation check");
         Require(sceCamera2Close() == 0, "sceCamera2Close check");
+        Require(sceCamera2SetVideoSync() == 0, "sceCamera2SetVideoSync check");
     return 0;
 }
