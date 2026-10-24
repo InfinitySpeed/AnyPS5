@@ -1050,7 +1050,8 @@ int APS5_VABI scePadReadForTracker(std::int32_t handle, PadTrackerData* data, st
 }
 
 int APS5_VABI scePadReadBlasterForTracker(std::int32_t handle, PadBlasterTrackerData* data, std::int32_t count) {
-    NotImplemented_nid_no_patch(__func__);
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    if (data == nullptr || count <= 0) return PAD_ERROR_INVALID_ARG;
     return 0;
 }
 

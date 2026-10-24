@@ -131,6 +131,7 @@ int APS5_VABI scePadSetLightBarForTracker(std::int32_t, const PadLightBarParam*)
 int APS5_VABI scePadReadExt(std::int32_t, PadDataExtended*, std::int32_t);
 int APS5_VABI scePadReadStateExt(std::int32_t, PadDataExtended*);
 int APS5_VABI scePadReadForTracker(std::int32_t, PadTrackerData*, std::int32_t);
+int APS5_VABI scePadReadBlasterForTracker(std::int32_t, PadBlasterTrackerData*, std::int32_t);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -803,6 +804,8 @@ int main() {
     Require(scePadReadStateExt(handle, &sedata) == PAD_OK);
     PadTrackerData tdata{};
     Require(scePadReadForTracker(handle, &tdata, 1) == 0);
+    PadBlasterTrackerData bdata{};
+    Require(scePadReadBlasterForTracker(handle, &bdata, 1) == 0);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
