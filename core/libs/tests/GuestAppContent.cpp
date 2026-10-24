@@ -34,6 +34,7 @@ int APS5_VABI sceAppContentAddcontShrink(void);
 int APS5_VABI sceAppContentAppParamGetString(void);
 int APS5_VABI sceAppContentDownload0Expand(void);
 int APS5_VABI sceAppContentDownload0Shrink(void);
+int APS5_VABI sceAppContentDownload1Expand(void);
 }
 
 static constexpr int ErrorParameter = static_cast<int>(0x80D90002);
@@ -261,6 +262,7 @@ int main() {
         Require(sceAppContentAppParamGetString() == 0);
         Require(sceAppContentDownload0Expand() == 0);
         Require(sceAppContentDownload0Shrink() == 0);
+        Require(sceAppContentDownload1Expand() == 0);
     std::filesystem::current_path(original);
     std::filesystem::remove_all(directory);
 }
