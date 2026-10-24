@@ -880,4 +880,5 @@ int main() {
     Require(scePadRemoteControlInsertData(nullptr) == PAD_ERROR_INVALID_ARG);
     Require(scePadRemoteControlInsertDataForAston(nullptr) == PAD_ERROR_INVALID_ARG);
     Require(scePadVirtualDeviceAddDevice(nullptr, nullptr) == PAD_ERROR_INVALID_ARG);
+    Require(scePadVertualDeviceAddDevice(nullptr, nullptr) == PAD_ERROR_INVALID_ARG);
 }
