@@ -52,6 +52,7 @@ int APS5_VABI sceGameLiveStreamingSetCameraFrameSetting(void);
 int APS5_VABI sceGameLiveStreamingSetServiceProviderPermission(void);
 int APS5_VABI sceGameLiveStreamingSetDefaultServiceProviderPermission(void);
 int APS5_VABI sceGameLiveStreamingSetInvitationSessionId(void);
+int APS5_VABI sceGameLiveStreamingStartGenerateStandbyScreenResource(void);
 }
 
 namespace {
@@ -145,4 +146,5 @@ int main() {
     Require(sceGameLiveStreamingSetServiceProviderPermission() == 0);
     Require(sceGameLiveStreamingSetDefaultServiceProviderPermission() == 0);
     Require(sceGameLiveStreamingSetInvitationSessionId() == 0);
+    Require(sceGameLiveStreamingStartGenerateStandbyScreenResource() == 0);
 }
