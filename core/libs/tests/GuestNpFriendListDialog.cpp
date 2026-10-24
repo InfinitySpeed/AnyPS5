@@ -4,6 +4,7 @@
 
 extern "C" {
 int APS5_VABI sceNpFriendListDialogInitialize(void);
+int APS5_VABI sceNpFriendListDialogOpen(const void* param);
 int APS5_VABI sceNpFriendListDialogOpenA(const void* param);
 int APS5_VABI sceNpFriendListDialogUpdateStatus(void);
 int APS5_VABI sceNpFriendListDialogGetStatus(void);
@@ -43,6 +44,7 @@ int main() {
     Require(sceNpFriendListDialogGetStatus() == kStatusInitialized);
     Require(sceNpFriendListDialogUpdateStatus() == kStatusInitialized);
 
+    Require(sceNpFriendListDialogOpen(nullptr) == kErrArgNull);
     Require(sceNpFriendListDialogOpenA(nullptr) == kErrArgNull);
     Require(sceNpFriendListDialogGetResultA(result) == kErrNotFinished);
 

@@ -30,6 +30,10 @@ int APS5_VABI sceNpFriendListDialogInitialize(void) {
     return 0;
 }
 
+int APS5_VABI sceNpFriendListDialogOpen(const void* param) {
+    return sceNpFriendListDialogOpenA(param);
+}
+
 int APS5_VABI sceNpFriendListDialogOpenA(const void* param) {
     const int status = g_status.load();
     if (status == COMMON_DIALOG_STATUS_NONE) return COMMON_DIALOG_ERROR_NOT_INITIALIZED;
