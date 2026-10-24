@@ -259,7 +259,6 @@ int APS5_VABI sceCameraGetProductInfo(void) {
 }
 
 int APS5_VABI sceCameraGetGamma(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
