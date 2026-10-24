@@ -42,6 +42,7 @@ int APS5_VABI sceSaveDataGetAppLaunchedUser(void);
 int APS5_VABI sceSaveDataGetAutoUploadConditions(void);
 int APS5_VABI sceSaveDataGetAutoUploadRequestInfo(void);
 int APS5_VABI sceSaveDataGetAutoUploadSetting(void);
+int APS5_VABI sceSaveDataGetBoundPsnAccountCount(void);
 }
 
 namespace {
@@ -144,6 +145,7 @@ int main() {
         Check(sceSaveDataGetAutoUploadConditions() == 0, "sceSaveDataGetAutoUploadConditions check");
         Check(sceSaveDataGetAutoUploadRequestInfo() == 0, "sceSaveDataGetAutoUploadRequestInfo check");
         Check(sceSaveDataGetAutoUploadSetting() == 0, "sceSaveDataGetAutoUploadSetting check");
+        Check(sceSaveDataGetBoundPsnAccountCount() == 0, "sceSaveDataGetBoundPsnAccountCount check");
     if (failures != 0) return 1;
     std::printf("savedata convert tests passed\n");
     return 0;
