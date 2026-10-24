@@ -100,6 +100,7 @@ struct GuestPollEntry {
     int descriptor;
     short events;
     short revents;
+std::int32_t APS5_VABI sceNetShowPolicy(void);
 };
 int APS5_VABI poll_nid_postfix(GuestPollEntry*, std::uint32_t, int);
 int* APS5_VABI __error_nid_postfix();
@@ -2215,4 +2216,5 @@ int main() {
         std::puts("skipped the IPv6 socket checks, the host has no usable IPv6 loopback");
         return 77;
     }
+    Require(sceNetShowPolicy() == 0);
 }
