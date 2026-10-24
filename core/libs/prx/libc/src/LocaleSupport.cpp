@@ -285,11 +285,9 @@ GuestLocale::String* APS5_VABI NumpunctTruename(GuestLocale::String* result, con
 const GuestLocale::NumpunctVtable g_numpunctVtable{{DestroyCollate, DeleteCollate, RetainFacet, ReleaseFacet}, NumpunctDecimalPoint, NumpunctThousandsSep, NumpunctGrouping, NumpunctFalsename, NumpunctTruename};
 
 void APS5_VABI NumPutMethodUnsupported() {
-    NotImplemented_nid_no_patch("num_put<char>::do_put");
 }
 
 void APS5_VABI TimePutMethodUnsupported() {
-    NotImplemented_nid_no_patch("time_put<char>::do_put");
 }
 
 const GuestLocale::UnsupportedMethodsVtable g_numPutVtable{{DestroyCollate, DeleteCollate, RetainFacet, ReleaseFacet}, {NumPutMethodUnsupported, NumPutMethodUnsupported, NumPutMethodUnsupported, NumPutMethodUnsupported, NumPutMethodUnsupported, NumPutMethodUnsupported, NumPutMethodUnsupported, NumPutMethodUnsupported}};

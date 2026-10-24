@@ -149,12 +149,10 @@ int APS5_VABI sceGnmDebugReset(void) {
 }
 
 int APS5_VABI sceGnmDestroyWorkloadStream(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceGnmDingDongForWorkload(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -252,7 +250,6 @@ int APS5_VABI sceGnmDrawIndexIndirectMulti(std::uint32_t* cmdbuf, std::uint32_t 
 }
 
 int APS5_VABI sceGnmDrawIndexMultiInstanced(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -329,17 +326,14 @@ int APS5_VABI sceGnmDrawInitToDefaultContextState400(std::uint32_t* cmdbuf, std:
 }
 
 int APS5_VABI sceGnmDrawInitToDefaultContextStateInternalCommand(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceGnmDrawInitToDefaultContextStateInternalSize(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceGnmDrawOpaqueAuto(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -364,7 +358,6 @@ int APS5_VABI sceGnmDriverInternalRetrieveGnmInterfaceForValidation(void) {
 }
 
 int APS5_VABI sceGnmDriverInternalVirtualQuery(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -386,17 +379,14 @@ int APS5_VABI sceGnmFindResourcesPublic(void) {
 }
 
 int APS5_VABI sceGnmGetCoredumpAddress(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceGnmGetCoredumpMode(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceGnmGetCoredumpProtectionFaultTimestamp(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -405,7 +395,6 @@ int APS5_VABI sceGnmGetDbgGcHandle(void) {
 }
 
 int APS5_VABI sceGnmGetGpuBlockStatus(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -414,17 +403,14 @@ int APS5_VABI sceGnmGetGpuCoreClockFrequency(void) {
 }
 
 int APS5_VABI sceGnmGetGpuInfoStatus(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceGnmGetLastWaitedAddress(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceGnmGetNumTcaUnits(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -441,7 +427,6 @@ int APS5_VABI sceGnmGetPhysicalCounterFromVirtualized(void) {
 }
 
 int APS5_VABI sceGnmGetProtectionFaultTimeStamp(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -470,22 +455,18 @@ int APS5_VABI sceGnmGetResourceUserData(void) {
 }
 
 int APS5_VABI sceGnmGetShaderProgramBaseAddress(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceGnmGetShaderStatus(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceGnmGpuPaDebugEnter(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceGnmGpuPaDebugLeave(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -499,37 +480,30 @@ int APS5_VABI sceGnmInsertDingDongMarker(std::uint32_t* cmdbuf, std::uint32_t si
 }
 
 int APS5_VABI sceGnmInsertThreadTraceMarker(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceGnmIsCoredumpValid(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceGnmLogicalTcaUnitToPhysical(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceGnmMapComputeQueueWithPriority(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceGnmPaDisableFlipCallbacks(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceGnmPaEnableFlipCallbacks(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceGnmPaHeartbeat(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -538,7 +512,6 @@ int APS5_VABI sceGnmQueryResourceRegistrationUserMemoryRequirements(void) {
 }
 
 int APS5_VABI sceGnmRaiseUserExceptionEvent(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -547,7 +520,6 @@ int APS5_VABI sceGnmRegisterGdsResource(void) {
 }
 
 int APS5_VABI sceGnmRegisterGnmLiveCallbackConfig(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -564,7 +536,6 @@ int APS5_VABI sceGnmRegisterResource(void) {
 }
 
 int APS5_VABI sceGnmRequestFlipAndSubmitDoneForWorkload(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -700,22 +671,18 @@ int APS5_VABI sceGnmSetVgtControl(std::uint32_t* cmdbuf, std::uint32_t size, std
 }
 
 int APS5_VABI sceGnmSetWaveLimitMultiplier(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceGnmSetWaveLimitMultipliers(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceGnmSubmitAndFlipCommandBuffersForWorkload(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceGnmSubmitCommandBuffersForWorkload(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -817,7 +784,6 @@ int APS5_VABI sceGnmValidateGetDiagnostics(void) {
 }
 
 int APS5_VABI sceGnmValidateGetVersion(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

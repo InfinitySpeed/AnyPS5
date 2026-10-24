@@ -36,17 +36,14 @@ int APS5_VABI sceKeyboardGetKey2Char(std::int32_t handle, std::int32_t arrange, 
 }
 
 int APS5_VABI sceKeyboardConnectPort(std::int32_t first, std::int32_t second) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceKeyboardDebugGetDeviceId(std::int32_t handle, std::int32_t* deviceId) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceKeyboardDeviceOpen(std::uint64_t deviceId, std::int32_t index, std::uint32_t options) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -55,77 +52,62 @@ int APS5_VABI sceKeyboardDisconnectAll(void) {
 }
 
 int APS5_VABI sceKeyboardDisconnectDevice(std::int32_t deviceId) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceKeyboardDisconnectPort(std::int32_t first, std::int32_t second) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceKeyboardGetDeviceInfo(std::int32_t deviceId, KeyboardDeviceInfo* info) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceKeyboardGetHandle(std::int32_t userId, std::int32_t type, std::int32_t index) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceKeyboardMbusInit(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceKeyboardPadEmulateClose(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceKeyboardPadEmulateOpen(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceKeyboardSetProcessFocus(const KeyboardProcessFocus* focus) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceKeyboardSetProcessPrivilege(std::uint8_t privilege) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceDbgKeyboardClose() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceDbgKeyboardGetKey2Char() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceDbgKeyboardInit() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceDbgKeyboardOpen() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceDbgKeyboardRead() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceDbgKeyboardReadState() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

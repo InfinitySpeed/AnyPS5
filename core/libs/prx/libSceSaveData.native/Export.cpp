@@ -987,7 +987,6 @@ int APS5_VABI sceSaveDataGetConvertProgress(float* progress) {
 }
 
 int APS5_VABI sceSaveDataCancel(std::uint32_t cancelArgument) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -998,7 +997,6 @@ int APS5_VABI sceSaveDataDirNameSearch2(const SaveDataDirNameSearchCond* cond, S
 }
 
 int APS5_VABI sceSaveDataPrepareForTransferring(const SaveDataMountPoint* mountPoint, const SaveDataPrepareParam* param) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

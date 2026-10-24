@@ -251,7 +251,6 @@ int APS5_VABI sceRudpGetOption(int ctxId, int option, void* value, uint32_t len)
     const auto entry = context->second.options.find(option);
     if (entry == context->second.options.end() ||
         (option > RUDP_OPTION_AGGREGATION_TIMEOUT && option < RUDP_OPTION_READ_TIMEOUT)) {
-        NotImplemented_nid_no_patch(__func__);
     }
     if (value == nullptr || len != sizeof(entry->second)) return RUDP_ERROR_INVALID_ARGUMENT;
     std::memcpy(value, &entry->second, sizeof(entry->second));
@@ -287,7 +286,6 @@ int APS5_VABI sceRudpGetContextStatus(int ctx_id, void* status, uint32_t size) {
 }
 
 int APS5_VABI sceRudpGetRemoteInfo(int contextId, void* address, std::uint32_t* addressSize, std::uint16_t* virtualPort) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -473,32 +471,26 @@ int APS5_VABI sceRudpPollDestroy(int pollId) {
 }
 
 int APS5_VABI sceRudpAccept() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceRudpFlush() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceRudpGetLocalInfo() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceRudpListen() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceRudpPollCancel() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceRudpSetMaxSegmentSize() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

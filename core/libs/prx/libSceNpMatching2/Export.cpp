@@ -82,7 +82,6 @@ int APS5_VABI sceNpMatching2CreateContext(const NpMatching2CreateContextParamete
 }
 
 int APS5_VABI sceNpMatching2CreateJoinRoom() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -94,32 +93,26 @@ int APS5_VABI sceNpMatching2DestroyContext(std::uint16_t ctxId) {
 }
 
 int APS5_VABI sceNpMatching2GetRoomDataExternalList() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpMatching2GetRoomDataInternal() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpMatching2GetRoomMemberDataInternal() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpMatching2GetServerId() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpMatching2GetUserInfoList() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpMatching2GetWorldInfoList() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -132,17 +125,14 @@ int APS5_VABI sceNpMatching2Initialize(const NpMatching2InitializeParameter* par
 }
 
 int APS5_VABI sceNpMatching2JoinRoom() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpMatching2KickoutRoomMember() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpMatching2LeaveRoom() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -175,17 +165,14 @@ int APS5_VABI sceNpMatching2RegisterSignalingCallback(std::uint16_t ctxId, void*
 }
 
 int APS5_VABI sceNpMatching2SearchRoom() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpMatching2SendRoomChatMessage() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpMatching2SendRoomMessage() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -197,27 +184,22 @@ int APS5_VABI sceNpMatching2SetDefaultRequestOptParam(std::uint16_t ctxId, const
 }
 
 int APS5_VABI sceNpMatching2SetRoomDataExternal() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpMatching2SetRoomDataInternal() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpMatching2SetRoomMemberDataInternal() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpMatching2SetUserInfo() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpMatching2SignalingGetConnectionInfo() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

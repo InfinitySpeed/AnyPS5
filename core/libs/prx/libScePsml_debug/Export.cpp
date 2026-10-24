@@ -353,57 +353,46 @@ std::int32_t APS5_VABI scePsmlMfsrGetDispatchMfsrPacket900(void* context, void* 
 }
 
 int APS5_VABI scePsmlMfsr2ReleaseSharedResources(void* sharedResources) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI scePsmlMfsr2GetSharedResourcesInitRequirement(MfsrRequirement* requirement, const Mfsr2SharedResourcesParam* param) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI scePsmlMfsr2GetContextInitRequirement(MfsrRequirement* requirement, const Mfsr2ContextParam* param) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI scePsmlMfsr2ReleaseContext(void* context) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI scePsmlMfsr2GetDispatchPacketsSizeInDwords() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI scePsmlMfsr2CreateSharedResources(void** sharedResources, const Mfsr2SharedResourcesParam* param) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI scePsmlMfsr2GetDispatchPackets(void* context, const MfsrCommandBuffer* commandBuffer, const Mfsr2DispatchParam* param) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI scePsmlMfsr2CreateContext(void** context, const Mfsr2ContextParam* param) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI scePsmlMfsr2Init() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI scePsmlMfsrEnableSpecularAA() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI scePsmlMfsrEnableQuality8K() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

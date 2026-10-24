@@ -178,23 +178,18 @@ extern "C" {
 int APS5_VABI sceVrTrackerRegisterDeviceInternal(int device_type, int handle, int unk0, int);
 
 int APS5_VABI sceVrTrackerCpuProcess(const VrTrackerCpuProcessParam* param) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceVrTrackerGetResult(const VrTrackerGetResultParam* param, VrTrackerResult* result) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceVrTrackerGetTime(std::uint64_t* time) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceVrTrackerGpuSubmit(const VrTrackerGpuSubmitParam* param) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceVrTrackerGpuWait(const VrTrackerGpuWaitParam* param) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceVrTrackerInit(const VrTrackerInitParam* param) {
@@ -214,26 +209,21 @@ int APS5_VABI sceVrTrackerInit(const VrTrackerInitParam* param) {
     return g_initialized.compare_exchange_strong(expected, true) ? 0 : AlreadyInitialized;
 }
 int APS5_VABI sceVrTrackerCpuPopMarker() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceVrTrackerCpuPushMarker() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceVrTrackerGetLiveCaptureId() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceVrTrackerGetPlayAreaWarningInfo(void* info) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceVrTrackerGpuWaitAndCpuProcess() {
     return g_initialized.load() ? NotExecuteGpuSubmit : NotInit;
 }
 int APS5_VABI sceVrTrackerNotifyEndOfCpuProcess(const void* param) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceVrTrackerQueryMemory(const void* param, void* result) {
@@ -275,19 +265,15 @@ int APS5_VABI sceVrTrackerRegisterDeviceInternal(int device_type, int handle, in
     return 0;
 }
 int APS5_VABI sceVrTrackerResetAll() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceVrTrackerResetOrientationRelative(int device_type, int handle) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceVrTrackerSaveInternalBuffers() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceVrTrackerSetDeviceRejection() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceVrTrackerSetDurationUntilStatusNotTracking(int device_type, std::uint32_t) {
@@ -295,23 +281,18 @@ int APS5_VABI sceVrTrackerSetDurationUntilStatusNotTracking(int device_type, std
     return static_cast<std::uint32_t>(device_type) > DeviceGun ? ArgumentInvalid : 0;
 }
 int APS5_VABI sceVrTrackerSetExtendedMode() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceVrTrackerSetLEDBrightness() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceVrTrackerSetRestingMode() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceVrTrackerStartLiveCapture() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceVrTrackerStopLiveCapture() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceVrTrackerTerm() {
@@ -331,7 +312,6 @@ int APS5_VABI sceVrTrackerUnregisterDevice(int handle) {
     return ArgumentInvalid;
 }
 int APS5_VABI sceVrTrackerUpdateMotionSensorData(const void* param) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

@@ -43,77 +43,62 @@ int APS5_VABI sceContentExportFinish(std::int32_t expId) {
 }
 
 int APS5_VABI sceContentExportFromData(std::int32_t expId, const ContentExportParam* param, std::size_t contentLength, ContentExportDataCallback callback, void* userData, char* path, std::size_t pathBufferLength) {
- NotImplemented_nid_no_patch(__func__);
  return 0;
 }
 
 int APS5_VABI sceContentExportFromFile(std::int32_t expId, const ContentExportParam* param, const char* sourcePath, char* path, std::size_t pathBufferLength) {
- NotImplemented_nid_no_patch(__func__);
  return 0;
 }
 
 int APS5_VABI sceContentExportFromFileWithThumbnail(std::int32_t expId, const ContentExportParam* param, const char* sourcePath, const char* thumbnailPath, char* path, std::size_t pathBufferLength) {
- NotImplemented_nid_no_patch(__func__);
  return 0;
 }
 
 int APS5_VABI sceContentExportAddToFavorites(std::int64_t contentId) {
- NotImplemented_nid_no_patch(__func__);
  return 0;
 }
 
 int APS5_VABI sceContentExportDataProvideFunction(void) {
- NotImplemented_nid_no_patch(__func__);
  return 0;
 }
 
 int APS5_VABI sceContentExportFree(void) {
- NotImplemented_nid_no_patch(__func__);
  return 0;
 }
 
 int APS5_VABI sceContentExportFrom(void) {
- NotImplemented_nid_no_patch(__func__);
  return 0;
 }
 
 int APS5_VABI sceContentExportFromFileForSf(std::int32_t expId, const ContentExportParam* param, const ContentExportSfParam* sfParam, const char* sourcePath, const char* thumbnailPath, char* path, std::size_t pathBufferLength) {
- NotImplemented_nid_no_patch(__func__);
  return 0;
 }
 
 int APS5_VABI sceContentExportFromFileWithContentIdList(std::int32_t expId, const ContentExportParam* param, const char* sourcePath, const char* thumbnailPath, const std::int64_t* contentIds, std::uint32_t contentCount, char* path, std::size_t pathBufferLength) {
- NotImplemented_nid_no_patch(__func__);
  return 0;
 }
 
 int APS5_VABI sceContentExportFromFileWithTitleIdList(std::int32_t expId, const ContentExportParam* param, const char* sourcePath, const char* thumbnailPath, const char* titleIdList, char* path, std::size_t pathBufferLength) {
- NotImplemented_nid_no_patch(__func__);
  return 0;
 }
 
 int APS5_VABI sceContentExportInit(const ContentExportInitParam* param) {
- NotImplemented_nid_no_patch(__func__);
  return 0;
 }
 
 int APS5_VABI sceContentExportMalloc(void) {
- NotImplemented_nid_no_patch(__func__);
  return 0;
 }
 
 int APS5_VABI sceContentExportRemoveFromFavorites(std::int64_t contentId) {
- NotImplemented_nid_no_patch(__func__);
  return 0;
 }
 
 int APS5_VABI sceContentExportRenameContent(std::int64_t contentId, const char* name) {
- NotImplemented_nid_no_patch(__func__);
  return 0;
 }
 
 int APS5_VABI sceContentExportValidateContents(const std::int64_t* contentIds, std::uint32_t count) {
- NotImplemented_nid_no_patch(__func__);
  return 0;
 }
 
