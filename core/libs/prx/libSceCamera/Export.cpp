@@ -279,7 +279,6 @@ int APS5_VABI sceCameraGetContrast(void) {
 }
 
 int APS5_VABI sceCameraSetSaturation(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
