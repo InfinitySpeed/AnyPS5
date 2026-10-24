@@ -127,6 +127,7 @@ int APS5_VABI sceNpManagerIntGetAccountLanguage(void);
 int APS5_VABI sceNpManagerIntGetAccountLanguageA(void);
 int APS5_VABI sceNpManagerIntGetAccountNpEnv(void);
 int APS5_VABI sceNpManagerIntGetAccountType(void);
+int APS5_VABI sceNpManagerIntGetActiveSigninState(void);
 }
 
 extern "C" {
@@ -666,5 +667,6 @@ int main() {
         Require(sceNpManagerIntGetAccountLanguageA() == 0, "sceNpManagerIntGetAccountLanguageA check");
         Require(sceNpManagerIntGetAccountNpEnv() == 0, "sceNpManagerIntGetAccountNpEnv check");
         Require(sceNpManagerIntGetAccountType() == 0, "sceNpManagerIntGetAccountType check");
+        Require(sceNpManagerIntGetActiveSigninState() == 0, "sceNpManagerIntGetActiveSigninState check");
     return 0;
 }
