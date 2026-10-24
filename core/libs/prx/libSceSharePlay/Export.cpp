@@ -46,7 +46,6 @@ int APS5_VABI sceSharePlayProhibitController(std::uint8_t prohibited) {
 }
 
 int APS5_VABI sceSharePlayCrashDaemon(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
