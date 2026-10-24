@@ -696,7 +696,6 @@ int APS5_VABI sceHmdReprojectionStart(const HmdReprojectionFrameParameter* param
 }
 
 int APS5_VABI sceHmdInternalResetLedForVsh(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
