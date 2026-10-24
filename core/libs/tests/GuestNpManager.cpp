@@ -111,6 +111,7 @@ int APS5_VABI sceNpManagerIntClearUsedFlag(void);
 int APS5_VABI sceNpManagerIntClearVshAccessToken(void);
 int APS5_VABI sceNpManagerIntCreateAuthenticationTicket(void);
 int APS5_VABI sceNpManagerIntCreateLoginContext(void);
+int APS5_VABI sceNpManagerIntCreateLoginRequest(void);
 }
 
 extern "C" {
@@ -634,5 +635,6 @@ int main() {
         Require(sceNpManagerIntClearVshAccessToken() == 0, "sceNpManagerIntClearVshAccessToken check");
         Require(sceNpManagerIntCreateAuthenticationTicket() == 0, "sceNpManagerIntCreateAuthenticationTicket check");
         Require(sceNpManagerIntCreateLoginContext() == 0, "sceNpManagerIntCreateLoginContext check");
+        Require(sceNpManagerIntCreateLoginRequest() == 0, "sceNpManagerIntCreateLoginRequest check");
     return 0;
 }
