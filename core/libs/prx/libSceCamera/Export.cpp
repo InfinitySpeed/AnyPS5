@@ -335,7 +335,6 @@ int APS5_VABI sceCameraWaitForEveReady(void) {
 }
 
 int APS5_VABI sceCameraGetRegistryInfo(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
