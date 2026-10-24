@@ -55,6 +55,7 @@ extern "C" int APS5_VABI sceShellCoreUtilMicMuteKeyPressed(void);
 extern "C" int APS5_VABI sceShellCoreUtilSwitchMicMute(void);
 extern "C" int APS5_VABI sceShellCoreUtilNotifyStartEventToUniversalMicMute(void);
 extern "C" int APS5_VABI sceShellCoreUtilIsLotusMicActivated(void);
+extern "C" int APS5_VABI sceShellCoreUtilResetAllNoticeScreenSkipFlag(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -261,4 +262,5 @@ int main() {
     Require(sceShellCoreUtilSwitchMicMute() == 0);
     Require(sceShellCoreUtilNotifyStartEventToUniversalMicMute() == 0);
     Require(sceShellCoreUtilIsLotusMicActivated() == 0);
+    Require(sceShellCoreUtilResetAllNoticeScreenSkipFlag() == 0);
 }
