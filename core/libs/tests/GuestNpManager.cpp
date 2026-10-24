@@ -90,6 +90,7 @@ int APS5_VABI sceNpInGameMessageSendDataA(void);
 int APS5_VABI sceNpIntGetAppType(void);
 int APS5_VABI sceNpIntGetGamePresenceStatus(void);
 int APS5_VABI sceNpIntGetNpTitleId(void);
+int APS5_VABI sceNpIntGetNpTitleIdSecret(void);
 }
 
 extern "C" {
@@ -592,5 +593,6 @@ int main() {
         Require(sceNpIntGetAppType() == 0, "sceNpIntGetAppType check");
         Require(sceNpIntGetGamePresenceStatus() == 0, "sceNpIntGetGamePresenceStatus check");
         Require(sceNpIntGetNpTitleId() == 0, "sceNpIntGetNpTitleId check");
+        Require(sceNpIntGetNpTitleIdSecret() == 0, "sceNpIntGetNpTitleIdSecret check");
     return 0;
 }
