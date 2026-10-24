@@ -16,6 +16,7 @@ int APS5_VABI sceSaveDataGetConvertProgress(float*);
 int APS5_VABI sceSaveDataInitialize3(const void*);
 int APS5_VABI sceSaveDataTerminate();
 int APS5_VABI sceSaveDataGetEventResult(const void*, SaveDataEvent*);
+int APS5_VABI sceSaveDataBindPsnAccount(void);
 }
 
 namespace {
@@ -92,6 +93,7 @@ int main() {
     std::filesystem::current_path(previous);
     std::error_code error;
     std::filesystem::remove_all(root, error);
+        Check(sceSaveDataBindPsnAccount() == 0, "sceSaveDataBindPsnAccount check");
     if (failures != 0) return 1;
     std::printf("savedata convert tests passed\n");
     return 0;

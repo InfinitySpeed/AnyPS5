@@ -98,7 +98,6 @@ int APS5_VABI sceSaveDataAbort() {
 }
 
 int APS5_VABI sceSaveDataBindPsnAccount(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
