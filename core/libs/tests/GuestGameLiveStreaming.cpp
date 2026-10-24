@@ -50,6 +50,7 @@ int APS5_VABI sceGameLiveStreamingClearSocialFeedbackMessages(void);
 int APS5_VABI sceGameLiveStreamingPostSocialMessage(void);
 int APS5_VABI sceGameLiveStreamingSetCameraFrameSetting(void);
 int APS5_VABI sceGameLiveStreamingSetServiceProviderPermission(void);
+int APS5_VABI sceGameLiveStreamingSetDefaultServiceProviderPermission(void);
 }
 
 namespace {
@@ -141,4 +142,5 @@ int main() {
     Require(sceGameLiveStreamingPostSocialMessage() == 0);
     Require(sceGameLiveStreamingSetCameraFrameSetting() == 0);
     Require(sceGameLiveStreamingSetServiceProviderPermission() == 0);
+    Require(sceGameLiveStreamingSetDefaultServiceProviderPermission() == 0);
 }
