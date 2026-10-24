@@ -878,4 +878,5 @@ int main() {
     Require(scePadSetPS4BcVibrationMode(0) == PAD_OK);
     Require(scePadEnablePs4CompatibleMode(-1, true) == PAD_ERROR_INVALID_HANDLE);
     Require(scePadRemoteControlInsertData(nullptr) == PAD_ERROR_INVALID_ARG);
+    Require(scePadRemoteControlInsertDataForAston(nullptr) == PAD_ERROR_INVALID_ARG);
 }
