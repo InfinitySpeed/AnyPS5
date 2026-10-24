@@ -18,6 +18,7 @@ int APS5_VABI sceSaveDataTerminate();
 int APS5_VABI sceSaveDataGetEventResult(const void*, SaveDataEvent*);
 int APS5_VABI sceSaveDataBindPsnAccount(void);
 int APS5_VABI sceSaveDataBindPsnAccountForSystemBackup(void);
+int APS5_VABI sceSaveDataChangeDatabase(void);
 }
 
 namespace {
@@ -96,6 +97,7 @@ int main() {
     std::filesystem::remove_all(root, error);
         Check(sceSaveDataBindPsnAccount() == 0, "sceSaveDataBindPsnAccount check");
         Check(sceSaveDataBindPsnAccountForSystemBackup() == 0, "sceSaveDataBindPsnAccountForSystemBackup check");
+        Check(sceSaveDataChangeDatabase() == 0, "sceSaveDataChangeDatabase check");
     if (failures != 0) return 1;
     std::printf("savedata convert tests passed\n");
     return 0;
