@@ -753,7 +753,6 @@ int APS5_VABI sceShellCoreUtilLemSettingReset(void) {
 }
 
 int APS5_VABI sceShellCoreUtilIsEChassisVariant(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
