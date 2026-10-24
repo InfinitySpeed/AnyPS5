@@ -28,6 +28,7 @@ std::int32_t APS5_VABI sceCompanionHttpdGet2ndScreenStatus(void);
 std::int32_t APS5_VABI sceCompanionHttpdGetUserId(void);
 std::int32_t APS5_VABI sceCompanionHttpdInitialize2(void);
 std::int32_t APS5_VABI sceCompanionHttpdRegisterRequestBodyReceptionCallback(void);
+std::int32_t APS5_VABI sceCompanionHttpdRegisterRequestCallback2(void);
 }
 
 namespace {
@@ -134,4 +135,5 @@ int main() {
     Require(sceCompanionHttpdGetUserId() == 0);
     Require(sceCompanionHttpdInitialize2() == 0);
     Require(sceCompanionHttpdRegisterRequestBodyReceptionCallback() == 0);
+    Require(sceCompanionHttpdRegisterRequestCallback2() == 0);
 }
