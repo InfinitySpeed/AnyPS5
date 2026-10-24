@@ -91,6 +91,7 @@ int APS5_VABI scePadIsMoveReproductionModel(std::int32_t);
 int APS5_VABI scePadGetAstonModel(std::int32_t);
 int APS5_VABI scePadSetVibrationForce(std::int32_t, const PadVibrationParam*);
 int APS5_VABI scePadSetButtonRemappingInfo(std::int32_t, const PadButtonRemappingInfo*);
+int APS5_VABI scePadSetLightBarBlinking(std::int32_t, const PadLightBarBlinkingParameter*);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -700,6 +701,7 @@ int main() {
     PadVibrationParam vparam{};
     Require(scePadSetVibrationForce(handle, &vparam) == PAD_OK);
     Require(scePadSetButtonRemappingInfo(handle, nullptr) == PAD_OK);
+    Require(scePadSetLightBarBlinking(handle, nullptr) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
