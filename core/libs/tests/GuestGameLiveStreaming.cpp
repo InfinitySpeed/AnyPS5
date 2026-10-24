@@ -44,6 +44,7 @@ int APS5_VABI sceGameLiveStreamingSetMetadata(void);
 int APS5_VABI sceGameLiveStreamingSetSpoilerTag(void);
 int APS5_VABI sceGameLiveStreamingClearSpoilerTag(void);
 int APS5_VABI sceGameLiveStreamingSetPresetSocialFeedbackCommands(void);
+int APS5_VABI sceGameLiveStreamingClearPresetSocialFeedbackCommands(void);
 }
 
 namespace {
@@ -129,4 +130,5 @@ int main() {
     Require(sceGameLiveStreamingSetSpoilerTag() == 0);
     Require(sceGameLiveStreamingClearSpoilerTag() == 0);
     Require(sceGameLiveStreamingSetPresetSocialFeedbackCommands() == 0);
+    Require(sceGameLiveStreamingClearPresetSocialFeedbackCommands() == 0);
 }
