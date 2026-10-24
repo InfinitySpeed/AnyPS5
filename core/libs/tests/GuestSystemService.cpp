@@ -60,6 +60,7 @@ extern "C" int APS5_VABI sceShellCoreUtilResetNoticeScreenSkipFlag(void);
 extern "C" int APS5_VABI sceShellCoreUtilGetNoticeScreenSkipFlagByAppId(void);
 extern "C" int APS5_VABI sceShellCoreUtilGetPasscodeInputType(void);
 extern "C" int APS5_VABI sceShellCoreUtilGetPasscodeDisplayInfo(void);
+extern "C" int APS5_VABI sceShellCoreUtilNotifySystemResumeTelemetryInfo(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -271,4 +272,5 @@ int main() {
     Require(sceShellCoreUtilGetNoticeScreenSkipFlagByAppId() == 0);
     Require(sceShellCoreUtilGetPasscodeInputType() == 0);
     Require(sceShellCoreUtilGetPasscodeDisplayInfo() == 0);
+    Require(sceShellCoreUtilNotifySystemResumeTelemetryInfo() == 0);
 }
