@@ -1262,8 +1262,10 @@ int APS5_VABI scePadRemoteControlInsertData(const std::uint8_t* data) {
 }
 
 int APS5_VABI scePadRemoteControlInsertDataForAston(const std::uint8_t* data) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!data) {
+        return PAD_ERROR_INVALID_ARG;
+    }
+    return PAD_OK;
 }
 
 int APS5_VABI scePadGetFeatureReport2(std::int32_t handle, std::uint8_t reportId, void* data, std::size_t size) {
