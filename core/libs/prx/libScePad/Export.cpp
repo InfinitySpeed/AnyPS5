@@ -564,8 +564,9 @@ int APS5_VABI scePadSetVibrationStrength(std::int32_t handle, std::uint32_t stre
 }
 
 int APS5_VABI scePadSetLightBarBaseBrightness(std::int32_t handle, std::uint32_t brightness) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    (void)brightness;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadSetLightBarBlinking(std::int32_t handle, const PadLightBarBlinkingParameter* parameter) {
