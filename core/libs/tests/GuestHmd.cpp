@@ -24,6 +24,7 @@ extern "C" int APS5_VABI sceHmdReprojectionFinalize(void);
 extern "C" int APS5_VABI sceHmdInternalDfuStart(void);
 extern "C" int APS5_VABI sceHmdInternalSeparateModeClose(void);
 extern "C" int APS5_VABI sceHmdInternalCrashReportClose(void);
+extern "C" int APS5_VABI sceHmdInternalResetLedForVsh(void);
 namespace {
 
 constexpr std::uint32_t LastSdkBeforeStartupState = 0x044fffff;
@@ -254,5 +255,6 @@ int main() {
         Require(sceHmdInternalDfuStart() == 0, "sceHmdInternalDfuStart check");
         Require(sceHmdInternalSeparateModeClose() == 0, "sceHmdInternalSeparateModeClose check");
         Require(sceHmdInternalCrashReportClose() == 0, "sceHmdInternalCrashReportClose check");
+        Require(sceHmdInternalResetLedForVsh() == 0, "sceHmdInternalResetLedForVsh check");
     }
 }
