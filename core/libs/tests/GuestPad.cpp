@@ -107,6 +107,7 @@ int APS5_VABI scePadSetTriggerTuningParam(std::int32_t, const PadTriggerTuningPa
 int APS5_VABI scePadSetProfileHunt(std::int32_t, std::int32_t, PadHuntProfile*, std::uint32_t*);
 int APS5_VABI scePadSetSavedSettingInfo(std::int32_t, const PadSavedSettingInfo*);
 int APS5_VABI scePadSetProfileLeonardo(std::int32_t, std::int32_t, PadLeonardoProfile*, std::uint32_t*);
+int APS5_VABI scePadGetProfileInfo(std::int32_t, std::int32_t, PadProfileInfo*);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -734,6 +735,8 @@ int main() {
     Require(scePadSetSavedSettingInfo(handle, nullptr) == PAD_OK);
     std::uint32_t lres = 99;
     Require(scePadSetProfileLeonardo(handle, 0, nullptr, &lres) == PAD_OK && lres == 0);
+    PadProfileInfo pinfo{};
+    Require(scePadGetProfileInfo(0, 0, &pinfo) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
