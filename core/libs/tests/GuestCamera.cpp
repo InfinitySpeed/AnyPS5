@@ -105,6 +105,7 @@ int APS5_VABI sceCameraGetAutoExposureGain(void);
 int APS5_VABI sceCameraGetRegister(void);
 int APS5_VABI sceCamera2SetGamma(void);
 int APS5_VABI sceCameraRemoveAppModuleFocus(void);
+int APS5_VABI sceCameraGetAutoWhiteBalance(void);
 }
 
 namespace {
@@ -233,5 +234,6 @@ int main() {
         Require(sceCameraGetRegister() == 0, "sceCameraGetRegister check");
         Require(sceCamera2SetGamma() == 0, "sceCamera2SetGamma check");
         Require(sceCameraRemoveAppModuleFocus() == 0, "sceCameraRemoveAppModuleFocus check");
+        Require(sceCameraGetAutoWhiteBalance() == 0, "sceCameraGetAutoWhiteBalance check");
     return 0;
 }
