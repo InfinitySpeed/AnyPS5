@@ -30,6 +30,10 @@ int APS5_VABI sceGameCustomDataDialogInitialize(void) {
     return 0;
 }
 
+int APS5_VABI sceGameCustomDataDialogOpen(const void* param) {
+    return sceGameCustomDataDialogOpenA(param);
+}
+
 int APS5_VABI sceGameCustomDataDialogOpenA(const void* param) {
     const int status = g_status.load();
     if (status == COMMON_DIALOG_STATUS_NONE) return COMMON_DIALOG_ERROR_NOT_INITIALIZED;

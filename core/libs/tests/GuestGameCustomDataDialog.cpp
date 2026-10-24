@@ -4,6 +4,7 @@
 
 extern "C" {
 int APS5_VABI sceGameCustomDataDialogInitialize(void);
+int APS5_VABI sceGameCustomDataDialogOpen(const void* param);
 int APS5_VABI sceGameCustomDataDialogOpenA(const void* param);
 int APS5_VABI sceGameCustomDataDialogUpdateStatus(void);
 int APS5_VABI sceGameCustomDataDialogGetStatus(void);
@@ -43,6 +44,7 @@ int main() {
     Require(sceGameCustomDataDialogGetStatus() == kStatusInitialized);
     Require(sceGameCustomDataDialogUpdateStatus() == kStatusInitialized);
 
+    Require(sceGameCustomDataDialogOpen(nullptr) == kErrArgNull);
     Require(sceGameCustomDataDialogOpenA(nullptr) == kErrArgNull);
     Require(sceGameCustomDataDialogGetResultA(result) == kErrNotFinished);
 
