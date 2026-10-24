@@ -281,7 +281,6 @@ int APS5_VABI sceNpIntGetGamePresenceStatus(void) {
     return 0;
 }
 int APS5_VABI sceNpIntGetNpTitleId(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceNpIntGetNpTitleIdSecret(void) {
