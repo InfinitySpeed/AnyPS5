@@ -234,7 +234,6 @@ int APS5_VABI sceRegMgrToolDataCheckGet(void) {
 }
 
 int APS5_VABI sceRegMgrDrvGetUpdateCnt(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
