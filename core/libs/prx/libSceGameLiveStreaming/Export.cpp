@@ -88,7 +88,6 @@ int APS5_VABI sceGameLiveStreamingScreenOpenSeparateMode(void) {
 }
 
 int APS5_VABI sceGameLiveStreamingScreenSetMode(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
