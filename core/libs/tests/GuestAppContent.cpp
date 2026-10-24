@@ -29,6 +29,7 @@ int APS5_VABI sceAppContentDownloadDataFormat(const AppContentMountPoint*);
 int APS5_VABI sceAppContentAppParamGetInt(uint32_t, int32_t*);
 int APS5_VABI sceAppContentAddcontEnqueueDownloadByEntitlemetId(void);
 int APS5_VABI sceAppContentAddcontEnqueueDownloadSp(void);
+int APS5_VABI sceAppContentAddcontMountByEntitlemetId(void);
 }
 
 static constexpr int ErrorParameter = static_cast<int>(0x80D90002);
@@ -251,6 +252,7 @@ int main() {
     Require(sceAppContentGetAddcontInfoList(0, nullptr, 1, nullptr) == ErrorParameter);
         Require(sceAppContentAddcontEnqueueDownloadByEntitlemetId() == 0);
         Require(sceAppContentAddcontEnqueueDownloadSp() == 0);
+        Require(sceAppContentAddcontMountByEntitlemetId() == 0);
     std::filesystem::current_path(original);
     std::filesystem::remove_all(directory);
 }
