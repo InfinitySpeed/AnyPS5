@@ -19,6 +19,7 @@ int APS5_VABI sceMoveResetLightSphere(std::int32_t handle);
 int APS5_VABI sceMoveGetBluetoothAddress(void);
 int APS5_VABI sceMoveGetCalibrationInfo(void);
 int APS5_VABI sceMoveGetDeviceId(void);
+int APS5_VABI sceMoveIsReproductionModel(void);
 }
 
 namespace {
@@ -157,4 +158,5 @@ int main() {
     Require(sceMoveGetBluetoothAddress() == 0);
     Require(sceMoveGetCalibrationInfo() == 0);
     Require(sceMoveGetDeviceId() == 0);
+    Require(sceMoveIsReproductionModel() == 0);
 }
