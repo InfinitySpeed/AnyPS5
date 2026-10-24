@@ -36,6 +36,7 @@ int APS5_VABI sceRegMgrCntlGetFileName();
 int APS5_VABI sceRegMgrCntSetInitReinst();
 int APS5_VABI sceRegMgrIsInitOK();
 int APS5_VABI sceRegMgrGetInitError();
+int APS5_VABI sceRegMgrRecoverRegNvs();
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -84,4 +85,5 @@ int main() {
     Require(sceRegMgrCntSetInitReinst() == 0);
     Require(sceRegMgrIsInitOK() == 0);
     Require(sceRegMgrGetInitError() == 0);
+    Require(sceRegMgrRecoverRegNvs() == 0);
 }
