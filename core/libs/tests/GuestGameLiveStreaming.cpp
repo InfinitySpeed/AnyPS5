@@ -27,6 +27,7 @@ struct GameLiveStreamingProgramInfo;
 int APS5_VABI sceGameLiveStreamingGetProgramInfo(GameLiveStreamingProgramInfo*);
 int APS5_VABI sceGameLiveStreamingEnableLiveStreaming(bool isEnableLiveStreaming);
 int APS5_VABI sceGameLiveStreamingScreenInitialize(void);
+int APS5_VABI sceGameLiveStreamingScreenInitializeSeparateModeParameter(void);
 }
 
 namespace {
@@ -95,4 +96,5 @@ int main() {
     for (const std::uint8_t byte : programInfo) Require(byte == 0x7f);
     Require(sceGameLiveStreamingTerminate() == notInitialized);
     Require(sceGameLiveStreamingScreenInitialize() == 0);
+    Require(sceGameLiveStreamingScreenInitializeSeparateModeParameter() == 0);
 }
