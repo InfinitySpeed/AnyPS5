@@ -673,7 +673,6 @@ int APS5_VABI sceShellCoreUtilGetVRBaseMatRectangles(void) {
 }
 
 int APS5_VABI sceShellCoreUtilSetVRBaseMatRectangles(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
