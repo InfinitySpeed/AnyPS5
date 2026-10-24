@@ -51,6 +51,7 @@ int APS5_VABI scePadSetTriggerEffectStrength(std::int32_t, std::uint32_t);
 int APS5_VABI scePadSetUserNumber(std::int32_t, std::int32_t);
 int APS5_VABI scePadShareOutputData(std::int32_t, std::int32_t);
 int APS5_VABI scePadShareOutputDataWithFunctionType(std::int32_t, std::int32_t, std::uint32_t);
+int APS5_VABI scePadIsLightBarBaseBrightnessControllable(std::int32_t);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -610,6 +611,7 @@ int main() {
     Require(scePadSetUserNumber(handle, 1) == PAD_OK);
     Require(scePadShareOutputData(handle, handle) == PAD_OK);
     Require(scePadShareOutputDataWithFunctionType(handle, handle, 0) == PAD_OK);
+    Require(scePadIsLightBarBaseBrightnessControllable(handle) == 1);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);

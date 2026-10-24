@@ -676,8 +676,8 @@ int APS5_VABI scePadSetForceIntercepted(bool enabled) {
 }
 
 int APS5_VABI scePadIsLightBarBaseBrightnessControllable(std::int32_t handle) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    return 1;
 }
 
 int APS5_VABI scePadSwitchConnection(std::int32_t handle, std::uint32_t flags) {
