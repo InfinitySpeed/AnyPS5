@@ -458,7 +458,6 @@ int APS5_VABI sceAudio3dPortGetStatus(void) {
 }
 
 int APS5_VABI sceAudio3dReportRegisterHandler(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
