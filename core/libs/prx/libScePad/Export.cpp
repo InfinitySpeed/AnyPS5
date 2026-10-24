@@ -863,8 +863,9 @@ int APS5_VABI scePadGetSavedSettingInfo(std::int32_t handle, PadSavedSettingInfo
 }
 
 int APS5_VABI scePadSetSavedSettingInfo(std::int32_t handle, const PadSavedSettingInfo* info) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    (void)info;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadVrControllerGetPhysicalUsbConnectionStatus(PadVrUsbConnectionStatus* status) {
