@@ -12,6 +12,7 @@ int APS5_VABI sceNpTrophy2GetTrophyInfo(int, int, int, NpTrophy2Details*, NpTrop
 int APS5_VABI sceNpTrophy2ShowTrophyList(int);
 int APS5_VABI sceNpTrophy2SystemAbortHandle(void);
 int APS5_VABI sceNpTrophy2SystemBuildGroupIconUri(void);
+int APS5_VABI sceNpTrophy2SystemBuildRewardIconUri(void);
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -61,4 +62,5 @@ int main() {
     Require(ThrowsInvalidArgument([] { sceNpTrophy2GetTrophyInfo(1, 1, 3, nullptr, nullptr); }));
     Require(sceNpTrophy2SystemAbortHandle() == 0);
     Require(sceNpTrophy2SystemBuildGroupIconUri() == 0);
+    Require(sceNpTrophy2SystemBuildRewardIconUri() == 0);
 }
