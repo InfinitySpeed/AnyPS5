@@ -657,7 +657,6 @@ int APS5_VABI sceShellCoreUtilGetPasscodeInputType(void) {
 }
 
 int APS5_VABI sceShellCoreUtilGetPasscodeDisplayInfo(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
