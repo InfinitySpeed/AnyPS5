@@ -64,6 +64,7 @@ extern "C" int APS5_VABI sceShellCoreUtilNotifySystemResumeTelemetryInfo(void);
 extern "C" int APS5_VABI sceShellCoreUtilUpdateTelemetryToken(void);
 extern "C" int APS5_VABI sceShellCoreUtilGetVRBaseMatRectangles(void);
 extern "C" int APS5_VABI sceShellCoreUtilSetVRBaseMatRectangles(void);
+extern "C" int APS5_VABI sceShellCoreUtilIsLaunchBlockDialog(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -279,4 +280,5 @@ int main() {
     Require(sceShellCoreUtilUpdateTelemetryToken() == 0);
     Require(sceShellCoreUtilGetVRBaseMatRectangles() == 0);
     Require(sceShellCoreUtilSetVRBaseMatRectangles() == 0);
+    Require(sceShellCoreUtilIsLaunchBlockDialog() == 0);
 }
