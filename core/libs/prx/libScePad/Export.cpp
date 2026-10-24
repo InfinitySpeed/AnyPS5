@@ -807,8 +807,9 @@ int APS5_VABI scePadDisableActiveProfileChange(std::int32_t handle, bool disable
 }
 
 int APS5_VABI scePadDisableActiveProfileChangeByDeviceId(std::int32_t deviceId, bool disabled) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    (void)deviceId;
+    (void)disabled;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadSetActiveProfileSlot(std::int32_t deviceId, std::uint32_t slot) {
