@@ -110,7 +110,6 @@ int APS5_VABI sceAgcDriverSuspendPointSubmit(void) {
 }
 
 int APS5_VABI sceAgcDriverSuspendPointSubmitDirect(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
