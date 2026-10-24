@@ -26,7 +26,6 @@ int APS5_VABI sceNpTrophy2SystemCheckCallback(void) {
 }
 
 int APS5_VABI sceNpTrophy2SystemCheckNetSyncTitles(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
