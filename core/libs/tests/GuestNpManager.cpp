@@ -151,6 +151,7 @@ int APS5_VABI sceNpManagerIntGetServerError(void);
 int APS5_VABI sceNpManagerIntGetSigninState(void);
 int APS5_VABI sceNpManagerIntGetSigninTelemetryInfo(void);
 int APS5_VABI sceNpManagerIntGetTicket(void);
+int APS5_VABI sceNpManagerIntGetTicketA(void);
 }
 
 extern "C" {
@@ -714,5 +715,6 @@ int main() {
             Require(sceNpManagerIntGetSigninState() == 0, "sceNpManagerIntGetSigninState check");
             Require(sceNpManagerIntGetSigninTelemetryInfo() == 0, "sceNpManagerIntGetSigninTelemetryInfo check");
             Require(sceNpManagerIntGetTicket() == 0, "sceNpManagerIntGetTicket check");
+            Require(sceNpManagerIntGetTicketA() == 0, "sceNpManagerIntGetTicketA check");
     return 0;
 }
