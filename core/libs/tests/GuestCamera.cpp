@@ -44,6 +44,7 @@ int APS5_VABI sceCameraGetDeviceConfig(void);
 int APS5_VABI sceCameraAudioOpen(void);
 int APS5_VABI sceCamera2GetAutoExposureGain(void);
 int APS5_VABI sceCameraGetCalibDataFromDeviceForEve(void);
+int APS5_VABI sceCameraGetWhiteBalance(void);
 }
 
 namespace {
@@ -111,5 +112,6 @@ int main() {
         Require(sceCameraAudioOpen() == 0, "sceCameraAudioOpen check");
         Require(sceCamera2GetAutoExposureGain() == 0, "sceCamera2GetAutoExposureGain check");
         Require(sceCameraGetCalibDataFromDeviceForEve() == 0, "sceCameraGetCalibDataFromDeviceForEve check");
+        Require(sceCameraGetWhiteBalance() == 0, "sceCameraGetWhiteBalance check");
     return 0;
 }
