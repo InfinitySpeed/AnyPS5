@@ -119,6 +119,7 @@ int APS5_VABI scePadGetVersionInfo(std::int32_t, PadVersionInfo*);
 int APS5_VABI scePadGetTriggerEffectInternalState(std::int32_t, PadTriggerInternalState*);
 int APS5_VABI scePadGetExtensionUnitInfo(std::int32_t, PadExtensionUnitInfo*);
 int APS5_VABI scePadGetFeatureReport(std::int32_t, std::uint8_t, void*, std::size_t);
+int APS5_VABI scePadVrControllerGetDeviceInformation(std::int32_t, PadVrControllerDeviceInformation*);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -769,6 +770,8 @@ int main() {
     PadExtensionUnitInfo einfo{};
     Require(scePadGetExtensionUnitInfo(handle, &einfo) == PAD_OK);
     Require(scePadGetFeatureReport(handle, 0, nullptr, 0) == PAD_OK);
+    PadVrControllerDeviceInformation vrinfo{};
+    Require(scePadVrControllerGetDeviceInformation(handle, &vrinfo) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);

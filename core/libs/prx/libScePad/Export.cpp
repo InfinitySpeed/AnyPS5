@@ -454,8 +454,9 @@ int APS5_VABI scePadSetVibrationTriggerEffectWeakWhileEmbeddedMicInUse(bool enab
 }
 
 int APS5_VABI scePadVrControllerGetDeviceInformation(std::int32_t handle, PadVrControllerDeviceInformation* info) {
- NotImplemented_nid_no_patch(__func__);
- return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    if (info == nullptr) return PAD_ERROR_INVALID_ARG;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadVrControllerRead(std::int32_t handle, PadVrControllerData* data, std::int32_t count) {
