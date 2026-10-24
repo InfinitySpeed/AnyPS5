@@ -79,6 +79,7 @@ int APS5_VABI sceHmd2InternalGetDeviceId(void);
 int APS5_VABI sceHmd2InternalSetBrightness(void);
 int APS5_VABI sceHmd2InternalImageStopBySlot(void);
 int APS5_VABI sceHmd2InternalSetVibrationMode(void);
+int APS5_VABI sceHmd2InternalGetVr2dData(void);
 }
 
 namespace {
@@ -350,6 +351,7 @@ int main() {
         Require(sceHmd2InternalSetBrightness() == 0, "sceHmd2InternalSetBrightness check");
         Require(sceHmd2InternalImageStopBySlot() == 0, "sceHmd2InternalImageStopBySlot check");
         Require(sceHmd2InternalSetVibrationMode() == 0, "sceHmd2InternalSetVibrationMode check");
+        Require(sceHmd2InternalGetVr2dData() == 0, "sceHmd2InternalGetVr2dData check");
     std::puts("HMD2 tests passed");
     return 0;
 }
