@@ -34,6 +34,7 @@ int APS5_VABI sceRegMgrCntlDeleteReg();
 int APS5_VABI sceRegMgrCntlGetFilesCount();
 int APS5_VABI sceRegMgrCntlGetFileName();
 int APS5_VABI sceRegMgrCntSetInitReinst();
+int APS5_VABI sceRegMgrIsInitOK();
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -80,4 +81,5 @@ int main() {
     Require(sceRegMgrCntlGetFilesCount() == 0);
     Require(sceRegMgrCntlGetFileName() == 0);
     Require(sceRegMgrCntSetInitReinst() == 0);
+    Require(sceRegMgrIsInitOK() == 0);
 }
