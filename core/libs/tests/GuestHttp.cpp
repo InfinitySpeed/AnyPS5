@@ -49,6 +49,7 @@ int APS5_VABI sceHttpParseStatusLine(const char*, std::size_t, std::int32_t*, st
 int APS5_VABI sceHttpDbgShowStat(void);
 int APS5_VABI sceHttpDbgShowConnectionStat(void);
 int APS5_VABI sceHttpDbgShowRequestStat(void);
+int APS5_VABI sceHttpDbgShowMemoryPoolStat(void);
 }
 
 alignas(16) static std::array<std::byte, 0x40> processParameters{};
@@ -973,4 +974,5 @@ int main() {
     Require(sceHttpDbgShowStat() == 0);
     Require(sceHttpDbgShowConnectionStat() == 0);
     Require(sceHttpDbgShowRequestStat() == 0);
+    Require(sceHttpDbgShowMemoryPoolStat() == 0);
 }
