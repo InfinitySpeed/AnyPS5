@@ -153,7 +153,6 @@ int APS5_VABI sceRazorCpuGpuMarkerSync(void) {
 }
 
 int APS5_VABI sceRazorCpuInitializeGpuMarkerContext(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
