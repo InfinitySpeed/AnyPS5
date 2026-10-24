@@ -326,7 +326,6 @@ int APS5_VABI sceHmdInternalDfuCheckAfterPvt(std::uint8_t* afterPvt) {
 }
 
 int APS5_VABI sceHmdInternalResetInertialSensor(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
