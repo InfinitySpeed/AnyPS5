@@ -56,6 +56,7 @@ int APS5_VABI sceNpAsmClientGetRelatedGameNpTitleIdsResult(void);
 int APS5_VABI sceNpAsmClientGetServiceBaseUrl(void);
 int APS5_VABI sceNpAsmClientGetServiceBaseUrlA(void);
 int APS5_VABI sceNpAsmClientGetServiceBaseUrlWithNpTitleId(void);
+int APS5_VABI sceNpAsmClientGetServiceBaseUrlWithNpTitleIdA(void);
 }
 
 extern "C" {
@@ -524,5 +525,6 @@ int main() {
         Require(sceNpAsmClientGetServiceBaseUrl() == 0, "sceNpAsmClientGetServiceBaseUrl check");
         Require(sceNpAsmClientGetServiceBaseUrlA() == 0, "sceNpAsmClientGetServiceBaseUrlA check");
         Require(sceNpAsmClientGetServiceBaseUrlWithNpTitleId() == 0, "sceNpAsmClientGetServiceBaseUrlWithNpTitleId check");
+        Require(sceNpAsmClientGetServiceBaseUrlWithNpTitleIdA() == 0, "sceNpAsmClientGetServiceBaseUrlWithNpTitleIdA check");
     return 0;
 }
