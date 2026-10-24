@@ -67,6 +67,7 @@ extern "C" int APS5_VABI sceShellCoreUtilSetVRBaseMatRectangles(void);
 extern "C" int APS5_VABI sceShellCoreUtilIsLaunchBlockDialog(void);
 extern "C" int APS5_VABI sceShellCoreUtilGetConsoleToken(void);
 extern "C" int APS5_VABI sceShellCoreUtilGetDeviceIdByDeviceUniqueId(void);
+extern "C" int APS5_VABI sceShellCoreUtilGetDeviceUniqueIdByDeviceId(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -285,4 +286,5 @@ int main() {
     Require(sceShellCoreUtilIsLaunchBlockDialog() == 0);
     Require(sceShellCoreUtilGetConsoleToken() == 0);
     Require(sceShellCoreUtilGetDeviceIdByDeviceUniqueId() == 0);
+    Require(sceShellCoreUtilGetDeviceUniqueIdByDeviceId() == 0);
 }
