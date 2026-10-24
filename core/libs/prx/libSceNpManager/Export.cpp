@@ -93,7 +93,6 @@ int APS5_VABI sceNpAsmClientDeleteRequest(void) {
     return 0;
 }
 int APS5_VABI sceNpAsmClientDeleteResourceContext(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceNpAsmClientDeleteResourceContext2(void) {
