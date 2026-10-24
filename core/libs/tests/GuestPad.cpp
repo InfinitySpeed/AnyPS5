@@ -897,4 +897,5 @@ int main() {
     Require(scePadBondUpdateSendData(0, nullptr) == PAD_ERROR_INVALID_ARG);
     Require(scePadBondUpdateResetBond(0) == PAD_ERROR_INVALID_ARG);
     Require(scePadBondUpdateGetReconnectStatus(nullptr) == PAD_ERROR_INVALID_ARG);
+    Require(scePadControllerUpdateIsUpdateNeeded2(0, nullptr, nullptr) == PAD_ERROR_INVALID_ARG);
 }
