@@ -167,7 +167,6 @@ int APS5_VABI sceSaveDataDeleteBackupData(void) {
 }
 
 int APS5_VABI sceSaveDataDeleteCloudData(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
