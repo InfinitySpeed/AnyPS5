@@ -52,6 +52,7 @@ int APS5_VABI sceRegMgrEvtGetRegIdForPS4();
 int APS5_VABI sceRegMgrStrncpy();
 int APS5_VABI sceRegMgrMemset();
 int APS5_VABI sceRegMgrSetbin();
+int APS5_VABI sceRegMgrToolGetUpdateCnt(void);
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -116,4 +117,5 @@ int main() {
     Require(sceRegMgrStrncpy() == 0);
     Require(sceRegMgrMemset() == 0);
     Require(sceRegMgrSetbin() == 0);
+    Require(sceRegMgrToolGetUpdateCnt() == 0);
 }
