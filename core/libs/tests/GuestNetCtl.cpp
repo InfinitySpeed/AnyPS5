@@ -63,6 +63,7 @@ int APS5_VABI sceNetCtlIsBandwidthManagementEnabledIpcInt(void);
 int APS5_VABI sceNetCtlDisableBandwidthManagementIpcInt(void);
 int APS5_VABI sceNetCtlEnableBandwidthManagementIpcInt(void);
 int APS5_VABI sceNetCtlApCpStart(void);
+int APS5_VABI sceNetCtlApCpStop(void);
 }
 
 namespace {
@@ -400,4 +401,5 @@ int main() {
     Require(sceNetCtlDisableBandwidthManagementIpcInt() == 0);
     Require(sceNetCtlEnableBandwidthManagementIpcInt() == 0);
     Require(sceNetCtlApCpStart() == 0);
+    Require(sceNetCtlApCpStop() == 0);
 }
