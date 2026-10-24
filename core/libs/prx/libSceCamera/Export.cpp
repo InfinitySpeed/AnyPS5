@@ -447,7 +447,6 @@ int APS5_VABI sceCamera2SetAutoWhiteBalance(void) {
 }
 
 int APS5_VABI sceCameraSetDebugStop(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
