@@ -36,6 +36,7 @@ int APS5_VABI sceNpAsmClientCreateResourceContext(void);
 int APS5_VABI sceNpAsmClientCreateResourceContext2(void);
 int APS5_VABI sceNpAsmClientDeleteRequest(void);
 int APS5_VABI sceNpAsmClientDeleteResourceContext(void);
+int APS5_VABI sceNpAsmClientDeleteResourceContext2(void);
 }
 
 extern "C" {
@@ -484,5 +485,6 @@ int main() {
         Require(sceNpAsmClientCreateResourceContext2() == 0, "sceNpAsmClientCreateResourceContext2 check");
         Require(sceNpAsmClientDeleteRequest() == 0, "sceNpAsmClientDeleteRequest check");
         Require(sceNpAsmClientDeleteResourceContext() == 0, "sceNpAsmClientDeleteResourceContext check");
+        Require(sceNpAsmClientDeleteResourceContext2() == 0, "sceNpAsmClientDeleteResourceContext2 check");
     return 0;
 }
