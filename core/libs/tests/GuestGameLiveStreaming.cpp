@@ -62,6 +62,7 @@ int APS5_VABI sceGameLiveStreamingGetCurrentBroadcastScreenLayout(void);
 int APS5_VABI sceGameLiveStreamingLaunchLiveViewer(void);
 int APS5_VABI sceGameLiveStreamingLaunchLiveViewerA(void);
 int APS5_VABI sceGameLiveStreamingSetGuardAreas(void);
+int APS5_VABI sceGameLiveStreamingStartSocialFeedbackMessageFiltering(void);
 }
 
 namespace {
@@ -165,4 +166,5 @@ int main() {
     Require(sceGameLiveStreamingLaunchLiveViewer() == 0);
     Require(sceGameLiveStreamingLaunchLiveViewerA() == 0);
     Require(sceGameLiveStreamingSetGuardAreas() == 0);
+    Require(sceGameLiveStreamingStartSocialFeedbackMessageFiltering() == 0);
 }
