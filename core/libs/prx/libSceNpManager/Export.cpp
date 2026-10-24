@@ -397,7 +397,6 @@ int APS5_VABI sceNpManagerIntGetAccountNpEnv(void) {
     return 0;
 }
 int APS5_VABI sceNpManagerIntGetAccountType(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceNpManagerIntGetActiveSigninState(void) {
