@@ -89,6 +89,7 @@ extern "C" int APS5_VABI sceCoredumpSequenceHandlerUpdateEventCache(void);
 extern "C" int APS5_VABI sceCoredumpSequenceHandlerGetEventCache(void);
 extern "C" int APS5_VABI sceCoredumpSequenceHandlerGetWorkingEventSummary(void);
 extern "C" int APS5_VABI sceCoredumpSequenceHandlerGetCoredumpStatus(void);
+extern "C" int APS5_VABI sceCoredumpSequenceHandlerGetCoredumpStatusByAppId(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -329,4 +330,5 @@ int main() {
     Require(sceCoredumpSequenceHandlerGetEventCache() == 0);
     Require(sceCoredumpSequenceHandlerGetWorkingEventSummary() == 0);
     Require(sceCoredumpSequenceHandlerGetCoredumpStatus() == 0);
+    Require(sceCoredumpSequenceHandlerGetCoredumpStatusByAppId() == 0);
 }
