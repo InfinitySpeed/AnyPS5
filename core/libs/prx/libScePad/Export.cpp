@@ -1369,8 +1369,11 @@ int APS5_VABI scePadControllerUpdateInit(void) {
 }
 
 int APS5_VABI scePadControllerUpdateIsUpdateNeeded2(std::int32_t deviceId, const std::uint32_t* version, std::uint16_t* status) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (deviceId <= 0 || !version || !status) {
+        return PAD_ERROR_INVALID_ARG;
+    }
+    *status = 0;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadControllerUpdateIsReady(std::int32_t deviceId, std::int32_t* ready) {
