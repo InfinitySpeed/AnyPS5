@@ -115,7 +115,6 @@ int APS5_VABI sceCameraGetCalibDataFromDevice(void) {
 }
 
 int APS5_VABI sceCamera2SetContrast(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
