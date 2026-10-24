@@ -2848,7 +2848,6 @@ int APS5_VABI sceNetConfigDelIfaddr6(int interfaceId, const NetIpv6Address* addr
 }
 
 int APS5_VABI sceNetConfigDelDefaultRoute6(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
