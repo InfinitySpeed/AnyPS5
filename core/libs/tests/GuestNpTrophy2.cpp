@@ -20,6 +20,7 @@ int APS5_VABI sceNpTrophy2SystemCreateContext(void);
 int APS5_VABI sceNpTrophy2SystemCreateHandle(void);
 int APS5_VABI sceNpTrophy2SystemDebugLockTrophy(void);
 int APS5_VABI sceNpTrophy2SystemDebugUnlockTrophy(void);
+int APS5_VABI sceNpTrophy2SystemDestroyContext(void);
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -77,4 +78,5 @@ int main() {
     Require(sceNpTrophy2SystemCreateHandle() == 0);
     Require(sceNpTrophy2SystemDebugLockTrophy() == 0);
     Require(sceNpTrophy2SystemDebugUnlockTrophy() == 0);
+    Require(sceNpTrophy2SystemDestroyContext() == 0);
 }
