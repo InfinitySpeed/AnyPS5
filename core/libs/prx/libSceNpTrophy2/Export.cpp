@@ -66,7 +66,6 @@ int APS5_VABI sceNpTrophy2SystemGetTrophyTitleConf(void) {
 }
 
 int APS5_VABI sceNpTrophy2SystemGetTrophyTitleDetails(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
