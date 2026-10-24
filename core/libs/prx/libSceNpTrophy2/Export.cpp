@@ -94,7 +94,6 @@ int APS5_VABI sceNpTrophy2SystemRemoveTitleData(void) {
 }
 
 int APS5_VABI sceNpTrophy2SystemRemoveUserData(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
