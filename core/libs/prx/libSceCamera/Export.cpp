@@ -251,7 +251,6 @@ int APS5_VABI sceCamera2GetAutoWhiteBalance(void) {
 }
 
 int APS5_VABI sceCameraAudioClose(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
