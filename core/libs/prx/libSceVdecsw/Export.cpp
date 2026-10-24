@@ -504,11 +504,11 @@ int APS5_VABI sceVdecswSyncDecodeOutput(std::uint64_t handle, OutputInfo* output
 }
 
 int APS5_VABI sceVdecswGetPictureInfo(const OutputInfo* output, void* first, void* second) {
-    (void)output;
-    (void)first;
-    (void)second;
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (output == nullptr || first == nullptr) throw std::runtime_error("Vdecsw: invalid argument pointer");
+    static_cast<void>(second);
+    if (output->codecType == CodecVp9) return sceVdecswGetVp9PictureInfo(output, static_cast<Vp9PictureInfo*>(first));
+    if (output->codecType == CodecHevc) return deliveredPictureInfo(output, static_cast<HevcPictureInfo*>(first));
+    return deliveredPictureInfo(output, static_cast<AvcPictureInfo*>(first));
 }
 
 int APS5_VABI sceVdecswGetAvcPictureInfo(const OutputInfo* output, AvcPictureInfo* first, AvcPictureInfo* second) {
