@@ -10,6 +10,7 @@ int APS5_VABI sceRegMgrCheckError();
 int APS5_VABI sceRegMgrCheckIntVal();
 int APS5_VABI sceRegMgrGetBinInitVal();
 int APS5_VABI sceRegMgrGetIntInitVal();
+int APS5_VABI sceRegMgrGetStrInitVal();
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -32,4 +33,5 @@ int main() {
     Require(sceRegMgrCheckIntVal() == 0);
     Require(sceRegMgrGetBinInitVal() == 0);
     Require(sceRegMgrGetIntInitVal() == 0);
+    Require(sceRegMgrGetStrInitVal() == 0);
 }
