@@ -234,7 +234,6 @@ int APS5_VABI sceAppContentGetAddcontDownloadProgress(uint32_t service_label, co
     return SCE_APP_CONTENT_ERROR_NOT_FOUND;
 }
 int APS5_VABI sceAppContentAddcontEnqueueDownloadByEntitlemetId(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
