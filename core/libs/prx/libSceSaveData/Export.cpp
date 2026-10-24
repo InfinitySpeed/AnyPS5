@@ -269,7 +269,6 @@ int APS5_VABI sceSaveDataInitialize2() {
 }
 
 int APS5_VABI sceSaveDataInitializeForCdlg(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
