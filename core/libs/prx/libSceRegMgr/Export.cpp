@@ -102,7 +102,6 @@ int APS5_VABI sceRegMgrSrvGetRealMachineType(void) {
 }
 
 int APS5_VABI sceRegMgrSrvGetRegion(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
