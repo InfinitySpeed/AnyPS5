@@ -91,6 +91,7 @@ int APS5_VABI sceCameraSetAppModuleFocus(void);
 int APS5_VABI sceCameraSetDefectivePixelCancellation(void);
 int APS5_VABI sceCameraGetDeviceID(void);
 int APS5_VABI sceCameraSetForceActivate(void);
+int APS5_VABI sceCameraSetWhiteBalance(void);
 }
 
 namespace {
@@ -205,5 +206,6 @@ int main() {
         Require(sceCameraSetDefectivePixelCancellation() == 0, "sceCameraSetDefectivePixelCancellation check");
         Require(sceCameraGetDeviceID() == 0, "sceCameraGetDeviceID check");
         Require(sceCameraSetForceActivate() == 0, "sceCameraSetForceActivate check");
+        Require(sceCameraSetWhiteBalance() == 0, "sceCameraSetWhiteBalance check");
     return 0;
 }
