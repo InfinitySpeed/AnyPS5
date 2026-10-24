@@ -161,7 +161,6 @@ int APS5_VABI sceRazorCpuInitializeInternal(void) {
 }
 
 int APS5_VABI sceRazorCpuSetPopMarkerCallback(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
