@@ -129,6 +129,7 @@ int APS5_VABI sceNpManagerIntGetAccountNpEnv(void);
 int APS5_VABI sceNpManagerIntGetAccountType(void);
 int APS5_VABI sceNpManagerIntGetActiveSigninState(void);
 int APS5_VABI sceNpManagerIntGetAuthServerErrorFlag(void);
+int APS5_VABI sceNpManagerIntGetAuthorizationCode(void);
 }
 
 extern "C" {
@@ -670,5 +671,6 @@ int main() {
         Require(sceNpManagerIntGetAccountType() == 0, "sceNpManagerIntGetAccountType check");
         Require(sceNpManagerIntGetActiveSigninState() == 0, "sceNpManagerIntGetActiveSigninState check");
         Require(sceNpManagerIntGetAuthServerErrorFlag() == 0, "sceNpManagerIntGetAuthServerErrorFlag check");
+        Require(sceNpManagerIntGetAuthorizationCode() == 0, "sceNpManagerIntGetAuthorizationCode check");
     return 0;
 }
