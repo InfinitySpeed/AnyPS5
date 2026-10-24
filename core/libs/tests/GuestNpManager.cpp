@@ -150,6 +150,7 @@ int APS5_VABI sceNpManagerIntGetPlusMemberTypeNB(void);
 int APS5_VABI sceNpManagerIntGetServerError(void);
 int APS5_VABI sceNpManagerIntGetSigninState(void);
 int APS5_VABI sceNpManagerIntGetSigninTelemetryInfo(void);
+int APS5_VABI sceNpManagerIntGetTicket(void);
 }
 
 extern "C" {
@@ -712,5 +713,6 @@ int main() {
             Require(sceNpManagerIntGetServerError() == 0, "sceNpManagerIntGetServerError check");
             Require(sceNpManagerIntGetSigninState() == 0, "sceNpManagerIntGetSigninState check");
             Require(sceNpManagerIntGetSigninTelemetryInfo() == 0, "sceNpManagerIntGetSigninTelemetryInfo check");
+            Require(sceNpManagerIntGetTicket() == 0, "sceNpManagerIntGetTicket check");
     return 0;
 }
