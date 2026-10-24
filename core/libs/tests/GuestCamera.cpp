@@ -61,6 +61,7 @@ int APS5_VABI sceCamera2SetAttribute(void);
 int APS5_VABI sceCameraGetCalibrationData(void);
 int APS5_VABI sceCameraGetSaturation(void);
 int APS5_VABI sceCamera2GetHue(void);
+int APS5_VABI sceCamera2Stop(void);
 }
 
 namespace {
@@ -145,5 +146,6 @@ int main() {
         Require(sceCameraGetCalibrationData() == 0, "sceCameraGetCalibrationData check");
         Require(sceCameraGetSaturation() == 0, "sceCameraGetSaturation check");
         Require(sceCamera2GetHue() == 0, "sceCamera2GetHue check");
+        Require(sceCamera2Stop() == 0, "sceCamera2Stop check");
     return 0;
 }
