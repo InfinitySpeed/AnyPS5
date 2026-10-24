@@ -478,7 +478,6 @@ int APS5_VABI sceNpManagerIntGetTitleToken(void) {
     return 0;
 }
 int APS5_VABI sceNpManagerIntGetTitleTokenWithCheck(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceNpManagerIntGetUserIdByAccountId(void) {
