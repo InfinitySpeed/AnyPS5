@@ -37,6 +37,7 @@ int APS5_VABI sceGameLiveStreamingPermitLiveStreaming(void);
 int APS5_VABI sceGameLiveStreamingSetMaxBitrate(void);
 int APS5_VABI sceGameLiveStreamingGetCurrentStatus(void);
 int APS5_VABI sceGameLiveStreamingEnableSocialFeedback(void);
+int APS5_VABI sceGameLiveStreamingGetSocialFeedbackMessagesCount(void);
 }
 
 namespace {
@@ -115,4 +116,5 @@ int main() {
     Require(sceGameLiveStreamingSetMaxBitrate() == 0);
     Require(sceGameLiveStreamingGetCurrentStatus() == 0);
     Require(sceGameLiveStreamingEnableSocialFeedback() == 0);
+    Require(sceGameLiveStreamingGetSocialFeedbackMessagesCount() == 0);
 }
