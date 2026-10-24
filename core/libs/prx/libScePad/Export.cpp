@@ -1145,8 +1145,9 @@ int APS5_VABI scePadDisconnectDevice(std::int32_t deviceId) {
 }
 
 int APS5_VABI scePadGetDeviceInfo(std::int32_t deviceId, PadDeviceInfo* info) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    (void)deviceId;
+    if (info == nullptr) return PAD_ERROR_INVALID_ARG;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadSetProcessFocus(const PadProcessFocusParameter* parameter) {
