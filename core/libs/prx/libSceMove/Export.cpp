@@ -132,7 +132,6 @@ int APS5_VABI sceMoveIsValidHandle(void) {
 }
 
 int APS5_VABI sceMoveReadStateRecentForTracker(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
