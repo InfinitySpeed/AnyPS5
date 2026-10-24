@@ -726,7 +726,6 @@ int APS5_VABI sceHmd2InternalSetFakeLensSeparationDistance(void) {
 }
 
 int APS5_VABI sceHmd2InternalDfuSend(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
