@@ -458,7 +458,6 @@ int APS5_VABI sceHttp2GetCookieStats(void) {
 }
 
 int APS5_VABI sceHttp2RedirectCacheFlush(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
