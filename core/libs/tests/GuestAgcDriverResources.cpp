@@ -31,6 +31,7 @@ bool APS5_VABI sceAgcDriverIsSubmitValidationEnabled(void);
 int APS5_VABI sceAgcDriverRegisterOwnerForSystem();
 int APS5_VABI sceAgcDriverInitResourceRegistrationInterface();
 int APS5_VABI sceAgcDriverSetResourceRegistrationInfo();
+int APS5_VABI sceAgcDriverAcquireRazorACQ(void);
 }
 
 static constexpr int Unavailable = static_cast<int>(0x8A6C9018);
@@ -100,4 +101,5 @@ int main() {
     Require(sceAgcDriverRegisterOwnerForSystem() == Unavailable);
     Require(sceAgcDriverInitResourceRegistrationInterface() == Unavailable);
     Require(sceAgcDriverSetResourceRegistrationInfo() == 0);
+    Require(sceAgcDriverAcquireRazorACQ() == 0);
 }
