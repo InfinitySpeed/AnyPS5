@@ -529,7 +529,6 @@ int APS5_VABI sceCsbMgrDestroyLocalSandbox(void) {
 }
 
 int APS5_VABI sceCsbMgrSwitchLocalSandbox(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
