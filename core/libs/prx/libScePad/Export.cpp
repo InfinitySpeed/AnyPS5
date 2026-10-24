@@ -908,8 +908,9 @@ int APS5_VABI scePadEnableProfileIndicator(std::int32_t handle) {
 }
 
 int APS5_VABI scePadSetProfileIndicatorAnimation(std::int32_t handle, std::uint8_t animation) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    (void)animation;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadIsCoPilot(std::int32_t handle) {

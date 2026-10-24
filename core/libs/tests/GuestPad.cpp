@@ -68,6 +68,7 @@ int APS5_VABI scePadSetSelectButtonCustomizeMode(std::int32_t, bool);
 int APS5_VABI scePadSetToggleAllReleaseLeonardo(std::int32_t);
 int APS5_VABI scePadEnableControllerIndicator(std::int32_t);
 int APS5_VABI scePadEnableProfileIndicator(std::int32_t);
+int APS5_VABI scePadSetProfileIndicatorAnimation(std::int32_t, std::uint8_t);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -644,6 +645,7 @@ int main() {
     Require(scePadSetToggleAllReleaseLeonardo(handle) == PAD_OK);
     Require(scePadEnableControllerIndicator(handle) == PAD_OK);
     Require(scePadEnableProfileIndicator(handle) == PAD_OK);
+    Require(scePadSetProfileIndicatorAnimation(handle, 0) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
