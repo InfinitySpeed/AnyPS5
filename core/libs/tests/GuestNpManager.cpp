@@ -162,6 +162,7 @@ int APS5_VABI sceNpManagerIntGetUserList(void);
 int APS5_VABI sceNpManagerIntGetUserNum(void);
 int APS5_VABI sceNpManagerIntGetVshAccessToken(void);
 int APS5_VABI sceNpManagerIntGetVshAccessTokenWithCheck(void);
+int APS5_VABI sceNpManagerIntGetVshClientId(void);
 }
 
 extern "C" {
@@ -736,5 +737,6 @@ int main() {
             Require(sceNpManagerIntGetUserNum() == 0, "sceNpManagerIntGetUserNum check");
             Require(sceNpManagerIntGetVshAccessToken() == 0, "sceNpManagerIntGetVshAccessToken check");
             Require(sceNpManagerIntGetVshAccessTokenWithCheck() == 0, "sceNpManagerIntGetVshAccessTokenWithCheck check");
+            Require(sceNpManagerIntGetVshClientId() == 0, "sceNpManagerIntGetVshClientId check");
     return 0;
 }
