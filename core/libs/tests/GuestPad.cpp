@@ -43,6 +43,7 @@ int APS5_VABI scePadEnablePlayPauseEmulation(bool);
 int APS5_VABI scePadDisableTrackingLedBatterySaver(bool);
 int APS5_VABI scePadSetLoginUserNumber(std::int32_t);
 int APS5_VABI scePadSetProcessPrivilegeOfButtonRemapping(bool);
+int APS5_VABI scePadSetForceIntercepted(bool);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -594,6 +595,7 @@ int main() {
     Require(scePadDisableTrackingLedBatterySaver(false) == PAD_OK);
     Require(scePadSetLoginUserNumber(1) == PAD_OK);
     Require(scePadSetProcessPrivilegeOfButtonRemapping(true) == PAD_OK);
+    Require(scePadSetForceIntercepted(true) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);

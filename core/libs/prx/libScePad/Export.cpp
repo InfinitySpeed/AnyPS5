@@ -667,8 +667,8 @@ int APS5_VABI scePadSetProcessPrivilegeOfButtonRemapping(bool enabled) {
 }
 
 int APS5_VABI scePadSetForceIntercepted(bool enabled) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    (void)enabled;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadIsLightBarBaseBrightnessControllable(std::int32_t handle) {
