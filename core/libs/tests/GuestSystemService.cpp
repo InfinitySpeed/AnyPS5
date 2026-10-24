@@ -22,6 +22,7 @@ extern "C" int APS5_VABI sceSystemServiceGetSpotifyTitleId(void);
 extern "C" int APS5_VABI sceSystemServiceGetAppStatusListContainsDaemon(void);
 extern "C" int APS5_VABI sceSystemServiceSwitchToVRApp(void);
 extern "C" int APS5_VABI sceSystemServiceSwitchToNonVRApp(void);
+extern "C" int APS5_VABI sceLncUtilGetSpmemAllocatorConfigValue(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -195,4 +196,5 @@ int main() {
     Require(sceSystemServiceGetAppStatusListContainsDaemon() == 0);
     Require(sceSystemServiceSwitchToVRApp() == 0);
     Require(sceSystemServiceSwitchToNonVRApp() == 0);
+    Require(sceLncUtilGetSpmemAllocatorConfigValue() == 0);
 }
