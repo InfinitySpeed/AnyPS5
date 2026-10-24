@@ -740,9 +740,8 @@ int APS5_VABI scePadSetLotusEnableIrKey(std::int32_t handle) {
 }
 
 int APS5_VABI scePadSetLotusDisableIrKey(std::int32_t handle) {
-    (void)handle;
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadGetUsbDetectionState(std::int32_t deviceId, PadUsbDetectionState* state) {
