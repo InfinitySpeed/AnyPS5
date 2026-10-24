@@ -21,6 +21,7 @@ int APS5_VABI sceNpPartyCreate(void);
 int APS5_VABI sceNpPartyCreateA(void);
 int APS5_VABI sceNpPartyGetMemberInfo(void);
 int APS5_VABI sceNpPartyGetMembers(void);
+int APS5_VABI sceNpPartyGetStateAsUser(void);
 }
 
 namespace {
@@ -92,5 +93,6 @@ int main() {
         if (sceNpPartyCreateA() != 0) return 1;
         if (sceNpPartyGetMemberInfo() != 0) return 1;
         if (sceNpPartyGetMembers() != 0) return 1;
+        if (sceNpPartyGetStateAsUser() != 0) return 1;
     return 0;
 }
