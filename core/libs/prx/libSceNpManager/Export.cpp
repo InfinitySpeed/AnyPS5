@@ -162,7 +162,6 @@ int APS5_VABI sceNpAsmClientGetServiceIdInfo(void) {
     return 0;
 }
 int APS5_VABI sceNpAsmClientGetServiceIdInfoA(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceNpAsmClientInitialize(void) {
