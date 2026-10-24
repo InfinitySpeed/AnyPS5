@@ -34,7 +34,6 @@ int APS5_VABI sceNpTrophy2SystemCreateContext(void) {
 }
 
 int APS5_VABI sceNpTrophy2SystemCreateHandle(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
