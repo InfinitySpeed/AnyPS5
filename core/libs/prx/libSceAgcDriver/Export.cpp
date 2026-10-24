@@ -22,7 +22,6 @@ int APS5_VABI sceAgcDriverCwsrSuspendAcq(void) {
 }
 
 int APS5_VABI sceAgcDriverDebugHardwareStatus(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
