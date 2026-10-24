@@ -913,7 +913,6 @@ int APS5_VABI sceNetCtlApAppInitWpaKeyForQa(std::uint8_t mode) {
 }
 
 int APS5_VABI sceNetCtlApRestart(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
