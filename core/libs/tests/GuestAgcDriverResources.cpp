@@ -40,6 +40,7 @@ int APS5_VABI sceAgcDriverDestroyQueue(void);
 int APS5_VABI sceAgcDriverGetPaDebugInterfaceVersion(void);
 int APS5_VABI sceAgcDriverGetRegShadowInfo(void);
 int APS5_VABI sceAgcDriverGetRegShadowInfoAgr(void);
+int APS5_VABI sceAgcDriverGetReservedDmemForAgc(void);
 }
 
 static constexpr int Unavailable = static_cast<int>(0x8A6C9018);
@@ -118,4 +119,5 @@ int main() {
     Require(sceAgcDriverGetPaDebugInterfaceVersion() == 0);
     Require(sceAgcDriverGetRegShadowInfo() == 0);
     Require(sceAgcDriverGetRegShadowInfoAgr() == 0);
+    Require(sceAgcDriverGetReservedDmemForAgc() == 0);
 }
