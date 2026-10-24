@@ -18,6 +18,7 @@ int APS5_VABI sceSharePlayGetEvent(void);
 int APS5_VABI sceSharePlayNotifyDialogOpen(void);
 int APS5_VABI sceSharePlayNotifyForceCloseForCdlg(void);
 int APS5_VABI sceSharePlayResumeScreenForCdlg(void);
+int APS5_VABI sceSharePlayServerLock(void);
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -71,4 +72,5 @@ int main() {
     Require(sceSharePlayNotifyDialogOpen() == 0);
     Require(sceSharePlayNotifyForceCloseForCdlg() == 0);
     Require(sceSharePlayResumeScreenForCdlg() == 0);
+    Require(sceSharePlayServerLock() == 0);
 }
