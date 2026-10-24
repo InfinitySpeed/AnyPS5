@@ -22,6 +22,7 @@ int APS5_VABI sceAudioInSetCompressorPreGain();
 int APS5_VABI sceAudioInSetNoiseGateThreshold();
 int APS5_VABI sceAudioInSetMicLevel();
 int APS5_VABI sceAudioInSetDeviceMuteStatus();
+int APS5_VABI sceAudioInSetUserMute();
 int32_t APS5_VABI sceAudioInIsPadEmbeddedMic(int32_t);
 int32_t APS5_VABI sceAudioInGetGain(int32_t, float*);
 int32_t APS5_VABI sceAudioInGetRerouteCount(int32_t);
@@ -69,6 +70,7 @@ void TestOpenEx() {
     Require(sceAudioInSetCompressorPreGain() == 0 && sceAudioInSetNoiseGateThreshold() == 0);
     Require(sceAudioInSetMicLevel() == 0);
     Require(sceAudioInSetDeviceMuteStatus() == 0);
+    Require(sceAudioInSetUserMute() == 0);
 }
 
 void TestValidation() {
