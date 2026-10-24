@@ -844,8 +844,9 @@ int APS5_VABI scePadGetControllerTypeLeonardo(std::int32_t deviceId, std::int32_
 }
 
 int APS5_VABI scePadSetControllerTypeLeonardo(std::int32_t deviceId, std::int32_t controllerType) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    (void)deviceId;
+    (void)controllerType;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadGetProfileLeonardo(std::int32_t handle, std::int32_t profileId, PadLeonardoProfile* profile) {
