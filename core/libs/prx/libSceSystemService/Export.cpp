@@ -761,7 +761,6 @@ int APS5_VABI sceSystemStateMgrGetRebootCause(void) {
 }
 
 int APS5_VABI sceCoredumpSequenceHandlerUpdateEventCache(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
