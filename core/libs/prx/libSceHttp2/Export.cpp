@@ -454,7 +454,6 @@ int APS5_VABI sceHttp2GetCookieBox(void) {
 }
 
 int APS5_VABI sceHttp2GetCookieStats(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
