@@ -266,7 +266,6 @@ int APS5_VABI scePlayGoTerminate(void) {
 }
 
 int APS5_VABI scePlayGoRequestNextChunk() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -277,7 +276,6 @@ int APS5_VABI scePlayGoSetLanguageMask(int handle, uint64_t language_mask) {
 }
 
 int APS5_VABI scePlayGoSnapshot() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

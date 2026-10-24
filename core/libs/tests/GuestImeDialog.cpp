@@ -19,6 +19,7 @@ int APS5_VABI sceImeDialogGetPanelSizeExtended(const Param*, const ExtendedParam
 int APS5_VABI sceImeDialogForceClose(void);
 int APS5_VABI sceImeDialogGetCurrentStarState(std::int64_t);
 int APS5_VABI sceImeDialogInitInternal(const Param*, const ExtendedParam*);
+int APS5_VABI sceImeDialogInitInternalWithSubInfo();
 int APS5_VABI sceImeDialogSetPanelPosition(std::int32_t, std::int32_t);
 }
 
@@ -86,6 +87,7 @@ void Close() {
 }
 
 int main() {
+    Require(sceImeDialogInitInternalWithSubInfo() == 0);
     char16_t buffer[16] = u"Hi";
     const Param param = DialogParam(buffer, 8);
     Require(!ImeCapturesKeyboard_nid_postfix());

@@ -11,6 +11,7 @@
 
 extern "C" {
 int APS5_VABI sceVoiceInit(const VoiceInitParam*, std::int32_t);
+int APS5_VABI sceVoiceWriteToIPort(uint32_t, const void*, uint32_t*, int16_t);
 int APS5_VABI sceVoiceSetThreadsParams(const VoiceThreadsParams*);
 int APS5_VABI sceVoiceStart(const VoiceStartParam*);
 int APS5_VABI sceVoiceStop();
@@ -103,6 +104,8 @@ std::uint32_t CreatePort(std::int32_t type, float volume) {
 } // namespace
 
 int main() {
+    uint32_t written = 123;
+    Require(sceVoiceWriteToIPort(0, nullptr, &written, 0) == 0 && written == 0);
     TestNotInitialized();
     constexpr auto notInitialized = static_cast<std::int32_t>(0x804e0801u);
     constexpr auto invalidPort = static_cast<std::int32_t>(0x804e0804u);

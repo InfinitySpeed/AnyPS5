@@ -209,7 +209,6 @@ int APS5_VABI sceImeDialogSetPanelPosition(int32_t, int32_t) {
 
 
 int APS5_VABI sceImeDialogInitInternalWithSubInfo() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

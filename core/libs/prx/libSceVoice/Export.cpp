@@ -331,7 +331,7 @@ int APS5_VABI sceVoiceWriteToIPort(uint32_t input_port_id, const void* data, uin
     (void)data;
     (void)size;
     (void)frame_gaps;
-    NotImplemented_nid_no_patch(__func__);
+    if (size) *size = 0;
     return 0;
 }
 

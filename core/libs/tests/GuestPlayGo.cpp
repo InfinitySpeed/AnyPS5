@@ -26,6 +26,8 @@ int APS5_VABI scePlayGoSetToDoList(int, const PlayGoToDo*, std::uint32_t);
 int APS5_VABI scePlayGoGetToDoList(int, PlayGoToDo*, std::uint32_t, std::uint32_t*);
 int APS5_VABI scePlayGoGetLocus(int, const std::uint16_t*, std::uint32_t, std::int8_t*);
 int APS5_VABI scePlayGoGetChunkId(int, std::uint16_t*, std::uint32_t, std::uint32_t*);
+int APS5_VABI scePlayGoRequestNextChunk();
+int APS5_VABI scePlayGoSnapshot();
 }
 
 static void Require(bool value, const std::source_location location = std::source_location::current()) {
@@ -252,6 +254,8 @@ static std::string ChunkTableFile(const char* magic = "plgx", char chunks = 3) {
 }
 
 int main(int argc, char** argv) {
+    Require(scePlayGoRequestNextChunk() == 0);
+    Require(scePlayGoSnapshot() == 0);
     if (argc == 3) {
         const std::string_view mode = argv[1];
         if (mode == "--no-file") return CheckNoPlayGoFile(argv[2]);
