@@ -654,8 +654,10 @@ int APS5_VABI scePadGetVersionInfo(std::int32_t handle, PadVersionInfo* info) {
 }
 
 int APS5_VABI scePadGetControllerType(std::int32_t handle, std::int32_t* type) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    if (type == nullptr) return PAD_ERROR_INVALID_ARG;
+    *type = 0;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadDisableDataConversion(std::int32_t handle, bool disabled) {

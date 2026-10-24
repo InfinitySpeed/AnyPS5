@@ -78,6 +78,7 @@ int APS5_VABI scePadDisconnectPort(std::int32_t, std::int32_t);
 int APS5_VABI scePadDisconnectDevice(std::int32_t);
 int APS5_VABI scePadGetControllerIdleCount(std::int32_t, std::uint64_t*);
 int APS5_VABI scePadGetCapability(std::int32_t, std::uint32_t*);
+int APS5_VABI scePadGetControllerType(std::int32_t, std::int32_t*);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -666,6 +667,8 @@ int main() {
     Require(scePadGetControllerIdleCount(handle, &idle) == PAD_OK && idle == 0);
     std::uint32_t cap = 99;
     Require(scePadGetCapability(0, &cap) == PAD_OK && cap == 0);
+    std::int32_t ctype = 99;
+    Require(scePadGetControllerType(handle, &ctype) == PAD_OK && ctype == 0);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
