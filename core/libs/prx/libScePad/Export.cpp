@@ -1118,7 +1118,8 @@ int APS5_VABI scePadIsMoveReproductionModel(std::int32_t handle) {
 }
 
 int APS5_VABI scePadReadAstonForTracker(std::int32_t handle, PadAstonTrackerData* data, std::int32_t count) {
-    NotImplemented_nid_no_patch(__func__);
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    if (data == nullptr || count <= 0) return PAD_ERROR_INVALID_ARG;
     return 0;
 }
 
