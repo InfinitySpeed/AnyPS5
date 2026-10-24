@@ -15,6 +15,7 @@ int APS5_VABI sceNpTrophy2SystemBuildGroupIconUri(void);
 int APS5_VABI sceNpTrophy2SystemBuildRewardIconUri(void);
 int APS5_VABI sceNpTrophy2SystemBuildTrophyIconUri(void);
 int APS5_VABI sceNpTrophy2SystemCheckCallback(void);
+int APS5_VABI sceNpTrophy2SystemCheckNetSyncTitles(void);
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -67,4 +68,5 @@ int main() {
     Require(sceNpTrophy2SystemBuildRewardIconUri() == 0);
     Require(sceNpTrophy2SystemBuildTrophyIconUri() == 0);
     Require(sceNpTrophy2SystemCheckCallback() == 0);
+    Require(sceNpTrophy2SystemCheckNetSyncTitles() == 0);
 }
