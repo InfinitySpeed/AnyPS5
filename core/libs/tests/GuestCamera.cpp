@@ -21,6 +21,7 @@ int APS5_VABI sceCameraStopByHandle(void);
 int APS5_VABI sceCameraGetDeviceIDWithoutOpen(void);
 int APS5_VABI sceCameraGetAttribute(void);
 int APS5_VABI sceCameraInitializeRegistryCalibData(void);
+int APS5_VABI sceCamera2GetContrast(void);
 }
 
 namespace {
@@ -65,5 +66,6 @@ int main() {
         Require(sceCameraGetDeviceIDWithoutOpen() == 0, "sceCameraGetDeviceIDWithoutOpen check");
         Require(sceCameraGetAttribute() == 0, "sceCameraGetAttribute check");
         Require(sceCameraInitializeRegistryCalibData() == 0, "sceCameraInitializeRegistryCalibData check");
+        Require(sceCamera2GetContrast() == 0, "sceCamera2GetContrast check");
     return 0;
 }
