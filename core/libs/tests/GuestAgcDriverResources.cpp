@@ -58,6 +58,7 @@ int APS5_VABI sceAgcDriverSubmitToHDRScopesACQ(void);
 int APS5_VABI sceAgcDriverSubmitToRazorACQ(void);
 int APS5_VABI sceAgcDriverSuspendPointSubmit(void);
 int APS5_VABI sceAgcDriverSuspendPointSubmitDirect(void);
+int APS5_VABI sceAgcDriverSysEnableSubmitDone45Exception(void);
 }
 
 static constexpr int Unavailable = static_cast<int>(0x8A6C9018);
@@ -154,4 +155,5 @@ int main() {
     Require(sceAgcDriverSubmitToRazorACQ() == 0);
     Require(sceAgcDriverSuspendPointSubmit() == 0);
     Require(sceAgcDriverSuspendPointSubmitDirect() == 0);
+    Require(sceAgcDriverSysEnableSubmitDone45Exception() == 0);
 }
