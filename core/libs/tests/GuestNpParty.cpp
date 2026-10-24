@@ -20,6 +20,7 @@ int APS5_VABI sceNpPartySendBinaryMessage(const void* sendParams);
 int APS5_VABI sceNpPartyCreate(void);
 int APS5_VABI sceNpPartyCreateA(void);
 int APS5_VABI sceNpPartyGetMemberInfo(void);
+int APS5_VABI sceNpPartyGetMembers(void);
 }
 
 namespace {
@@ -90,5 +91,6 @@ int main() {
         if (sceNpPartyCreate() != 0) return 1;
         if (sceNpPartyCreateA() != 0) return 1;
         if (sceNpPartyGetMemberInfo() != 0) return 1;
+        if (sceNpPartyGetMembers() != 0) return 1;
     return 0;
 }
