@@ -209,7 +209,6 @@ int32_t APS5_VABI sceAudioInGetRerouteCount(int32_t handle) {
 }
 
 int APS5_VABI sceAudioInDeviceIdOpen(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
