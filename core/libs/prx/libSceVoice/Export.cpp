@@ -440,7 +440,6 @@ int APS5_VABI sceVoiceDeviceInCustomerData(void) {
 }
 
 int APS5_VABI sceVoiceQAEnableRecording(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
