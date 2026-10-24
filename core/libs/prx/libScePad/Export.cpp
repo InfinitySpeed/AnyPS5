@@ -1232,8 +1232,10 @@ int APS5_VABI scePadSetPS4BcVibrationMode(std::uint8_t mode) {
 }
 
 int APS5_VABI scePadSetVirtualDeviceComponentInformation(std::int32_t deviceId, const PadVirtualDeviceComponentInformation* info) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (deviceId <= 0 || !info) {
+        return PAD_ERROR_INVALID_ARG;
+    }
+    return PAD_OK;
 }
 
 int APS5_VABI scePadEnablePs4CompatibleMode(std::int32_t handle, bool enabled) {
