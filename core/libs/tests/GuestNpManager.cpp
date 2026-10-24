@@ -46,6 +46,7 @@ int APS5_VABI sceNpAsmClientGetNpComInfo2(void);
 int APS5_VABI sceNpAsmClientGetNpComInfo2A(void);
 int APS5_VABI sceNpAsmClientGetNpComInfo3(void);
 int APS5_VABI sceNpAsmClientGetNpComInfo4(void);
+int APS5_VABI sceNpAsmClientGetNpTitleId(void);
 }
 
 extern "C" {
@@ -504,5 +505,6 @@ int main() {
         Require(sceNpAsmClientGetNpComInfo2A() == 0, "sceNpAsmClientGetNpComInfo2A check");
         Require(sceNpAsmClientGetNpComInfo3() == 0, "sceNpAsmClientGetNpComInfo3 check");
         Require(sceNpAsmClientGetNpComInfo4() == 0, "sceNpAsmClientGetNpComInfo4 check");
+        Require(sceNpAsmClientGetNpTitleId() == 0, "sceNpAsmClientGetNpTitleId check");
     return 0;
 }
