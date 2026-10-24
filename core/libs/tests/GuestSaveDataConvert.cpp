@@ -33,6 +33,7 @@ int APS5_VABI sceSaveDataDebugGetThreadId(void);
 int APS5_VABI sceSaveDataDeleteAllUser(void);
 int APS5_VABI sceSaveDataDeleteBackupData(void);
 int APS5_VABI sceSaveDataDeleteCloudData(void);
+int APS5_VABI sceSaveDataDeleteProspero(void);
 }
 
 namespace {
@@ -126,6 +127,7 @@ int main() {
         Check(sceSaveDataDeleteAllUser() == 0, "sceSaveDataDeleteAllUser check");
         Check(sceSaveDataDeleteBackupData() == 0, "sceSaveDataDeleteBackupData check");
         Check(sceSaveDataDeleteCloudData() == 0, "sceSaveDataDeleteCloudData check");
+        Check(sceSaveDataDeleteProspero() == 0, "sceSaveDataDeleteProspero check");
     if (failures != 0) return 1;
     std::printf("savedata convert tests passed\n");
     return 0;
