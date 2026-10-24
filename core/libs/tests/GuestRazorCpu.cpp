@@ -40,6 +40,7 @@ int APS5_VABI sceRazorCpuStartCaptureInternal(void);
 int APS5_VABI sceRazorCpuStopCaptureInternal(void);
 int APS5_VABI sceRazorCpuWorkloadRunBegin(void);
 int APS5_VABI sceRazorCpuWorkloadRunEnd(void);
+int APS5_VABI sceRazorCpuWorkloadSubmit(void);
 }
 
 namespace {
@@ -112,6 +113,7 @@ int main() {
         Require(sceRazorCpuStopCaptureInternal() == 0);
         Require(sceRazorCpuWorkloadRunBegin() == 0);
         Require(sceRazorCpuWorkloadRunEnd() == 0);
+        Require(sceRazorCpuWorkloadSubmit() == 0);
     bool threw = false;
     try {
         sceRazorCpuGetDataTagStorageSize(16);

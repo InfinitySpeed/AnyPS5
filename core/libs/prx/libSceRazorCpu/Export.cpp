@@ -189,7 +189,6 @@ int APS5_VABI sceRazorCpuWorkloadRunEnd(void) {
 }
 
 int APS5_VABI sceRazorCpuWorkloadSubmit(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
