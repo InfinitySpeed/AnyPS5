@@ -9,6 +9,7 @@ std::int32_t APS5_VABI sceRegMgrNonSysGetInt(std::int64_t key, std::int32_t unk,
 int APS5_VABI sceRegMgrCheckError();
 int APS5_VABI sceRegMgrCheckIntVal();
 int APS5_VABI sceRegMgrGetBinInitVal();
+int APS5_VABI sceRegMgrGetIntInitVal();
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -30,4 +31,5 @@ int main() {
     Require(sceRegMgrCheckError() == 0);
     Require(sceRegMgrCheckIntVal() == 0);
     Require(sceRegMgrGetBinInitVal() == 0);
+    Require(sceRegMgrGetIntInitVal() == 0);
 }
