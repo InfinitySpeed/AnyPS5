@@ -2790,7 +2790,6 @@ int APS5_VABI sceNetConfigDelArpWithInterface(int interfaceId, const NetEtherAdd
 }
 
 int APS5_VABI sceNetConfigDelDefaultRoute(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
