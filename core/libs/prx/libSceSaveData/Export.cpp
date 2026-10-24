@@ -159,7 +159,6 @@ int APS5_VABI sceSaveDataDebugGetThreadId(void) {
 }
 
 int APS5_VABI sceSaveDataDeleteAllUser(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
