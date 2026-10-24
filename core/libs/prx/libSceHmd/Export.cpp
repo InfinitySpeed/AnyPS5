@@ -927,7 +927,6 @@ int APS5_VABI sceHmdInternalSetPortStatus(std::uint64_t status) {
 }
 
 int APS5_VABI sceHmdReprojectionStop(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
