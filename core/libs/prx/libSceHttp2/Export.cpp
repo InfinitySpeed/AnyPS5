@@ -434,7 +434,6 @@ int APS5_VABI sceHttp2CookieExport(void) {
 }
 
 int APS5_VABI sceHttp2CookieImport(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
