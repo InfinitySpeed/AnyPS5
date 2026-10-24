@@ -42,6 +42,7 @@ int APS5_VABI sceCameraGetMmapConnectedCount(void);
 int APS5_VABI sceCamera2GetSaturation(void);
 int APS5_VABI sceCameraGetDeviceConfig(void);
 int APS5_VABI sceCameraAudioOpen(void);
+int APS5_VABI sceCamera2GetAutoExposureGain(void);
 }
 
 namespace {
@@ -107,5 +108,6 @@ int main() {
         Require(sceCamera2GetSaturation() == 0, "sceCamera2GetSaturation check");
         Require(sceCameraGetDeviceConfig() == 0, "sceCameraGetDeviceConfig check");
         Require(sceCameraAudioOpen() == 0, "sceCameraAudioOpen check");
+        Require(sceCamera2GetAutoExposureGain() == 0, "sceCamera2GetAutoExposureGain check");
     return 0;
 }
