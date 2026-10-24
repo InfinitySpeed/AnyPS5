@@ -122,6 +122,7 @@ int APS5_VABI sceCameraAudioReset(void);
 int APS5_VABI sceCameraSetAutoExposureGain(void);
 int APS5_VABI sceCameraSetAutoWhiteBalance(void);
 int APS5_VABI sceCameraGetHue(void);
+int APS5_VABI sceCameraCloseByHandle(void);
 }
 
 namespace {
@@ -267,5 +268,6 @@ int main() {
         Require(sceCameraSetAutoExposureGain() == 0, "sceCameraSetAutoExposureGain check");
         Require(sceCameraSetAutoWhiteBalance() == 0, "sceCameraSetAutoWhiteBalance check");
         Require(sceCameraGetHue() == 0, "sceCameraGetHue check");
+        Require(sceCameraCloseByHandle() == 0, "sceCameraCloseByHandle check");
     return 0;
 }
