@@ -35,6 +35,7 @@ std::int32_t APS5_VABI sceAudio3dPortOpenEx(void);
 std::int32_t APS5_VABI sceAudio3dPortCreate(void);
 std::int32_t APS5_VABI sceAudio3dPortDestroy(void);
 std::int32_t APS5_VABI sceAudio3dPortGetStatus(void);
+std::int32_t APS5_VABI sceAudio3dReportRegisterHandler(void);
 }
 
 namespace {
@@ -433,4 +434,5 @@ int main() {
     Require(sceAudio3dPortCreate() == 0);
     Require(sceAudio3dPortDestroy() == 0);
     Require(sceAudio3dPortGetStatus() == 0);
+    Require(sceAudio3dReportRegisterHandler() == 0);
 }
