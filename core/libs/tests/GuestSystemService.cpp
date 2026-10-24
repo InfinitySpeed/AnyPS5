@@ -45,6 +45,7 @@ extern "C" int APS5_VABI sceLncUtilImportSpmemConfigJson(void);
 extern "C" int APS5_VABI sceShellCoreUtilExitAppWithValue(void);
 extern "C" int APS5_VABI sceShellCoreUtilNpDebugSpecialNotification(void);
 extern "C" int APS5_VABI sceShellCoreUtilIsDddTemperatureDanger(void);
+extern "C" int APS5_VABI sceShellCoreUtilIsM2StorageTemperatureDanger(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -241,4 +242,5 @@ int main() {
     Require(sceShellCoreUtilExitAppWithValue() == 0);
     Require(sceShellCoreUtilNpDebugSpecialNotification() == 0);
     Require(sceShellCoreUtilIsDddTemperatureDanger() == 0);
+    Require(sceShellCoreUtilIsM2StorageTemperatureDanger() == 0);
 }
