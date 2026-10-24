@@ -39,6 +39,7 @@ int APS5_VABI sceNpTusDeleteMultiSlotVariableVUser(int reqId, const NpOnlineId* 
 int APS5_VABI sceNpTusSetThreadParam(void);
 int APS5_VABI sceNpTusCreateTitleCtx(void);
 int APS5_VABI sceNpTusSetTimeout(void);
+int APS5_VABI sceNpTusChangeModeForOtherSaveDataOwners(void);
 }
 
 static constexpr int SIGNED_OUT = static_cast<int>(0x80550006);
@@ -307,5 +308,6 @@ int main() {
         Require(sceNpTusSetThreadParam() == 0);
         Require(sceNpTusCreateTitleCtx() == 0);
         Require(sceNpTusSetTimeout() == 0);
+        Require(sceNpTusChangeModeForOtherSaveDataOwners() == 0);
     CheckTssTitleContexts();
 }
