@@ -14,6 +14,7 @@ int APS5_VABI sceRegMgrGetStrInitVal();
 int APS5_VABI sceRegMgrGetVersion();
 int APS5_VABI sceRegMgrIsChange();
 int APS5_VABI sceRegMgrEvtGetCnt();
+int APS5_VABI sceRegMgrEvtGetRegId();
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -40,4 +41,5 @@ int main() {
     Require(sceRegMgrGetVersion() == 0);
     Require(sceRegMgrIsChange() == 0);
     Require(sceRegMgrEvtGetCnt() == 0);
+    Require(sceRegMgrEvtGetRegId() == 0);
 }
