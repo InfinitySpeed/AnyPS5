@@ -95,6 +95,7 @@ int APS5_VABI sceCameraSetWhiteBalance(void);
 int APS5_VABI sceCamera2GetFieldOfView(void);
 int APS5_VABI sceCamera2IsValidFrameData(void);
 int APS5_VABI sceCameraSetProcessFocus(void);
+int APS5_VABI sceCameraSetGamma(void);
 }
 
 namespace {
@@ -213,5 +214,6 @@ int main() {
         Require(sceCamera2GetFieldOfView() == 0, "sceCamera2GetFieldOfView check");
         Require(sceCamera2IsValidFrameData() == 0, "sceCamera2IsValidFrameData check");
         Require(sceCameraSetProcessFocus() == 0, "sceCameraSetProcessFocus check");
+        Require(sceCameraSetGamma() == 0, "sceCameraSetGamma check");
     return 0;
 }
