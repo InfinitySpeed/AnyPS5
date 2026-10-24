@@ -887,4 +887,5 @@ int main() {
     Require(scePadVirtualDeviceGetRemoteSetting(0, nullptr) == PAD_ERROR_INVALID_ARG);
     Require(scePadVirtualDeviceSetTriggerEffectSetting(0, nullptr) == PAD_ERROR_INVALID_ARG);
     Require(scePadGetLicenseControllerInformation(0, nullptr) == PAD_ERROR_INVALID_ARG);
+    Require(scePadReadHistory(0, nullptr, 1) == PAD_ERROR_INVALID_ARG);
 }
