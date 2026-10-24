@@ -138,7 +138,6 @@ int APS5_VABI sceSaveDataCheckSaveDataBroken(void) {
 }
 
 int APS5_VABI sceSaveDataCheckSaveDataVersion(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
