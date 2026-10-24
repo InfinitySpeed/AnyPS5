@@ -20,6 +20,7 @@ int APS5_VABI sceScreenShotEnableNotification();
 int APS5_VABI sceScreenShotGetDrcParam();
 int APS5_VABI sceScreenShotSetDrcParam();
 int APS5_VABI sceScreenShotIsVshScreenCaptureDisabled();
+int APS5_VABI sceScreenShotSetParam();
 int APS5_VABI sceScreenShotSetOverlayImage(const char* path, int offsetX, int offsetY);
 int APS5_VABI sceScreenShotSetOverlayImageWithOrigin(const char* path, int offsetX, int offsetY, int origin);
 }
@@ -82,6 +83,7 @@ void TestDisableState() {
     Require(sceScreenShotGetDrcParam() == 0, "sceScreenShotGetDrcParam");
     Require(sceScreenShotSetDrcParam() == 0, "sceScreenShotSetDrcParam");
     Require(sceScreenShotIsVshScreenCaptureDisabled() == 0, "sceScreenShotIsVshScreenCaptureDisabled");
+    Require(sceScreenShotSetParam() == 0, "sceScreenShotSetParam");
 }
 
 void TestOverlay(bool large) {
