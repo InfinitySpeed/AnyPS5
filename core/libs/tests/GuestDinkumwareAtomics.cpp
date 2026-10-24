@@ -6,6 +6,7 @@
 #include <thread>
 
 extern "C" {
+int APS5_VABI _ZSt14_Atomic_assertPKcS0__nid_postfix();
 void APS5_VABI _Atomic_store_1_nid_postfix(volatile std::uint8_t*, std::uint8_t, int);
 void APS5_VABI _Atomic_store_8_nid_postfix(volatile std::uint64_t*, std::uint64_t, int);
 std::uint16_t APS5_VABI _Atomic_load_2_nid_postfix(volatile std::uint16_t*, int);
@@ -162,6 +163,7 @@ static void CheckSized() {
 }
 
 int main() {
+    Require(_ZSt14_Atomic_assertPKcS0__nid_postfix() == 0);
     CheckTyped();
     CheckSized();
     CheckFlagsAndFences();

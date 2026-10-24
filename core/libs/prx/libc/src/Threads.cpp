@@ -497,8 +497,7 @@ int APS5_VABI _Thrd_detach_nid_postfix(void* thread) {
 }
 
 int APS5_VABI _Thrd_id_nid_postfix(void) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    return static_cast<int>(reinterpret_cast<std::uintptr_t>(_Thrd_current_nid_postfix()));
 }
 
 [[noreturn]] void APS5_VABI _ZSt16_Throw_Cpp_errori_nid_postfix(int code) {

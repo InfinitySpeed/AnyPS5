@@ -70,6 +70,7 @@ int APS5_VABI _ZNSt8__sce_v212_Thrd_detachEP7pthread_nid_postfix(void* thread);
 int APS5_VABI _ZNSt8__sce_v210_Thrd_joinEP7pthreadPi_nid_postfix(void* thread, int* code);
 void APS5_VABI _ZNSt8__sce_v211_Thrd_yieldEv_nid_postfix();
 void* APS5_VABI _ZNSt8__sce_v28_Thrd_idEv_nid_postfix();
+int APS5_VABI _Thrd_id_nid_postfix();
 int APS5_VABI scePthreadCreate(void** thread, const void* attr, void* (APS5_VABI* entry)(void*), void* argument, const char* name);
 int APS5_VABI scePthreadMutexUnlock(void** mutex);
 int APS5_VABI scePthreadCondWait(void** condition, void** mutex);
@@ -464,6 +465,7 @@ static void VersionedSync() {
     Require(_ZNSt8__sce_v212_Thrd_detachEP7pthread_nid_postfix(nullptr) == 4);
     _ZNSt8__sce_v211_Thrd_yieldEv_nid_postfix();
     Require(_ZNSt8__sce_v28_Thrd_idEv_nid_postfix() != nullptr);
+    Require(_Thrd_id_nid_postfix() != 0);
 }
 
 static void ThreadHelpers() {

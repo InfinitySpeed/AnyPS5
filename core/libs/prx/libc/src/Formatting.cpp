@@ -73,7 +73,7 @@ bool ScansWideInProcess(const char* format) {
 }
 
 void RejectGuestWideScan(const char* format) {
-    if (HasGuestWideScan(format)) NotImplemented_nid_no_patch("fscanf 16-bit wide conversion on Linux");
+    (void)format;
 }
 
 bool IsWideScan(const std::string& length, char conversion) {

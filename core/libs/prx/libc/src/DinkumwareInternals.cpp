@@ -52,7 +52,7 @@ double APS5_VABI _Stod_nid_postfix(const char* text, char** end, std::int64_t pt
         if (guestErrno == 0) guestErrno = saved;
         return value;
     }
-    if (Hexadecimal(text)) NotImplemented_nid_no_patch("_Stod (hexadecimal text with a power-of-ten scale)");
+    if (Hexadecimal(text)) return value * std::pow(10.0, pten);
     std::string number(text, static_cast<const char*>(stop));
     long long exponent = 0;
     const auto marker = number.find_first_of("eE");
