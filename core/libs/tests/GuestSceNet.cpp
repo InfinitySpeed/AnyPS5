@@ -103,6 +103,7 @@ struct GuestPollEntry {
 std::int32_t APS5_VABI sceNetShowPolicy(void);
 std::int32_t APS5_VABI sceNetThreadExit(void);
 std::int32_t APS5_VABI sceNetConfigCleanUpAllInterfaces(void);
+std::int32_t APS5_VABI sceNetConfigDelDefaultRoute(void);
 };
 int APS5_VABI poll_nid_postfix(GuestPollEntry*, std::uint32_t, int);
 int* APS5_VABI __error_nid_postfix();
@@ -2221,4 +2222,5 @@ int main() {
     Require(sceNetShowPolicy() == 0);
     Require(sceNetThreadExit() == 0);
     Require(sceNetConfigCleanUpAllInterfaces() == 0);
+    Require(sceNetConfigDelDefaultRoute() == 0);
 }
