@@ -76,6 +76,7 @@ int APS5_VABI sceCameraGetSharpness(void);
 int APS5_VABI sceCamera2GetExposureGain(void);
 int APS5_VABI sceCameraStartByHandle(void);
 int APS5_VABI sceCamera2Open(void);
+int APS5_VABI sceCamera2Start(void);
 }
 
 namespace {
@@ -175,5 +176,6 @@ int main() {
         Require(sceCamera2GetExposureGain() == 0, "sceCamera2GetExposureGain check");
         Require(sceCameraStartByHandle() == 0, "sceCameraStartByHandle check");
         Require(sceCamera2Open() == 0, "sceCamera2Open check");
+        Require(sceCamera2Start() == 0, "sceCamera2Start check");
     return 0;
 }
