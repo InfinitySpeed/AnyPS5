@@ -74,7 +74,6 @@ int APS5_VABI sceAgcDriverSetFlip(void) {
 }
 
 int APS5_VABI sceAgcDriverSetHsOffchipParamDirect(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
