@@ -1256,8 +1256,11 @@ int APS5_VABI scePadGetLicenseControllerInformation(std::int32_t handle, PadLice
 }
 
 int APS5_VABI scePadReadHistory(std::int32_t handle, PadHistoryData* data, std::int32_t count) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    (void)count;
+    if (handle <= 0 || !data) {
+        return PAD_ERROR_INVALID_ARG;
+    }
+    return PAD_OK;
 }
 
 int APS5_VABI scePadStartRecording(void) {
