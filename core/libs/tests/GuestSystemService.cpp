@@ -28,6 +28,7 @@ extern "C" int APS5_VABI sceCsbMgrTerminate(void);
 extern "C" int APS5_VABI sceCsbMgrCreateLocalSandbox(void);
 extern "C" int APS5_VABI sceCsbMgrDestroyLocalSandbox(void);
 extern "C" int APS5_VABI sceCsbMgrSwitchLocalSandbox(void);
+extern "C" int APS5_VABI sceCsbMgrGetCurrentLocalSandboxId(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -207,4 +208,5 @@ int main() {
     Require(sceCsbMgrCreateLocalSandbox() == 0);
     Require(sceCsbMgrDestroyLocalSandbox() == 0);
     Require(sceCsbMgrSwitchLocalSandbox() == 0);
+    Require(sceCsbMgrGetCurrentLocalSandboxId() == 0);
 }
