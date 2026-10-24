@@ -475,7 +475,6 @@ int APS5_VABI sceCameraSetAutoExposureGain(void) {
 }
 
 int APS5_VABI sceCameraSetAutoWhiteBalance(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
