@@ -1022,7 +1022,6 @@ int APS5_VABI scePadMbusInit(void) {
 }
 
 int APS5_VABI scePadMbusTerm(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
