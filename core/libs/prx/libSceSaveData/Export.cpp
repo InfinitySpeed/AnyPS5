@@ -273,7 +273,6 @@ int APS5_VABI sceSaveDataInitializeForCdlg(void) {
 }
 
 int APS5_VABI sceSaveDataIsDeletingUsbDb(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
