@@ -24,6 +24,7 @@ extern "C" int APS5_VABI sceSystemServiceSwitchToVRApp(void);
 extern "C" int APS5_VABI sceSystemServiceSwitchToNonVRApp(void);
 extern "C" int APS5_VABI sceLncUtilGetSpmemAllocatorConfigValue(void);
 extern "C" int APS5_VABI sceCsbMgrInitialize(void);
+extern "C" int APS5_VABI sceCsbMgrTerminate(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -199,4 +200,5 @@ int main() {
     Require(sceSystemServiceSwitchToNonVRApp() == 0);
     Require(sceLncUtilGetSpmemAllocatorConfigValue() == 0);
     Require(sceCsbMgrInitialize() == 0);
+    Require(sceCsbMgrTerminate() == 0);
 }
