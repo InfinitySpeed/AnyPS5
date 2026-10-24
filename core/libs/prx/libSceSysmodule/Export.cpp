@@ -331,7 +331,6 @@ int APS5_VABI sceSysmodulePreloadModuleForLibkernel() {
 }
 
 int APS5_VABI sceSysmoduleUnloadModuleByNameInternal() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

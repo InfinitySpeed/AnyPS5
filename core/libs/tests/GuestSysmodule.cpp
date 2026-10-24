@@ -33,6 +33,7 @@ int APS5_VABI sceSysmoduleIsCalledFromSysModule();
 int APS5_VABI sceSysmoduleIsCameraPreloaded();
 int APS5_VABI sceSysmoduleMapLibcForLibkernel();
 int APS5_VABI sceSysmodulePreloadModuleForLibkernel();
+int APS5_VABI sceSysmoduleUnloadModuleByNameInternal();
 int APS5_VABI sceKernelDlsym(std::int32_t handle, const char* symbol, void** addr);
 }
 
@@ -220,6 +221,7 @@ int main() {
     Require(sceSysmoduleIsCameraPreloaded() == 0);
     Require(sceSysmoduleMapLibcForLibkernel() == 0);
     Require(sceSysmodulePreloadModuleForLibkernel() == 0);
+    Require(sceSysmoduleUnloadModuleByNameInternal() == 0);
     for (std::uint32_t id : {0u, kInternalFlag}) {
         Require(sceSysmoduleIsLoadedInternal(id) == kInvalidValue);
         Require(sceSysmoduleLoadModuleInternal(id) == kInvalidValue);
