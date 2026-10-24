@@ -19,6 +19,7 @@ extern "C" int APS5_VABI sceSystemStateMgrTickVideoPlayback(void);
 extern "C" int APS5_VABI sceSystemServiceTelemetrySetData2WithUserId(void);
 extern "C" int APS5_VABI sceShellCoreUtilStartUmmDictation(void);
 extern "C" int APS5_VABI sceSystemServiceGetSpotifyTitleId(void);
+extern "C" int APS5_VABI sceSystemServiceGetAppStatusListContainsDaemon(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -189,4 +190,5 @@ int main() {
     Require(sceSystemServiceTelemetrySetData2WithUserId() == 0);
     Require(sceShellCoreUtilStartUmmDictation() == 0);
     Require(sceSystemServiceGetSpotifyTitleId() == 0);
+    Require(sceSystemServiceGetAppStatusListContainsDaemon() == 0);
 }
