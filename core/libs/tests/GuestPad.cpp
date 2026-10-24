@@ -127,6 +127,7 @@ int APS5_VABI scePadGetTelemetryInfo(std::int32_t, PadTelemetryInfo*);
 int APS5_VABI scePadGetMotionSensorPosition(std::int32_t, PadMotionSensorPosition*);
 int APS5_VABI scePadGetBluetoothAddress(std::int32_t, std::uint64_t*);
 int APS5_VABI scePadGetDeviceInfo(std::int32_t, PadDeviceInfo*);
+int APS5_VABI scePadSetLightBarForTracker(std::int32_t, const PadLightBarParam*);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -792,6 +793,7 @@ int main() {
     Require(scePadGetBluetoothAddress(handle, &btaddr) == PAD_OK && btaddr == 0);
     PadDeviceInfo devinfo{};
     Require(scePadGetDeviceInfo(0, &devinfo) == PAD_OK);
+    Require(scePadSetLightBarForTracker(handle, nullptr) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
