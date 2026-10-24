@@ -11,6 +11,7 @@
 #include <stdexcept>
 
 extern "C" int APS5_VABI sceHmdInternalEventInitialize(void);
+extern "C" int APS5_VABI sceHmdInternalAnotherScreenOpen(void);
 namespace {
 
 constexpr std::uint32_t LastSdkBeforeStartupState = 0x044fffff;
@@ -228,5 +229,6 @@ int main() {
         Require(sceHmdGetDeviceInformation(&info) == Hmd::NotInitialized, "query after terminate");
         CheckDisconnected();
         Require(sceHmdInternalEventInitialize() == 0, "sceHmdInternalEventInitialize check");
+        Require(sceHmdInternalAnotherScreenOpen() == 0, "sceHmdInternalAnotherScreenOpen check");
     }
 }
