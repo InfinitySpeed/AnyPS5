@@ -35,6 +35,7 @@ extern "C" int APS5_VABI sceCsbMgrSetLocalSandboxInfo(void);
 extern "C" int APS5_VABI sceCsbMgrIssueStreamingSandboxInfo(void);
 extern "C" int APS5_VABI sceReportSequenceHandlerRequestReport(void);
 extern "C" int APS5_VABI sceReportSequenceHandlerCancelReport(void);
+extern "C" int APS5_VABI sceReportSequenceHandlerExistsEvent(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -221,4 +222,5 @@ int main() {
     Require(sceCsbMgrIssueStreamingSandboxInfo() == 0);
     Require(sceReportSequenceHandlerRequestReport() == 0);
     Require(sceReportSequenceHandlerCancelReport() == 0);
+    Require(sceReportSequenceHandlerExistsEvent() == 0);
 }
