@@ -69,6 +69,7 @@ int APS5_VABI sceCameraGetProductInfo(void);
 int APS5_VABI sceCameraGetGamma(void);
 int APS5_VABI sceCameraGetLensCorrection(void);
 int APS5_VABI sceCameraChangeAppModuleState(void);
+int APS5_VABI sceCamera2GetFrameData(void);
 }
 
 namespace {
@@ -161,5 +162,6 @@ int main() {
         Require(sceCameraGetGamma() == 0, "sceCameraGetGamma check");
         Require(sceCameraGetLensCorrection() == 0, "sceCameraGetLensCorrection check");
         Require(sceCameraChangeAppModuleState() == 0, "sceCameraChangeAppModuleState check");
+        Require(sceCamera2GetFrameData() == 0, "sceCamera2GetFrameData check");
     return 0;
 }
