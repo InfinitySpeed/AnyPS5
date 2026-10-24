@@ -42,7 +42,6 @@ int APS5_VABI sceRegMgrCheckError(void) {
 }
 
 int APS5_VABI sceRegMgrCheckIntVal(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
