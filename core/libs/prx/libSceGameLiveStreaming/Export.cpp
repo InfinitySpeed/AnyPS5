@@ -140,7 +140,6 @@ int APS5_VABI sceGameLiveStreamingClearPresetSocialFeedbackCommands(void) {
 }
 
 int APS5_VABI sceGameLiveStreamingSetPresetSocialFeedbackCommandsDescription(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
