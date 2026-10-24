@@ -700,8 +700,9 @@ int APS5_VABI scePadGetTriggerEffectInternalState(std::int32_t handle, PadTrigge
 }
 
 int APS5_VABI scePadSetUserNumber(std::int32_t handle, std::int32_t number) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    (void)number;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadDisableTransportButtons(bool disabled) {
