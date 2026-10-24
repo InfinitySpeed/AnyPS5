@@ -30,6 +30,7 @@ uintptr_t APS5_VABI sceKernelGetEventId(const KernelEvent* ev);
 void* APS5_VABI sceKernelGetEventUserData(const KernelEvent* ev);
 int APS5_VABI sceHttp2AddCookie(void);
 int APS5_VABI sceHttp2AuthCacheFlush(void);
+int APS5_VABI sceHttp2CookieExport(void);
 }
 
 struct Http2MemoryPoolStats {
@@ -253,4 +254,5 @@ int main() {
     Require(sceKernelDeleteEqueue(termEqueue) == 0);
     Require(sceHttp2AddCookie() == 0);
     Require(sceHttp2AuthCacheFlush() == 0);
+    Require(sceHttp2CookieExport() == 0);
 }
