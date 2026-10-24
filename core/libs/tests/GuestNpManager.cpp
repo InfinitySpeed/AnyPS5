@@ -160,6 +160,7 @@ int APS5_VABI sceNpManagerIntGetUserIdByOnlineId(void);
 int APS5_VABI sceNpManagerIntGetUserIdByOnlineIdSdk(void);
 int APS5_VABI sceNpManagerIntGetUserList(void);
 int APS5_VABI sceNpManagerIntGetUserNum(void);
+int APS5_VABI sceNpManagerIntGetVshAccessToken(void);
 }
 
 extern "C" {
@@ -732,5 +733,6 @@ int main() {
             Require(sceNpManagerIntGetUserIdByOnlineIdSdk() == 0, "sceNpManagerIntGetUserIdByOnlineIdSdk check");
             Require(sceNpManagerIntGetUserList() == 0, "sceNpManagerIntGetUserList check");
             Require(sceNpManagerIntGetUserNum() == 0, "sceNpManagerIntGetUserNum check");
+            Require(sceNpManagerIntGetVshAccessToken() == 0, "sceNpManagerIntGetVshAccessToken check");
     return 0;
 }
