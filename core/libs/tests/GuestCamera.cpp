@@ -35,6 +35,7 @@ int APS5_VABI sceCameraIsConnectedForSystem(void);
 int APS5_VABI sceCamera2SetExposureGain(void);
 int APS5_VABI sceCameraSetRegister(void);
 int APS5_VABI sceCameraSetVideoSyncInternal(void);
+int APS5_VABI sceCameraSetConfigInternal(void);
 }
 
 namespace {
@@ -93,5 +94,6 @@ int main() {
         Require(sceCamera2SetExposureGain() == 0, "sceCamera2SetExposureGain check");
         Require(sceCameraSetRegister() == 0, "sceCameraSetRegister check");
         Require(sceCameraSetVideoSyncInternal() == 0, "sceCameraSetVideoSyncInternal check");
+        Require(sceCameraSetConfigInternal() == 0, "sceCameraSetConfigInternal check");
     return 0;
 }
