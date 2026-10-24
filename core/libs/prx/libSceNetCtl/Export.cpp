@@ -823,7 +823,6 @@ int APS5_VABI sceNetCtlDisableBandwidthManagementIpcInt(void) {
 }
 
 int APS5_VABI sceNetCtlEnableBandwidthManagementIpcInt(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
