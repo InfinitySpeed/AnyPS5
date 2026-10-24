@@ -879,4 +879,5 @@ int main() {
     Require(scePadEnablePs4CompatibleMode(-1, true) == PAD_ERROR_INVALID_HANDLE);
     Require(scePadRemoteControlInsertData(nullptr) == PAD_ERROR_INVALID_ARG);
     Require(scePadRemoteControlInsertDataForAston(nullptr) == PAD_ERROR_INVALID_ARG);
+    Require(scePadVirtualDeviceAddDevice(nullptr, nullptr) == PAD_ERROR_INVALID_ARG);
 }
