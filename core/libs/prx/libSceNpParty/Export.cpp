@@ -63,7 +63,6 @@ int APS5_VABI sceNpPartyGetMemberVoiceInfo(std::uint16_t, std::uint16_t, std::ui
 }
 
 int APS5_VABI sceNpPartyGetMembers(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
