@@ -545,7 +545,6 @@ int APS5_VABI sceHmdInternalGetDeviceInformationByHandle(std::int32_t handle, Hm
 }
 
 int APS5_VABI sceHmdReprojectionStopLiveCapture(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
