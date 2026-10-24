@@ -46,6 +46,7 @@ int APS5_VABI sceRegMgrNonSysSetStr();
 int APS5_VABI sceRegMgrGetVersionForPS4();
 int APS5_VABI sceRegMgrBackupNeedMemForPS4();
 int APS5_VABI sceRegMgrBackupPullDataForPS4();
+int APS5_VABI sceRegMgrBackupPushDataForPS4();
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -104,4 +105,5 @@ int main() {
     Require(sceRegMgrGetVersionForPS4() == 0);
     Require(sceRegMgrBackupNeedMemForPS4() == 0);
     Require(sceRegMgrBackupPullDataForPS4() == 0);
+    Require(sceRegMgrBackupPushDataForPS4() == 0);
 }
