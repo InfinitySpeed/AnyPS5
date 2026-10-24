@@ -889,4 +889,5 @@ int main() {
     Require(scePadGetLicenseControllerInformation(0, nullptr) == PAD_ERROR_INVALID_ARG);
     Require(scePadReadHistory(0, nullptr, 1) == PAD_ERROR_INVALID_ARG);
     Require(scePadGetFeatureReport2(0, 0, nullptr, 0) == PAD_ERROR_INVALID_ARG);
+    Require(scePadSetFeatureReport2(0, 0, nullptr, 0) == PAD_ERROR_INVALID_ARG);
 }

@@ -1295,8 +1295,12 @@ int APS5_VABI scePadGetFeatureReport2(std::int32_t handle, std::uint8_t reportId
 }
 
 int APS5_VABI scePadSetFeatureReport2(std::int32_t handle, std::uint8_t reportId, const void* data, std::size_t size) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    (void)reportId;
+    (void)size;
+    if (handle <= 0 || !data) {
+        return PAD_ERROR_INVALID_ARG;
+    }
+    return PAD_OK;
 }
 
 int APS5_VABI scePadSetMuteLed(std::int32_t handle, std::uint32_t mode) {
