@@ -87,7 +87,6 @@ int APS5_VABI sceNpAsmClientCreateResourceContext(void) {
     return 0;
 }
 int APS5_VABI sceNpAsmClientCreateResourceContext2(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceNpAsmClientDeleteRequest(void) {
