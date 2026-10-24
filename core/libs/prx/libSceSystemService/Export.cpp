@@ -641,7 +641,6 @@ int APS5_VABI sceShellCoreUtilIsLotusMicActivated(void) {
 }
 
 int APS5_VABI sceShellCoreUtilResetAllNoticeScreenSkipFlag(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
