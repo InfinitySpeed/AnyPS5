@@ -95,7 +95,6 @@ int APS5_VABI sceRazorCpuShutdownDataTags(void) {
 
 size_t APS5_VABI sceRazorCpuGetDataTagStorageSize(uint32_t tagCount) {
  (void)tagCount;
- NotImplemented_nid_no_patch(__func__);
 }
 
 int APS5_VABI sceRazorCpuTagArray(const char* label, uint32_t category, void* array, size_t bufferSize, size_t elementSize) {

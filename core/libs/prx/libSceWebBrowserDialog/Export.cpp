@@ -161,17 +161,14 @@ int APS5_VABI sceWebBrowserDialogResetCookie(const WebBrowserDialogResetCookiePa
 }
 
 int APS5_VABI sceWebBrowserDialogGetEvent() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceWebBrowserDialogNavigate() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceWebBrowserDialogSetZoom() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

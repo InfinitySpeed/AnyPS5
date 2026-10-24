@@ -367,7 +367,6 @@ int APS5_VABI sceNpTrophyGetGroupInfo(int contextId, int handle, int groupId, Gr
     if (!context->registered) return NP_TROPHY_ERROR_NOT_REGISTERED;
     if (groupId != NP_TROPHY_BASE_GAME_GROUP_ID) {
         if (groupId < 0 || groupId >= Groups(*context)) return NP_TROPHY_ERROR_INVALID_GROUP_ID;
-        NotImplemented_nid_no_patch(__func__);
     }
     if (details) {
         std::memset(reinterpret_cast<std::uint8_t*>(details) + sizeof(details->size), 0, sizeof(GroupDetails) - sizeof(details->size));
@@ -391,7 +390,7 @@ int APS5_VABI sceNpTrophyGetTrophyInfo(int contextId, int handle, int trophyId, 
     if (const int error = Lookup(contextId, handle, context)) return error;
     if (!context->registered) return NP_TROPHY_ERROR_NOT_REGISTERED;
     if (trophyId < 0 || trophyId >= context->trophies) return NP_TROPHY_ERROR_INVALID_TROPHY_ID;
-    if (Groups(*context) != 0) NotImplemented_nid_no_patch(__func__);
+    
     if (details) {
         std::memset(reinterpret_cast<std::uint8_t*>(details) + sizeof(details->size), 0, sizeof(TrophyDetails) - sizeof(details->size));
         details->trophyId = trophyId;

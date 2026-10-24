@@ -200,12 +200,10 @@ int APS5_VABI sceVorbisDecCrossLap(void* first, void* second) {
 }
 
 int APS5_VABI sceVorbisDecGetDecodePriority(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceVorbisDecGetLastDecodeError(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -290,7 +288,6 @@ std::int64_t APS5_VABI sceVorbisDecSerialNumber(void* vf, int link) {
 }
 
 int APS5_VABI sceVorbisDecSetDecodePriority(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

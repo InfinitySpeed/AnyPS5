@@ -58,7 +58,7 @@ int APS5_VABI sceMoveTerm(void) {
 int APS5_VABI sceMoveOpen(int32_t userId, int32_t type, int32_t index) {
     std::lock_guard lock(stateMutex);
     if (!initialized) return MOVE_ERROR_NOT_INIT;
-    if (userId != USER_SERVICE_INITIAL_USER_ID) NotImplemented_nid_no_patch(__func__);
+    
     for (const auto& [openHandle, slot] : openHandles) {
         if (slot.type == type && slot.index == index) return MOVE_ERROR_ALREADY_OPENED;
     }
