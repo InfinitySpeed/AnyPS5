@@ -432,7 +432,6 @@ int APS5_VABI sceVoiceInitHQ(const VoiceInitParam* param, std::int32_t version) 
 }
 
 int APS5_VABI sceVoiceGetMemorySize(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
