@@ -38,6 +38,7 @@ extern "C" int APS5_VABI sceReportSequenceHandlerCancelReport(void);
 extern "C" int APS5_VABI sceReportSequenceHandlerExistsEvent(void);
 extern "C" int APS5_VABI sceReportSequenceHandlerUpdateEventCache(void);
 extern "C" int APS5_VABI sceReportSequenceHandlerGetEventCache(void);
+extern "C" int APS5_VABI sceLncUtilRegisterCallEntries(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -227,4 +228,5 @@ int main() {
     Require(sceReportSequenceHandlerExistsEvent() == 0);
     Require(sceReportSequenceHandlerUpdateEventCache() == 0);
     Require(sceReportSequenceHandlerGetEventCache() == 0);
+    Require(sceLncUtilRegisterCallEntries() == 0);
 }
