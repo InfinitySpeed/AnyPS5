@@ -50,7 +50,6 @@ int APS5_VABI sceAgcDriverGetWorkloadStreamInfo(void) {
 }
 
 int APS5_VABI sceAgcDriverIDHSSubmit(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
