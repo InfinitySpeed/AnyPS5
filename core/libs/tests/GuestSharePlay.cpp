@@ -26,6 +26,7 @@ int APS5_VABI sceSharePlaySetProhibitionModeWithAppId(void);
 int APS5_VABI sceSharePlayStartStandby(void);
 int APS5_VABI sceSharePlayStartStreaming(void);
 int APS5_VABI sceSharePlayStopStandby(void);
+int APS5_VABI sceSharePlayStopStreaming(void);
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -87,4 +88,5 @@ int main() {
     Require(sceSharePlayStartStandby() == 0);
     Require(sceSharePlayStartStreaming() == 0);
     Require(sceSharePlayStopStandby() == 0);
+    Require(sceSharePlayStopStreaming() == 0);
 }
