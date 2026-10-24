@@ -44,6 +44,7 @@ extern "C" int APS5_VABI getpid_nid_postfix(void);
 #endif
 
 extern "C" int* APS5_VABI __error_nid_postfix();
+extern "C" char* APS5_VABI getcwd_nid_postfix(char*, std::size_t);
 extern "C" int APS5_VABI getpid_nid_postfix();
 
 namespace {
@@ -924,6 +925,11 @@ int APS5_VABI sceKernelTitleWorkaroundIsEnabled(const KernelTitleWorkaround* wor
 int APS5_VABI sceKernelGetProcessType(int pid) {
     if (pid != getpid_nid_postfix() && pid != -1 && pid != 0) return static_cast<int>(0x80020003);
     return 0;
+}
+
+int APS5_VABI __getcwd_nid_postfix(char* buffer, std::size_t size) {
+    if (!buffer) return static_cast<int>(Fail(GuestEfault));
+    return getcwd_nid_postfix(buffer, size) ? 0 : -1;
 }
 
 }
