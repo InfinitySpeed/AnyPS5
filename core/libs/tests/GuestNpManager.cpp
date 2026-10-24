@@ -148,6 +148,7 @@ int APS5_VABI sceNpManagerIntGetParentalControlInfo(void);
 int APS5_VABI sceNpManagerIntGetPlusMemberType(void);
 int APS5_VABI sceNpManagerIntGetPlusMemberTypeNB(void);
 int APS5_VABI sceNpManagerIntGetServerError(void);
+int APS5_VABI sceNpManagerIntGetSigninState(void);
 }
 
 extern "C" {
@@ -708,5 +709,6 @@ int main() {
             Require(sceNpManagerIntGetPlusMemberType() == 0, "sceNpManagerIntGetPlusMemberType check");
             Require(sceNpManagerIntGetPlusMemberTypeNB() == 0, "sceNpManagerIntGetPlusMemberTypeNB check");
             Require(sceNpManagerIntGetServerError() == 0, "sceNpManagerIntGetServerError check");
+            Require(sceNpManagerIntGetSigninState() == 0, "sceNpManagerIntGetSigninState check");
     return 0;
 }
