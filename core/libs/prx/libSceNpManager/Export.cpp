@@ -526,7 +526,6 @@ int APS5_VABI sceNpManagerIntLoginCreateAuthenticationTicket(void) {
     return 0;
 }
 int APS5_VABI sceNpManagerIntLoginGetAccessToken(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
