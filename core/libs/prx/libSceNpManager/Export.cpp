@@ -627,7 +627,6 @@ int APS5_VABI sceNpCheckPlus(int req_id, const void* param, void* result) {
 
 int APS5_VABI sceNpNotifyPlusFeature(const void* param) {
     (void)param;
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -837,7 +836,6 @@ int APS5_VABI sceNpGetUserIdByAccountId(uint64_t account_id, int* user_id) {
 
 int APS5_VABI sceNpGetSandboxInfo(void* sandbox_info) {
     (void)sandbox_info;
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -845,13 +843,11 @@ APS5_EXPORT("8weiQyIdI3A", sceNpUnknown_8weiQyIdI3A);
 int APS5_VABI sceNpUnknown_8weiQyIdI3A(int userId, const NpOnlineId* buffer) {
     (void)userId;
     (void)buffer;
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 APS5_EXPORT("WxLcN76q19o", sceNpUnknown_WxLcN76q19o);
 int APS5_VABI sceNpUnknown_WxLcN76q19o(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -865,47 +861,38 @@ int APS5_VABI sceNpCheckCallbackForLib() {
 extern "C" {
 
 int APS5_VABI sceNpInGameMessageCreateHandle() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpInGameMessageDeleteHandle() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpInGameMessageInitialize() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpInGameMessagePrepare() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpInGameMessageSendData() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpInGameMessageTerminate() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpSnsFacebookCreateRequest() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpSnsFacebookDeleteRequest() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpSnsFacebookGetAccessToken() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

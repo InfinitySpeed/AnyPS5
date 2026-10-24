@@ -813,7 +813,6 @@ int APS5_VABI sceAmprAmmGetVirtualAddressRanges(std::uint64_t* start, std::uint6
 }
 
 int APS5_VABI sceAmprAmmSetPageTablePoolOccupancyNotificationThreshold(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -854,12 +853,10 @@ int APS5_VABI _Cnd_init_with_name_nid_postfix(void** handle, const char*) {
 }
 
 int APS5_VABI _ZNKSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE3getES3_S3_RSt8ios_baseRNSt5_IosbIiE8_IostateEP2tmPKcSE__nid_postfix(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI _ZNSt8time_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5__nid_postfix(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

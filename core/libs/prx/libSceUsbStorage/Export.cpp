@@ -24,7 +24,6 @@ std::int32_t APS5_VABI sceUsbStorageRegisterCallback(std::int32_t eventType, Usb
     if (eventType < UsbStorage::CallbackEventTypeFirst || eventType > UsbStorage::CallbackEventTypeLast) {
         return UsbStorage::InvalidArgument;
     }
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -35,7 +34,6 @@ std::int32_t APS5_VABI sceUsbStorageUnregisterCallback(std::int32_t eventType, U
     if (eventType < UsbStorage::CallbackEventTypeFirst || eventType > UsbStorage::CallbackEventTypeLast) {
         return UsbStorage::InvalidArgument;
     }
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -45,7 +43,6 @@ std::int32_t APS5_VABI sceUsbStorageRegisterCallbackForMapAvailable(std::uint32_
     if (directory == nullptr || callback == nullptr) {
         return UsbStorage::InvalidArgument;
     }
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -54,7 +51,6 @@ std::int32_t APS5_VABI sceUsbStorageUnregisterCallbackForMapAvailable(std::uint3
     if (directory == nullptr || callback == nullptr) {
         return UsbStorage::InvalidArgument;
     }
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -64,7 +60,6 @@ std::int32_t APS5_VABI sceUsbStorageRegisterCallbackForMapUnavailable(std::uint3
     if (directory == nullptr || callback == nullptr) {
         return UsbStorage::InvalidArgument;
     }
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -73,7 +68,6 @@ std::int32_t APS5_VABI sceUsbStorageUnregisterCallbackForMapUnavailable(std::uin
     if (directory == nullptr || callback == nullptr) {
         return UsbStorage::InvalidArgument;
     }
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -96,7 +90,6 @@ std::int32_t APS5_VABI sceUsbStorageGetDeviceList(std::uint32_t* devices, std::i
 int APS5_VABI sceUsbStorageGetMountPointOfShellCore(uint32_t device, char* mountPoint) {
     (void)device;
     (void)mountPoint;
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -123,7 +116,6 @@ std::int32_t APS5_VABI sceUsbStorageRequestUnmap(std::uint32_t device, const cha
     if (directory == nullptr) {
         return UsbStorage::InvalidArgument;
     }
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -147,12 +139,10 @@ std::int32_t APS5_VABI sceUsbStorageGetdentsRead(std::int32_t fd, void* buffer, 
 
 std::int32_t APS5_VABI sceUsbStorageGetdentsClose(std::int32_t fd) {
     (void)fd;
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceUsbStorageClearFakeWriteProtection() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -168,12 +158,10 @@ std::int32_t APS5_VABI sceUsbStorageRequestMapWSB(std::uint32_t device, const ch
 }
 
 int APS5_VABI sceUsbStorageSetFakeMapLockForDebug() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceUsbStorageSetFakeWriteProtection() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

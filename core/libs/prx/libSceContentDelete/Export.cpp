@@ -36,22 +36,18 @@ int APS5_VABI sceContentDeleteById(std::int64_t contentId) {
 }
 
 int APS5_VABI sceContentDeleteByIdListForSf(const std::int64_t* contentIds, std::size_t count) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceContentDeleteGlobalMstat(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceContentDeleteMemoryInitialize(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceContentDeleteMemoryTerminate(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

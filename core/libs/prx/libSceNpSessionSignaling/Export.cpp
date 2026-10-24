@@ -263,12 +263,10 @@ int APS5_VABI sceNpSessionSignalingRequestPrepare(uint32_t contextId, uint32_t* 
 }
 
 int APS5_VABI sceNpSessionSignalingGetMemoryInfo(SessionSignalingMemoryInfo* memoryInfo) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpSessionSignalingGetConnectionStatistics(SessionSignalingConnectionStatistics* statistics) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -309,7 +307,6 @@ int APS5_VABI sceNpSessionSignalingGetConnectionFromNetAddress2(std::uint32_t co
 }
 
 int APS5_VABI sceNpSessionSignalingCreateJoinActivate() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -324,27 +321,22 @@ int APS5_VABI sceNpSessionSignalingGetConnectionFromNetAddress(std::uint32_t con
 }
 
 int APS5_VABI sceNpSessionSignalingGetCustomProperty() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpSessionSignalingGetGroupFromPeerAddress() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpSessionSignalingInitializeWithPort() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpSessionSignalingJoinActivate() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceNpSessionSignalingSetCustomProperty() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

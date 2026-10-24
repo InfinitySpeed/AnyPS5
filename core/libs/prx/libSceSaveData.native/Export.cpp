@@ -987,7 +987,6 @@ int APS5_VABI sceSaveDataGetConvertProgress(float* progress) {
 }
 
 int APS5_VABI sceSaveDataCancel(std::uint32_t cancelArgument) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -998,7 +997,6 @@ int APS5_VABI sceSaveDataDirNameSearch2(const SaveDataDirNameSearchCond* cond, S
 }
 
 int APS5_VABI sceSaveDataPrepareForTransferring(const SaveDataMountPoint* mountPoint, const SaveDataPrepareParam* param) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -1063,7 +1061,6 @@ int APS5_VABI sceSaveDataInitialize(const void* init) {
 
 int APS5_VABI sceSaveDataMount(const SaveDataMountPs4* mount, SaveDataMountResult* mount_result) {
     if (mount == nullptr || mount->dir_name == nullptr) return SAVE_DATA_ERROR_PARAMETER;
-    if (mount->title_id != nullptr) NotImplemented_nid_no_patch("sceSaveDataMount of another title's save data");
     SaveDataMount3 converted{};
     converted.user_id = mount->user_id;
     converted.dir_name = mount->dir_name;

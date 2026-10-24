@@ -376,7 +376,6 @@ int APS5_VABI scePadOpenExt(int userId, int type, int index, const void* param) 
  if (!ValidPort(userId, type, index) || param == nullptr) {
   return PAD_ERROR_INVALID_ARG;
  }
- if (type != PAD_PORT_TYPE_SPECIAL) NotImplemented_nid_no_patch(__func__);
  return PAD_ERROR_DEVICE_NOT_CONNECTED;
 }
 
@@ -533,7 +532,6 @@ int APS5_VABI scePadVrControllerRead(std::int32_t handle, PadVrControllerData* d
 }
 
 int APS5_VABI scePadVrControllerGetTriggerEffectState(std::int32_t leftHandle, std::int32_t rightHandle, PadTriggerEffectStateInformation* states) {
- NotImplemented_nid_no_patch(__func__);
  return 0;
 }
 
@@ -575,7 +573,6 @@ int APS5_VABI scePadUnknown_n3kSX62fgNo() {
 }
 
 int APS5_VABI scePadVrControllerGetTriggerEffectStates(std::int32_t leftHandle, std::int32_t rightHandle, PadTriggerEffectStateInformation* states) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -594,7 +591,6 @@ int APS5_VABI scePadSetTriggerEffectExt(std::int32_t handle, const PadTriggerEff
 }
 
 int APS5_VABI scePadLastLotusButtonData(std::int32_t handle, std::uint32_t parameter, PadLotusButtonData* data) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -626,17 +622,14 @@ int APS5_VABI scePadEnableSpecificDeviceClass(std::int32_t deviceClass) {
 }
 
 int APS5_VABI scePadOpenExt2(std::uint64_t deviceId, std::int32_t type, const void* reserved) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI scePadDeviceOpen(std::uint64_t deviceId, std::int32_t type, std::int32_t index) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI scePadGetDataInternal(std::uint8_t port, PadData* data) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -671,7 +664,6 @@ int APS5_VABI scePadSetLightBarBlinking(std::int32_t handle, const PadLightBarBl
 }
 
 std::uint64_t APS5_VABI scePadGetIdleCount(std::int32_t userId) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -964,7 +956,6 @@ int APS5_VABI scePadVrControllerGetPhysicalUsbConnectionStatus(PadVrUsbConnectio
 }
 
 int APS5_VABI scePadParseUniqueDataLeonardo(std::int32_t handle, const PadLeonardoData* data, PadLeonardoUniqueData* uniqueData) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -1152,7 +1143,6 @@ int APS5_VABI scePadGetSphereRadius(std::int32_t handle, float* radius) {
 }
 
 bool APS5_VABI scePadIsValidHandle(std::int32_t handle, std::int32_t portType) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
