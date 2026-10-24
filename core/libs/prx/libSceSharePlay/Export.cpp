@@ -98,7 +98,6 @@ int APS5_VABI sceSharePlayStartStandby(void) {
 }
 
 int APS5_VABI sceSharePlayStartStreaming(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
