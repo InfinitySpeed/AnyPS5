@@ -785,8 +785,8 @@ int APS5_VABI scePadSetProfileHunt(std::int32_t handle, std::int32_t profileId, 
 }
 
 int APS5_VABI scePadResetHunt(std::int32_t handle) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadGetProfileInfo(std::int32_t deviceId, std::int32_t profileId, PadProfileInfo* info) {
