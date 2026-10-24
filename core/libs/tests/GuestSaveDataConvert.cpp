@@ -59,6 +59,7 @@ int APS5_VABI sceSaveDataMountInternal(void);
 int APS5_VABI sceSaveDataMountSys(void);
 int APS5_VABI sceSaveDataRebuildDatabase(void);
 int APS5_VABI sceSaveDataRestoreBackupData(void);
+int APS5_VABI sceSaveDataRestoreBackupDataForCdlg(void);
 }
 
 namespace {
@@ -178,6 +179,7 @@ int main() {
         Check(sceSaveDataMountSys() == 0, "sceSaveDataMountSys check");
         Check(sceSaveDataRebuildDatabase() == 0, "sceSaveDataRebuildDatabase check");
         Check(sceSaveDataRestoreBackupData() == 0, "sceSaveDataRestoreBackupData check");
+        Check(sceSaveDataRestoreBackupDataForCdlg() == 0, "sceSaveDataRestoreBackupDataForCdlg check");
     if (failures != 0) return 1;
     std::printf("savedata convert tests passed\n");
     return 0;
