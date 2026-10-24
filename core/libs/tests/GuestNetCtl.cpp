@@ -70,6 +70,9 @@ int APS5_VABI sceNetBweCheckCallbackIpcInt(void);
 int APS5_VABI sceNetBweStartInternetConnectionTestIpcInt(void);
 int APS5_VABI sceNetBweFinishInternetConnectionTestIpcInt(void);
 int APS5_VABI sceNetBweStartInternetConnectionTestBandwidthTestIpcInt(void);
+int APS5_VABI sceNetCtlRegisterCallbackForNpToolkit(NetCtlCallback, void*, int*);
+int APS5_VABI sceNetCtlUnregisterCallbackForNpToolkit(int);
+int APS5_VABI sceNetCtlCheckCallbackForNpToolkit(void);
 }
 
 namespace {
@@ -305,6 +308,9 @@ int main() {
     Require(sceNetCtlRegisterCallbackV6(nullptr, nullptr, nullptr) == kErrInvalidAddr);
     Require(sceNetCtlUnregisterCallback(-1) == invalidId);
     Require(sceNetCtlUnregisterCallbackV6(-1) == invalidId);
+    Require(sceNetCtlRegisterCallbackForNpToolkit(nullptr, nullptr, nullptr) == kErrInvalidAddr);
+    Require(sceNetCtlUnregisterCallbackForNpToolkit(-1) == invalidId);
+    Require(sceNetCtlCheckCallbackForNpToolkit() == 0);
     CheckCallbacks();
 
     Require(sceNetCtlGetStateV6(nullptr) == kErrInvalidAddr);
