@@ -76,7 +76,6 @@ int APS5_VABI sceGameLiveStreamingScreenTerminate(void) {
 }
 
 int APS5_VABI sceGameLiveStreamingScreenCloseSeparateMode(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
