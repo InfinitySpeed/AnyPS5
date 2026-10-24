@@ -74,7 +74,6 @@ int APS5_VABI sceNpTrophy2SystemGetTrpIconByUri(void) {
 }
 
 int APS5_VABI sceNpTrophy2SystemIsServerAvailable(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
