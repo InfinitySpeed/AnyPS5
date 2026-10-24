@@ -1198,8 +1198,10 @@ int APS5_VABI scePadVirtualDeviceInsertData(std::int32_t deviceId, const PadData
 }
 
 int APS5_VABI scePadVirtualDeviceInsertTriggerInternalState(std::int32_t deviceId, const PadVirtualTriggerInternalState* state) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (deviceId <= 0 || !state) {
+        return PAD_ERROR_INVALID_ARG;
+    }
+    return PAD_OK;
 }
 
 int APS5_VABI scePadVirtualDeviceGetRemoteSetting(std::int32_t deviceId, PadRemoteSetting* setting) {
