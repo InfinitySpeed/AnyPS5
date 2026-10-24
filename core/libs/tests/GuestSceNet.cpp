@@ -109,6 +109,7 @@ std::int32_t APS5_VABI sceNetConfigDelDefaultRoute6(void);
 std::int32_t APS5_VABI sceNetInfoDumpStop(void);
 std::int32_t APS5_VABI sceNetPppoeStop(void);
 std::int32_t APS5_VABI sceNetConfigRoutingStop(void);
+std::int32_t APS5_VABI sceNetConfigRoutingShowRoutingConfig(void);
 };
 int APS5_VABI poll_nid_postfix(GuestPollEntry*, std::uint32_t, int);
 int* APS5_VABI __error_nid_postfix();
@@ -2233,4 +2234,5 @@ int main() {
     Require(sceNetInfoDumpStop() == 0);
     Require(sceNetPppoeStop() == 0);
     Require(sceNetConfigRoutingStop() == 0);
+    Require(sceNetConfigRoutingShowRoutingConfig() == 0);
 }
