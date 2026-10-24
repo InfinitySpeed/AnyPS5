@@ -55,6 +55,7 @@ int APS5_VABI sceSaveDataIsDeletingUsbDb(void);
 int APS5_VABI sceSaveDataManualDelete(void);
 int APS5_VABI sceSaveDataManualDownload(void);
 int APS5_VABI sceSaveDataManualUpload(void);
+int APS5_VABI sceSaveDataMountInternal(void);
 }
 
 namespace {
@@ -170,6 +171,7 @@ int main() {
         Check(sceSaveDataManualDelete() == 0, "sceSaveDataManualDelete check");
         Check(sceSaveDataManualDownload() == 0, "sceSaveDataManualDownload check");
         Check(sceSaveDataManualUpload() == 0, "sceSaveDataManualUpload check");
+        Check(sceSaveDataMountInternal() == 0, "sceSaveDataMountInternal check");
     if (failures != 0) return 1;
     std::printf("savedata convert tests passed\n");
     return 0;

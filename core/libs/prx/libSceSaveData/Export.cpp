@@ -299,7 +299,6 @@ int APS5_VABI sceSaveDataMount5() {
 }
 
 int APS5_VABI sceSaveDataMountInternal(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
