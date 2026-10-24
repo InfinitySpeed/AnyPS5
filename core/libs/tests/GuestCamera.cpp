@@ -100,6 +100,7 @@ int APS5_VABI sceCamera2GetConfig(void);
 int APS5_VABI sceCamera2GetWhiteBalance(void);
 int APS5_VABI sceCameraGetDeviceConfigWithoutHandle(void);
 int APS5_VABI sceCameraDeviceOpen(void);
+int APS5_VABI sceCameraSetUacModeInternal(void);
 }
 
 namespace {
@@ -223,5 +224,6 @@ int main() {
         Require(sceCamera2GetWhiteBalance() == 0, "sceCamera2GetWhiteBalance check");
         Require(sceCameraGetDeviceConfigWithoutHandle() == 0, "sceCameraGetDeviceConfigWithoutHandle check");
         Require(sceCameraDeviceOpen() == 0, "sceCameraDeviceOpen check");
+        Require(sceCameraSetUacModeInternal() == 0, "sceCameraSetUacModeInternal check");
     return 0;
 }
