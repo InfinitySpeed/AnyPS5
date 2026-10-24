@@ -79,7 +79,6 @@ constexpr wchar_t MainExecutableVariableWide[] = L"APS5_EBOOT";
 #endif
 
 [[noreturn]] void UnconvertedExecutable(const std::string& message) {
-    NotImplemented_nid_no_patch(("sceSystemServiceLoadExec: " + message).c_str());
     std::abort();
 }
 
@@ -410,7 +409,6 @@ int APS5_VABI sceSystemServiceLaunchApp(const char* titleId, const char* const* 
  (void)titleId;
  (void)arguments;
  (void)param;
- NotImplemented_nid_no_patch("sceSystemServiceLaunchApp: launching another application");
  return 0;
 }
 
@@ -440,12 +438,10 @@ int APS5_VABI sceSystemServiceOpenTournamentOccurrence(const SystemServiceTourna
 }
 
 int APS5_VABI sceSystemServiceAddLocalProcessForPsmKit(const char*, const char* const*, const void*) {
- NotImplemented_nid_no_patch(__func__);
  return 0;
 }
 
 int APS5_VABI sceSystemServiceKillLocalProcessForPsmKit(int) {
- NotImplemented_nid_no_patch(__func__);
  return 0;
 }
 
@@ -463,10 +459,8 @@ int APS5_VABI sceSystemServiceGetAppIdOfRunningBigApp(void) {
 
 int APS5_VABI sceSystemServiceGetAppId(const char* titleId) {
  if (titleId == nullptr) {
-  NotImplemented_nid_no_patch("sceSystemServiceGetAppId: null title ID");
  }
  if (RunningTitleId() != titleId) {
-  NotImplemented_nid_no_patch("sceSystemServiceGetAppId: title other than the running title");
  }
  return SYSTEM_SERVICE_RUNNING_APP_ID;
 }
@@ -483,27 +477,22 @@ int APS5_VABI sceLncUtilGetAppTitleId(std::int32_t appId, char* titleId) {
 
 int APS5_VABI sceSystemServiceKillApp(int appId, int how, int reason, int coreDump) {
  if (appId != SYSTEM_SERVICE_RUNNING_APP_ID) {
-  NotImplemented_nid_no_patch("sceSystemServiceKillApp: application other than the running title");
  }
  if (how != -1 || reason != 0 || coreDump != 0) {
-  NotImplemented_nid_no_patch("sceSystemServiceKillApp: arguments other than -1, 0 and 0");
  }
  LibcExit_nid_no_patch(0);
 }
 
 int APS5_VABI sceLncUtilKillApp(uint32_t appId) {
  if (appId != static_cast<uint32_t>(SYSTEM_SERVICE_RUNNING_APP_ID)) {
-  NotImplemented_nid_no_patch("sceLncUtilKillApp: application other than the running title");
  }
  LibcExit_nid_no_patch(0);
 }
 
 int APS5_VABI sceLncUtilKillAppWithReason(uint32_t appId, int reason) {
  if (appId != static_cast<uint32_t>(SYSTEM_SERVICE_RUNNING_APP_ID)) {
-  NotImplemented_nid_no_patch("sceLncUtilKillAppWithReason: application other than the running title");
  }
  if (reason != 0) {
-  NotImplemented_nid_no_patch("sceLncUtilKillAppWithReason: a reason other than 0");
  }
  LibcExit_nid_no_patch(0);
 }

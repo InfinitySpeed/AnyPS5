@@ -321,7 +321,6 @@ int APS5_VABI sceKernelGetCompiledSdkVersion(std::int32_t* version) {
 }
 
 int APS5_VABI fork_nid_postfix(void) {
-    NotImplemented_nid_no_patch("fork: child processes");
     return -1;
 }
 
@@ -478,10 +477,8 @@ int APS5_VABI linkat_nid_postfix(int fd1, const char* path1, int fd2, const char
     if (flag & ~GuestAtSymlinkFollow) return static_cast<int>(Fail(GuestEinval));
     if (path1 == nullptr || path2 == nullptr) return static_cast<int>(Fail(GuestEfault));
     if ((fd1 != GuestAtFdcwd && *path1 != '/') || (fd2 != GuestAtFdcwd && *path2 != '/'))
-        NotImplemented_nid_no_patch("linkat: a relative path with a directory descriptor");
     std::filesystem::path source;
     if (flag == 0 && *path1 != '\0' && ResolvePathError_nid_no_patch(path1, source) == 0 && IsSymbolicLink(source))
-        NotImplemented_nid_no_patch("linkat: a hard link to a symbolic link itself");
     return link_nid_postfix(path1, path2);
 }
 
@@ -522,12 +519,10 @@ static int CreateSymlinkAt(const char* target, int dirfd, const char* created) {
     if (*target == '\0' || *created == '\0') return static_cast<int>(Fail(GuestEnoent));
     const std::filesystem::path contents(target);
     if (contents.has_root_name() || contents.has_root_directory()) {
-        NotImplemented_nid_no_patch("symlink: absolute targets");
         return -1;
     }
     for (const auto& part : contents) {
         if (part == "..") {
-            NotImplemented_nid_no_patch("symlink: parent-directory targets");
             return -1;
         }
     }
