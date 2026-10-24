@@ -34,6 +34,7 @@ int APS5_VABI sceRazorCpuGpuMarkerSync(void);
 int APS5_VABI sceRazorCpuInitializeGpuMarkerContext(void);
 int APS5_VABI sceRazorCpuInitializeInternal(void);
 int APS5_VABI sceRazorCpuSetPopMarkerCallback(void);
+int APS5_VABI sceRazorCpuSetPushMarkerCallback(void);
 }
 
 namespace {
@@ -100,6 +101,7 @@ int main() {
         Require(sceRazorCpuInitializeGpuMarkerContext() == 0);
         Require(sceRazorCpuInitializeInternal() == 0);
         Require(sceRazorCpuSetPopMarkerCallback() == 0);
+        Require(sceRazorCpuSetPushMarkerCallback() == 0);
     bool threw = false;
     try {
         sceRazorCpuGetDataTagStorageSize(16);
