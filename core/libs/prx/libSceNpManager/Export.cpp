@@ -310,7 +310,6 @@ int APS5_VABI sceNpManagerIntAddPlusMemberTypeCallback(void) {
     return 0;
 }
 int APS5_VABI sceNpManagerIntAddSigninStateCallback(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceNpManagerIntAuthGetAuthorizationCode(void) {
