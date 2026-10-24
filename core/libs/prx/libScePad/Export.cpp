@@ -1098,8 +1098,10 @@ bool APS5_VABI scePadIsMoveConnected(std::int32_t handle) {
 }
 
 int APS5_VABI scePadGetBluetoothAddress(std::int32_t handle, std::uint64_t* address) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    if (address == nullptr) return PAD_ERROR_INVALID_ARG;
+    *address = 0;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadIsMoveReproductionModel(std::int32_t handle) {
