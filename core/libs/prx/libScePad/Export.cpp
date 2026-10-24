@@ -799,8 +799,10 @@ int APS5_VABI scePadSetStickTriggerTuningMode(std::int32_t handle, std::uint32_t
 }
 
 int APS5_VABI scePadSetStickTuningParam(std::int32_t handle, std::uint32_t stick, const PadStickTuningParameter* parameter) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    (void)stick;
+    (void)parameter;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadSetTriggerTuningParam(std::int32_t handle, const PadTriggerTuningParameter* parameter) {

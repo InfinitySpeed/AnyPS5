@@ -102,6 +102,7 @@ int APS5_VABI scePadOutputReport(std::int32_t, std::uint8_t, const void*, std::u
 int APS5_VABI scePadVrControllerSetTriggerEffects(std::int32_t, std::int32_t, const PadVrTriggerEffects*);
 int APS5_VABI scePadSetLotusIrCodeSetStart(std::int32_t, std::uint8_t, std::uint16_t, std::size_t);
 int APS5_VABI scePadSetLotusIrCodeSetData(std::int32_t, std::uint8_t, const void*, std::size_t);
+int APS5_VABI scePadSetStickTuningParam(std::int32_t, std::uint32_t, const PadStickTuningParameter*);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -722,6 +723,7 @@ int main() {
     Require(scePadVrControllerSetTriggerEffects(handle, handle, nullptr) == PAD_OK);
     Require(scePadSetLotusIrCodeSetStart(handle, 0, 0, 0) == PAD_OK);
     Require(scePadSetLotusIrCodeSetData(handle, 0, nullptr, 0) == PAD_OK);
+    Require(scePadSetStickTuningParam(handle, 0, nullptr) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
