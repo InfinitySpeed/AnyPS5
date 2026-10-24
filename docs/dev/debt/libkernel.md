@@ -124,6 +124,8 @@
 
 ### Functional
 
+- [pthread_attr_setstackaddr](../../../core/libs/prx/libkernel/Pthread/Posix/Attr.cpp) (libkernel) - console-specific behavior is unverified. Follows [FreeBSD 11.4 libthr](https://github.com/freebsd/freebsd-src/blob/releng/11.4/lib/libthr/thread/thr_attr.c#L509-L525): a null attribute, null attribute object or null stack address returns POSIX `EINVAL`; success changes only the stored stack address through the existing SCE setter.
+
 - [scePthreadYield](../../../core/libs/prx/libkernel/Pthread/src/Thread.cpp) (libkernel) on Windows calls Sleep(1) after 512 consecutive yields that find no other thread ready on the current processor and arrive less than ~10,000 TSC ticks apart (so the span varies with host CPU TSC rate); FreeBSD sched_yield never sleeps.
 - [Guest thread scheduling](../../../core/libs/prx/libkernel/Pthread/src/Thread.cpp) (libkernel) - the policies and priorities that `sched_get_priority_max`, `sched_get_priority_min`, `pthread_setschedparam` and `scePthreadSetschedparam` accept, and those a created thread takes, follow a PS5 (firmware 13.60), but they are only recorded and reported: they are not applied to host threads, so a title's priority order has no effect on host scheduling
 - [Linux runtime module initialization](../../../core/libs/prx/libkernel/Module/src/DynamicLoader.cpp) (libkernel) - modules in explicit runtime directories can be mapped for bindings before an explicit guest load runs their entry and init array once with the caller arguments. Finalizers run only after initialization completed. Console dependency-start and finalization ordering are unmeasured. Windows and macOS use their existing lifecycle paths.
