@@ -258,7 +258,6 @@ int APS5_VABI sceAppContentDownload0Expand(void) {
 }
 
 int APS5_VABI sceAppContentDownload0Shrink(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
