@@ -42,6 +42,7 @@ int APS5_VABI sceAudioInVmicWrite();
 int APS5_VABI sceAudioInVmicGetStatus();
 int APS5_VABI sceAudioInVmicSetMute();
 int APS5_VABI sceAudioInExtCtrl();
+int APS5_VABI sceAudioInInputs();
 int32_t APS5_VABI sceAudioInIsPadEmbeddedMic(int32_t);
 int32_t APS5_VABI sceAudioInGetGain(int32_t, float*);
 int32_t APS5_VABI sceAudioInGetRerouteCount(int32_t);
@@ -109,6 +110,7 @@ void TestOpenEx() {
     Require(sceAudioInVmicGetStatus() == 0);
     Require(sceAudioInVmicSetMute() == 0);
     Require(sceAudioInExtCtrl() == 0);
+    Require(sceAudioInInputs() == 0);
 }
 
 void TestValidation() {
