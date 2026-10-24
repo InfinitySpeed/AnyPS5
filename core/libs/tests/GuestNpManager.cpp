@@ -106,6 +106,7 @@ int APS5_VABI sceNpManagerIntCheckNpState(void);
 int APS5_VABI sceNpManagerIntCheckNpStateA(void);
 int APS5_VABI sceNpManagerIntClearGameAccessToken(void);
 int APS5_VABI sceNpManagerIntClearOnlineIdChangeFlag(void);
+int APS5_VABI sceNpManagerIntClearTicket(void);
 }
 
 extern "C" {
@@ -624,5 +625,6 @@ int main() {
         Require(sceNpManagerIntCheckNpStateA() == 0, "sceNpManagerIntCheckNpStateA check");
         Require(sceNpManagerIntClearGameAccessToken() == 0, "sceNpManagerIntClearGameAccessToken check");
         Require(sceNpManagerIntClearOnlineIdChangeFlag() == 0, "sceNpManagerIntClearOnlineIdChangeFlag check");
+        Require(sceNpManagerIntClearTicket() == 0, "sceNpManagerIntClearTicket check");
     return 0;
 }
