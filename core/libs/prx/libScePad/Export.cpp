@@ -929,7 +929,6 @@ int APS5_VABI scePadGetInfoByPortType(std::int32_t type, PadPortInfo* info) {
 }
 
 int APS5_VABI scePadResetLightBarAll(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
