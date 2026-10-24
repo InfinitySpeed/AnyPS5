@@ -28,6 +28,7 @@ int APS5_VABI sceRegMgrBackupNeedMem();
 int APS5_VABI sceRegMgrBackupPullData();
 int APS5_VABI sceRegMgrBackupPushData();
 int APS5_VABI sceRegMgrBackupPullDataGkp();
+int APS5_VABI sceRegMgrBackupPushDataGkp();
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -68,4 +69,5 @@ int main() {
     Require(sceRegMgrBackupPullData() == 0);
     Require(sceRegMgrBackupPushData() == 0);
     Require(sceRegMgrBackupPullDataGkp() == 0);
+    Require(sceRegMgrBackupPushDataGkp() == 0);
 }
