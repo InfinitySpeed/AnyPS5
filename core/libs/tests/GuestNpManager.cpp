@@ -145,6 +145,7 @@ int APS5_VABI sceNpManagerIntGetOnlineIdChangeFlag(void);
 int APS5_VABI sceNpManagerIntGetOnlineIdSdk(void);
 int APS5_VABI sceNpManagerIntGetParentalControlFlag(void);
 int APS5_VABI sceNpManagerIntGetParentalControlInfo(void);
+int APS5_VABI sceNpManagerIntGetPlusMemberType(void);
 }
 
 extern "C" {
@@ -702,5 +703,6 @@ int main() {
             Require(sceNpManagerIntGetOnlineIdSdk() == 0, "sceNpManagerIntGetOnlineIdSdk check");
             Require(sceNpManagerIntGetParentalControlFlag() == 0, "sceNpManagerIntGetParentalControlFlag check");
             Require(sceNpManagerIntGetParentalControlInfo() == 0, "sceNpManagerIntGetParentalControlInfo check");
+            Require(sceNpManagerIntGetPlusMemberType() == 0, "sceNpManagerIntGetPlusMemberType check");
     return 0;
 }
