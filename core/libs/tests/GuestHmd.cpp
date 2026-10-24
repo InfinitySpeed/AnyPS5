@@ -34,6 +34,7 @@ extern "C" int APS5_VABI sceHmdInternalCrashReportOpen(void);
 extern "C" int APS5_VABI sceHmdReprojectionClearUserEventStart(void);
 extern "C" int APS5_VABI sceHmdInternalMapSharedMemory(void);
 extern "C" int APS5_VABI sceHmdInternalDfuReset(void);
+extern "C" int APS5_VABI sceHmdInternalMmapGetCount(void);
 namespace {
 
 constexpr std::uint32_t LastSdkBeforeStartupState = 0x044fffff;
@@ -274,5 +275,6 @@ int main() {
         Require(sceHmdReprojectionClearUserEventStart() == 0, "sceHmdReprojectionClearUserEventStart check");
         Require(sceHmdInternalMapSharedMemory() == 0, "sceHmdInternalMapSharedMemory check");
         Require(sceHmdInternalDfuReset() == 0, "sceHmdInternalDfuReset check");
+        Require(sceHmdInternalMmapGetCount() == 0, "sceHmdInternalMmapGetCount check");
     }
 }
