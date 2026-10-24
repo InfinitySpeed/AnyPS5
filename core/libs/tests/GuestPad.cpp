@@ -85,6 +85,7 @@ int APS5_VABI scePadGetSelectButtonCustomizeMode(std::int32_t);
 int APS5_VABI scePadIsCoPilot(std::int32_t);
 int APS5_VABI scePadGetActiveTime(std::int32_t, std::int32_t, std::uint64_t*);
 int APS5_VABI scePadGetDeviceId(std::int32_t, std::int32_t*);
+int APS5_VABI scePadGetMotionTimerUnit(std::int32_t, float*);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -684,6 +685,8 @@ int main() {
     Require(scePadGetActiveTime(handle, 0, &atime) == PAD_OK && atime == 0);
     std::int32_t devId = 99;
     Require(scePadGetDeviceId(handle, &devId) == PAD_OK && devId == 0);
+    float munit = 0.0f;
+    Require(scePadGetMotionTimerUnit(handle, &munit) == PAD_OK && munit == 1.0f);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);

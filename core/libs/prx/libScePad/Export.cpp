@@ -992,8 +992,10 @@ int APS5_VABI scePadResetOrientationForTracker(std::int32_t handle) {
 }
 
 int APS5_VABI scePadGetMotionTimerUnit(std::int32_t handle, float* unit) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    if (unit == nullptr) return PAD_ERROR_INVALID_ARG;
+    *unit = 1.0f;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadSetVrTrackingMode(std::uint8_t mode) {
