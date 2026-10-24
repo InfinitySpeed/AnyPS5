@@ -383,7 +383,6 @@ int APS5_VABI sceCamera2GetConfig(void) {
 }
 
 int APS5_VABI sceCamera2GetWhiteBalance(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
