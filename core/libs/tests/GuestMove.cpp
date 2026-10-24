@@ -17,6 +17,7 @@ int APS5_VABI sceMoveSetVibration(std::int32_t handle, std::uint8_t motor);
 int APS5_VABI sceMoveSetLightSphere(std::int32_t handle, std::uint8_t red, std::uint8_t green, std::uint8_t blue);
 int APS5_VABI sceMoveResetLightSphere(std::int32_t handle);
 int APS5_VABI sceMoveGetBluetoothAddress(void);
+int APS5_VABI sceMoveGetCalibrationInfo(void);
 }
 
 namespace {
@@ -153,4 +154,5 @@ int main() {
     Require(sceMoveClose(third) == kOk);
     Require(sceMoveTerm() == kOk);
     Require(sceMoveGetBluetoothAddress() == 0);
+    Require(sceMoveGetCalibrationInfo() == 0);
 }
