@@ -630,7 +630,6 @@ int APS5_VABI sceHmdGetAssyError(HmdAssemblyError* data) {
 }
 
 int APS5_VABI sceHmdReprojectionFinalize(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
