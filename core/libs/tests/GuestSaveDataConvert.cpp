@@ -28,6 +28,7 @@ int APS5_VABI sceSaveDataCheckCloudData(void);
 int APS5_VABI sceSaveDataCheckSaveDataBroken(void);
 int APS5_VABI sceSaveDataCheckSaveDataVersion(void);
 int APS5_VABI sceSaveDataCheckSaveDataVersionLatest(void);
+int APS5_VABI sceSaveDataCreateUploadData(void);
 }
 
 namespace {
@@ -116,6 +117,7 @@ int main() {
         Check(sceSaveDataCheckSaveDataBroken() == 0, "sceSaveDataCheckSaveDataBroken check");
         Check(sceSaveDataCheckSaveDataVersion() == 0, "sceSaveDataCheckSaveDataVersion check");
         Check(sceSaveDataCheckSaveDataVersionLatest() == 0, "sceSaveDataCheckSaveDataVersionLatest check");
+        Check(sceSaveDataCreateUploadData() == 0, "sceSaveDataCreateUploadData check");
     if (failures != 0) return 1;
     std::printf("savedata convert tests passed\n");
     return 0;
