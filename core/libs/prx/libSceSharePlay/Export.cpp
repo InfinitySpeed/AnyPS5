@@ -106,7 +106,6 @@ int APS5_VABI sceSharePlayStopStandby(void) {
 }
 
 int APS5_VABI sceSharePlayStopStreaming(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
