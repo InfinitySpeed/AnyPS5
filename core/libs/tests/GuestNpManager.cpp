@@ -120,6 +120,7 @@ int APS5_VABI sceNpManagerIntGetAccountAge(void);
 int APS5_VABI sceNpManagerIntGetAccountCountry(void);
 int APS5_VABI sceNpManagerIntGetAccountCountryA(void);
 int APS5_VABI sceNpManagerIntGetAccountCountrySdk(void);
+int APS5_VABI sceNpManagerIntGetAccountDateOfBirthSdk(void);
 }
 
 extern "C" {
@@ -652,5 +653,6 @@ int main() {
         Require(sceNpManagerIntGetAccountCountry() == 0, "sceNpManagerIntGetAccountCountry check");
         Require(sceNpManagerIntGetAccountCountryA() == 0, "sceNpManagerIntGetAccountCountryA check");
         Require(sceNpManagerIntGetAccountCountrySdk() == 0, "sceNpManagerIntGetAccountCountrySdk check");
+        Require(sceNpManagerIntGetAccountDateOfBirthSdk() == 0, "sceNpManagerIntGetAccountDateOfBirthSdk check");
     return 0;
 }
