@@ -90,7 +90,6 @@ int APS5_VABI sceNpPartyInitialize(const void* param) {
 }
 
 int APS5_VABI sceNpPartyJoin(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
