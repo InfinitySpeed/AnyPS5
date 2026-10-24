@@ -32,6 +32,7 @@ int APS5_VABI sceAudio3dAudioOutOutput(std::int32_t handle, const void* ptr);
 int APS5_VABI sceAudio3dAudioOutOutputs(AudioOutOutputParam* param, std::uint32_t num);
 std::int32_t APS5_VABI sceAudio3dStrError(void);
 std::int32_t APS5_VABI sceAudio3dPortOpenEx(void);
+std::int32_t APS5_VABI sceAudio3dPortCreate(void);
 }
 
 namespace {
@@ -427,4 +428,5 @@ int main() {
     CheckTerminate();
     Require(sceAudio3dStrError() == 0);
     Require(sceAudio3dPortOpenEx() == 0);
+    Require(sceAudio3dPortCreate() == 0);
 }
