@@ -39,6 +39,7 @@ int APS5_VABI sceRegMgrGetInitError();
 int APS5_VABI sceRegMgrRecoverRegNvs();
 int APS5_VABI sceRegMgrNonSysCheckError();
 int APS5_VABI sceRegMgrNonSysGetBin();
+int APS5_VABI sceRegMgrNonSysGetStr();
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -90,4 +91,5 @@ int main() {
     Require(sceRegMgrRecoverRegNvs() == 0);
     Require(sceRegMgrNonSysCheckError() == 0);
     Require(sceRegMgrNonSysGetBin() == 0);
+    Require(sceRegMgrNonSysGetStr() == 0);
 }
