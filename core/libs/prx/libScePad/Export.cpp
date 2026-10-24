@@ -1414,8 +1414,11 @@ int APS5_VABI scePadControllerUpdateResetController(std::int32_t deviceId) {
 }
 
 int APS5_VABI scePadControllerUpdateGetReconnectStatus(std::int32_t* status) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!status) {
+        return PAD_ERROR_INVALID_ARG;
+    }
+    *status = 0;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadControllerUpdateTerm(void) {

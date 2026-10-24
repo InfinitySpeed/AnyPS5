@@ -903,4 +903,5 @@ int main() {
     Require(scePadControllerUpdateGetStatus(0, nullptr) == PAD_ERROR_INVALID_ARG);
     Require(scePadControllerUpdateSendData(0, nullptr) == PAD_ERROR_INVALID_ARG);
     Require(scePadControllerUpdateResetController(0) == PAD_ERROR_INVALID_ARG);
+    Require(scePadControllerUpdateGetReconnectStatus(nullptr) == PAD_ERROR_INVALID_ARG);
 }
