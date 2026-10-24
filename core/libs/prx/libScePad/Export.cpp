@@ -801,8 +801,9 @@ int APS5_VABI scePadGetActiveProfileInfo(std::int32_t handle, PadActiveProfileIn
 }
 
 int APS5_VABI scePadDisableActiveProfileChange(std::int32_t handle, bool disabled) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    (void)disabled;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadDisableActiveProfileChangeByDeviceId(std::int32_t deviceId, bool disabled) {
