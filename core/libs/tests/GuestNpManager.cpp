@@ -31,6 +31,7 @@ int APS5_VABI sceNpAsmAbort(void);
 int APS5_VABI sceNpAsmClientAbortRequest(void);
 int APS5_VABI sceNpAsmClientClearNpTitleToken(void);
 int APS5_VABI sceNpAsmClientClearNpTitleTokenA(void);
+int APS5_VABI sceNpAsmClientCreateRequest2(void);
 }
 
 extern "C" {
@@ -474,5 +475,6 @@ int main() {
         Require(sceNpAsmClientAbortRequest() == 0, "sceNpAsmClientAbortRequest check");
         Require(sceNpAsmClientClearNpTitleToken() == 0, "sceNpAsmClientClearNpTitleToken check");
         Require(sceNpAsmClientClearNpTitleTokenA() == 0, "sceNpAsmClientClearNpTitleTokenA check");
+        Require(sceNpAsmClientCreateRequest2() == 0, "sceNpAsmClientCreateRequest2 check");
     return 0;
 }
