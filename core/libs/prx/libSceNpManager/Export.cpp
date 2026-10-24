@@ -517,7 +517,6 @@ int APS5_VABI sceNpManagerIntIsUnregisteredClientError(void) {
     return 0;
 }
 int APS5_VABI sceNpManagerIntLoginAuthenticate(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceNpManagerIntLoginBind(void) {
