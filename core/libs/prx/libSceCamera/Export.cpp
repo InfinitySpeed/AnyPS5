@@ -311,7 +311,6 @@ int APS5_VABI sceCameraOpenByModuleId(void) {
 }
 
 int APS5_VABI sceCamera2GetCalibrationData(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
