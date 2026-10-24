@@ -92,6 +92,7 @@ int APS5_VABI sceCameraSetDefectivePixelCancellation(void);
 int APS5_VABI sceCameraGetDeviceID(void);
 int APS5_VABI sceCameraSetForceActivate(void);
 int APS5_VABI sceCameraSetWhiteBalance(void);
+int APS5_VABI sceCamera2GetFieldOfView(void);
 }
 
 namespace {
@@ -207,5 +208,6 @@ int main() {
         Require(sceCameraGetDeviceID() == 0, "sceCameraGetDeviceID check");
         Require(sceCameraSetForceActivate() == 0, "sceCameraSetForceActivate check");
         Require(sceCameraSetWhiteBalance() == 0, "sceCameraSetWhiteBalance check");
+        Require(sceCamera2GetFieldOfView() == 0, "sceCamera2GetFieldOfView check");
     return 0;
 }
