@@ -13,6 +13,7 @@ extern "C" int APS5_VABI sceSystemServiceLaunchApp(const char* titleId, const ch
 extern "C" int APS5_VABI sceSystemServiceAddLocalProcessForPsmKit(const char* path, const char* const* arguments, const void* param);
 extern "C" int APS5_VABI sceSystemServiceKillLocalProcessForPsmKit(int handle);
 
+extern "C" int APS5_VABI sceSystemServiceLaunchSystemDeeplink(void);
 namespace {
 
 constexpr int browserUnavailable = static_cast<int>(0x8002002Du);
@@ -177,4 +178,5 @@ int main() {
     event.event_type = 7;
     Require(sceSystemServiceReceiveEvent(&event) == SYSTEM_SERVICE_ERROR_NO_EVENT);
     TestPlayerDialogParam();
+    Require(sceSystemServiceLaunchSystemDeeplink() == 0);
 }
