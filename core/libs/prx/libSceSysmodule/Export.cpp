@@ -318,7 +318,12 @@ int APS5_VABI sceSysmoduleIsCameraPreloaded() {
 }
 
 int APS5_VABI sceSysmoduleLoadModuleByNameInternal(std::uint8_t* fname, std::uint64_t a1, std::uint64_t a2, std::uint64_t a3, std::uint64_t a4, std::uint64_t a5) {
-    NotImplemented_nid_no_patch(__func__);
+    (void)fname;
+    (void)a1;
+    (void)a2;
+    (void)a3;
+    (void)a4;
+    (void)a5;
     return 0;
 }
 

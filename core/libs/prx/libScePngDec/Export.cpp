@@ -208,7 +208,6 @@ int32_t APS5_VABI scePngDecQueryMemorySize(const PngDecCreateParam* param) {
 }
 
 int APS5_VABI scePngDecDecodeWithInputControl() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

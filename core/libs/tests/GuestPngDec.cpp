@@ -14,6 +14,7 @@ std::int32_t APS5_VABI scePngDecCreate(const PngDecCreateParam*, void*, std::uin
 std::int32_t APS5_VABI scePngDecDelete(void*);
 std::int32_t APS5_VABI scePngDecParseHeader(const PngDecParseParam*, PngDecImageInfo*);
 std::int32_t APS5_VABI scePngDecDecode(void*, const PngDecDecodeParam*, PngDecImageInfo*);
+int APS5_VABI scePngDecDecodeWithInputControl();
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -270,5 +271,6 @@ int main() {
     Require(scePngDecDelete(handle) == invalidHandle);
     Require(scePngDecDecode(handle, &decode, &info) == invalidHandle);
 
+    Require(scePngDecDecodeWithInputControl() == 0);
     return 0;
 }
