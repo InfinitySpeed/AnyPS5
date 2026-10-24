@@ -633,7 +633,6 @@ int APS5_VABI sceShellCoreUtilSwitchMicMute(void) {
 }
 
 int APS5_VABI sceShellCoreUtilNotifyStartEventToUniversalMicMute(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
