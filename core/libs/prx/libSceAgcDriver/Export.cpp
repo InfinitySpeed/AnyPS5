@@ -70,7 +70,6 @@ int APS5_VABI sceAgcDriverPatchClearState(void) {
 }
 
 int APS5_VABI sceAgcDriverSetFlip(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
