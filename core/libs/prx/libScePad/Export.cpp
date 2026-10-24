@@ -864,8 +864,10 @@ int APS5_VABI scePadResetLeonardo(std::int32_t handle) {
 }
 
 int APS5_VABI scePadSetProfileEditMode(std::int32_t handle, bool enabled, std::uint32_t profile) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    (void)enabled;
+    (void)profile;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadGetProfileEditMode(std::int32_t handle, std::int32_t* mode) {
