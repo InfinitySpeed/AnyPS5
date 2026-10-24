@@ -138,6 +138,7 @@ int APS5_VABI sceNpManagerIntGetIssuerId(void);
 int APS5_VABI sceNpManagerIntGetNpEnv(void);
 int APS5_VABI sceNpManagerIntGetNpId(void);
 int APS5_VABI sceNpManagerIntGetNpIdByOnlineId(void);
+int APS5_VABI sceNpManagerIntGetNpIdSdk(void);
 }
 
 extern "C" {
@@ -688,5 +689,6 @@ int main() {
         Require(sceNpManagerIntGetNpEnv() == 0, "sceNpManagerIntGetNpEnv check");
         Require(sceNpManagerIntGetNpId() == 0, "sceNpManagerIntGetNpId check");
             Require(sceNpManagerIntGetNpIdByOnlineId() == 0, "sceNpManagerIntGetNpIdByOnlineId check");
+            Require(sceNpManagerIntGetNpIdSdk() == 0, "sceNpManagerIntGetNpIdSdk check");
     return 0;
 }
