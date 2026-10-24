@@ -32,6 +32,7 @@ int APS5_VABI sceNpTrophy2SystemRegisterTitleSyncedCallback(void);
 int APS5_VABI sceNpTrophy2SystemRegisterTitleUpdateCallback(void);
 int APS5_VABI sceNpTrophy2SystemRemoveAll(void);
 int APS5_VABI sceNpTrophy2SystemRemoveTitleData(void);
+int APS5_VABI sceNpTrophy2SystemRemoveUserData(void);
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -101,4 +102,5 @@ int main() {
     Require(sceNpTrophy2SystemRegisterTitleUpdateCallback() == 0);
     Require(sceNpTrophy2SystemRemoveAll() == 0);
     Require(sceNpTrophy2SystemRemoveTitleData() == 0);
+    Require(sceNpTrophy2SystemRemoveUserData() == 0);
 }
