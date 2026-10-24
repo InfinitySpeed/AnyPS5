@@ -40,6 +40,7 @@ int APS5_VABI sceCameraSetAttributeInternal(void);
 int APS5_VABI sceCamera2SetWhiteBalance(void);
 int APS5_VABI sceCameraGetMmapConnectedCount(void);
 int APS5_VABI sceCamera2GetSaturation(void);
+int APS5_VABI sceCameraGetDeviceConfig(void);
 }
 
 namespace {
@@ -103,5 +104,6 @@ int main() {
         Require(sceCamera2SetWhiteBalance() == 0, "sceCamera2SetWhiteBalance check");
         Require(sceCameraGetMmapConnectedCount() == 0, "sceCameraGetMmapConnectedCount check");
         Require(sceCamera2GetSaturation() == 0, "sceCamera2GetSaturation check");
+        Require(sceCameraGetDeviceConfig() == 0, "sceCameraGetDeviceConfig check");
     return 0;
 }
