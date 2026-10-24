@@ -80,6 +80,7 @@ int APS5_VABI sceNpIdMapperAccountIdToNpId(void);
 int APS5_VABI sceNpIdMapperAccountIdToOnlineId(void);
 int APS5_VABI sceNpIdMapperCreateRequest(void);
 int APS5_VABI sceNpIdMapperDeleteRequest(void);
+int APS5_VABI sceNpIdMapperNpIdToAccountId(void);
 }
 
 extern "C" {
@@ -572,5 +573,6 @@ int main() {
         Require(sceNpIdMapperAccountIdToOnlineId() == 0, "sceNpIdMapperAccountIdToOnlineId check");
         Require(sceNpIdMapperCreateRequest() == 0, "sceNpIdMapperCreateRequest check");
         Require(sceNpIdMapperDeleteRequest() == 0, "sceNpIdMapperDeleteRequest check");
+        Require(sceNpIdMapperNpIdToAccountId() == 0, "sceNpIdMapperNpIdToAccountId check");
     return 0;
 }
