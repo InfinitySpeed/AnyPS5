@@ -21,17 +21,14 @@ const Font::RendererSelection* APS5_VABI sceFontSelectRendererFt(int value) {
 }
 
 int APS5_VABI sceFontFtInitAliases(FontFtAliases** aliases) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceFontFtSetAliasFont(const char* alias, std::uint32_t fontId) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 int APS5_VABI sceFontFtSetAliasPath(const char* alias, const char* path) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -44,7 +41,6 @@ int APS5_VABI sceFontFtSupportCid(FontLibrary library) {
 }
 
 int APS5_VABI sceFontFtSupportFontFormats(FontLibrary library, std::uint32_t formats) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -69,7 +65,6 @@ int APS5_VABI sceFontFtSupportPfr(FontLibrary library) {
 }
 
 int APS5_VABI sceFontFtSupportSystemFonts(FontLibrary library) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
@@ -94,12 +89,10 @@ int APS5_VABI sceFontFtSupportWinFonts(FontLibrary library) {
 }
 
 int APS5_VABI sceFontFtTermAliases(FontFtAliases** aliases) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
 const FontFtGlyphSelection* APS5_VABI sceFontSelectGlyphsFt(std::int32_t selector) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
