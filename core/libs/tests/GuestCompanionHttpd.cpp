@@ -29,6 +29,7 @@ std::int32_t APS5_VABI sceCompanionHttpdGetUserId(void);
 std::int32_t APS5_VABI sceCompanionHttpdInitialize2(void);
 std::int32_t APS5_VABI sceCompanionHttpdRegisterRequestBodyReceptionCallback(void);
 std::int32_t APS5_VABI sceCompanionHttpdRegisterRequestCallback2(void);
+std::int32_t APS5_VABI sceCompanionHttpdUnregisterRequestBodyReceptionCallback(void);
 }
 
 namespace {
@@ -136,4 +137,5 @@ int main() {
     Require(sceCompanionHttpdInitialize2() == 0);
     Require(sceCompanionHttpdRegisterRequestBodyReceptionCallback() == 0);
     Require(sceCompanionHttpdRegisterRequestCallback2() == 0);
+    Require(sceCompanionHttpdUnregisterRequestBodyReceptionCallback() == 0);
 }
