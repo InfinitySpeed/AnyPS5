@@ -149,7 +149,6 @@ int APS5_VABI sceRazorCpuFiberSwitch(void) {
 }
 
 int APS5_VABI sceRazorCpuGpuMarkerSync(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
