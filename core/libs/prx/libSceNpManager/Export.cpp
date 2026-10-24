@@ -376,7 +376,6 @@ int APS5_VABI sceNpManagerIntGetAccountCountryA(void) {
     return 0;
 }
 int APS5_VABI sceNpManagerIntGetAccountCountrySdk(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceNpManagerIntGetAccountDateOfBirthSdk(void) {
