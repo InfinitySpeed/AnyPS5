@@ -136,6 +136,7 @@ int APS5_VABI scePadReadAstonForTracker(std::int32_t, PadAstonTrackerData*, std:
 int APS5_VABI scePadUiReadState(std::int32_t, PadUiData*);
 int APS5_VABI scePadUiReadStateForTuning(std::int32_t, PadUiTuningData*);
 int APS5_VABI scePadVrControllerRead(std::int32_t, PadVrControllerData*, std::int32_t);
+int APS5_VABI scePadVrControllerReadState(int, PadVrControllerData*);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -818,6 +819,8 @@ int main() {
     Require(scePadUiReadStateForTuning(handle, &utdata) == PAD_OK);
     PadVrControllerData vrdata{};
     Require(scePadVrControllerRead(handle, &vrdata, 1) == 0);
+    PadVrControllerData vrstate{};
+    Require(scePadVrControllerReadState(handle, &vrstate) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);
