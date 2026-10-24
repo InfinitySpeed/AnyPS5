@@ -7,6 +7,7 @@ int APS5_VABI sceNpFriendListDialogInitialize(void);
 int APS5_VABI sceNpFriendListDialogOpenA(const void* param);
 int APS5_VABI sceNpFriendListDialogUpdateStatus(void);
 int APS5_VABI sceNpFriendListDialogGetStatus(void);
+int APS5_VABI sceNpFriendListDialogGetResult(void* result);
 int APS5_VABI sceNpFriendListDialogGetResultA(void* result);
 int APS5_VABI sceNpFriendListDialogClose(void);
 int APS5_VABI sceNpFriendListDialogTerminate(void);
@@ -50,6 +51,7 @@ int main() {
     Require(sceNpFriendListDialogGetStatus() == kStatusFinished);
     Require(sceNpFriendListDialogUpdateStatus() == kStatusFinished);
 
+    Require(sceNpFriendListDialogGetResult(nullptr) == kErrArgNull);
     Require(sceNpFriendListDialogGetResultA(nullptr) == kErrArgNull);
     Require(sceNpFriendListDialogGetResultA(result) == 0);
     Require(result[0] == kResultUserCanceled);
