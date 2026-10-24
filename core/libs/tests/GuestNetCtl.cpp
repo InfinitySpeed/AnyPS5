@@ -38,6 +38,7 @@ int APS5_VABI sceNetCtlInit(void);
 int APS5_VABI sceNetCtlCheckCallback(void);
 int APS5_VABI sceNetCtlCheckCallbackForNpToolkit(void);
 int APS5_VABI sceNetCtlCheckCallbackForLibIpcInt(void);
+int APS5_VABI sceNetCtlClearEventIpcInt(int);
 int APS5_VABI sceNetCtlGetInfo(int, NetCtlInfo*);
 int APS5_VABI sceNetCtlGetNatInfo(NetCtlNatInfo*);
 int APS5_VABI sceNetCtlGetState(int*);
@@ -121,6 +122,7 @@ void CheckCallbacks() {
     Require(sceNetCtlCheckCallback() == 0);
     Require(sceNetCtlCheckCallbackForNpToolkit() == 0);
     Require(sceNetCtlCheckCallbackForLibIpcInt() == 0);
+    Require(sceNetCtlClearEventIpcInt(0) == 0);
     Require(g_first.calls == 1 && g_first.event == event && g_first.arg == &firstProbe);
     Require(sceNetCtlCheckCallback() == 0);
     Require(g_first.calls == 1);

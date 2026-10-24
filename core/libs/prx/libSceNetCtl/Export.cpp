@@ -671,7 +671,7 @@ int APS5_VABI sceNetCtlCheckCallbackForLibIpcInt(void) {
 }
 
 int APS5_VABI sceNetCtlClearEventIpcInt(int event) {
-    NotImplemented_nid_no_patch(__func__);
+    (void)event;
     return 0;
 }
 
