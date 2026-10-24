@@ -733,7 +733,6 @@ int APS5_VABI sceHmdInternalSetSidetone(std::uint8_t level) {
 }
 
 int APS5_VABI sceHmdInternalSeparateModeOpen(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
