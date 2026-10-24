@@ -21,6 +21,7 @@ int APS5_VABI sceMoveGetCalibrationInfo(void);
 int APS5_VABI sceMoveGetDeviceId(void);
 int APS5_VABI sceMoveIsReproductionModel(void);
 int APS5_VABI sceMoveIsValidHandle(void);
+int APS5_VABI sceMoveReadStateRecentForTracker(void);
 }
 
 namespace {
@@ -161,4 +162,5 @@ int main() {
     Require(sceMoveGetDeviceId() == 0);
     Require(sceMoveIsReproductionModel() == 0);
     Require(sceMoveIsValidHandle() == 0);
+    Require(sceMoveReadStateRecentForTracker() == 0);
 }
