@@ -4,6 +4,7 @@
 #include <sched.h>
 #include "SceTypes.hpp"
 #include "prx/libkernel/Time/include/TimedWait.hpp"
+#include <array>
 #include <atomic>
 #include <bit>
 #include <condition_variable>
@@ -104,6 +105,7 @@ inline int GuestCpuFromHost(unsigned hostCpu, KernelCpumask threadAffinity) {
 }
 
 struct PthreadAttrPrivate {
+    static constexpr std::size_t AffinityBytes = 32;
     void* stackAddress = nullptr;
     std::size_t _stacksize;
     int _detachstate;
@@ -115,6 +117,7 @@ struct PthreadAttrPrivate {
     std::size_t _guardsize = 0x1000;
     int _solosched = 0;
     int _scope = GUEST_SCOPE_SYSTEM;
+    std::array<unsigned char, AffinityBytes - sizeof(KernelCpumask)> affinityTail{};
 };
 
 inline std::atomic<std::int64_t> nextThreadId{100000};

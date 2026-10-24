@@ -1,3 +1,5 @@
+#include <algorithm>
+#include <cstring>
 #include <cstdint>
 #include <cstddef>
 #include <stdexcept>
@@ -42,7 +44,40 @@ int APS5_VABI pthread_attr_get_np_nid_postfix(Pthread thread, PthreadAttr* attr)
     p->_schedpolicy = thread->schedPolicy.load(std::memory_order_relaxed);
     p->_affinity = thread->affinity.load(std::memory_order_relaxed);
     p->_affinityExplicit = true;
+    p->affinityTail.fill(0);
     p->_scope = thread->scope;
+    return 0;
+}
+
+int APS5_VABI pthread_attr_getaffinity_np_nid_postfix(const PthreadAttr* attr, std::size_t size, void* mask) {
+    if (!Valid(attr)) return PosixThread::GUEST_EINVAL;
+    if (size < PthreadAttrPrivate::AffinityBytes) return 34;
+    if (!mask) return PosixThread::GUEST_EFAULT;
+    std::memset(mask, 0, size);
+    if ((*attr)->_affinityExplicit) {
+        std::memcpy(mask, &(*attr)->_affinity, sizeof(KernelCpumask));
+        std::memcpy(static_cast<unsigned char*>(mask) + sizeof(KernelCpumask), (*attr)->affinityTail.data(), (*attr)->affinityTail.size());
+    } else {
+        std::memset(mask, 0xff, PthreadAttrPrivate::AffinityBytes);
+    }
+    return 0;
+}
+
+int APS5_VABI pthread_attr_setaffinity_np_nid_postfix(PthreadAttr* attr, std::size_t size, const void* mask) {
+    if (!Valid(attr)) return PosixThread::GUEST_EINVAL;
+    if (size == 0 || !mask) {
+        (*attr)->_affinity = DEFAULT_THREAD_AFFINITY;
+        (*attr)->_affinityExplicit = false;
+        (*attr)->affinityTail.fill(0);
+        return 0;
+    }
+    if (size < PthreadAttrPrivate::AffinityBytes) return 34;
+    const auto* bytes = static_cast<const unsigned char*>(mask);
+    if (std::any_of(bytes + PthreadAttrPrivate::AffinityBytes, bytes + size, [](unsigned char byte) { return byte != 0; }))
+        return PosixThread::GUEST_EINVAL;
+    std::memcpy(&(*attr)->_affinity, bytes, sizeof(KernelCpumask));
+    std::memcpy((*attr)->affinityTail.data(), bytes + sizeof(KernelCpumask), (*attr)->affinityTail.size());
+    (*attr)->_affinityExplicit = true;
     return 0;
 }
 
