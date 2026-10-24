@@ -57,6 +57,7 @@ int APS5_VABI sceGameLiveStreamingStopGenerateStandbyScreenResource(void);
 int APS5_VABI sceGameLiveStreamingRegisterCallback(void);
 int APS5_VABI sceGameLiveStreamingUnregisterCallback(void);
 int APS5_VABI sceGameLiveStreamingCheckCallback(void);
+int APS5_VABI sceGameLiveStreamingSetStandbyScreenResource(void);
 }
 
 namespace {
@@ -155,4 +156,5 @@ int main() {
     Require(sceGameLiveStreamingRegisterCallback() == 0);
     Require(sceGameLiveStreamingUnregisterCallback() == 0);
     Require(sceGameLiveStreamingCheckCallback() == 0);
+    Require(sceGameLiveStreamingSetStandbyScreenResource() == 0);
 }

@@ -188,7 +188,6 @@ int APS5_VABI sceGameLiveStreamingCheckCallback(void) {
 }
 
 int APS5_VABI sceGameLiveStreamingSetStandbyScreenResource(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
