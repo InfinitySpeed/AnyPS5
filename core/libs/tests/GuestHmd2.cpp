@@ -64,6 +64,7 @@ int APS5_VABI sceHmd2ReprojectionGetCurrentOutput(Hmd2::ReprojectionOutput* outp
 int APS5_VABI sceHmd2SetFieldOfView(const Hmd2::FieldOfView* fieldOfView);
 int APS5_VABI sceHmd2InternalSetPortStatus(void);
 int APS5_VABI sceHmd2InternalLedDetectorStartBySlot(void);
+int APS5_VABI sceHmd2InternalImageStartBySlot(void);
 }
 
 namespace {
@@ -320,6 +321,7 @@ int main() {
     Require(sceHmd2SetFieldOfView(nullptr) == Hmd2::ParameterNull, "null field of view");
         Require(sceHmd2InternalSetPortStatus() == 0, "sceHmd2InternalSetPortStatus check");
         Require(sceHmd2InternalLedDetectorStartBySlot() == 0, "sceHmd2InternalLedDetectorStartBySlot check");
+        Require(sceHmd2InternalImageStartBySlot() == 0, "sceHmd2InternalImageStartBySlot check");
     std::puts("HMD2 tests passed");
     return 0;
 }
