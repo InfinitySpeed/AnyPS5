@@ -67,6 +67,7 @@ int APS5_VABI sceHmd2InternalLedDetectorStartBySlot(void);
 int APS5_VABI sceHmd2InternalImageStartBySlot(void);
 int APS5_VABI sceHmd2InternalSetPortConnection(void);
 int APS5_VABI sceHmd2InternalSetCameraSeeThroughMode(void);
+int APS5_VABI sceHmd2InternalSetFakeLensSeparationDistance(void);
 }
 
 namespace {
@@ -326,6 +327,7 @@ int main() {
         Require(sceHmd2InternalImageStartBySlot() == 0, "sceHmd2InternalImageStartBySlot check");
         Require(sceHmd2InternalSetPortConnection() == 0, "sceHmd2InternalSetPortConnection check");
         Require(sceHmd2InternalSetCameraSeeThroughMode() == 0, "sceHmd2InternalSetCameraSeeThroughMode check");
+        Require(sceHmd2InternalSetFakeLensSeparationDistance() == 0, "sceHmd2InternalSetFakeLensSeparationDistance check");
     std::puts("HMD2 tests passed");
     return 0;
 }

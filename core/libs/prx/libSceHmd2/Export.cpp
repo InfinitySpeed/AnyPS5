@@ -722,7 +722,6 @@ int APS5_VABI sceHmd2InternalSetCameraSeeThroughMode(void) {
 }
 
 int APS5_VABI sceHmd2InternalSetFakeLensSeparationDistance(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
