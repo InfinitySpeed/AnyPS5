@@ -27,6 +27,7 @@ int APS5_VABI sceCameraGetConnectedDeviceAndDriverMode(void);
 int APS5_VABI sceCamera2IsAttached(void);
 int APS5_VABI sceCamera2SetSharpness(void);
 int APS5_VABI sceCameraSetTrackerMode(void);
+int APS5_VABI sceCameraSetContrast(void);
 }
 
 namespace {
@@ -77,5 +78,6 @@ int main() {
         Require(sceCamera2IsAttached() == 0, "sceCamera2IsAttached check");
         Require(sceCamera2SetSharpness() == 0, "sceCamera2SetSharpness check");
         Require(sceCameraSetTrackerMode() == 0, "sceCameraSetTrackerMode check");
+        Require(sceCameraSetContrast() == 0, "sceCameraSetContrast check");
     return 0;
 }
