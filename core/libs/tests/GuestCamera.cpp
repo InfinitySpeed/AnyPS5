@@ -54,6 +54,7 @@ int APS5_VABI sceCameraSetProcessFocusByHandle(void);
 int APS5_VABI sceCamera2SetConfig(void);
 int APS5_VABI sceCameraGetExposureGain(void);
 int APS5_VABI sceCameraSetSharpness(void);
+int APS5_VABI sceCamera2Initialize(void);
 }
 
 namespace {
@@ -131,5 +132,6 @@ int main() {
         Require(sceCamera2SetConfig() == 0, "sceCamera2SetConfig check");
         Require(sceCameraGetExposureGain() == 0, "sceCameraGetExposureGain check");
         Require(sceCameraSetSharpness() == 0, "sceCameraSetSharpness check");
+        Require(sceCamera2Initialize() == 0, "sceCamera2Initialize check");
     return 0;
 }
