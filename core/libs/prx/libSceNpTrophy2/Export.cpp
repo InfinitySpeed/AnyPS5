@@ -18,7 +18,6 @@ int APS5_VABI sceNpTrophy2SystemBuildRewardIconUri(void) {
 }
 
 int APS5_VABI sceNpTrophy2SystemBuildTrophyIconUri(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
