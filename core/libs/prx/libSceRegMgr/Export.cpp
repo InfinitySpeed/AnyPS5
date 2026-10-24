@@ -98,7 +98,6 @@ int APS5_VABI sceRegMgrSrvGetQAFforReg(void) {
 }
 
 int APS5_VABI sceRegMgrSrvGetRealMachineType(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

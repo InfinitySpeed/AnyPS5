@@ -21,6 +21,7 @@ int APS5_VABI sceRegMgrSrvCnvRegionInt();
 int APS5_VABI sceRegMgrSrvCnvRegionStr();
 int APS5_VABI sceRegMgrSrvGetMachineType();
 int APS5_VABI sceRegMgrSrvGetQAFforReg();
+int APS5_VABI sceRegMgrSrvGetRealMachineType();
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -54,4 +55,5 @@ int main() {
     Require(sceRegMgrSrvCnvRegionStr() == 0);
     Require(sceRegMgrSrvGetMachineType() == 0);
     Require(sceRegMgrSrvGetQAFforReg() == 0);
+    Require(sceRegMgrSrvGetRealMachineType() == 0);
 }
