@@ -80,6 +80,7 @@ int APS5_VABI sceCamera2Start(void);
 int APS5_VABI sceCameraSetLensCorrectionInternal(void);
 int APS5_VABI sceCameraOpenByModuleId(void);
 int APS5_VABI sceCamera2GetCalibrationData(void);
+int APS5_VABI sceCameraAudioGetData(void);
 }
 
 namespace {
@@ -183,5 +184,6 @@ int main() {
         Require(sceCameraSetLensCorrectionInternal() == 0, "sceCameraSetLensCorrectionInternal check");
         Require(sceCameraOpenByModuleId() == 0, "sceCameraOpenByModuleId check");
         Require(sceCamera2GetCalibrationData() == 0, "sceCamera2GetCalibrationData check");
+        Require(sceCameraAudioGetData() == 0, "sceCameraAudioGetData check");
     return 0;
 }
