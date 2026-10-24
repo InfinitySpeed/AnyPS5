@@ -37,6 +37,7 @@ int APS5_VABI sceHttp2GetAutoRedirect(void);
 int APS5_VABI sceHttp2GetCookie(void);
 int APS5_VABI sceHttp2GetCookieBox(void);
 int APS5_VABI sceHttp2GetCookieStats(void);
+int APS5_VABI sceHttp2RedirectCacheFlush(void);
 }
 
 struct Http2MemoryPoolStats {
@@ -267,4 +268,5 @@ int main() {
     Require(sceHttp2GetCookie() == 0);
     Require(sceHttp2GetCookieBox() == 0);
     Require(sceHttp2GetCookieStats() == 0);
+    Require(sceHttp2RedirectCacheFlush() == 0);
 }
