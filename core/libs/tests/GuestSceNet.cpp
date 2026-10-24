@@ -101,6 +101,7 @@ struct GuestPollEntry {
     short events;
     short revents;
 std::int32_t APS5_VABI sceNetShowPolicy(void);
+std::int32_t APS5_VABI sceNetThreadExit(void);
 };
 int APS5_VABI poll_nid_postfix(GuestPollEntry*, std::uint32_t, int);
 int* APS5_VABI __error_nid_postfix();
@@ -2217,4 +2218,5 @@ int main() {
         return 77;
     }
     Require(sceNetShowPolicy() == 0);
+    Require(sceNetThreadExit() == 0);
 }
