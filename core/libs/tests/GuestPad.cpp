@@ -882,4 +882,5 @@ int main() {
     Require(scePadVirtualDeviceAddDevice(nullptr, nullptr) == PAD_ERROR_INVALID_ARG);
     Require(scePadVertualDeviceAddDevice(nullptr, nullptr) == PAD_ERROR_INVALID_ARG);
     Require(scePadVirtualDeviceInsertData(0, nullptr) == PAD_ERROR_INVALID_ARG);
+    Require(scePadVirtualDeviceInsertTriggerInternalState(0, nullptr) == PAD_ERROR_INVALID_ARG);
 }
