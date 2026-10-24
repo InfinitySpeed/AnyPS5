@@ -48,6 +48,7 @@ int APS5_VABI sceCameraGetWhiteBalance(void);
 int APS5_VABI sceCameraGetVrCaptureInfo(void);
 int APS5_VABI sceCameraSetCalibDataForEve(void);
 int APS5_VABI sceCamera2GetAttribute(void);
+int APS5_VABI sceCameraSetLensCorrection(void);
 }
 
 namespace {
@@ -119,5 +120,6 @@ int main() {
         Require(sceCameraGetVrCaptureInfo() == 0, "sceCameraGetVrCaptureInfo check");
         Require(sceCameraSetCalibDataForEve() == 0, "sceCameraSetCalibDataForEve check");
         Require(sceCamera2GetAttribute() == 0, "sceCamera2GetAttribute check");
+        Require(sceCameraSetLensCorrection() == 0, "sceCameraSetLensCorrection check");
     return 0;
 }
