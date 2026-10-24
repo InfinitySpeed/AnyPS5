@@ -132,7 +132,6 @@ int APS5_VABI sceCompanionHttpdSetBody(const char* body, std::uint64_t size, voi
 }
 
 int APS5_VABI sceCompanionHttpdGet2ndScreenStatus(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
