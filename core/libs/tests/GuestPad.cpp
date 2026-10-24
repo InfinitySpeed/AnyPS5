@@ -876,4 +876,5 @@ int main() {
     Require(scePadVirtualDeviceDisableButtonRemapping(false) == PAD_OK);
     Require(scePadSetShareButtonMaskForRemotePlay(0) == PAD_OK);
     Require(scePadSetPS4BcVibrationMode(0) == PAD_OK);
+    Require(scePadEnablePs4CompatibleMode(-1, true) == PAD_ERROR_INVALID_HANDLE);
 }
