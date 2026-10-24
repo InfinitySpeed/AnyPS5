@@ -88,6 +88,7 @@ int APS5_VABI sceNpInGameMessageGetMemoryPoolStatistics(void);
 int APS5_VABI sceNpInGameMessagePrepareA(void);
 int APS5_VABI sceNpInGameMessageSendDataA(void);
 int APS5_VABI sceNpIntGetAppType(void);
+int APS5_VABI sceNpIntGetGamePresenceStatus(void);
 }
 
 extern "C" {
@@ -588,5 +589,6 @@ int main() {
         Require(sceNpInGameMessagePrepareA() == 0, "sceNpInGameMessagePrepareA check");
         Require(sceNpInGameMessageSendDataA() == 0, "sceNpInGameMessageSendDataA check");
         Require(sceNpIntGetAppType() == 0, "sceNpIntGetAppType check");
+        Require(sceNpIntGetGamePresenceStatus() == 0, "sceNpIntGetGamePresenceStatus check");
     return 0;
 }
