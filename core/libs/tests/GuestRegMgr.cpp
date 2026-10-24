@@ -27,6 +27,7 @@ int APS5_VABI sceRegMgrSrvGetRegionStr();
 int APS5_VABI sceRegMgrBackupNeedMem();
 int APS5_VABI sceRegMgrBackupPullData();
 int APS5_VABI sceRegMgrBackupPushData();
+int APS5_VABI sceRegMgrBackupPullDataGkp();
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -66,4 +67,5 @@ int main() {
     Require(sceRegMgrBackupNeedMem() == 0);
     Require(sceRegMgrBackupPullData() == 0);
     Require(sceRegMgrBackupPushData() == 0);
+    Require(sceRegMgrBackupPullDataGkp() == 0);
 }
