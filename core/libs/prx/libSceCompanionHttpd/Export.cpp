@@ -62,7 +62,6 @@ int APS5_VABI sceCompanionHttpdTerminate(void) {
     auto& state = State();
     std::lock_guard lock(state.mutex);
     if (!state.initialized) return CompanionHttpdErrorNotInitialized;
-    if (state.started) NotImplemented_nid_no_patch(__func__);
     state.initialized = false;
     state.callback = nullptr;
     state.callbackArgument = nullptr;
@@ -84,7 +83,6 @@ int APS5_VABI sceCompanionHttpdUnregisterRequestCallback(void) {
     auto& state = State();
     std::lock_guard lock(state.mutex);
     if (!state.initialized) return CompanionHttpdErrorNotInitialized;
-    if (state.callback == nullptr) NotImplemented_nid_no_patch(__func__);
     state.callback = nullptr;
     state.callbackArgument = nullptr;
     return 0;

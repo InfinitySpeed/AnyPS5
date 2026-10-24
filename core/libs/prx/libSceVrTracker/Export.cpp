@@ -194,7 +194,6 @@ int APS5_VABI sceVrTrackerGpuWait(const VrTrackerGpuWaitParam* param) {
 }
 int APS5_VABI sceVrTrackerInit(const VrTrackerInitParam* param) {
     if (g_initialized.load()) return AlreadyInitialized;
-    if (param && param->size == sizeof(VrTrackerInitParam)) NotImplemented_nid_no_patch(__func__);
     const auto* init = reinterpret_cast<const InitParam*>(param);
     if (!init || init->size != sizeof(InitParam) || !init->direct_memory_garlic ||
         init->direct_memory_garlic_alignment != MemoryAlignment || init->direct_memory_garlic_size != GarlicSize ||

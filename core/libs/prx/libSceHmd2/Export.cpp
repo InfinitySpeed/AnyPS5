@@ -218,7 +218,6 @@ std::int32_t openHandle = 0;
 
 std::int32_t BeforeInitialize(std::int32_t answer, const char* name) {
     std::lock_guard lock(stateMutex);
-    if (initialized) NotImplemented_nid_no_patch(name);
     return answer;
 }
 

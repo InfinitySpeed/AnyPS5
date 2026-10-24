@@ -212,14 +212,12 @@ extern "C" {
 std::int32_t APS5_VABI scePsmlMfsrGetContextBufferRequirement1100(void* requirement, const void* param) {
  (void)requirement;
  (void)param;
- if (g_mfsrInitialized) NotImplemented_nid_no_patch(__func__);
  return SCE_PSML_ERROR_NOT_INITIALIZED;
 }
 
 std::int32_t APS5_VABI scePsmlMfsrCreateContext1100(void** context, const void* param) {
  (void)context;
  (void)param;
- if (g_mfsrInitialized) NotImplemented_nid_no_patch(__func__);
  return SCE_PSML_ERROR_NOT_INITIALIZED;
 }
 
@@ -227,7 +225,6 @@ std::int32_t APS5_VABI scePsmlMfsrGetDispatchMfsrPacket1100(void* context, void*
  (void)context;
  (void)commandBuffer;
  (void)param;
- if (g_mfsrInitialized) NotImplemented_nid_no_patch(__func__);
  return SCE_PSML_ERROR_NOT_INITIALIZED;
 }
 
@@ -284,7 +281,6 @@ std::int32_t APS5_VABI scePsmlMfsrReleaseContext(void* context) {
 std::int32_t APS5_VABI scePsmlMfsrCreateContext1300(void** context, const void* param) {
  (void)context;
  (void)param;
- if (g_mfsrInitialized) NotImplemented_nid_no_patch(__func__);
  return SCE_PSML_ERROR_NOT_INITIALIZED;
 }
 
@@ -292,7 +288,6 @@ std::int32_t APS5_VABI scePsmlMfsrGetDispatchMfsrPacket1300(void* context, void*
  (void)context;
  (void)commandBuffer;
  (void)param;
- if (g_mfsrInitialized) NotImplemented_nid_no_patch(__func__);
  return SCE_PSML_ERROR_NOT_INITIALIZED;
 }
 
@@ -340,7 +335,6 @@ std::int32_t APS5_VABI scePsmlMfsrGetDispatchMfsrPacket1000(void* context, void*
  (void)context;
  (void)commandBuffer;
  (void)param;
- if (g_mfsrInitialized) NotImplemented_nid_no_patch(__func__);
  return SCE_PSML_ERROR_NOT_INITIALIZED;
 }
 
@@ -348,7 +342,6 @@ std::int32_t APS5_VABI scePsmlMfsrGetDispatchMfsrPacket900(void* context, void* 
  (void)context;
  (void)commandBuffer;
  (void)param;
- if (g_mfsrInitialized) NotImplemented_nid_no_patch(__func__);
  return SCE_PSML_ERROR_NOT_INITIALIZED;
 }
 

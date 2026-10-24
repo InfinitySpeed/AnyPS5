@@ -293,7 +293,6 @@ static void CopyIntrusivePtr(IntrusivePtr* self, const IntrusivePtr* source, con
 static void ReleaseIntrusivePtr(IntrusivePtr* self, const std::size_t referenceCountOffset, const char* function) {
     if (!self->object) return;
     if (ReferenceCount(self->object, referenceCountOffset).fetch_sub(1) != 1) return;
-    if (!self->deleter) NotImplemented_nid_no_patch(function);
     self->deleter(self->object);
     self->object = nullptr;
     self->deleter = nullptr;

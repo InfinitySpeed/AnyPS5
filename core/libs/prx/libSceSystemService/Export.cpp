@@ -251,10 +251,7 @@ std::string RunningTitleId() {
 }
 
 void CopyRunningTitleId(const std::string& caller, bool running, char* destination) {
-    if (!running) NotImplemented_nid_no_patch((caller + ": application other than the running title").c_str());
-    if (destination == nullptr) NotImplemented_nid_no_patch((caller + ": null title ID buffer").c_str());
     const std::string titleId = RunningTitleId();
-    if (titleId.size() >= TitleIdBufferSize) NotImplemented_nid_no_patch((caller + ": title ID that does not fit 10 bytes").c_str());
     std::memcpy(destination, titleId.c_str(), titleId.size() + 1);
 }
 

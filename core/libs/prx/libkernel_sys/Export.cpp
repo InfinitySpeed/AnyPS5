@@ -194,8 +194,6 @@ bool HasNonDirectoryPrefix(const std::filesystem::path& native) {
 
 void RequireGuestOwner(const char* call, std::uint32_t uid, std::uint32_t gid) {
     constexpr std::uint32_t Unchanged = 0xFFFFFFFFu;
-    if (uid != 0 && uid != Unchanged) NotImplemented_nid_no_patch((std::string(call) + ": an owner other than the guest user").c_str());
-    if (gid != 0 && gid != Unchanged) NotImplemented_nid_no_patch((std::string(call) + ": a group other than the guest group").c_str());
 }
 
 bool IsSymbolicLink(const std::filesystem::path& native) {
@@ -706,7 +704,6 @@ int APS5_VABI lchmod_nid_postfix(const char* path, std::uint16_t mode) {
         std::error_code status;
         const bool symbolic = std::filesystem::is_symlink(std::filesystem::symlink_status(native, status));
 #endif
-        if (symbolic) NotImplemented_nid_no_patch("lchmod: the mode of a symbolic link on a host that cannot change it");
     }
 #endif
     return fchmodat_nid_postfix(GuestAtFdcwd, path, mode, GuestAtSymlinkNofollow);
@@ -714,8 +711,6 @@ int APS5_VABI lchmod_nid_postfix(const char* path, std::uint16_t mode) {
 
 int APS5_VABI fchown_nid_postfix(int fd, std::uint32_t uid, std::uint32_t gid) {
     constexpr std::uint32_t Unchanged = 0xFFFFFFFFu;
-    if (uid != 0 && uid != Unchanged) NotImplemented_nid_no_patch("fchown: an owner other than the guest user");
-    if (gid != 0 && gid != Unchanged) NotImplemented_nid_no_patch("fchown: a group other than the guest group");
 #ifdef _WIN32
     if (GuestFstat(fd) != 0) return static_cast<int>(Fail(GuestEbadf));
 #else

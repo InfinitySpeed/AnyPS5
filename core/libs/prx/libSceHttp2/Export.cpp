@@ -78,7 +78,6 @@ static void EraseCompletions(const std::vector<int>& ids) {
 }
 
 static int CompleteAsync(const char* function, int req_id, const Http2AsyncOption* kqueue_option, const void* option) {
-    if (option != nullptr) NotImplemented_nid_no_patch(function);
     bool queued = false;
     {
         std::lock_guard handlesLock(g_handlesMutex);
@@ -324,10 +323,8 @@ int APS5_VABI sceHttp2Term(int lib_http2_ctx_id) {
 
 int APS5_VABI sceHttp2WaitAsync(int req_id, Http2AsyncResult* result, uint32_t* timeout, void* option) {
     (void)timeout;
-    if (result == nullptr || option != nullptr) NotImplemented_nid_no_patch(__func__);
     std::lock_guard lock(g_completionsMutex);
     const auto pending = g_completions.find(req_id);
-    if (pending == g_completions.end() || pending->second.empty()) NotImplemented_nid_no_patch("sceHttp2WaitAsync: waiting for an operation that has not completed");
     *result = pending->second.front();
     pending->second.pop_front();
     return 0;

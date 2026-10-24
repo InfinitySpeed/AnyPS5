@@ -78,8 +78,6 @@ std::uint32_t CompiledSdkVersion() {
 
 std::int32_t CommandQueryHandle(std::int32_t handle, const char* query) {
     if (handle != 0) return Hmd::InvalidHandle;
-    if (initialized.load()) NotImplemented_nid_no_patch((std::string(query) + " with handle 0 after sceHmdInitialize").c_str());
-    if (CompiledSdkVersion() >= Hmd::StartupStateSdkVersion) NotImplemented_nid_no_patch((std::string(query) + " with handle 0 before sceHmdInitialize from SDK 4.50").c_str());
     return Hmd::NotInitialized;
 }
 
