@@ -379,7 +379,6 @@ int APS5_VABI sceCameraSetGamma(void) {
 }
 
 int APS5_VABI sceCamera2GetConfig(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
