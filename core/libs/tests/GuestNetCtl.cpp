@@ -56,6 +56,7 @@ int APS5_VABI sceNetCtlUnregisterCallback(int);
 int APS5_VABI sceNetCtlUnregisterCallbackV6(int);
 int APS5_VABI sceNetCtlConnectIpcInt(void);
 int APS5_VABI sceNetCtlConnectWithRetryIpcInt(void);
+int APS5_VABI sceNetCtlDisconnectIpcInt(void);
 }
 
 namespace {
@@ -386,4 +387,5 @@ int main() {
     for (const auto value : natInfo.opaque) Require(value == kFill);
     Require(sceNetCtlConnectIpcInt() == 0);
     Require(sceNetCtlConnectWithRetryIpcInt() == 0);
+    Require(sceNetCtlDisconnectIpcInt() == 0);
 }
