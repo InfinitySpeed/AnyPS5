@@ -319,7 +319,6 @@ int APS5_VABI sceCameraAudioGetData(void) {
 }
 
 int APS5_VABI sceCamera2SetHue(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
