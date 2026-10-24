@@ -272,7 +272,6 @@ int APS5_VABI sceNpInGameMessagePrepareA(void) {
     return 0;
 }
 int APS5_VABI sceNpInGameMessageSendDataA(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceNpIntGetAppType(void) {
