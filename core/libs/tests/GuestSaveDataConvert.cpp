@@ -51,6 +51,7 @@ int APS5_VABI sceSaveDataGetSaveDataRootUsbPath(void);
 int APS5_VABI sceSaveDataGetSavePoint(void);
 int APS5_VABI sceSaveDataGetUpdatedDataCount(void);
 int APS5_VABI sceSaveDataInitializeForCdlg(void);
+int APS5_VABI sceSaveDataIsDeletingUsbDb(void);
 }
 
 namespace {
@@ -162,6 +163,7 @@ int main() {
         Check(sceSaveDataGetSavePoint() == 0, "sceSaveDataGetSavePoint check");
         Check(sceSaveDataGetUpdatedDataCount() == 0, "sceSaveDataGetUpdatedDataCount check");
         Check(sceSaveDataInitializeForCdlg() == 0, "sceSaveDataInitializeForCdlg check");
+        Check(sceSaveDataIsDeletingUsbDb() == 0, "sceSaveDataIsDeletingUsbDb check");
     if (failures != 0) return 1;
     std::printf("savedata convert tests passed\n");
     return 0;
