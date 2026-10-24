@@ -15,6 +15,7 @@ int APS5_VABI sceSharePlayCrashDaemon(void);
 int APS5_VABI sceSharePlayGetCurrentConnectionInfo(void);
 int APS5_VABI sceSharePlayGetCurrentInfo(void);
 int APS5_VABI sceSharePlayGetEvent(void);
+int APS5_VABI sceSharePlayNotifyDialogOpen(void);
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
@@ -65,4 +66,5 @@ int main() {
     Require(sceSharePlayGetCurrentConnectionInfo() == 0);
     Require(sceSharePlayGetCurrentInfo() == 0);
     Require(sceSharePlayGetEvent() == 0);
+    Require(sceSharePlayNotifyDialogOpen() == 0);
 }
