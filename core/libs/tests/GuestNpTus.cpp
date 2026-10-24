@@ -38,6 +38,7 @@ int APS5_VABI sceNpTusDeleteMultiSlotVariableVUserAsync(int reqId, const NpOnlin
 int APS5_VABI sceNpTusDeleteMultiSlotVariableVUser(int reqId, const NpOnlineId* targetVirtualUserId, const std::int32_t* slotIds, int arrayLen, void* option);
 int APS5_VABI sceNpTusSetThreadParam(void);
 int APS5_VABI sceNpTusCreateTitleCtx(void);
+int APS5_VABI sceNpTusSetTimeout(void);
 }
 
 static constexpr int SIGNED_OUT = static_cast<int>(0x80550006);
@@ -305,5 +306,6 @@ int main() {
     for (std::size_t index = 1; index < contexts.size(); ++index) Require(sceNpTusDeleteNpTitleCtx(contexts[index]) == 0);
         Require(sceNpTusSetThreadParam() == 0);
         Require(sceNpTusCreateTitleCtx() == 0);
+        Require(sceNpTusSetTimeout() == 0);
     CheckTssTitleContexts();
 }

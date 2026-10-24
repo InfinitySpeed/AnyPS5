@@ -197,7 +197,6 @@ int APS5_VABI sceNpTusCreateTitleCtx(void) {
 }
 
 int APS5_VABI sceNpTusSetTimeout(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
