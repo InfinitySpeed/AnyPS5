@@ -152,7 +152,6 @@ int APS5_VABI sceGameLiveStreamingPostSocialMessage(void) {
 }
 
 int APS5_VABI sceGameLiveStreamingSetCameraFrameSetting(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
