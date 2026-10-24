@@ -18,6 +18,9 @@ int APS5_VABI sceNpWordFilterAbortRequest(int reqId);
 int APS5_VABI sceNpWordFilterPollAsync(int reqId, int* result);
 int APS5_VABI sceNpWordFilterCensorComment(int reqId, const char* comment, void* option);
 int APS5_VABI sceNpWordFilterSanitizeComment(int reqId, const char* comment, char* sanitizedComment, void* option);
+int APS5_VABI sceNpBandwidthTestInitStart();
+int APS5_VABI sceNpBandwidthTestInitStartDownload(const void* param);
+int APS5_VABI sceNpBandwidthTestInitStartUpload(const void* param);
 }
 
 namespace {
@@ -132,6 +135,12 @@ void CheckWordFilter() {
     Require(sceNpLookupDeleteTitleCtx(context) == InvalidId, "sceNpLookupDeleteTitleCtx", "a word filter context was found among the lookup contexts");
 }
 
+void CheckBandwidthTest() {
+    Require(sceNpBandwidthTestInitStart() == SignedOut, "sceNpBandwidthTestInitStart", "did not return SIGNED_OUT");
+    Require(sceNpBandwidthTestInitStartDownload(nullptr) == SignedOut, "sceNpBandwidthTestInitStartDownload", "did not return SIGNED_OUT");
+    Require(sceNpBandwidthTestInitStartUpload(nullptr) == SignedOut, "sceNpBandwidthTestInitStartUpload", "did not return SIGNED_OUT");
+}
+
 }
 
 int main() {
@@ -139,6 +148,7 @@ int main() {
     std::strcpy(reinterpret_cast<char*>(selfNpId), "player_1");
     CheckLookup();
     CheckWordFilter();
+    CheckBandwidthTest();
     if (failures != 0) return 1;
     std::puts("NpUtility offline tests passed");
     return 0;
