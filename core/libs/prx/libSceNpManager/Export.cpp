@@ -400,7 +400,6 @@ int APS5_VABI sceNpManagerIntGetAccountType(void) {
     return 0;
 }
 int APS5_VABI sceNpManagerIntGetActiveSigninState(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceNpManagerIntGetAuthServerErrorFlag(void) {
