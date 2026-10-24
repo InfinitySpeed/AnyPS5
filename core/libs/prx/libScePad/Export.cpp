@@ -458,8 +458,9 @@ int APS5_VABI scePadVrControllerReadState(int handle, PadVrControllerData* state
 }
 
 int APS5_VABI scePadVrControllerSetTriggerEffect(std::int32_t handle, const PadVrTriggerEffect* effect) {
- NotImplemented_nid_no_patch(__func__);
- return 0;
+ if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+ (void)effect;
+ return PAD_OK;
 }
 
 int APS5_VABI scePadVrControllerSetTriggerEffects(std::int32_t leftHandle, std::int32_t rightHandle, const PadVrTriggerEffects* effects) {
