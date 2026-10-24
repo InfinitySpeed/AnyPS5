@@ -50,6 +50,7 @@ int APS5_VABI sceCameraSetCalibDataForEve(void);
 int APS5_VABI sceCamera2GetAttribute(void);
 int APS5_VABI sceCameraSetLensCorrection(void);
 int APS5_VABI sceCameraSetCalibData(void);
+int APS5_VABI sceCameraSetProcessFocusByHandle(void);
 }
 
 namespace {
@@ -123,5 +124,6 @@ int main() {
         Require(sceCamera2GetAttribute() == 0, "sceCamera2GetAttribute check");
         Require(sceCameraSetLensCorrection() == 0, "sceCameraSetLensCorrection check");
         Require(sceCameraSetCalibData() == 0, "sceCameraSetCalibData check");
+        Require(sceCameraSetProcessFocusByHandle() == 0, "sceCameraSetProcessFocusByHandle check");
     return 0;
 }
