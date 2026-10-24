@@ -42,7 +42,6 @@ int APS5_VABI sceAudiodecDecodeWithPriorityEx(void) {
 }
 
 int APS5_VABI sceAudiodecDeleteDecoderEx(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
