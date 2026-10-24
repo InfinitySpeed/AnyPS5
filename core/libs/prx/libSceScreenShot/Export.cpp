@@ -95,7 +95,6 @@ int APS5_VABI sceScreenShotGetDrcParam() {
     return 0;
 }
 int APS5_VABI sceScreenShotIsVshScreenCaptureDisabled() {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 int APS5_VABI sceScreenShotSetDrcParam() {
