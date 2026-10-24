@@ -33,6 +33,7 @@ int APS5_VABI scePadControllerUpdateTerm(void);
 int APS5_VABI scePadDisableVibration(std::int32_t, bool);
 int APS5_VABI scePadSetVibrationStrength(std::int32_t, std::uint32_t);
 int APS5_VABI scePadSetLightBarBaseBrightness(std::int32_t, std::uint32_t);
+int APS5_VABI scePadSetPowerSavingState(std::int32_t, std::uint8_t);
 int APS5_VABI scePadUnknown_n3kSX62fgNo();
 int APS5_VABI scePadRead_nid_postfix(int, PadData*, int);
 int APS5_VABI scePadReadState(int, PadData*);
@@ -574,6 +575,7 @@ int main() {
     Require(scePadDisableVibration(handle, true) == PAD_OK);
     Require(scePadSetVibrationStrength(handle, 100) == PAD_OK);
     Require(scePadSetLightBarBaseBrightness(handle, 255) == PAD_OK);
+    Require(scePadSetPowerSavingState(handle, 1) == PAD_OK);
     Require(handle > 0);
     Require(scePadUnknown_n3kSX62fgNo() == PAD_OK);
     Require(scePadGetHandle(user, 0, 0) == handle);

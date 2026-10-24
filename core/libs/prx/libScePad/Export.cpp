@@ -585,8 +585,9 @@ int APS5_VABI scePadGetControllerIdleCount(std::int32_t handle, std::uint64_t* c
 }
 
 int APS5_VABI scePadSetPowerSavingState(std::int32_t handle, std::uint8_t state) {
-    NotImplemented_nid_no_patch(__func__);
-    return 0;
+    if (!KnownHandle(handle)) return PAD_ERROR_INVALID_HANDLE;
+    (void)state;
+    return PAD_OK;
 }
 
 int APS5_VABI scePadSetAutoPowerOffCount(std::int32_t count) {
