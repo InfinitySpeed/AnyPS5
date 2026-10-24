@@ -807,7 +807,6 @@ int APS5_VABI sceNetCtlGetNatInfoIpcInt(NetCtlNatInfoInternal* info) {
 }
 
 int APS5_VABI sceNetCtlSetStunWithPaddingFlagIpcInt(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 

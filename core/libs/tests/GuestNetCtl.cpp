@@ -57,6 +57,7 @@ int APS5_VABI sceNetCtlUnregisterCallbackV6(int);
 int APS5_VABI sceNetCtlConnectIpcInt(void);
 int APS5_VABI sceNetCtlConnectWithRetryIpcInt(void);
 int APS5_VABI sceNetCtlDisconnectIpcInt(void);
+int APS5_VABI sceNetCtlSetStunWithPaddingFlagIpcInt(void);
 }
 
 namespace {
@@ -388,4 +389,5 @@ int main() {
     Require(sceNetCtlConnectIpcInt() == 0);
     Require(sceNetCtlConnectWithRetryIpcInt() == 0);
     Require(sceNetCtlDisconnectIpcInt() == 0);
+    Require(sceNetCtlSetStunWithPaddingFlagIpcInt() == 0);
 }
