@@ -154,6 +154,7 @@ int APS5_VABI sceNpManagerIntGetTicket(void);
 int APS5_VABI sceNpManagerIntGetTicketA(void);
 int APS5_VABI sceNpManagerIntGetTitleToken(void);
 int APS5_VABI sceNpManagerIntGetTitleTokenWithCheck(void);
+int APS5_VABI sceNpManagerIntGetUserIdByAccountId(void);
 }
 
 extern "C" {
@@ -720,5 +721,6 @@ int main() {
             Require(sceNpManagerIntGetTicketA() == 0, "sceNpManagerIntGetTicketA check");
             Require(sceNpManagerIntGetTitleToken() == 0, "sceNpManagerIntGetTitleToken check");
             Require(sceNpManagerIntGetTitleTokenWithCheck() == 0, "sceNpManagerIntGetTitleTokenWithCheck check");
+            Require(sceNpManagerIntGetUserIdByAccountId() == 0, "sceNpManagerIntGetUserIdByAccountId check");
     return 0;
 }
