@@ -141,7 +141,6 @@ int APS5_VABI sceRazorCpuEndLogicalFileAccess(void) {
 }
 
 int APS5_VABI sceRazorCpuFiberLogNameChange(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
