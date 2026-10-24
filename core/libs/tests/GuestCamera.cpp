@@ -30,6 +30,7 @@ int APS5_VABI sceCameraSetTrackerMode(void);
 int APS5_VABI sceCameraSetContrast(void);
 int APS5_VABI sceCameraGetCalibDataForEve(void);
 int APS5_VABI sceCameraGetCalibDataFromDevice(void);
+int APS5_VABI sceCamera2SetContrast(void);
 }
 
 namespace {
@@ -83,5 +84,6 @@ int main() {
         Require(sceCameraSetContrast() == 0, "sceCameraSetContrast check");
         Require(sceCameraGetCalibDataForEve() == 0, "sceCameraGetCalibDataForEve check");
         Require(sceCameraGetCalibDataFromDevice() == 0, "sceCameraGetCalibDataFromDevice check");
+        Require(sceCamera2SetContrast() == 0, "sceCamera2SetContrast check");
     return 0;
 }
