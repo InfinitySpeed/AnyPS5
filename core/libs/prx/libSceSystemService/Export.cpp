@@ -621,7 +621,6 @@ int APS5_VABI sceShellCoreUtilChangePbtcMode(void) {
 }
 
 int APS5_VABI sceShellCoreUtilTelemetryCacheData(void) {
-    NotImplemented_nid_no_patch(__func__);
     return 0;
 }
 
