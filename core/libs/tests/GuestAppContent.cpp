@@ -38,6 +38,7 @@ int APS5_VABI sceAppContentDownload1Expand(void);
 int APS5_VABI sceAppContentDownload1Shrink(void);
 int APS5_VABI sceAppContentGetAddcontInfoByEntitlementId(void);
 int APS5_VABI sceAppContentGetAddcontInfoListByIroTag(void);
+int APS5_VABI sceAppContentGetDownloadedStoreCountry(void);
 }
 
 static constexpr int ErrorParameter = static_cast<int>(0x80D90002);
@@ -269,6 +270,7 @@ int main() {
         Require(sceAppContentDownload1Shrink() == 0);
         Require(sceAppContentGetAddcontInfoByEntitlementId() == 0);
         Require(sceAppContentGetAddcontInfoListByIroTag() == 0);
+        Require(sceAppContentGetDownloadedStoreCountry() == 0);
     std::filesystem::current_path(original);
     std::filesystem::remove_all(directory);
 }
