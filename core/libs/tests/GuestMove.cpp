@@ -24,6 +24,7 @@ int APS5_VABI sceMoveIsValidHandle(void);
 int APS5_VABI sceMoveReadStateRecentForTracker(void);
 int APS5_VABI sceMoveSetCalibrationMode(void);
 int APS5_VABI sceMoveSetExtensionPortOutput(void);
+int APS5_VABI sceMoveSetLightSphereForTracker(void);
 }
 
 namespace {
@@ -167,4 +168,5 @@ int main() {
     Require(sceMoveReadStateRecentForTracker() == 0);
     Require(sceMoveSetCalibrationMode() == 0);
     Require(sceMoveSetExtensionPortOutput() == 0);
+    Require(sceMoveSetLightSphereForTracker() == 0);
 }
