@@ -77,6 +77,7 @@ int APS5_VABI sceRtcSetCurrentAdNetworkTick(const RtcTick*);
 int APS5_VABI sceRtcSetCurrentDebugNetworkTick(const RtcTick*);
 int APS5_VABI sceRtcInit(void);
 int APS5_VABI sceRtcEnd(void);
+int APS5_VABI sceRtcSetConf(int first, int second, int third, int fourth);
 }
 
 static void Require(bool value) { if (!value) std::abort(); }
